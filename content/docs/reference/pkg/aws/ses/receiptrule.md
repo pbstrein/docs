@@ -3,9 +3,6 @@
 title: "ReceiptRule"
 block_external_search_index: true
 ---
-<style>
-table td p { margin-top: 0; margin-bottom: 0; }
-</style>
 
 Provides an SES receipt rule resource
 
@@ -39,975 +36,530 @@ const store = new aws.ses.ReceiptRule("store", {
 
 ## Create a ReceiptRule Resource
 
-{{< langchoose csharp nojavascript >}}
+{{< chooser language "javascript,typescript,python,go,csharp" / >}}
 
+{{% choosable language nodejs %}}
 <div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="k">new </span><span class="nx"><a href="/docs/reference/pkg/nodejs/pulumi/aws/ses/#ReceiptRule">ReceiptRule</a></span><span class="p">(</span><span class="nx">name</span>: <span class="nx"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string">string</a></span><span class="p">, </span><span class="nx">args</span>: <span class="nx"><a href="/docs/reference/pkg/nodejs/pulumi/aws/ses/#ReceiptRuleArgs">ReceiptRuleArgs</a></span><span class="p">, </span><span class="nx">opts</span>?: <span class="nx"><a href="/docs/reference/pkg/nodejs/pulumi/pulumi/pulumi/#CustomResourceOptions">pulumi.CustomResourceOptions</a></span><span class="p">);</span></code></pre></div>
+{{% /choosable %}}
 
+{{% choosable language python %}}
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def </span><span class="nf">ReceiptRule</span><span class="p">(resource_name, opts=None, </span>add_header_actions=None<span class="p">, </span>after=None<span class="p">, </span>bounce_actions=None<span class="p">, </span>enabled=None<span class="p">, </span>lambda_actions=None<span class="p">, </span>name=None<span class="p">, </span>recipients=None<span class="p">, </span>rule_set_name=None<span class="p">, </span>s3_actions=None<span class="p">, </span>scan_enabled=None<span class="p">, </span>sns_actions=None<span class="p">, </span>stop_actions=None<span class="p">, </span>tls_policy=None<span class="p">, </span>workmail_actions=None<span class="p">, __props__=None);</span></code></pre></div>
+{{% /choosable %}}
 
+{{% choosable language go %}}
 <div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="k">func </span>NewReceiptRule<span class="p">(</span><span class="nx">ctx</span> *<span class="nx"><a href="https://pkg.go.dev/github.com/pulumi/pulumi/sdk/go/pulumi?tab=doc#Context">pulumi.Context</a></span><span class="p">, </span><span class="nx">name</span> <span class="nx"><a href="https://golang.org/pkg/builtin/#string">string</a></span><span class="p">, </span><span class="nx">args</span> <span class="nx"><a href="https://pkg.go.dev/github.com/pulumi/pulumi-aws/sdk/go/aws/ses?tab=doc#ReceiptRuleArgs">ReceiptRuleArgs</a></span><span class="p">, </span><span class="nx">opts</span> ...<span class="nx"><a href="https://pkg.go.dev/github.com/pulumi/pulumi/sdk/go/pulumi?tab=doc#ResourceOption">pulumi.ResourceOption</a></span><span class="p">) (*<span class="nx"><a href="https://pkg.go.dev/github.com/pulumi/pulumi-aws/sdk/go/aws/ses?tab=doc#ReceiptRule">ReceiptRule</a></span>, error)</span></code></pre></div>
+{{% /choosable %}}
 
+{{% choosable language csharp %}}
 <div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public </span><span class="nx"><a href="/docs/reference/pkg/dotnet/Pulumi.Aws/Pulumi.Aws.Ses.ReceiptRule.html">ReceiptRule</a></span><span class="p">(</span><span class="nx"><a href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/built-in-types">string</a></span> <span class="nx">name<span class="p">, </span><span class="nx"><a href="/docs/reference/pkg/dotnet/Pulumi.Aws/Pulumi.Aws.Ses.ReceiptRuleArgs.html">ReceiptRuleArgs</a></span> <span class="nx">args<span class="p">, </span><span class="nx"><a href="/docs/reference/pkg/dotnet/Pulumi/Pulumi.CustomResourceOptions.html">Pulumi.CustomResourceOptions</a></span>? <span class="nx">opts = null<span class="p">)</span></code></pre></div>
-
-Creates a ReceiptRule resource with the given unique name, arguments, and options.
-
-{{% lang nodejs %}}
-
-<ul class="pl-10">
-    <li><strong>name</strong> &ndash; (Required) The unique name of the resulting resource.</li>
-    <li><strong>args</strong> &ndash;  (Optional)  The arguments to use to populate this resource's properties.</li>
-    <li><strong>opts</strong> &ndash; (Optional) A bag of options that control this resource's behavior.</li>
-</ul>
-
-{{% /lang %}}
-
-{{% lang go %}}
-
-<ul class="pl-10">
-    <li><strong>name</strong> &ndash; (Required) The unique name of the resulting resource.</li>
-    <li><strong>args</strong> &ndash;  (Optional)  The arguments to use to populate this resource's properties.</li>
-    <li><strong>opts</strong> &ndash; (Optional) A bag of options that control this resource's behavior.</li>
-</ul>
-
-{{% /lang %}}
-
-{{% lang csharp %}}
-
-<ul class="pl-10">
-    <li><strong>name</strong> &ndash; (Required) The unique name of the resulting resource.</li>
-    <li><strong>args</strong> &ndash;  (Optional)  The arguments to use to populate this resource's properties.</li>
-    <li><strong>opts</strong> &ndash; (Optional) A bag of options that control this resource's behavior.</li>
-</ul>
-
-{{% /lang %}}
-
-The following arguments are supported:
-
-
-{{< langchoose csharp nojavascript >}}
-
-
-{{% lang csharp %}}
-
-
-<table class="ml-6">
-    <thead>
-        <tr>
-            <th>Argument</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-    
-        <tr>
-            <td class="align-top">Add<wbr>Header<wbr>Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptruleaddheaderaction">List&lt;Receipt<wbr>Rule<wbr>Add<wbr>Header<wbr>Action<wbr>Args&gt;?</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of Add Header Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">After</td>
-            <td class="align-top">
-                
-                <code>string?</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-The name of the rule to place this rule after
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Bounce<wbr>Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrulebounceaction">List&lt;Receipt<wbr>Rule<wbr>Bounce<wbr>Action<wbr>Args&gt;?</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of Bounce Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Enabled</td>
-            <td class="align-top">
-                
-                <code>bool?</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-If true, the rule will be enabled
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Lambda<wbr>Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrulelambdaaction">List&lt;Receipt<wbr>Rule<wbr>Lambda<wbr>Action<wbr>Args&gt;?</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of Lambda Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Name</td>
-            <td class="align-top">
-                
-                <code>string?</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-The name of the rule
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Recipients</td>
-            <td class="align-top">
-                
-                <code>List<string>?</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of email addresses
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Rule<wbr>Set<wbr>Name</td>
-            <td class="align-top">
-                
-                <code>string</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The name of the rule set
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">S3Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrules3action">List&lt;Receipt<wbr>Rule<wbr>S3Action<wbr>Args&gt;?</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of S3 Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Scan<wbr>Enabled</td>
-            <td class="align-top">
-                
-                <code>bool?</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-If true, incoming emails will be scanned for spam and viruses
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Sns<wbr>Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrulesnsaction">List&lt;Receipt<wbr>Rule<wbr>Sns<wbr>Action<wbr>Args&gt;?</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of SNS Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Stop<wbr>Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrulestopaction">List&lt;Receipt<wbr>Rule<wbr>Stop<wbr>Action<wbr>Args&gt;?</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of Stop Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Tls<wbr>Policy</td>
-            <td class="align-top">
-                
-                <code>string?</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-Require or Optional
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Workmail<wbr>Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptruleworkmailaction">List&lt;Receipt<wbr>Rule<wbr>Workmail<wbr>Action<wbr>Args&gt;?</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of WorkMail Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-    </tbody>
-</table>
-
-
-{{% /lang %}}
-
-
-{{% lang go %}}
-
-
-<table class="ml-6">
-    <thead>
-        <tr>
-            <th>Argument</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-    
-        <tr>
-            <td class="align-top">Add<wbr>Header<wbr>Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptruleaddheaderaction">[]Receipt<wbr>Rule<wbr>Add<wbr>Header<wbr>Action</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of Add Header Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">After</td>
-            <td class="align-top">
-                
-                <code>*string</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-The name of the rule to place this rule after
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Bounce<wbr>Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrulebounceaction">[]Receipt<wbr>Rule<wbr>Bounce<wbr>Action</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of Bounce Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Enabled</td>
-            <td class="align-top">
-                
-                <code>*bool</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-If true, the rule will be enabled
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Lambda<wbr>Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrulelambdaaction">[]Receipt<wbr>Rule<wbr>Lambda<wbr>Action</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of Lambda Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Name</td>
-            <td class="align-top">
-                
-                <code>*string</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-The name of the rule
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Recipients</td>
-            <td class="align-top">
-                
-                <code>[]string</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of email addresses
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Rule<wbr>Set<wbr>Name</td>
-            <td class="align-top">
-                
-                <code>string</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The name of the rule set
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">S3Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrules3action">[]Receipt<wbr>Rule<wbr>S3Action</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of S3 Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Scan<wbr>Enabled</td>
-            <td class="align-top">
-                
-                <code>*bool</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-If true, incoming emails will be scanned for spam and viruses
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Sns<wbr>Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrulesnsaction">[]Receipt<wbr>Rule<wbr>Sns<wbr>Action</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of SNS Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Stop<wbr>Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrulestopaction">[]Receipt<wbr>Rule<wbr>Stop<wbr>Action</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of Stop Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Tls<wbr>Policy</td>
-            <td class="align-top">
-                
-                <code>*string</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-Require or Optional
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Workmail<wbr>Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptruleworkmailaction">[]Receipt<wbr>Rule<wbr>Workmail<wbr>Action</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of WorkMail Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-    </tbody>
-</table>
-
-
-{{% /lang %}}
-
-
-{{% lang nodejs %}}
-
-
-<table class="ml-6">
-    <thead>
-        <tr>
-            <th>Argument</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-    
-        <tr>
-            <td class="align-top">add<wbr>Header<wbr>Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptruleaddheaderaction">Receipt<wbr>Rule<wbr>Add<wbr>Header<wbr>Action[]?</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of Add Header Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">after</td>
-            <td class="align-top">
-                
-                <code>string?</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-The name of the rule to place this rule after
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">bounce<wbr>Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrulebounceaction">Receipt<wbr>Rule<wbr>Bounce<wbr>Action[]?</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of Bounce Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">enabled</td>
-            <td class="align-top">
-                
-                <code>boolean?</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-If true, the rule will be enabled
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">lambda<wbr>Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrulelambdaaction">Receipt<wbr>Rule<wbr>Lambda<wbr>Action[]?</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of Lambda Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">name</td>
-            <td class="align-top">
-                
-                <code>string?</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-The name of the rule
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">recipients</td>
-            <td class="align-top">
-                
-                <code>string[]?</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of email addresses
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">rule<wbr>Set<wbr>Name</td>
-            <td class="align-top">
-                
-                <code>string</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The name of the rule set
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">s3Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrules3action">Receipt<wbr>Rule<wbr>S3Action[]?</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of S3 Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">scan<wbr>Enabled</td>
-            <td class="align-top">
-                
-                <code>boolean?</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-If true, incoming emails will be scanned for spam and viruses
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">sns<wbr>Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrulesnsaction">Receipt<wbr>Rule<wbr>Sns<wbr>Action[]?</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of SNS Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">stop<wbr>Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrulestopaction">Receipt<wbr>Rule<wbr>Stop<wbr>Action[]?</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of Stop Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">tls<wbr>Policy</td>
-            <td class="align-top">
-                
-                <code>string?</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-Require or Optional
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">workmail<wbr>Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptruleworkmailaction">Receipt<wbr>Rule<wbr>Workmail<wbr>Action[]?</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of WorkMail Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-    </tbody>
-</table>
-
-
-{{% /lang %}}
-
-
-{{% lang python %}}
-
-
-<table class="ml-6">
-    <thead>
-        <tr>
-            <th>Argument</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-    
-        <tr>
-            <td class="align-top">add_<wbr>header_<wbr>actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptruleaddheaderaction">List[Receipt<wbr>Rule<wbr>Add<wbr>Header<wbr>Action]</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of Add Header Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">after</td>
-            <td class="align-top">
-                
-                <code>str</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-The name of the rule to place this rule after
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">bounce_<wbr>actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrulebounceaction">List[Receipt<wbr>Rule<wbr>Bounce<wbr>Action]</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of Bounce Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">enabled</td>
-            <td class="align-top">
-                
-                <code>bool</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-If true, the rule will be enabled
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">lambda_<wbr>actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrulelambdaaction">List[Receipt<wbr>Rule<wbr>Lambda<wbr>Action]</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of Lambda Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">name</td>
-            <td class="align-top">
-                
-                <code>str</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-The name of the rule
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">recipients</td>
-            <td class="align-top">
-                
-                <code>List[str]</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of email addresses
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">rule_<wbr>set_<wbr>name</td>
-            <td class="align-top">
-                
-                <code>str</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The name of the rule set
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">s3_<wbr>actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrules3action">List[Receipt<wbr>Rule<wbr>S3Action]</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of S3 Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">scan_<wbr>enabled</td>
-            <td class="align-top">
-                
-                <code>bool</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-If true, incoming emails will be scanned for spam and viruses
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">sns_<wbr>actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrulesnsaction">List[Receipt<wbr>Rule<wbr>Sns<wbr>Action]</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of SNS Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">stop_<wbr>actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrulestopaction">List[Receipt<wbr>Rule<wbr>Stop<wbr>Action]</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of Stop Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">tls_<wbr>policy</td>
-            <td class="align-top">
-                
-                <code>str</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-Require or Optional
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">workmail_<wbr>actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptruleworkmailaction">List[Receipt<wbr>Rule<wbr>Workmail<wbr>Action]</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of WorkMail Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-    </tbody>
-</table>
-
-
-{{% /lang %}}
-
-
-
+{{% /choosable %}}
+
+Contructor Arguments
+
+{{% choosable language nodejs %}}
+
+<dl class="resources-ctor-args">
+    <dt class="property-required" title="Required">
+        name
+        <span class="property-indicator"></span>
+    </dt>
+    <dd>The unique name of the resource.</dd>
+    <dt class="property-optional" title="Optional">
+        args
+        <span class="property-indicator"></span>
+    </dt>
+    <dd>The arguments to use to populate this resource's properties.</dd>
+    <dt class="property-optional" title="Optional">
+        opts
+        <span class="property-indicator"></span>
+    </dt>
+    <dd>A bag of options that control this resource's behavior.</dd>
+</dl>
+
+{{% /choosable %}}
+
+{{% choosable language python %}}
+<dl class="resources-ctor-args">
+    <dt class="property-required" title="Required">
+        name
+        <span class="property-indicator"></span>
+    </dt>
+    <dd>The unique name of the resource.</dd>
+    <dt class="property-optional" title="Optional">
+        opts
+        <span class="property-indicator"></span>
+    </dt>
+    <dd>A bag of options that control this resource's behavior.</dd>
+</dl>
+{{% /choosable %}}
+
+{{% choosable language go %}}
+
+<dl class="resources-ctor-args">
+    <dt class="property-required" title="Required">
+        name
+        <span class="property-indicator"></span>
+    </dt>
+    <dd>The unique name of the resource.</dd>
+    <dt class="property-optional" title="Optional">
+        args
+        <span class="property-indicator"></span>
+    </dt>
+    <dd>The arguments to use to populate this resource's properties.</dd>
+    <dt class="property-optional" title="Optional">
+        opts
+        <span class="property-indicator"></span>
+    </dt>
+    <dd>A bag of options that control this resource's behavior.</dd>
+</dl>
+
+{{% /choosable %}}
+
+{{% choosable language csharp %}}
+
+<dl class="resources-ctor-args">
+    <dt class="property-required" title="Required">
+        name
+        <span class="property-indicator"></span>
+    </dt>
+    <dd>The unique name of the resource.</dd>
+    <dt class="property-optional" title="Optional">
+        args
+        <span class="property-indicator"></span>
+    </dt>
+    <dd>The arguments to use to populate this resource's properties.</dd>
+    <dt class="property-optional" title="Optional">
+        opts
+        <span class="property-indicator"></span>
+    </dt>
+    <dd>A bag of options that control this resource's behavior.</dd>
+</dl>
+
+{{% /choosable %}}
+
+Resource Arguments
+
+
+
+
+{{% choosable language csharp %}}
+<dl class="resources-properties">
+
+    <dt class="property-optional"
+            title="Optional">Add<wbr>Header<wbr>Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptruleaddheaderaction">List&lt;Receipt<wbr>Rule<wbr>Add<wbr>Header<wbr>Action<wbr>Args&gt;?</a></span>
+    </dt>
+    <dd>{{% md %}}A list of Add Header Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">After<span class="property-indicator"></span>
+        <span class="property-type">string?</span>
+    </dt>
+    <dd>{{% md %}}The name of the rule to place this rule after
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Bounce<wbr>Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrulebounceaction">List&lt;Receipt<wbr>Rule<wbr>Bounce<wbr>Action<wbr>Args&gt;?</a></span>
+    </dt>
+    <dd>{{% md %}}A list of Bounce Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Enabled<span class="property-indicator"></span>
+        <span class="property-type">bool?</span>
+    </dt>
+    <dd>{{% md %}}If true, the rule will be enabled
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Lambda<wbr>Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrulelambdaaction">List&lt;Receipt<wbr>Rule<wbr>Lambda<wbr>Action<wbr>Args&gt;?</a></span>
+    </dt>
+    <dd>{{% md %}}A list of Lambda Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Name<span class="property-indicator"></span>
+        <span class="property-type">string?</span>
+    </dt>
+    <dd>{{% md %}}The name of the rule
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Recipients<span class="property-indicator"></span>
+        <span class="property-type">List<string>?</span>
+    </dt>
+    <dd>{{% md %}}A list of email addresses
+{{% /md %}}</dd>
+
+    <dt class="property-required"
+            title="Required">Rule<wbr>Set<wbr>Name<span class="property-indicator"></span>
+        <span class="property-type">string</span>
+    </dt>
+    <dd>{{% md %}}The name of the rule set
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">S3Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrules3action">List&lt;Receipt<wbr>Rule<wbr>S3Action<wbr>Args&gt;?</a></span>
+    </dt>
+    <dd>{{% md %}}A list of S3 Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Scan<wbr>Enabled<span class="property-indicator"></span>
+        <span class="property-type">bool?</span>
+    </dt>
+    <dd>{{% md %}}If true, incoming emails will be scanned for spam and viruses
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Sns<wbr>Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrulesnsaction">List&lt;Receipt<wbr>Rule<wbr>Sns<wbr>Action<wbr>Args&gt;?</a></span>
+    </dt>
+    <dd>{{% md %}}A list of SNS Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Stop<wbr>Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrulestopaction">List&lt;Receipt<wbr>Rule<wbr>Stop<wbr>Action<wbr>Args&gt;?</a></span>
+    </dt>
+    <dd>{{% md %}}A list of Stop Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Tls<wbr>Policy<span class="property-indicator"></span>
+        <span class="property-type">string?</span>
+    </dt>
+    <dd>{{% md %}}Require or Optional
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Workmail<wbr>Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptruleworkmailaction">List&lt;Receipt<wbr>Rule<wbr>Workmail<wbr>Action<wbr>Args&gt;?</a></span>
+    </dt>
+    <dd>{{% md %}}A list of WorkMail Action blocks. Documented below.
+{{% /md %}}</dd>
+
+</dl>
+{{% /choosable %}}
+
+
+{{% choosable language go %}}
+<dl class="resources-properties">
+
+    <dt class="property-optional"
+            title="Optional">Add<wbr>Header<wbr>Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptruleaddheaderaction">[]Receipt<wbr>Rule<wbr>Add<wbr>Header<wbr>Action</a></span>
+    </dt>
+    <dd>{{% md %}}A list of Add Header Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">After<span class="property-indicator"></span>
+        <span class="property-type">*string</span>
+    </dt>
+    <dd>{{% md %}}The name of the rule to place this rule after
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Bounce<wbr>Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrulebounceaction">[]Receipt<wbr>Rule<wbr>Bounce<wbr>Action</a></span>
+    </dt>
+    <dd>{{% md %}}A list of Bounce Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Enabled<span class="property-indicator"></span>
+        <span class="property-type">*bool</span>
+    </dt>
+    <dd>{{% md %}}If true, the rule will be enabled
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Lambda<wbr>Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrulelambdaaction">[]Receipt<wbr>Rule<wbr>Lambda<wbr>Action</a></span>
+    </dt>
+    <dd>{{% md %}}A list of Lambda Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Name<span class="property-indicator"></span>
+        <span class="property-type">*string</span>
+    </dt>
+    <dd>{{% md %}}The name of the rule
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Recipients<span class="property-indicator"></span>
+        <span class="property-type">[]string</span>
+    </dt>
+    <dd>{{% md %}}A list of email addresses
+{{% /md %}}</dd>
+
+    <dt class="property-required"
+            title="Required">Rule<wbr>Set<wbr>Name<span class="property-indicator"></span>
+        <span class="property-type">string</span>
+    </dt>
+    <dd>{{% md %}}The name of the rule set
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">S3Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrules3action">[]Receipt<wbr>Rule<wbr>S3Action</a></span>
+    </dt>
+    <dd>{{% md %}}A list of S3 Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Scan<wbr>Enabled<span class="property-indicator"></span>
+        <span class="property-type">*bool</span>
+    </dt>
+    <dd>{{% md %}}If true, incoming emails will be scanned for spam and viruses
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Sns<wbr>Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrulesnsaction">[]Receipt<wbr>Rule<wbr>Sns<wbr>Action</a></span>
+    </dt>
+    <dd>{{% md %}}A list of SNS Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Stop<wbr>Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrulestopaction">[]Receipt<wbr>Rule<wbr>Stop<wbr>Action</a></span>
+    </dt>
+    <dd>{{% md %}}A list of Stop Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Tls<wbr>Policy<span class="property-indicator"></span>
+        <span class="property-type">*string</span>
+    </dt>
+    <dd>{{% md %}}Require or Optional
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Workmail<wbr>Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptruleworkmailaction">[]Receipt<wbr>Rule<wbr>Workmail<wbr>Action</a></span>
+    </dt>
+    <dd>{{% md %}}A list of WorkMail Action blocks. Documented below.
+{{% /md %}}</dd>
+
+</dl>
+{{% /choosable %}}
+
+
+{{% choosable language nodejs %}}
+<dl class="resources-properties">
+
+    <dt class="property-optional"
+            title="Optional">add<wbr>Header<wbr>Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptruleaddheaderaction">Receipt<wbr>Rule<wbr>Add<wbr>Header<wbr>Action[]?</a></span>
+    </dt>
+    <dd>{{% md %}}A list of Add Header Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">after<span class="property-indicator"></span>
+        <span class="property-type">string?</span>
+    </dt>
+    <dd>{{% md %}}The name of the rule to place this rule after
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">bounce<wbr>Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrulebounceaction">Receipt<wbr>Rule<wbr>Bounce<wbr>Action[]?</a></span>
+    </dt>
+    <dd>{{% md %}}A list of Bounce Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">enabled<span class="property-indicator"></span>
+        <span class="property-type">boolean?</span>
+    </dt>
+    <dd>{{% md %}}If true, the rule will be enabled
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">lambda<wbr>Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrulelambdaaction">Receipt<wbr>Rule<wbr>Lambda<wbr>Action[]?</a></span>
+    </dt>
+    <dd>{{% md %}}A list of Lambda Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">name<span class="property-indicator"></span>
+        <span class="property-type">string?</span>
+    </dt>
+    <dd>{{% md %}}The name of the rule
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">recipients<span class="property-indicator"></span>
+        <span class="property-type">string[]?</span>
+    </dt>
+    <dd>{{% md %}}A list of email addresses
+{{% /md %}}</dd>
+
+    <dt class="property-required"
+            title="Required">rule<wbr>Set<wbr>Name<span class="property-indicator"></span>
+        <span class="property-type">string</span>
+    </dt>
+    <dd>{{% md %}}The name of the rule set
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">s3Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrules3action">Receipt<wbr>Rule<wbr>S3Action[]?</a></span>
+    </dt>
+    <dd>{{% md %}}A list of S3 Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">scan<wbr>Enabled<span class="property-indicator"></span>
+        <span class="property-type">boolean?</span>
+    </dt>
+    <dd>{{% md %}}If true, incoming emails will be scanned for spam and viruses
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">sns<wbr>Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrulesnsaction">Receipt<wbr>Rule<wbr>Sns<wbr>Action[]?</a></span>
+    </dt>
+    <dd>{{% md %}}A list of SNS Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">stop<wbr>Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrulestopaction">Receipt<wbr>Rule<wbr>Stop<wbr>Action[]?</a></span>
+    </dt>
+    <dd>{{% md %}}A list of Stop Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">tls<wbr>Policy<span class="property-indicator"></span>
+        <span class="property-type">string?</span>
+    </dt>
+    <dd>{{% md %}}Require or Optional
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">workmail<wbr>Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptruleworkmailaction">Receipt<wbr>Rule<wbr>Workmail<wbr>Action[]?</a></span>
+    </dt>
+    <dd>{{% md %}}A list of WorkMail Action blocks. Documented below.
+{{% /md %}}</dd>
+
+</dl>
+{{% /choosable %}}
+
+
+{{% choosable language python %}}
+<dl class="resources-properties">
+
+    <dt class="property-optional"
+            title="Optional">add_<wbr>header_<wbr>actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptruleaddheaderaction">List[Receipt<wbr>Rule<wbr>Add<wbr>Header<wbr>Action]</a></span>
+    </dt>
+    <dd>{{% md %}}A list of Add Header Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">after<span class="property-indicator"></span>
+        <span class="property-type">str</span>
+    </dt>
+    <dd>{{% md %}}The name of the rule to place this rule after
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">bounce_<wbr>actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrulebounceaction">List[Receipt<wbr>Rule<wbr>Bounce<wbr>Action]</a></span>
+    </dt>
+    <dd>{{% md %}}A list of Bounce Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">enabled<span class="property-indicator"></span>
+        <span class="property-type">bool</span>
+    </dt>
+    <dd>{{% md %}}If true, the rule will be enabled
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">lambda_<wbr>actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrulelambdaaction">List[Receipt<wbr>Rule<wbr>Lambda<wbr>Action]</a></span>
+    </dt>
+    <dd>{{% md %}}A list of Lambda Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">name<span class="property-indicator"></span>
+        <span class="property-type">str</span>
+    </dt>
+    <dd>{{% md %}}The name of the rule
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">recipients<span class="property-indicator"></span>
+        <span class="property-type">List[str]</span>
+    </dt>
+    <dd>{{% md %}}A list of email addresses
+{{% /md %}}</dd>
+
+    <dt class="property-required"
+            title="Required">rule_<wbr>set_<wbr>name<span class="property-indicator"></span>
+        <span class="property-type">str</span>
+    </dt>
+    <dd>{{% md %}}The name of the rule set
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">s3_<wbr>actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrules3action">List[Receipt<wbr>Rule<wbr>S3Action]</a></span>
+    </dt>
+    <dd>{{% md %}}A list of S3 Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">scan_<wbr>enabled<span class="property-indicator"></span>
+        <span class="property-type">bool</span>
+    </dt>
+    <dd>{{% md %}}If true, incoming emails will be scanned for spam and viruses
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">sns_<wbr>actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrulesnsaction">List[Receipt<wbr>Rule<wbr>Sns<wbr>Action]</a></span>
+    </dt>
+    <dd>{{% md %}}A list of SNS Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">stop_<wbr>actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrulestopaction">List[Receipt<wbr>Rule<wbr>Stop<wbr>Action]</a></span>
+    </dt>
+    <dd>{{% md %}}A list of Stop Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">tls_<wbr>policy<span class="property-indicator"></span>
+        <span class="property-type">str</span>
+    </dt>
+    <dd>{{% md %}}Require or Optional
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">workmail_<wbr>actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptruleworkmailaction">List[Receipt<wbr>Rule<wbr>Workmail<wbr>Action]</a></span>
+    </dt>
+    <dd>{{% md %}}A list of WorkMail Action blocks. Documented below.
+{{% /md %}}</dd>
+
+</dl>
+{{% /choosable %}}
 
 
 
@@ -1018,818 +570,425 @@ The following output properties are available:
 
 
 
-{{< langchoose csharp nojavascript >}}
-
-
-{{% lang csharp %}}
-
-
-<table class="ml-6">
-    <thead>
-        <tr>
-            <th>Argument</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-    
-        <tr>
-            <td class="align-top">Add<wbr>Header<wbr>Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptruleaddheaderaction">List&lt;Receipt<wbr>Rule<wbr>Add<wbr>Header<wbr>Action&gt;?</a></code>
-            </td>
-            <td class="align-top">{{% md %}} A list of Add Header Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">After</td>
-            <td class="align-top">
-                
-                <code>string?</code>
-            </td>
-            <td class="align-top">{{% md %}} The name of the rule to place this rule after
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Bounce<wbr>Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrulebounceaction">List&lt;Receipt<wbr>Rule<wbr>Bounce<wbr>Action&gt;?</a></code>
-            </td>
-            <td class="align-top">{{% md %}} A list of Bounce Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Enabled</td>
-            <td class="align-top">
-                
-                <code>bool</code>
-            </td>
-            <td class="align-top">{{% md %}} If true, the rule will be enabled
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Lambda<wbr>Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrulelambdaaction">List&lt;Receipt<wbr>Rule<wbr>Lambda<wbr>Action&gt;?</a></code>
-            </td>
-            <td class="align-top">{{% md %}} A list of Lambda Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Name</td>
-            <td class="align-top">
-                
-                <code>string</code>
-            </td>
-            <td class="align-top">{{% md %}} The name of the rule
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Recipients</td>
-            <td class="align-top">
-                
-                <code>List<string>?</code>
-            </td>
-            <td class="align-top">{{% md %}} A list of email addresses
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Rule<wbr>Set<wbr>Name</td>
-            <td class="align-top">
-                
-                <code>string</code>
-            </td>
-            <td class="align-top">{{% md %}} The name of the rule set
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">S3Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrules3action">List&lt;Receipt<wbr>Rule<wbr>S3Action&gt;?</a></code>
-            </td>
-            <td class="align-top">{{% md %}} A list of S3 Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Scan<wbr>Enabled</td>
-            <td class="align-top">
-                
-                <code>bool</code>
-            </td>
-            <td class="align-top">{{% md %}} If true, incoming emails will be scanned for spam and viruses
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Sns<wbr>Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrulesnsaction">List&lt;Receipt<wbr>Rule<wbr>Sns<wbr>Action&gt;?</a></code>
-            </td>
-            <td class="align-top">{{% md %}} A list of SNS Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Stop<wbr>Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrulestopaction">List&lt;Receipt<wbr>Rule<wbr>Stop<wbr>Action&gt;?</a></code>
-            </td>
-            <td class="align-top">{{% md %}} A list of Stop Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Tls<wbr>Policy</td>
-            <td class="align-top">
-                
-                <code>string</code>
-            </td>
-            <td class="align-top">{{% md %}} Require or Optional
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Workmail<wbr>Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptruleworkmailaction">List&lt;Receipt<wbr>Rule<wbr>Workmail<wbr>Action&gt;?</a></code>
-            </td>
-            <td class="align-top">{{% md %}} A list of WorkMail Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-    </tbody>
-</table>
-
-
-{{% /lang %}}
-
-
-{{% lang go %}}
-
-
-<table class="ml-6">
-    <thead>
-        <tr>
-            <th>Argument</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-    
-        <tr>
-            <td class="align-top">Add<wbr>Header<wbr>Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptruleaddheaderaction">[]Receipt<wbr>Rule<wbr>Add<wbr>Header<wbr>Action</a></code>
-            </td>
-            <td class="align-top">{{% md %}} A list of Add Header Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">After</td>
-            <td class="align-top">
-                
-                <code>*string</code>
-            </td>
-            <td class="align-top">{{% md %}} The name of the rule to place this rule after
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Bounce<wbr>Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrulebounceaction">[]Receipt<wbr>Rule<wbr>Bounce<wbr>Action</a></code>
-            </td>
-            <td class="align-top">{{% md %}} A list of Bounce Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Enabled</td>
-            <td class="align-top">
-                
-                <code>bool</code>
-            </td>
-            <td class="align-top">{{% md %}} If true, the rule will be enabled
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Lambda<wbr>Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrulelambdaaction">[]Receipt<wbr>Rule<wbr>Lambda<wbr>Action</a></code>
-            </td>
-            <td class="align-top">{{% md %}} A list of Lambda Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Name</td>
-            <td class="align-top">
-                
-                <code>string</code>
-            </td>
-            <td class="align-top">{{% md %}} The name of the rule
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Recipients</td>
-            <td class="align-top">
-                
-                <code>[]string</code>
-            </td>
-            <td class="align-top">{{% md %}} A list of email addresses
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Rule<wbr>Set<wbr>Name</td>
-            <td class="align-top">
-                
-                <code>string</code>
-            </td>
-            <td class="align-top">{{% md %}} The name of the rule set
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">S3Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrules3action">[]Receipt<wbr>Rule<wbr>S3Action</a></code>
-            </td>
-            <td class="align-top">{{% md %}} A list of S3 Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Scan<wbr>Enabled</td>
-            <td class="align-top">
-                
-                <code>bool</code>
-            </td>
-            <td class="align-top">{{% md %}} If true, incoming emails will be scanned for spam and viruses
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Sns<wbr>Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrulesnsaction">[]Receipt<wbr>Rule<wbr>Sns<wbr>Action</a></code>
-            </td>
-            <td class="align-top">{{% md %}} A list of SNS Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Stop<wbr>Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrulestopaction">[]Receipt<wbr>Rule<wbr>Stop<wbr>Action</a></code>
-            </td>
-            <td class="align-top">{{% md %}} A list of Stop Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Tls<wbr>Policy</td>
-            <td class="align-top">
-                
-                <code>string</code>
-            </td>
-            <td class="align-top">{{% md %}} Require or Optional
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Workmail<wbr>Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptruleworkmailaction">[]Receipt<wbr>Rule<wbr>Workmail<wbr>Action</a></code>
-            </td>
-            <td class="align-top">{{% md %}} A list of WorkMail Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-    </tbody>
-</table>
-
-
-{{% /lang %}}
-
-
-{{% lang nodejs %}}
-
-
-<table class="ml-6">
-    <thead>
-        <tr>
-            <th>Argument</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-    
-        <tr>
-            <td class="align-top">add<wbr>Header<wbr>Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptruleaddheaderaction">Receipt<wbr>Rule<wbr>Add<wbr>Header<wbr>Action[]?</a></code>
-            </td>
-            <td class="align-top">{{% md %}} A list of Add Header Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">after</td>
-            <td class="align-top">
-                
-                <code>string?</code>
-            </td>
-            <td class="align-top">{{% md %}} The name of the rule to place this rule after
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">bounce<wbr>Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrulebounceaction">Receipt<wbr>Rule<wbr>Bounce<wbr>Action[]?</a></code>
-            </td>
-            <td class="align-top">{{% md %}} A list of Bounce Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">enabled</td>
-            <td class="align-top">
-                
-                <code>boolean</code>
-            </td>
-            <td class="align-top">{{% md %}} If true, the rule will be enabled
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">lambda<wbr>Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrulelambdaaction">Receipt<wbr>Rule<wbr>Lambda<wbr>Action[]?</a></code>
-            </td>
-            <td class="align-top">{{% md %}} A list of Lambda Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">name</td>
-            <td class="align-top">
-                
-                <code>string</code>
-            </td>
-            <td class="align-top">{{% md %}} The name of the rule
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">recipients</td>
-            <td class="align-top">
-                
-                <code>string[]?</code>
-            </td>
-            <td class="align-top">{{% md %}} A list of email addresses
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">rule<wbr>Set<wbr>Name</td>
-            <td class="align-top">
-                
-                <code>string</code>
-            </td>
-            <td class="align-top">{{% md %}} The name of the rule set
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">s3Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrules3action">Receipt<wbr>Rule<wbr>S3Action[]?</a></code>
-            </td>
-            <td class="align-top">{{% md %}} A list of S3 Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">scan<wbr>Enabled</td>
-            <td class="align-top">
-                
-                <code>boolean</code>
-            </td>
-            <td class="align-top">{{% md %}} If true, incoming emails will be scanned for spam and viruses
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">sns<wbr>Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrulesnsaction">Receipt<wbr>Rule<wbr>Sns<wbr>Action[]?</a></code>
-            </td>
-            <td class="align-top">{{% md %}} A list of SNS Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">stop<wbr>Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrulestopaction">Receipt<wbr>Rule<wbr>Stop<wbr>Action[]?</a></code>
-            </td>
-            <td class="align-top">{{% md %}} A list of Stop Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">tls<wbr>Policy</td>
-            <td class="align-top">
-                
-                <code>string</code>
-            </td>
-            <td class="align-top">{{% md %}} Require or Optional
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">workmail<wbr>Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptruleworkmailaction">Receipt<wbr>Rule<wbr>Workmail<wbr>Action[]?</a></code>
-            </td>
-            <td class="align-top">{{% md %}} A list of WorkMail Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-    </tbody>
-</table>
-
-
-{{% /lang %}}
-
-
-{{% lang python %}}
-
-
-<table class="ml-6">
-    <thead>
-        <tr>
-            <th>Argument</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-    
-        <tr>
-            <td class="align-top">add_<wbr>header_<wbr>actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptruleaddheaderaction">List[Receipt<wbr>Rule<wbr>Add<wbr>Header<wbr>Action]</a></code>
-            </td>
-            <td class="align-top">{{% md %}} A list of Add Header Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">after</td>
-            <td class="align-top">
-                
-                <code>str</code>
-            </td>
-            <td class="align-top">{{% md %}} The name of the rule to place this rule after
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">bounce_<wbr>actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrulebounceaction">List[Receipt<wbr>Rule<wbr>Bounce<wbr>Action]</a></code>
-            </td>
-            <td class="align-top">{{% md %}} A list of Bounce Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">enabled</td>
-            <td class="align-top">
-                
-                <code>bool</code>
-            </td>
-            <td class="align-top">{{% md %}} If true, the rule will be enabled
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">lambda_<wbr>actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrulelambdaaction">List[Receipt<wbr>Rule<wbr>Lambda<wbr>Action]</a></code>
-            </td>
-            <td class="align-top">{{% md %}} A list of Lambda Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">name</td>
-            <td class="align-top">
-                
-                <code>str</code>
-            </td>
-            <td class="align-top">{{% md %}} The name of the rule
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">recipients</td>
-            <td class="align-top">
-                
-                <code>List[str]</code>
-            </td>
-            <td class="align-top">{{% md %}} A list of email addresses
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">rule_<wbr>set_<wbr>name</td>
-            <td class="align-top">
-                
-                <code>str</code>
-            </td>
-            <td class="align-top">{{% md %}} The name of the rule set
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">s3_<wbr>actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrules3action">List[Receipt<wbr>Rule<wbr>S3Action]</a></code>
-            </td>
-            <td class="align-top">{{% md %}} A list of S3 Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">scan_<wbr>enabled</td>
-            <td class="align-top">
-                
-                <code>bool</code>
-            </td>
-            <td class="align-top">{{% md %}} If true, incoming emails will be scanned for spam and viruses
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">sns_<wbr>actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrulesnsaction">List[Receipt<wbr>Rule<wbr>Sns<wbr>Action]</a></code>
-            </td>
-            <td class="align-top">{{% md %}} A list of SNS Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">stop_<wbr>actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrulestopaction">List[Receipt<wbr>Rule<wbr>Stop<wbr>Action]</a></code>
-            </td>
-            <td class="align-top">{{% md %}} A list of Stop Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">tls_<wbr>policy</td>
-            <td class="align-top">
-                
-                <code>str</code>
-            </td>
-            <td class="align-top">{{% md %}} Require or Optional
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">workmail_<wbr>actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptruleworkmailaction">List[Receipt<wbr>Rule<wbr>Workmail<wbr>Action]</a></code>
-            </td>
-            <td class="align-top">{{% md %}} A list of WorkMail Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-    </tbody>
-</table>
-
-
-{{% /lang %}}
 
-
-
+{{% choosable language csharp %}}
+<dl class="resources-properties">
+
+    <dt class="property-"
+            title="">Add<wbr>Header<wbr>Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptruleaddheaderaction">List&lt;Receipt<wbr>Rule<wbr>Add<wbr>Header<wbr>Action&gt;?</a></span>
+    </dt>
+    <dd>{{% md %}}A list of Add Header Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-"
+            title="">After<span class="property-indicator"></span>
+        <span class="property-type">string?</span>
+    </dt>
+    <dd>{{% md %}}The name of the rule to place this rule after
+{{% /md %}}</dd>
+
+    <dt class="property-"
+            title="">Bounce<wbr>Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrulebounceaction">List&lt;Receipt<wbr>Rule<wbr>Bounce<wbr>Action&gt;?</a></span>
+    </dt>
+    <dd>{{% md %}}A list of Bounce Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-"
+            title="">Enabled<span class="property-indicator"></span>
+        <span class="property-type">bool</span>
+    </dt>
+    <dd>{{% md %}}If true, the rule will be enabled
+{{% /md %}}</dd>
+
+    <dt class="property-"
+            title="">Lambda<wbr>Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrulelambdaaction">List&lt;Receipt<wbr>Rule<wbr>Lambda<wbr>Action&gt;?</a></span>
+    </dt>
+    <dd>{{% md %}}A list of Lambda Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-"
+            title="">Name<span class="property-indicator"></span>
+        <span class="property-type">string</span>
+    </dt>
+    <dd>{{% md %}}The name of the rule
+{{% /md %}}</dd>
+
+    <dt class="property-"
+            title="">Recipients<span class="property-indicator"></span>
+        <span class="property-type">List<string>?</span>
+    </dt>
+    <dd>{{% md %}}A list of email addresses
+{{% /md %}}</dd>
+
+    <dt class="property-"
+            title="">Rule<wbr>Set<wbr>Name<span class="property-indicator"></span>
+        <span class="property-type">string</span>
+    </dt>
+    <dd>{{% md %}}The name of the rule set
+{{% /md %}}</dd>
+
+    <dt class="property-"
+            title="">S3Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrules3action">List&lt;Receipt<wbr>Rule<wbr>S3Action&gt;?</a></span>
+    </dt>
+    <dd>{{% md %}}A list of S3 Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-"
+            title="">Scan<wbr>Enabled<span class="property-indicator"></span>
+        <span class="property-type">bool</span>
+    </dt>
+    <dd>{{% md %}}If true, incoming emails will be scanned for spam and viruses
+{{% /md %}}</dd>
+
+    <dt class="property-"
+            title="">Sns<wbr>Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrulesnsaction">List&lt;Receipt<wbr>Rule<wbr>Sns<wbr>Action&gt;?</a></span>
+    </dt>
+    <dd>{{% md %}}A list of SNS Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-"
+            title="">Stop<wbr>Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrulestopaction">List&lt;Receipt<wbr>Rule<wbr>Stop<wbr>Action&gt;?</a></span>
+    </dt>
+    <dd>{{% md %}}A list of Stop Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-"
+            title="">Tls<wbr>Policy<span class="property-indicator"></span>
+        <span class="property-type">string</span>
+    </dt>
+    <dd>{{% md %}}Require or Optional
+{{% /md %}}</dd>
+
+    <dt class="property-"
+            title="">Workmail<wbr>Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptruleworkmailaction">List&lt;Receipt<wbr>Rule<wbr>Workmail<wbr>Action&gt;?</a></span>
+    </dt>
+    <dd>{{% md %}}A list of WorkMail Action blocks. Documented below.
+{{% /md %}}</dd>
+
+</dl>
+{{% /choosable %}}
+
+
+{{% choosable language go %}}
+<dl class="resources-properties">
+
+    <dt class="property-"
+            title="">Add<wbr>Header<wbr>Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptruleaddheaderaction">[]Receipt<wbr>Rule<wbr>Add<wbr>Header<wbr>Action</a></span>
+    </dt>
+    <dd>{{% md %}}A list of Add Header Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-"
+            title="">After<span class="property-indicator"></span>
+        <span class="property-type">*string</span>
+    </dt>
+    <dd>{{% md %}}The name of the rule to place this rule after
+{{% /md %}}</dd>
+
+    <dt class="property-"
+            title="">Bounce<wbr>Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrulebounceaction">[]Receipt<wbr>Rule<wbr>Bounce<wbr>Action</a></span>
+    </dt>
+    <dd>{{% md %}}A list of Bounce Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-"
+            title="">Enabled<span class="property-indicator"></span>
+        <span class="property-type">bool</span>
+    </dt>
+    <dd>{{% md %}}If true, the rule will be enabled
+{{% /md %}}</dd>
+
+    <dt class="property-"
+            title="">Lambda<wbr>Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrulelambdaaction">[]Receipt<wbr>Rule<wbr>Lambda<wbr>Action</a></span>
+    </dt>
+    <dd>{{% md %}}A list of Lambda Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-"
+            title="">Name<span class="property-indicator"></span>
+        <span class="property-type">string</span>
+    </dt>
+    <dd>{{% md %}}The name of the rule
+{{% /md %}}</dd>
+
+    <dt class="property-"
+            title="">Recipients<span class="property-indicator"></span>
+        <span class="property-type">[]string</span>
+    </dt>
+    <dd>{{% md %}}A list of email addresses
+{{% /md %}}</dd>
+
+    <dt class="property-"
+            title="">Rule<wbr>Set<wbr>Name<span class="property-indicator"></span>
+        <span class="property-type">string</span>
+    </dt>
+    <dd>{{% md %}}The name of the rule set
+{{% /md %}}</dd>
+
+    <dt class="property-"
+            title="">S3Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrules3action">[]Receipt<wbr>Rule<wbr>S3Action</a></span>
+    </dt>
+    <dd>{{% md %}}A list of S3 Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-"
+            title="">Scan<wbr>Enabled<span class="property-indicator"></span>
+        <span class="property-type">bool</span>
+    </dt>
+    <dd>{{% md %}}If true, incoming emails will be scanned for spam and viruses
+{{% /md %}}</dd>
+
+    <dt class="property-"
+            title="">Sns<wbr>Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrulesnsaction">[]Receipt<wbr>Rule<wbr>Sns<wbr>Action</a></span>
+    </dt>
+    <dd>{{% md %}}A list of SNS Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-"
+            title="">Stop<wbr>Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrulestopaction">[]Receipt<wbr>Rule<wbr>Stop<wbr>Action</a></span>
+    </dt>
+    <dd>{{% md %}}A list of Stop Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-"
+            title="">Tls<wbr>Policy<span class="property-indicator"></span>
+        <span class="property-type">string</span>
+    </dt>
+    <dd>{{% md %}}Require or Optional
+{{% /md %}}</dd>
+
+    <dt class="property-"
+            title="">Workmail<wbr>Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptruleworkmailaction">[]Receipt<wbr>Rule<wbr>Workmail<wbr>Action</a></span>
+    </dt>
+    <dd>{{% md %}}A list of WorkMail Action blocks. Documented below.
+{{% /md %}}</dd>
+
+</dl>
+{{% /choosable %}}
+
+
+{{% choosable language nodejs %}}
+<dl class="resources-properties">
+
+    <dt class="property-"
+            title="">add<wbr>Header<wbr>Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptruleaddheaderaction">Receipt<wbr>Rule<wbr>Add<wbr>Header<wbr>Action[]?</a></span>
+    </dt>
+    <dd>{{% md %}}A list of Add Header Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-"
+            title="">after<span class="property-indicator"></span>
+        <span class="property-type">string?</span>
+    </dt>
+    <dd>{{% md %}}The name of the rule to place this rule after
+{{% /md %}}</dd>
+
+    <dt class="property-"
+            title="">bounce<wbr>Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrulebounceaction">Receipt<wbr>Rule<wbr>Bounce<wbr>Action[]?</a></span>
+    </dt>
+    <dd>{{% md %}}A list of Bounce Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-"
+            title="">enabled<span class="property-indicator"></span>
+        <span class="property-type">boolean</span>
+    </dt>
+    <dd>{{% md %}}If true, the rule will be enabled
+{{% /md %}}</dd>
+
+    <dt class="property-"
+            title="">lambda<wbr>Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrulelambdaaction">Receipt<wbr>Rule<wbr>Lambda<wbr>Action[]?</a></span>
+    </dt>
+    <dd>{{% md %}}A list of Lambda Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-"
+            title="">name<span class="property-indicator"></span>
+        <span class="property-type">string</span>
+    </dt>
+    <dd>{{% md %}}The name of the rule
+{{% /md %}}</dd>
+
+    <dt class="property-"
+            title="">recipients<span class="property-indicator"></span>
+        <span class="property-type">string[]?</span>
+    </dt>
+    <dd>{{% md %}}A list of email addresses
+{{% /md %}}</dd>
+
+    <dt class="property-"
+            title="">rule<wbr>Set<wbr>Name<span class="property-indicator"></span>
+        <span class="property-type">string</span>
+    </dt>
+    <dd>{{% md %}}The name of the rule set
+{{% /md %}}</dd>
+
+    <dt class="property-"
+            title="">s3Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrules3action">Receipt<wbr>Rule<wbr>S3Action[]?</a></span>
+    </dt>
+    <dd>{{% md %}}A list of S3 Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-"
+            title="">scan<wbr>Enabled<span class="property-indicator"></span>
+        <span class="property-type">boolean</span>
+    </dt>
+    <dd>{{% md %}}If true, incoming emails will be scanned for spam and viruses
+{{% /md %}}</dd>
+
+    <dt class="property-"
+            title="">sns<wbr>Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrulesnsaction">Receipt<wbr>Rule<wbr>Sns<wbr>Action[]?</a></span>
+    </dt>
+    <dd>{{% md %}}A list of SNS Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-"
+            title="">stop<wbr>Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrulestopaction">Receipt<wbr>Rule<wbr>Stop<wbr>Action[]?</a></span>
+    </dt>
+    <dd>{{% md %}}A list of Stop Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-"
+            title="">tls<wbr>Policy<span class="property-indicator"></span>
+        <span class="property-type">string</span>
+    </dt>
+    <dd>{{% md %}}Require or Optional
+{{% /md %}}</dd>
+
+    <dt class="property-"
+            title="">workmail<wbr>Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptruleworkmailaction">Receipt<wbr>Rule<wbr>Workmail<wbr>Action[]?</a></span>
+    </dt>
+    <dd>{{% md %}}A list of WorkMail Action blocks. Documented below.
+{{% /md %}}</dd>
+
+</dl>
+{{% /choosable %}}
+
+
+{{% choosable language python %}}
+<dl class="resources-properties">
+
+    <dt class="property-"
+            title="">add_<wbr>header_<wbr>actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptruleaddheaderaction">List[Receipt<wbr>Rule<wbr>Add<wbr>Header<wbr>Action]</a></span>
+    </dt>
+    <dd>{{% md %}}A list of Add Header Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-"
+            title="">after<span class="property-indicator"></span>
+        <span class="property-type">str</span>
+    </dt>
+    <dd>{{% md %}}The name of the rule to place this rule after
+{{% /md %}}</dd>
+
+    <dt class="property-"
+            title="">bounce_<wbr>actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrulebounceaction">List[Receipt<wbr>Rule<wbr>Bounce<wbr>Action]</a></span>
+    </dt>
+    <dd>{{% md %}}A list of Bounce Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-"
+            title="">enabled<span class="property-indicator"></span>
+        <span class="property-type">bool</span>
+    </dt>
+    <dd>{{% md %}}If true, the rule will be enabled
+{{% /md %}}</dd>
+
+    <dt class="property-"
+            title="">lambda_<wbr>actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrulelambdaaction">List[Receipt<wbr>Rule<wbr>Lambda<wbr>Action]</a></span>
+    </dt>
+    <dd>{{% md %}}A list of Lambda Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-"
+            title="">name<span class="property-indicator"></span>
+        <span class="property-type">str</span>
+    </dt>
+    <dd>{{% md %}}The name of the rule
+{{% /md %}}</dd>
+
+    <dt class="property-"
+            title="">recipients<span class="property-indicator"></span>
+        <span class="property-type">List[str]</span>
+    </dt>
+    <dd>{{% md %}}A list of email addresses
+{{% /md %}}</dd>
+
+    <dt class="property-"
+            title="">rule_<wbr>set_<wbr>name<span class="property-indicator"></span>
+        <span class="property-type">str</span>
+    </dt>
+    <dd>{{% md %}}The name of the rule set
+{{% /md %}}</dd>
+
+    <dt class="property-"
+            title="">s3_<wbr>actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrules3action">List[Receipt<wbr>Rule<wbr>S3Action]</a></span>
+    </dt>
+    <dd>{{% md %}}A list of S3 Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-"
+            title="">scan_<wbr>enabled<span class="property-indicator"></span>
+        <span class="property-type">bool</span>
+    </dt>
+    <dd>{{% md %}}If true, incoming emails will be scanned for spam and viruses
+{{% /md %}}</dd>
+
+    <dt class="property-"
+            title="">sns_<wbr>actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrulesnsaction">List[Receipt<wbr>Rule<wbr>Sns<wbr>Action]</a></span>
+    </dt>
+    <dd>{{% md %}}A list of SNS Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-"
+            title="">stop_<wbr>actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrulestopaction">List[Receipt<wbr>Rule<wbr>Stop<wbr>Action]</a></span>
+    </dt>
+    <dd>{{% md %}}A list of Stop Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-"
+            title="">tls_<wbr>policy<span class="property-indicator"></span>
+        <span class="property-type">str</span>
+    </dt>
+    <dd>{{% md %}}Require or Optional
+{{% /md %}}</dd>
+
+    <dt class="property-"
+            title="">workmail_<wbr>actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptruleworkmailaction">List[Receipt<wbr>Rule<wbr>Workmail<wbr>Action]</a></span>
+    </dt>
+    <dd>{{% md %}}A list of WorkMail Action blocks. Documented below.
+{{% /md %}}</dd>
+
+</dl>
+{{% /choosable %}}
 
 
 
@@ -1837,15 +996,23 @@ The following output properties are available:
 
 ## Look up an Existing ReceiptRule Resource
 
-{{< langchoose csharp nojavascript >}}
+{{< chooser language "javascript,typescript,python,go,csharp  " / >}}
 
+{{% choosable language nodejs %}}
 <div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="k">public static </span><span class="nf">get</span><span class="p">(</span><span class="nx">name</span>: <span class="nx"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string">string</a></span><span class="p">, </span><span class="nx">id</span>: <span class="nx"><a href="/docs/reference/pkg/nodejs/pulumi/pulumi/#ID">pulumi.Input&lt;pulumi.ID&gt;</a></span><span class="p">, </span><span class="nx">state</span>?: <span class="nx"><a href="/docs/reference/pkg/nodejs/pulumi/aws/ses/#ReceiptRuleState">ReceiptRuleState</a></span><span class="p">, </span><span class="nx">opts</span>?: <span class="nx"><a href="/docs/reference/pkg/nodejs/pulumi/pulumi/#CustomResourceOptions">pulumi.CustomResourceOptions</a></span><span class="p">): </span><span class="nx"><a href="/docs/reference/pkg/nodejs/pulumi/aws/ses/#ReceiptRule">ReceiptRule</a></span></code></pre></div>
+{{% /choosable %}}
 
+{{% choosable language python %}}
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">static </span><span class="nf">get</span><span class="p">(resource_name, id, opts=None, </span>add_header_actions=None<span class="p">, </span>after=None<span class="p">, </span>bounce_actions=None<span class="p">, </span>enabled=None<span class="p">, </span>lambda_actions=None<span class="p">, </span>name=None<span class="p">, </span>recipients=None<span class="p">, </span>rule_set_name=None<span class="p">, </span>s3_actions=None<span class="p">, </span>scan_enabled=None<span class="p">, </span>sns_actions=None<span class="p">, </span>stop_actions=None<span class="p">, </span>tls_policy=None<span class="p">, </span>workmail_actions=None<span class="p">, __props__=None);</span></code></pre></div>
+{{% /choosable %}}
 
+{{% choosable language go %}}
 <div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="k">func </span>GetReceiptRule<span class="p">(</span><span class="nx">ctx</span> *<span class="nx"><a href="https://pkg.go.dev/github.com/pulumi/pulumi/sdk/go/pulumi?tab=doc#Context">pulumi.Context</a></span><span class="p">, </span><span class="nx">name</span> <span class="nx"><a href="https://golang.org/pkg/builtin/#string">string</a></span><span class="p">, </span><span class="nx">id</span> <span class="nx"><a href="https://pkg.go.dev/github.com/pulumi/pulumi/sdk/go/pulumi?tab=doc#IDInput">pulumi.IDInput</a></span><span class="p">, </span><span class="nx">state</span> *<span class="nx"><a href="https://pkg.go.dev/github.com/pulumi/pulumi-aws/sdk/go/aws/ses?tab=doc#ReceiptRuleState">ReceiptRuleState</a></span><span class="p">, </span><span class="nx">opts</span> ...<span class="nx"><a href="https://pkg.go.dev/github.com/pulumi/pulumi/sdk/go/pulumi?tab=doc#ResourceOption">pulumi.ResourceOption</a></span><span class="p">) (*<span class="nx"><a href="https://pkg.go.dev/github.com/pulumi/pulumi-aws/sdk/go/aws/ses?tab=doc#ReceiptRule">ReceiptRule</a></span>, error)</span></code></pre></div>
+{{% /choosable %}}
 
+{{% choosable language csharp %}}
 <div class="highlight"><pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public static </span><span class="nx"><a href="/docs/reference/pkg/dotnet/Pulumi.Aws/Pulumi.Aws.Ses.ReceiptRule.html">ReceiptRule</a></span><span class="nf"> Get</span><span class="p">(</span><span class="nx"><a href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/built-in-types">string</a></span> <span class="nx">name<span class="p">, </span><span class="nx"><a href="/docs/reference/pkg/dotnet/Pulumi/Pulumi.Input.html">Pulumi.Input&lt;string&gt;</a></span> <span class="nx">id<span class="p">, </span><span class="nx"><a href="/docs/reference/pkg/dotnet/Pulumi.Aws/Pulumi.Aws.Ses.ReceiptRuleState.html">ReceiptRuleState</a></span>? <span class="nx">state<span class="p">, </span><span class="nx"><a href="/docs/reference/pkg/dotnet/Pulumi/Pulumi.CustomResourceOptions.html">Pulumi.CustomResourceOptions</a></span>? <span class="nx">opts = null<span class="p">)</span></code></pre></div>
+{{% /choosable %}}
 
 Get an existing ReceiptRule resource's state with the given name, ID, and optional extra properties used to qualify the lookup.
 
@@ -1885,930 +1052,425 @@ Get an existing ReceiptRule resource's state with the given name, ID, and option
 The following state arguments are supported:
 
 
-{{< langchoose csharp nojavascript >}}
-
-
-{{% lang csharp %}}
-
-
-<table class="ml-6">
-    <thead>
-        <tr>
-            <th>Argument</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-    
-        <tr>
-            <td class="align-top">Add<wbr>Header<wbr>Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptruleaddheaderaction">List&lt;Receipt<wbr>Rule<wbr>Add<wbr>Header<wbr>Action<wbr>Args&gt;?</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of Add Header Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">After</td>
-            <td class="align-top">
-                
-                <code>string?</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-The name of the rule to place this rule after
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Bounce<wbr>Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrulebounceaction">List&lt;Receipt<wbr>Rule<wbr>Bounce<wbr>Action<wbr>Args&gt;?</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of Bounce Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Enabled</td>
-            <td class="align-top">
-                
-                <code>bool?</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-If true, the rule will be enabled
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Lambda<wbr>Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrulelambdaaction">List&lt;Receipt<wbr>Rule<wbr>Lambda<wbr>Action<wbr>Args&gt;?</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of Lambda Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Name</td>
-            <td class="align-top">
-                
-                <code>string?</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-The name of the rule
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Recipients</td>
-            <td class="align-top">
-                
-                <code>List<string>?</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of email addresses
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Rule<wbr>Set<wbr>Name</td>
-            <td class="align-top">
-                
-                <code>string?</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-The name of the rule set
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">S3Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrules3action">List&lt;Receipt<wbr>Rule<wbr>S3Action<wbr>Args&gt;?</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of S3 Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Scan<wbr>Enabled</td>
-            <td class="align-top">
-                
-                <code>bool?</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-If true, incoming emails will be scanned for spam and viruses
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Sns<wbr>Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrulesnsaction">List&lt;Receipt<wbr>Rule<wbr>Sns<wbr>Action<wbr>Args&gt;?</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of SNS Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Stop<wbr>Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrulestopaction">List&lt;Receipt<wbr>Rule<wbr>Stop<wbr>Action<wbr>Args&gt;?</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of Stop Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Tls<wbr>Policy</td>
-            <td class="align-top">
-                
-                <code>string?</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-Require or Optional
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Workmail<wbr>Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptruleworkmailaction">List&lt;Receipt<wbr>Rule<wbr>Workmail<wbr>Action<wbr>Args&gt;?</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of WorkMail Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-    </tbody>
-</table>
-
-
-{{% /lang %}}
-
-
-{{% lang go %}}
-
-
-<table class="ml-6">
-    <thead>
-        <tr>
-            <th>Argument</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-    
-        <tr>
-            <td class="align-top">Add<wbr>Header<wbr>Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptruleaddheaderaction">[]Receipt<wbr>Rule<wbr>Add<wbr>Header<wbr>Action</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of Add Header Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">After</td>
-            <td class="align-top">
-                
-                <code>*string</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-The name of the rule to place this rule after
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Bounce<wbr>Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrulebounceaction">[]Receipt<wbr>Rule<wbr>Bounce<wbr>Action</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of Bounce Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Enabled</td>
-            <td class="align-top">
-                
-                <code>*bool</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-If true, the rule will be enabled
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Lambda<wbr>Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrulelambdaaction">[]Receipt<wbr>Rule<wbr>Lambda<wbr>Action</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of Lambda Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Name</td>
-            <td class="align-top">
-                
-                <code>*string</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-The name of the rule
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Recipients</td>
-            <td class="align-top">
-                
-                <code>[]string</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of email addresses
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Rule<wbr>Set<wbr>Name</td>
-            <td class="align-top">
-                
-                <code>*string</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-The name of the rule set
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">S3Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrules3action">[]Receipt<wbr>Rule<wbr>S3Action</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of S3 Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Scan<wbr>Enabled</td>
-            <td class="align-top">
-                
-                <code>*bool</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-If true, incoming emails will be scanned for spam and viruses
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Sns<wbr>Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrulesnsaction">[]Receipt<wbr>Rule<wbr>Sns<wbr>Action</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of SNS Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Stop<wbr>Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrulestopaction">[]Receipt<wbr>Rule<wbr>Stop<wbr>Action</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of Stop Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Tls<wbr>Policy</td>
-            <td class="align-top">
-                
-                <code>*string</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-Require or Optional
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Workmail<wbr>Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptruleworkmailaction">[]Receipt<wbr>Rule<wbr>Workmail<wbr>Action</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of WorkMail Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-    </tbody>
-</table>
-
-
-{{% /lang %}}
-
-
-{{% lang nodejs %}}
-
-
-<table class="ml-6">
-    <thead>
-        <tr>
-            <th>Argument</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-    
-        <tr>
-            <td class="align-top">add<wbr>Header<wbr>Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptruleaddheaderaction">Receipt<wbr>Rule<wbr>Add<wbr>Header<wbr>Action[]?</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of Add Header Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">after</td>
-            <td class="align-top">
-                
-                <code>string?</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-The name of the rule to place this rule after
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">bounce<wbr>Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrulebounceaction">Receipt<wbr>Rule<wbr>Bounce<wbr>Action[]?</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of Bounce Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">enabled</td>
-            <td class="align-top">
-                
-                <code>boolean?</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-If true, the rule will be enabled
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">lambda<wbr>Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrulelambdaaction">Receipt<wbr>Rule<wbr>Lambda<wbr>Action[]?</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of Lambda Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">name</td>
-            <td class="align-top">
-                
-                <code>string?</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-The name of the rule
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">recipients</td>
-            <td class="align-top">
-                
-                <code>string[]?</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of email addresses
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">rule<wbr>Set<wbr>Name</td>
-            <td class="align-top">
-                
-                <code>string?</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-The name of the rule set
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">s3Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrules3action">Receipt<wbr>Rule<wbr>S3Action[]?</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of S3 Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">scan<wbr>Enabled</td>
-            <td class="align-top">
-                
-                <code>boolean?</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-If true, incoming emails will be scanned for spam and viruses
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">sns<wbr>Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrulesnsaction">Receipt<wbr>Rule<wbr>Sns<wbr>Action[]?</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of SNS Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">stop<wbr>Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrulestopaction">Receipt<wbr>Rule<wbr>Stop<wbr>Action[]?</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of Stop Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">tls<wbr>Policy</td>
-            <td class="align-top">
-                
-                <code>string?</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-Require or Optional
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">workmail<wbr>Actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptruleworkmailaction">Receipt<wbr>Rule<wbr>Workmail<wbr>Action[]?</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of WorkMail Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-    </tbody>
-</table>
-
-
-{{% /lang %}}
-
-
-{{% lang python %}}
-
-
-<table class="ml-6">
-    <thead>
-        <tr>
-            <th>Argument</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-    
-        <tr>
-            <td class="align-top">add_<wbr>header_<wbr>actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptruleaddheaderaction">List[Receipt<wbr>Rule<wbr>Add<wbr>Header<wbr>Action]</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of Add Header Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">after</td>
-            <td class="align-top">
-                
-                <code>str</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-The name of the rule to place this rule after
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">bounce_<wbr>actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrulebounceaction">List[Receipt<wbr>Rule<wbr>Bounce<wbr>Action]</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of Bounce Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">enabled</td>
-            <td class="align-top">
-                
-                <code>bool</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-If true, the rule will be enabled
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">lambda_<wbr>actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrulelambdaaction">List[Receipt<wbr>Rule<wbr>Lambda<wbr>Action]</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of Lambda Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">name</td>
-            <td class="align-top">
-                
-                <code>str</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-The name of the rule
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">recipients</td>
-            <td class="align-top">
-                
-                <code>List[str]</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of email addresses
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">rule_<wbr>set_<wbr>name</td>
-            <td class="align-top">
-                
-                <code>str</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-The name of the rule set
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">s3_<wbr>actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrules3action">List[Receipt<wbr>Rule<wbr>S3Action]</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of S3 Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">scan_<wbr>enabled</td>
-            <td class="align-top">
-                
-                <code>bool</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-If true, incoming emails will be scanned for spam and viruses
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">sns_<wbr>actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrulesnsaction">List[Receipt<wbr>Rule<wbr>Sns<wbr>Action]</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of SNS Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">stop_<wbr>actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptrulestopaction">List[Receipt<wbr>Rule<wbr>Stop<wbr>Action]</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of Stop Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">tls_<wbr>policy</td>
-            <td class="align-top">
-                
-                <code>str</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-Require or Optional
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">workmail_<wbr>actions</td>
-            <td class="align-top">
-                
-                <code><a href="#receiptruleworkmailaction">List[Receipt<wbr>Rule<wbr>Workmail<wbr>Action]</a></code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-A list of WorkMail Action blocks. Documented below.
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-    </tbody>
-</table>
-
-
-{{% /lang %}}
 
-
-
+{{% choosable language csharp %}}
+<dl class="resources-properties">
+
+    <dt class="property-optional"
+            title="Optional">Add<wbr>Header<wbr>Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptruleaddheaderaction">List&lt;Receipt<wbr>Rule<wbr>Add<wbr>Header<wbr>Action<wbr>Args&gt;?</a></span>
+    </dt>
+    <dd>{{% md %}}A list of Add Header Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">After<span class="property-indicator"></span>
+        <span class="property-type">string?</span>
+    </dt>
+    <dd>{{% md %}}The name of the rule to place this rule after
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Bounce<wbr>Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrulebounceaction">List&lt;Receipt<wbr>Rule<wbr>Bounce<wbr>Action<wbr>Args&gt;?</a></span>
+    </dt>
+    <dd>{{% md %}}A list of Bounce Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Enabled<span class="property-indicator"></span>
+        <span class="property-type">bool?</span>
+    </dt>
+    <dd>{{% md %}}If true, the rule will be enabled
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Lambda<wbr>Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrulelambdaaction">List&lt;Receipt<wbr>Rule<wbr>Lambda<wbr>Action<wbr>Args&gt;?</a></span>
+    </dt>
+    <dd>{{% md %}}A list of Lambda Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Name<span class="property-indicator"></span>
+        <span class="property-type">string?</span>
+    </dt>
+    <dd>{{% md %}}The name of the rule
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Recipients<span class="property-indicator"></span>
+        <span class="property-type">List<string>?</span>
+    </dt>
+    <dd>{{% md %}}A list of email addresses
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Rule<wbr>Set<wbr>Name<span class="property-indicator"></span>
+        <span class="property-type">string?</span>
+    </dt>
+    <dd>{{% md %}}The name of the rule set
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">S3Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrules3action">List&lt;Receipt<wbr>Rule<wbr>S3Action<wbr>Args&gt;?</a></span>
+    </dt>
+    <dd>{{% md %}}A list of S3 Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Scan<wbr>Enabled<span class="property-indicator"></span>
+        <span class="property-type">bool?</span>
+    </dt>
+    <dd>{{% md %}}If true, incoming emails will be scanned for spam and viruses
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Sns<wbr>Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrulesnsaction">List&lt;Receipt<wbr>Rule<wbr>Sns<wbr>Action<wbr>Args&gt;?</a></span>
+    </dt>
+    <dd>{{% md %}}A list of SNS Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Stop<wbr>Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrulestopaction">List&lt;Receipt<wbr>Rule<wbr>Stop<wbr>Action<wbr>Args&gt;?</a></span>
+    </dt>
+    <dd>{{% md %}}A list of Stop Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Tls<wbr>Policy<span class="property-indicator"></span>
+        <span class="property-type">string?</span>
+    </dt>
+    <dd>{{% md %}}Require or Optional
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Workmail<wbr>Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptruleworkmailaction">List&lt;Receipt<wbr>Rule<wbr>Workmail<wbr>Action<wbr>Args&gt;?</a></span>
+    </dt>
+    <dd>{{% md %}}A list of WorkMail Action blocks. Documented below.
+{{% /md %}}</dd>
+
+</dl>
+{{% /choosable %}}
+
+
+{{% choosable language go %}}
+<dl class="resources-properties">
+
+    <dt class="property-optional"
+            title="Optional">Add<wbr>Header<wbr>Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptruleaddheaderaction">[]Receipt<wbr>Rule<wbr>Add<wbr>Header<wbr>Action</a></span>
+    </dt>
+    <dd>{{% md %}}A list of Add Header Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">After<span class="property-indicator"></span>
+        <span class="property-type">*string</span>
+    </dt>
+    <dd>{{% md %}}The name of the rule to place this rule after
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Bounce<wbr>Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrulebounceaction">[]Receipt<wbr>Rule<wbr>Bounce<wbr>Action</a></span>
+    </dt>
+    <dd>{{% md %}}A list of Bounce Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Enabled<span class="property-indicator"></span>
+        <span class="property-type">*bool</span>
+    </dt>
+    <dd>{{% md %}}If true, the rule will be enabled
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Lambda<wbr>Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrulelambdaaction">[]Receipt<wbr>Rule<wbr>Lambda<wbr>Action</a></span>
+    </dt>
+    <dd>{{% md %}}A list of Lambda Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Name<span class="property-indicator"></span>
+        <span class="property-type">*string</span>
+    </dt>
+    <dd>{{% md %}}The name of the rule
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Recipients<span class="property-indicator"></span>
+        <span class="property-type">[]string</span>
+    </dt>
+    <dd>{{% md %}}A list of email addresses
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Rule<wbr>Set<wbr>Name<span class="property-indicator"></span>
+        <span class="property-type">*string</span>
+    </dt>
+    <dd>{{% md %}}The name of the rule set
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">S3Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrules3action">[]Receipt<wbr>Rule<wbr>S3Action</a></span>
+    </dt>
+    <dd>{{% md %}}A list of S3 Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Scan<wbr>Enabled<span class="property-indicator"></span>
+        <span class="property-type">*bool</span>
+    </dt>
+    <dd>{{% md %}}If true, incoming emails will be scanned for spam and viruses
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Sns<wbr>Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrulesnsaction">[]Receipt<wbr>Rule<wbr>Sns<wbr>Action</a></span>
+    </dt>
+    <dd>{{% md %}}A list of SNS Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Stop<wbr>Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrulestopaction">[]Receipt<wbr>Rule<wbr>Stop<wbr>Action</a></span>
+    </dt>
+    <dd>{{% md %}}A list of Stop Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Tls<wbr>Policy<span class="property-indicator"></span>
+        <span class="property-type">*string</span>
+    </dt>
+    <dd>{{% md %}}Require or Optional
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Workmail<wbr>Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptruleworkmailaction">[]Receipt<wbr>Rule<wbr>Workmail<wbr>Action</a></span>
+    </dt>
+    <dd>{{% md %}}A list of WorkMail Action blocks. Documented below.
+{{% /md %}}</dd>
+
+</dl>
+{{% /choosable %}}
+
+
+{{% choosable language nodejs %}}
+<dl class="resources-properties">
+
+    <dt class="property-optional"
+            title="Optional">add<wbr>Header<wbr>Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptruleaddheaderaction">Receipt<wbr>Rule<wbr>Add<wbr>Header<wbr>Action[]?</a></span>
+    </dt>
+    <dd>{{% md %}}A list of Add Header Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">after<span class="property-indicator"></span>
+        <span class="property-type">string?</span>
+    </dt>
+    <dd>{{% md %}}The name of the rule to place this rule after
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">bounce<wbr>Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrulebounceaction">Receipt<wbr>Rule<wbr>Bounce<wbr>Action[]?</a></span>
+    </dt>
+    <dd>{{% md %}}A list of Bounce Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">enabled<span class="property-indicator"></span>
+        <span class="property-type">boolean?</span>
+    </dt>
+    <dd>{{% md %}}If true, the rule will be enabled
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">lambda<wbr>Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrulelambdaaction">Receipt<wbr>Rule<wbr>Lambda<wbr>Action[]?</a></span>
+    </dt>
+    <dd>{{% md %}}A list of Lambda Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">name<span class="property-indicator"></span>
+        <span class="property-type">string?</span>
+    </dt>
+    <dd>{{% md %}}The name of the rule
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">recipients<span class="property-indicator"></span>
+        <span class="property-type">string[]?</span>
+    </dt>
+    <dd>{{% md %}}A list of email addresses
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">rule<wbr>Set<wbr>Name<span class="property-indicator"></span>
+        <span class="property-type">string?</span>
+    </dt>
+    <dd>{{% md %}}The name of the rule set
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">s3Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrules3action">Receipt<wbr>Rule<wbr>S3Action[]?</a></span>
+    </dt>
+    <dd>{{% md %}}A list of S3 Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">scan<wbr>Enabled<span class="property-indicator"></span>
+        <span class="property-type">boolean?</span>
+    </dt>
+    <dd>{{% md %}}If true, incoming emails will be scanned for spam and viruses
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">sns<wbr>Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrulesnsaction">Receipt<wbr>Rule<wbr>Sns<wbr>Action[]?</a></span>
+    </dt>
+    <dd>{{% md %}}A list of SNS Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">stop<wbr>Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrulestopaction">Receipt<wbr>Rule<wbr>Stop<wbr>Action[]?</a></span>
+    </dt>
+    <dd>{{% md %}}A list of Stop Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">tls<wbr>Policy<span class="property-indicator"></span>
+        <span class="property-type">string?</span>
+    </dt>
+    <dd>{{% md %}}Require or Optional
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">workmail<wbr>Actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptruleworkmailaction">Receipt<wbr>Rule<wbr>Workmail<wbr>Action[]?</a></span>
+    </dt>
+    <dd>{{% md %}}A list of WorkMail Action blocks. Documented below.
+{{% /md %}}</dd>
+
+</dl>
+{{% /choosable %}}
+
+
+{{% choosable language python %}}
+<dl class="resources-properties">
+
+    <dt class="property-optional"
+            title="Optional">add_<wbr>header_<wbr>actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptruleaddheaderaction">List[Receipt<wbr>Rule<wbr>Add<wbr>Header<wbr>Action]</a></span>
+    </dt>
+    <dd>{{% md %}}A list of Add Header Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">after<span class="property-indicator"></span>
+        <span class="property-type">str</span>
+    </dt>
+    <dd>{{% md %}}The name of the rule to place this rule after
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">bounce_<wbr>actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrulebounceaction">List[Receipt<wbr>Rule<wbr>Bounce<wbr>Action]</a></span>
+    </dt>
+    <dd>{{% md %}}A list of Bounce Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">enabled<span class="property-indicator"></span>
+        <span class="property-type">bool</span>
+    </dt>
+    <dd>{{% md %}}If true, the rule will be enabled
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">lambda_<wbr>actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrulelambdaaction">List[Receipt<wbr>Rule<wbr>Lambda<wbr>Action]</a></span>
+    </dt>
+    <dd>{{% md %}}A list of Lambda Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">name<span class="property-indicator"></span>
+        <span class="property-type">str</span>
+    </dt>
+    <dd>{{% md %}}The name of the rule
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">recipients<span class="property-indicator"></span>
+        <span class="property-type">List[str]</span>
+    </dt>
+    <dd>{{% md %}}A list of email addresses
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">rule_<wbr>set_<wbr>name<span class="property-indicator"></span>
+        <span class="property-type">str</span>
+    </dt>
+    <dd>{{% md %}}The name of the rule set
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">s3_<wbr>actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrules3action">List[Receipt<wbr>Rule<wbr>S3Action]</a></span>
+    </dt>
+    <dd>{{% md %}}A list of S3 Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">scan_<wbr>enabled<span class="property-indicator"></span>
+        <span class="property-type">bool</span>
+    </dt>
+    <dd>{{% md %}}If true, incoming emails will be scanned for spam and viruses
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">sns_<wbr>actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrulesnsaction">List[Receipt<wbr>Rule<wbr>Sns<wbr>Action]</a></span>
+    </dt>
+    <dd>{{% md %}}A list of SNS Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">stop_<wbr>actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptrulestopaction">List[Receipt<wbr>Rule<wbr>Stop<wbr>Action]</a></span>
+    </dt>
+    <dd>{{% md %}}A list of Stop Action blocks. Documented below.
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">tls_<wbr>policy<span class="property-indicator"></span>
+        <span class="property-type">str</span>
+    </dt>
+    <dd>{{% md %}}Require or Optional
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">workmail_<wbr>actions<span class="property-indicator"></span>
+        <span class="property-type"><a href="#receiptruleworkmailaction">List[Receipt<wbr>Rule<wbr>Workmail<wbr>Action]</a></span>
+    </dt>
+    <dd>{{% md %}}A list of WorkMail Action blocks. Documented below.
+{{% /md %}}</dd>
+
+</dl>
+{{% /choosable %}}
 
 
 
@@ -2833,267 +1495,117 @@ A list of WorkMail Action blocks. Documented below.
 
 
 
-{{< langchoose csharp nojavascript >}}
+
+{{% choosable language csharp %}}
+<dl class="resources-properties">
+
+    <dt class="property-required"
+            title="Required">Header<wbr>Name<span class="property-indicator"></span>
+        <span class="property-type">string</span>
+    </dt>
+    <dd>{{% md %}}The name of the header to add
+{{% /md %}}</dd>
+
+    <dt class="property-required"
+            title="Required">Header<wbr>Value<span class="property-indicator"></span>
+        <span class="property-type">string</span>
+    </dt>
+    <dd>{{% md %}}The value of the header to add
+{{% /md %}}</dd>
+
+    <dt class="property-required"
+            title="Required">Position<span class="property-indicator"></span>
+        <span class="property-type">int</span>
+    </dt>
+    <dd>{{% md %}}The position of the action in the receipt rule
+{{% /md %}}</dd>
+
+</dl>
+{{% /choosable %}}
 
 
-{{% lang csharp %}}
+{{% choosable language go %}}
+<dl class="resources-properties">
+
+    <dt class="property-required"
+            title="Required">Header<wbr>Name<span class="property-indicator"></span>
+        <span class="property-type">string</span>
+    </dt>
+    <dd>{{% md %}}The name of the header to add
+{{% /md %}}</dd>
+
+    <dt class="property-required"
+            title="Required">Header<wbr>Value<span class="property-indicator"></span>
+        <span class="property-type">string</span>
+    </dt>
+    <dd>{{% md %}}The value of the header to add
+{{% /md %}}</dd>
+
+    <dt class="property-required"
+            title="Required">Position<span class="property-indicator"></span>
+        <span class="property-type">int</span>
+    </dt>
+    <dd>{{% md %}}The position of the action in the receipt rule
+{{% /md %}}</dd>
+
+</dl>
+{{% /choosable %}}
 
 
-<table class="ml-6">
-    <thead>
-        <tr>
-            <th>Argument</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-    
-        <tr>
-            <td class="align-top">Header<wbr>Name</td>
-            <td class="align-top">
-                
-                <code>string</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The name of the header to add
- {{% /md %}}
+{{% choosable language nodejs %}}
+<dl class="resources-properties">
 
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Header<wbr>Value</td>
-            <td class="align-top">
-                
-                <code>string</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The value of the header to add
- {{% /md %}}
+    <dt class="property-required"
+            title="Required">header<wbr>Name<span class="property-indicator"></span>
+        <span class="property-type">string</span>
+    </dt>
+    <dd>{{% md %}}The name of the header to add
+{{% /md %}}</dd>
 
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Position</td>
-            <td class="align-top">
-                
-                <code>int</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The position of the action in the receipt rule
- {{% /md %}}
+    <dt class="property-required"
+            title="Required">header<wbr>Value<span class="property-indicator"></span>
+        <span class="property-type">string</span>
+    </dt>
+    <dd>{{% md %}}The value of the header to add
+{{% /md %}}</dd>
 
-            
-            </td>
-        </tr>
-    
-    </tbody>
-</table>
+    <dt class="property-required"
+            title="Required">position<span class="property-indicator"></span>
+        <span class="property-type">number</span>
+    </dt>
+    <dd>{{% md %}}The position of the action in the receipt rule
+{{% /md %}}</dd>
+
+</dl>
+{{% /choosable %}}
 
 
-{{% /lang %}}
+{{% choosable language python %}}
+<dl class="resources-properties">
 
+    <dt class="property-required"
+            title="Required">header<wbr>Name<span class="property-indicator"></span>
+        <span class="property-type">str</span>
+    </dt>
+    <dd>{{% md %}}The name of the header to add
+{{% /md %}}</dd>
 
-{{% lang go %}}
+    <dt class="property-required"
+            title="Required">header<wbr>Value<span class="property-indicator"></span>
+        <span class="property-type">str</span>
+    </dt>
+    <dd>{{% md %}}The value of the header to add
+{{% /md %}}</dd>
 
+    <dt class="property-required"
+            title="Required">position<span class="property-indicator"></span>
+        <span class="property-type">float</span>
+    </dt>
+    <dd>{{% md %}}The position of the action in the receipt rule
+{{% /md %}}</dd>
 
-<table class="ml-6">
-    <thead>
-        <tr>
-            <th>Argument</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-    
-        <tr>
-            <td class="align-top">Header<wbr>Name</td>
-            <td class="align-top">
-                
-                <code>string</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The name of the header to add
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Header<wbr>Value</td>
-            <td class="align-top">
-                
-                <code>string</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The value of the header to add
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Position</td>
-            <td class="align-top">
-                
-                <code>int</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The position of the action in the receipt rule
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-    </tbody>
-</table>
-
-
-{{% /lang %}}
-
-
-{{% lang nodejs %}}
-
-
-<table class="ml-6">
-    <thead>
-        <tr>
-            <th>Argument</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-    
-        <tr>
-            <td class="align-top">header<wbr>Name</td>
-            <td class="align-top">
-                
-                <code>string</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The name of the header to add
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">header<wbr>Value</td>
-            <td class="align-top">
-                
-                <code>string</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The value of the header to add
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">position</td>
-            <td class="align-top">
-                
-                <code>number</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The position of the action in the receipt rule
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-    </tbody>
-</table>
-
-
-{{% /lang %}}
-
-
-{{% lang python %}}
-
-
-<table class="ml-6">
-    <thead>
-        <tr>
-            <th>Argument</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-    
-        <tr>
-            <td class="align-top">header<wbr>Name</td>
-            <td class="align-top">
-                
-                <code>str</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The name of the header to add
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">header<wbr>Value</td>
-            <td class="align-top">
-                
-                <code>str</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The value of the header to add
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">position</td>
-            <td class="align-top">
-                
-                <code>float</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The position of the action in the receipt rule
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-    </tbody>
-</table>
-
-
-{{% /lang %}}
+</dl>
+{{% /choosable %}}
 
 
 
@@ -3114,447 +1626,201 @@ The position of the action in the receipt rule
 
 
 
-{{< langchoose csharp nojavascript >}}
+
+{{% choosable language csharp %}}
+<dl class="resources-properties">
+
+    <dt class="property-required"
+            title="Required">Message<span class="property-indicator"></span>
+        <span class="property-type">string</span>
+    </dt>
+    <dd>{{% md %}}The message to send
+{{% /md %}}</dd>
+
+    <dt class="property-required"
+            title="Required">Position<span class="property-indicator"></span>
+        <span class="property-type">int</span>
+    </dt>
+    <dd>{{% md %}}The position of the action in the receipt rule
+{{% /md %}}</dd>
+
+    <dt class="property-required"
+            title="Required">Sender<span class="property-indicator"></span>
+        <span class="property-type">string</span>
+    </dt>
+    <dd>{{% md %}}The email address of the sender
+{{% /md %}}</dd>
+
+    <dt class="property-required"
+            title="Required">Smtp<wbr>Reply<wbr>Code<span class="property-indicator"></span>
+        <span class="property-type">string</span>
+    </dt>
+    <dd>{{% md %}}The RFC 5321 SMTP reply code
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Status<wbr>Code<span class="property-indicator"></span>
+        <span class="property-type">string?</span>
+    </dt>
+    <dd>{{% md %}}The RFC 3463 SMTP enhanced status code
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Topic<wbr>Arn<span class="property-indicator"></span>
+        <span class="property-type">string?</span>
+    </dt>
+    <dd>{{% md %}}The ARN of an SNS topic to notify
+{{% /md %}}</dd>
+
+</dl>
+{{% /choosable %}}
 
 
-{{% lang csharp %}}
+{{% choosable language go %}}
+<dl class="resources-properties">
+
+    <dt class="property-required"
+            title="Required">Message<span class="property-indicator"></span>
+        <span class="property-type">string</span>
+    </dt>
+    <dd>{{% md %}}The message to send
+{{% /md %}}</dd>
+
+    <dt class="property-required"
+            title="Required">Position<span class="property-indicator"></span>
+        <span class="property-type">int</span>
+    </dt>
+    <dd>{{% md %}}The position of the action in the receipt rule
+{{% /md %}}</dd>
+
+    <dt class="property-required"
+            title="Required">Sender<span class="property-indicator"></span>
+        <span class="property-type">string</span>
+    </dt>
+    <dd>{{% md %}}The email address of the sender
+{{% /md %}}</dd>
+
+    <dt class="property-required"
+            title="Required">Smtp<wbr>Reply<wbr>Code<span class="property-indicator"></span>
+        <span class="property-type">string</span>
+    </dt>
+    <dd>{{% md %}}The RFC 5321 SMTP reply code
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Status<wbr>Code<span class="property-indicator"></span>
+        <span class="property-type">*string</span>
+    </dt>
+    <dd>{{% md %}}The RFC 3463 SMTP enhanced status code
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Topic<wbr>Arn<span class="property-indicator"></span>
+        <span class="property-type">*string</span>
+    </dt>
+    <dd>{{% md %}}The ARN of an SNS topic to notify
+{{% /md %}}</dd>
+
+</dl>
+{{% /choosable %}}
 
 
-<table class="ml-6">
-    <thead>
-        <tr>
-            <th>Argument</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-    
-        <tr>
-            <td class="align-top">Message</td>
-            <td class="align-top">
-                
-                <code>string</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The message to send
- {{% /md %}}
+{{% choosable language nodejs %}}
+<dl class="resources-properties">
 
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Position</td>
-            <td class="align-top">
-                
-                <code>int</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The position of the action in the receipt rule
- {{% /md %}}
+    <dt class="property-required"
+            title="Required">message<span class="property-indicator"></span>
+        <span class="property-type">string</span>
+    </dt>
+    <dd>{{% md %}}The message to send
+{{% /md %}}</dd>
 
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Sender</td>
-            <td class="align-top">
-                
-                <code>string</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The email address of the sender
- {{% /md %}}
+    <dt class="property-required"
+            title="Required">position<span class="property-indicator"></span>
+        <span class="property-type">number</span>
+    </dt>
+    <dd>{{% md %}}The position of the action in the receipt rule
+{{% /md %}}</dd>
 
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Smtp<wbr>Reply<wbr>Code</td>
-            <td class="align-top">
-                
-                <code>string</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The RFC 5321 SMTP reply code
- {{% /md %}}
+    <dt class="property-required"
+            title="Required">sender<span class="property-indicator"></span>
+        <span class="property-type">string</span>
+    </dt>
+    <dd>{{% md %}}The email address of the sender
+{{% /md %}}</dd>
 
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Status<wbr>Code</td>
-            <td class="align-top">
-                
-                <code>string?</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-The RFC 3463 SMTP enhanced status code
- {{% /md %}}
+    <dt class="property-required"
+            title="Required">smtp<wbr>Reply<wbr>Code<span class="property-indicator"></span>
+        <span class="property-type">string</span>
+    </dt>
+    <dd>{{% md %}}The RFC 5321 SMTP reply code
+{{% /md %}}</dd>
 
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Topic<wbr>Arn</td>
-            <td class="align-top">
-                
-                <code>string?</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-The ARN of an SNS topic to notify
- {{% /md %}}
+    <dt class="property-optional"
+            title="Optional">status<wbr>Code<span class="property-indicator"></span>
+        <span class="property-type">string?</span>
+    </dt>
+    <dd>{{% md %}}The RFC 3463 SMTP enhanced status code
+{{% /md %}}</dd>
 
-            
-            </td>
-        </tr>
-    
-    </tbody>
-</table>
+    <dt class="property-optional"
+            title="Optional">topic<wbr>Arn<span class="property-indicator"></span>
+        <span class="property-type">string?</span>
+    </dt>
+    <dd>{{% md %}}The ARN of an SNS topic to notify
+{{% /md %}}</dd>
+
+</dl>
+{{% /choosable %}}
 
 
-{{% /lang %}}
+{{% choosable language python %}}
+<dl class="resources-properties">
 
+    <dt class="property-required"
+            title="Required">message<span class="property-indicator"></span>
+        <span class="property-type">str</span>
+    </dt>
+    <dd>{{% md %}}The message to send
+{{% /md %}}</dd>
 
-{{% lang go %}}
+    <dt class="property-required"
+            title="Required">position<span class="property-indicator"></span>
+        <span class="property-type">float</span>
+    </dt>
+    <dd>{{% md %}}The position of the action in the receipt rule
+{{% /md %}}</dd>
 
+    <dt class="property-required"
+            title="Required">sender<span class="property-indicator"></span>
+        <span class="property-type">str</span>
+    </dt>
+    <dd>{{% md %}}The email address of the sender
+{{% /md %}}</dd>
 
-<table class="ml-6">
-    <thead>
-        <tr>
-            <th>Argument</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-    
-        <tr>
-            <td class="align-top">Message</td>
-            <td class="align-top">
-                
-                <code>string</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The message to send
- {{% /md %}}
+    <dt class="property-required"
+            title="Required">smtp<wbr>Reply<wbr>Code<span class="property-indicator"></span>
+        <span class="property-type">str</span>
+    </dt>
+    <dd>{{% md %}}The RFC 5321 SMTP reply code
+{{% /md %}}</dd>
 
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Position</td>
-            <td class="align-top">
-                
-                <code>int</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The position of the action in the receipt rule
- {{% /md %}}
+    <dt class="property-optional"
+            title="Optional">status_<wbr>code<span class="property-indicator"></span>
+        <span class="property-type">str</span>
+    </dt>
+    <dd>{{% md %}}The RFC 3463 SMTP enhanced status code
+{{% /md %}}</dd>
 
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Sender</td>
-            <td class="align-top">
-                
-                <code>string</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The email address of the sender
- {{% /md %}}
+    <dt class="property-optional"
+            title="Optional">topic_<wbr>arn<span class="property-indicator"></span>
+        <span class="property-type">str</span>
+    </dt>
+    <dd>{{% md %}}The ARN of an SNS topic to notify
+{{% /md %}}</dd>
 
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Smtp<wbr>Reply<wbr>Code</td>
-            <td class="align-top">
-                
-                <code>string</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The RFC 5321 SMTP reply code
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Status<wbr>Code</td>
-            <td class="align-top">
-                
-                <code>*string</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-The RFC 3463 SMTP enhanced status code
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Topic<wbr>Arn</td>
-            <td class="align-top">
-                
-                <code>*string</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-The ARN of an SNS topic to notify
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-    </tbody>
-</table>
-
-
-{{% /lang %}}
-
-
-{{% lang nodejs %}}
-
-
-<table class="ml-6">
-    <thead>
-        <tr>
-            <th>Argument</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-    
-        <tr>
-            <td class="align-top">message</td>
-            <td class="align-top">
-                
-                <code>string</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The message to send
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">position</td>
-            <td class="align-top">
-                
-                <code>number</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The position of the action in the receipt rule
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">sender</td>
-            <td class="align-top">
-                
-                <code>string</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The email address of the sender
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">smtp<wbr>Reply<wbr>Code</td>
-            <td class="align-top">
-                
-                <code>string</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The RFC 5321 SMTP reply code
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">status<wbr>Code</td>
-            <td class="align-top">
-                
-                <code>string?</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-The RFC 3463 SMTP enhanced status code
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">topic<wbr>Arn</td>
-            <td class="align-top">
-                
-                <code>string?</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-The ARN of an SNS topic to notify
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-    </tbody>
-</table>
-
-
-{{% /lang %}}
-
-
-{{% lang python %}}
-
-
-<table class="ml-6">
-    <thead>
-        <tr>
-            <th>Argument</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-    
-        <tr>
-            <td class="align-top">message</td>
-            <td class="align-top">
-                
-                <code>str</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The message to send
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">position</td>
-            <td class="align-top">
-                
-                <code>float</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The position of the action in the receipt rule
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">sender</td>
-            <td class="align-top">
-                
-                <code>str</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The email address of the sender
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">smtp<wbr>Reply<wbr>Code</td>
-            <td class="align-top">
-                
-                <code>str</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The RFC 5321 SMTP reply code
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">status_<wbr>code</td>
-            <td class="align-top">
-                
-                <code>str</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-The RFC 3463 SMTP enhanced status code
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">topic_<wbr>arn</td>
-            <td class="align-top">
-                
-                <code>str</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-The ARN of an SNS topic to notify
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-    </tbody>
-</table>
-
-
-{{% /lang %}}
+</dl>
+{{% /choosable %}}
 
 
 
@@ -3575,327 +1841,145 @@ The ARN of an SNS topic to notify
 
 
 
-{{< langchoose csharp nojavascript >}}
+
+{{% choosable language csharp %}}
+<dl class="resources-properties">
+
+    <dt class="property-required"
+            title="Required">Function<wbr>Arn<span class="property-indicator"></span>
+        <span class="property-type">string</span>
+    </dt>
+    <dd>{{% md %}}The ARN of the Lambda function to invoke
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Invocation<wbr>Type<span class="property-indicator"></span>
+        <span class="property-type">string?</span>
+    </dt>
+    <dd>{{% md %}}Event or RequestResponse
+{{% /md %}}</dd>
+
+    <dt class="property-required"
+            title="Required">Position<span class="property-indicator"></span>
+        <span class="property-type">int</span>
+    </dt>
+    <dd>{{% md %}}The position of the action in the receipt rule
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Topic<wbr>Arn<span class="property-indicator"></span>
+        <span class="property-type">string?</span>
+    </dt>
+    <dd>{{% md %}}The ARN of an SNS topic to notify
+{{% /md %}}</dd>
+
+</dl>
+{{% /choosable %}}
 
 
-{{% lang csharp %}}
+{{% choosable language go %}}
+<dl class="resources-properties">
+
+    <dt class="property-required"
+            title="Required">Function<wbr>Arn<span class="property-indicator"></span>
+        <span class="property-type">string</span>
+    </dt>
+    <dd>{{% md %}}The ARN of the Lambda function to invoke
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Invocation<wbr>Type<span class="property-indicator"></span>
+        <span class="property-type">*string</span>
+    </dt>
+    <dd>{{% md %}}Event or RequestResponse
+{{% /md %}}</dd>
+
+    <dt class="property-required"
+            title="Required">Position<span class="property-indicator"></span>
+        <span class="property-type">int</span>
+    </dt>
+    <dd>{{% md %}}The position of the action in the receipt rule
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Topic<wbr>Arn<span class="property-indicator"></span>
+        <span class="property-type">*string</span>
+    </dt>
+    <dd>{{% md %}}The ARN of an SNS topic to notify
+{{% /md %}}</dd>
+
+</dl>
+{{% /choosable %}}
 
 
-<table class="ml-6">
-    <thead>
-        <tr>
-            <th>Argument</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-    
-        <tr>
-            <td class="align-top">Function<wbr>Arn</td>
-            <td class="align-top">
-                
-                <code>string</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The ARN of the Lambda function to invoke
- {{% /md %}}
+{{% choosable language nodejs %}}
+<dl class="resources-properties">
 
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Invocation<wbr>Type</td>
-            <td class="align-top">
-                
-                <code>string?</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-Event or RequestResponse
- {{% /md %}}
+    <dt class="property-required"
+            title="Required">function<wbr>Arn<span class="property-indicator"></span>
+        <span class="property-type">string</span>
+    </dt>
+    <dd>{{% md %}}The ARN of the Lambda function to invoke
+{{% /md %}}</dd>
 
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Position</td>
-            <td class="align-top">
-                
-                <code>int</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The position of the action in the receipt rule
- {{% /md %}}
+    <dt class="property-optional"
+            title="Optional">invocation<wbr>Type<span class="property-indicator"></span>
+        <span class="property-type">string?</span>
+    </dt>
+    <dd>{{% md %}}Event or RequestResponse
+{{% /md %}}</dd>
 
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Topic<wbr>Arn</td>
-            <td class="align-top">
-                
-                <code>string?</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-The ARN of an SNS topic to notify
- {{% /md %}}
+    <dt class="property-required"
+            title="Required">position<span class="property-indicator"></span>
+        <span class="property-type">number</span>
+    </dt>
+    <dd>{{% md %}}The position of the action in the receipt rule
+{{% /md %}}</dd>
 
-            
-            </td>
-        </tr>
-    
-    </tbody>
-</table>
+    <dt class="property-optional"
+            title="Optional">topic<wbr>Arn<span class="property-indicator"></span>
+        <span class="property-type">string?</span>
+    </dt>
+    <dd>{{% md %}}The ARN of an SNS topic to notify
+{{% /md %}}</dd>
+
+</dl>
+{{% /choosable %}}
 
 
-{{% /lang %}}
+{{% choosable language python %}}
+<dl class="resources-properties">
 
+    <dt class="property-required"
+            title="Required">function_<wbr>arn<span class="property-indicator"></span>
+        <span class="property-type">str</span>
+    </dt>
+    <dd>{{% md %}}The ARN of the Lambda function to invoke
+{{% /md %}}</dd>
 
-{{% lang go %}}
+    <dt class="property-optional"
+            title="Optional">invocation<wbr>Type<span class="property-indicator"></span>
+        <span class="property-type">str</span>
+    </dt>
+    <dd>{{% md %}}Event or RequestResponse
+{{% /md %}}</dd>
 
+    <dt class="property-required"
+            title="Required">position<span class="property-indicator"></span>
+        <span class="property-type">float</span>
+    </dt>
+    <dd>{{% md %}}The position of the action in the receipt rule
+{{% /md %}}</dd>
 
-<table class="ml-6">
-    <thead>
-        <tr>
-            <th>Argument</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-    
-        <tr>
-            <td class="align-top">Function<wbr>Arn</td>
-            <td class="align-top">
-                
-                <code>string</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The ARN of the Lambda function to invoke
- {{% /md %}}
+    <dt class="property-optional"
+            title="Optional">topic_<wbr>arn<span class="property-indicator"></span>
+        <span class="property-type">str</span>
+    </dt>
+    <dd>{{% md %}}The ARN of an SNS topic to notify
+{{% /md %}}</dd>
 
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Invocation<wbr>Type</td>
-            <td class="align-top">
-                
-                <code>*string</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-Event or RequestResponse
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Position</td>
-            <td class="align-top">
-                
-                <code>int</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The position of the action in the receipt rule
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Topic<wbr>Arn</td>
-            <td class="align-top">
-                
-                <code>*string</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-The ARN of an SNS topic to notify
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-    </tbody>
-</table>
-
-
-{{% /lang %}}
-
-
-{{% lang nodejs %}}
-
-
-<table class="ml-6">
-    <thead>
-        <tr>
-            <th>Argument</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-    
-        <tr>
-            <td class="align-top">function<wbr>Arn</td>
-            <td class="align-top">
-                
-                <code>string</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The ARN of the Lambda function to invoke
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">invocation<wbr>Type</td>
-            <td class="align-top">
-                
-                <code>string?</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-Event or RequestResponse
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">position</td>
-            <td class="align-top">
-                
-                <code>number</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The position of the action in the receipt rule
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">topic<wbr>Arn</td>
-            <td class="align-top">
-                
-                <code>string?</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-The ARN of an SNS topic to notify
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-    </tbody>
-</table>
-
-
-{{% /lang %}}
-
-
-{{% lang python %}}
-
-
-<table class="ml-6">
-    <thead>
-        <tr>
-            <th>Argument</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-    
-        <tr>
-            <td class="align-top">function_<wbr>arn</td>
-            <td class="align-top">
-                
-                <code>str</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The ARN of the Lambda function to invoke
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">invocation<wbr>Type</td>
-            <td class="align-top">
-                
-                <code>str</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-Event or RequestResponse
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">position</td>
-            <td class="align-top">
-                
-                <code>float</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The position of the action in the receipt rule
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">topic_<wbr>arn</td>
-            <td class="align-top">
-                
-                <code>str</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-The ARN of an SNS topic to notify
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-    </tbody>
-</table>
-
-
-{{% /lang %}}
+</dl>
+{{% /choosable %}}
 
 
 
@@ -3916,387 +2000,173 @@ The ARN of an SNS topic to notify
 
 
 
-{{< langchoose csharp nojavascript >}}
+
+{{% choosable language csharp %}}
+<dl class="resources-properties">
+
+    <dt class="property-required"
+            title="Required">Bucket<wbr>Name<span class="property-indicator"></span>
+        <span class="property-type">string</span>
+    </dt>
+    <dd>{{% md %}}The name of the S3 bucket
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Kms<wbr>Key<wbr>Arn<span class="property-indicator"></span>
+        <span class="property-type">string?</span>
+    </dt>
+    <dd>{{% md %}}The ARN of the KMS key
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Object<wbr>Key<wbr>Prefix<span class="property-indicator"></span>
+        <span class="property-type">string?</span>
+    </dt>
+    <dd>{{% md %}}The key prefix of the S3 bucket
+{{% /md %}}</dd>
+
+    <dt class="property-required"
+            title="Required">Position<span class="property-indicator"></span>
+        <span class="property-type">int</span>
+    </dt>
+    <dd>{{% md %}}The position of the action in the receipt rule
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Topic<wbr>Arn<span class="property-indicator"></span>
+        <span class="property-type">string?</span>
+    </dt>
+    <dd>{{% md %}}The ARN of an SNS topic to notify
+{{% /md %}}</dd>
+
+</dl>
+{{% /choosable %}}
 
 
-{{% lang csharp %}}
+{{% choosable language go %}}
+<dl class="resources-properties">
+
+    <dt class="property-required"
+            title="Required">Bucket<wbr>Name<span class="property-indicator"></span>
+        <span class="property-type">string</span>
+    </dt>
+    <dd>{{% md %}}The name of the S3 bucket
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Kms<wbr>Key<wbr>Arn<span class="property-indicator"></span>
+        <span class="property-type">*string</span>
+    </dt>
+    <dd>{{% md %}}The ARN of the KMS key
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Object<wbr>Key<wbr>Prefix<span class="property-indicator"></span>
+        <span class="property-type">*string</span>
+    </dt>
+    <dd>{{% md %}}The key prefix of the S3 bucket
+{{% /md %}}</dd>
+
+    <dt class="property-required"
+            title="Required">Position<span class="property-indicator"></span>
+        <span class="property-type">int</span>
+    </dt>
+    <dd>{{% md %}}The position of the action in the receipt rule
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Topic<wbr>Arn<span class="property-indicator"></span>
+        <span class="property-type">*string</span>
+    </dt>
+    <dd>{{% md %}}The ARN of an SNS topic to notify
+{{% /md %}}</dd>
+
+</dl>
+{{% /choosable %}}
 
 
-<table class="ml-6">
-    <thead>
-        <tr>
-            <th>Argument</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-    
-        <tr>
-            <td class="align-top">Bucket<wbr>Name</td>
-            <td class="align-top">
-                
-                <code>string</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The name of the S3 bucket
- {{% /md %}}
+{{% choosable language nodejs %}}
+<dl class="resources-properties">
 
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Kms<wbr>Key<wbr>Arn</td>
-            <td class="align-top">
-                
-                <code>string?</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-The ARN of the KMS key
- {{% /md %}}
+    <dt class="property-required"
+            title="Required">bucket<wbr>Name<span class="property-indicator"></span>
+        <span class="property-type">string</span>
+    </dt>
+    <dd>{{% md %}}The name of the S3 bucket
+{{% /md %}}</dd>
 
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Object<wbr>Key<wbr>Prefix</td>
-            <td class="align-top">
-                
-                <code>string?</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-The key prefix of the S3 bucket
- {{% /md %}}
+    <dt class="property-optional"
+            title="Optional">kms<wbr>Key<wbr>Arn<span class="property-indicator"></span>
+        <span class="property-type">string?</span>
+    </dt>
+    <dd>{{% md %}}The ARN of the KMS key
+{{% /md %}}</dd>
 
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Position</td>
-            <td class="align-top">
-                
-                <code>int</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The position of the action in the receipt rule
- {{% /md %}}
+    <dt class="property-optional"
+            title="Optional">object<wbr>Key<wbr>Prefix<span class="property-indicator"></span>
+        <span class="property-type">string?</span>
+    </dt>
+    <dd>{{% md %}}The key prefix of the S3 bucket
+{{% /md %}}</dd>
 
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Topic<wbr>Arn</td>
-            <td class="align-top">
-                
-                <code>string?</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-The ARN of an SNS topic to notify
- {{% /md %}}
+    <dt class="property-required"
+            title="Required">position<span class="property-indicator"></span>
+        <span class="property-type">number</span>
+    </dt>
+    <dd>{{% md %}}The position of the action in the receipt rule
+{{% /md %}}</dd>
 
-            
-            </td>
-        </tr>
-    
-    </tbody>
-</table>
+    <dt class="property-optional"
+            title="Optional">topic<wbr>Arn<span class="property-indicator"></span>
+        <span class="property-type">string?</span>
+    </dt>
+    <dd>{{% md %}}The ARN of an SNS topic to notify
+{{% /md %}}</dd>
+
+</dl>
+{{% /choosable %}}
 
 
-{{% /lang %}}
+{{% choosable language python %}}
+<dl class="resources-properties">
 
+    <dt class="property-required"
+            title="Required">bucket_<wbr>name<span class="property-indicator"></span>
+        <span class="property-type">str</span>
+    </dt>
+    <dd>{{% md %}}The name of the S3 bucket
+{{% /md %}}</dd>
 
-{{% lang go %}}
+    <dt class="property-optional"
+            title="Optional">kms_<wbr>key_<wbr>arn<span class="property-indicator"></span>
+        <span class="property-type">str</span>
+    </dt>
+    <dd>{{% md %}}The ARN of the KMS key
+{{% /md %}}</dd>
 
+    <dt class="property-optional"
+            title="Optional">object<wbr>Key<wbr>Prefix<span class="property-indicator"></span>
+        <span class="property-type">str</span>
+    </dt>
+    <dd>{{% md %}}The key prefix of the S3 bucket
+{{% /md %}}</dd>
 
-<table class="ml-6">
-    <thead>
-        <tr>
-            <th>Argument</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-    
-        <tr>
-            <td class="align-top">Bucket<wbr>Name</td>
-            <td class="align-top">
-                
-                <code>string</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The name of the S3 bucket
- {{% /md %}}
+    <dt class="property-required"
+            title="Required">position<span class="property-indicator"></span>
+        <span class="property-type">float</span>
+    </dt>
+    <dd>{{% md %}}The position of the action in the receipt rule
+{{% /md %}}</dd>
 
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Kms<wbr>Key<wbr>Arn</td>
-            <td class="align-top">
-                
-                <code>*string</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-The ARN of the KMS key
- {{% /md %}}
+    <dt class="property-optional"
+            title="Optional">topic_<wbr>arn<span class="property-indicator"></span>
+        <span class="property-type">str</span>
+    </dt>
+    <dd>{{% md %}}The ARN of an SNS topic to notify
+{{% /md %}}</dd>
 
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Object<wbr>Key<wbr>Prefix</td>
-            <td class="align-top">
-                
-                <code>*string</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-The key prefix of the S3 bucket
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Position</td>
-            <td class="align-top">
-                
-                <code>int</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The position of the action in the receipt rule
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Topic<wbr>Arn</td>
-            <td class="align-top">
-                
-                <code>*string</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-The ARN of an SNS topic to notify
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-    </tbody>
-</table>
-
-
-{{% /lang %}}
-
-
-{{% lang nodejs %}}
-
-
-<table class="ml-6">
-    <thead>
-        <tr>
-            <th>Argument</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-    
-        <tr>
-            <td class="align-top">bucket<wbr>Name</td>
-            <td class="align-top">
-                
-                <code>string</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The name of the S3 bucket
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">kms<wbr>Key<wbr>Arn</td>
-            <td class="align-top">
-                
-                <code>string?</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-The ARN of the KMS key
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">object<wbr>Key<wbr>Prefix</td>
-            <td class="align-top">
-                
-                <code>string?</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-The key prefix of the S3 bucket
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">position</td>
-            <td class="align-top">
-                
-                <code>number</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The position of the action in the receipt rule
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">topic<wbr>Arn</td>
-            <td class="align-top">
-                
-                <code>string?</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-The ARN of an SNS topic to notify
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-    </tbody>
-</table>
-
-
-{{% /lang %}}
-
-
-{{% lang python %}}
-
-
-<table class="ml-6">
-    <thead>
-        <tr>
-            <th>Argument</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-    
-        <tr>
-            <td class="align-top">bucket_<wbr>name</td>
-            <td class="align-top">
-                
-                <code>str</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The name of the S3 bucket
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">kms_<wbr>key_<wbr>arn</td>
-            <td class="align-top">
-                
-                <code>str</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-The ARN of the KMS key
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">object<wbr>Key<wbr>Prefix</td>
-            <td class="align-top">
-                
-                <code>str</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-The key prefix of the S3 bucket
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">position</td>
-            <td class="align-top">
-                
-                <code>float</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The position of the action in the receipt rule
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">topic_<wbr>arn</td>
-            <td class="align-top">
-                
-                <code>str</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-The ARN of an SNS topic to notify
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-    </tbody>
-</table>
-
-
-{{% /lang %}}
+</dl>
+{{% /choosable %}}
 
 
 
@@ -4317,207 +2187,89 @@ The ARN of an SNS topic to notify
 
 
 
-{{< langchoose csharp nojavascript >}}
+
+{{% choosable language csharp %}}
+<dl class="resources-properties">
+
+    <dt class="property-required"
+            title="Required">Position<span class="property-indicator"></span>
+        <span class="property-type">int</span>
+    </dt>
+    <dd>{{% md %}}The position of the action in the receipt rule
+{{% /md %}}</dd>
+
+    <dt class="property-required"
+            title="Required">Topic<wbr>Arn<span class="property-indicator"></span>
+        <span class="property-type">string</span>
+    </dt>
+    <dd>{{% md %}}The ARN of an SNS topic to notify
+{{% /md %}}</dd>
+
+</dl>
+{{% /choosable %}}
 
 
-{{% lang csharp %}}
+{{% choosable language go %}}
+<dl class="resources-properties">
+
+    <dt class="property-required"
+            title="Required">Position<span class="property-indicator"></span>
+        <span class="property-type">int</span>
+    </dt>
+    <dd>{{% md %}}The position of the action in the receipt rule
+{{% /md %}}</dd>
+
+    <dt class="property-required"
+            title="Required">Topic<wbr>Arn<span class="property-indicator"></span>
+        <span class="property-type">string</span>
+    </dt>
+    <dd>{{% md %}}The ARN of an SNS topic to notify
+{{% /md %}}</dd>
+
+</dl>
+{{% /choosable %}}
 
 
-<table class="ml-6">
-    <thead>
-        <tr>
-            <th>Argument</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-    
-        <tr>
-            <td class="align-top">Position</td>
-            <td class="align-top">
-                
-                <code>int</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The position of the action in the receipt rule
- {{% /md %}}
+{{% choosable language nodejs %}}
+<dl class="resources-properties">
 
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Topic<wbr>Arn</td>
-            <td class="align-top">
-                
-                <code>string</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The ARN of an SNS topic to notify
- {{% /md %}}
+    <dt class="property-required"
+            title="Required">position<span class="property-indicator"></span>
+        <span class="property-type">number</span>
+    </dt>
+    <dd>{{% md %}}The position of the action in the receipt rule
+{{% /md %}}</dd>
 
-            
-            </td>
-        </tr>
-    
-    </tbody>
-</table>
+    <dt class="property-required"
+            title="Required">topic<wbr>Arn<span class="property-indicator"></span>
+        <span class="property-type">string</span>
+    </dt>
+    <dd>{{% md %}}The ARN of an SNS topic to notify
+{{% /md %}}</dd>
+
+</dl>
+{{% /choosable %}}
 
 
-{{% /lang %}}
+{{% choosable language python %}}
+<dl class="resources-properties">
 
+    <dt class="property-required"
+            title="Required">position<span class="property-indicator"></span>
+        <span class="property-type">float</span>
+    </dt>
+    <dd>{{% md %}}The position of the action in the receipt rule
+{{% /md %}}</dd>
 
-{{% lang go %}}
+    <dt class="property-required"
+            title="Required">topic_<wbr>arn<span class="property-indicator"></span>
+        <span class="property-type">str</span>
+    </dt>
+    <dd>{{% md %}}The ARN of an SNS topic to notify
+{{% /md %}}</dd>
 
-
-<table class="ml-6">
-    <thead>
-        <tr>
-            <th>Argument</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-    
-        <tr>
-            <td class="align-top">Position</td>
-            <td class="align-top">
-                
-                <code>int</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The position of the action in the receipt rule
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Topic<wbr>Arn</td>
-            <td class="align-top">
-                
-                <code>string</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The ARN of an SNS topic to notify
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-    </tbody>
-</table>
-
-
-{{% /lang %}}
-
-
-{{% lang nodejs %}}
-
-
-<table class="ml-6">
-    <thead>
-        <tr>
-            <th>Argument</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-    
-        <tr>
-            <td class="align-top">position</td>
-            <td class="align-top">
-                
-                <code>number</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The position of the action in the receipt rule
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">topic<wbr>Arn</td>
-            <td class="align-top">
-                
-                <code>string</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The ARN of an SNS topic to notify
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-    </tbody>
-</table>
-
-
-{{% /lang %}}
-
-
-{{% lang python %}}
-
-
-<table class="ml-6">
-    <thead>
-        <tr>
-            <th>Argument</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-    
-        <tr>
-            <td class="align-top">position</td>
-            <td class="align-top">
-                
-                <code>float</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The position of the action in the receipt rule
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">topic_<wbr>arn</td>
-            <td class="align-top">
-                
-                <code>str</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The ARN of an SNS topic to notify
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-    </tbody>
-</table>
-
-
-{{% /lang %}}
+</dl>
+{{% /choosable %}}
 
 
 
@@ -4538,267 +2290,117 @@ The ARN of an SNS topic to notify
 
 
 
-{{< langchoose csharp nojavascript >}}
+
+{{% choosable language csharp %}}
+<dl class="resources-properties">
+
+    <dt class="property-required"
+            title="Required">Position<span class="property-indicator"></span>
+        <span class="property-type">int</span>
+    </dt>
+    <dd>{{% md %}}The position of the action in the receipt rule
+{{% /md %}}</dd>
+
+    <dt class="property-required"
+            title="Required">Scope<span class="property-indicator"></span>
+        <span class="property-type">string</span>
+    </dt>
+    <dd>{{% md %}}The scope to apply
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Topic<wbr>Arn<span class="property-indicator"></span>
+        <span class="property-type">string?</span>
+    </dt>
+    <dd>{{% md %}}The ARN of an SNS topic to notify
+{{% /md %}}</dd>
+
+</dl>
+{{% /choosable %}}
 
 
-{{% lang csharp %}}
+{{% choosable language go %}}
+<dl class="resources-properties">
+
+    <dt class="property-required"
+            title="Required">Position<span class="property-indicator"></span>
+        <span class="property-type">int</span>
+    </dt>
+    <dd>{{% md %}}The position of the action in the receipt rule
+{{% /md %}}</dd>
+
+    <dt class="property-required"
+            title="Required">Scope<span class="property-indicator"></span>
+        <span class="property-type">string</span>
+    </dt>
+    <dd>{{% md %}}The scope to apply
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Topic<wbr>Arn<span class="property-indicator"></span>
+        <span class="property-type">*string</span>
+    </dt>
+    <dd>{{% md %}}The ARN of an SNS topic to notify
+{{% /md %}}</dd>
+
+</dl>
+{{% /choosable %}}
 
 
-<table class="ml-6">
-    <thead>
-        <tr>
-            <th>Argument</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-    
-        <tr>
-            <td class="align-top">Position</td>
-            <td class="align-top">
-                
-                <code>int</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The position of the action in the receipt rule
- {{% /md %}}
+{{% choosable language nodejs %}}
+<dl class="resources-properties">
 
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Scope</td>
-            <td class="align-top">
-                
-                <code>string</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The scope to apply
- {{% /md %}}
+    <dt class="property-required"
+            title="Required">position<span class="property-indicator"></span>
+        <span class="property-type">number</span>
+    </dt>
+    <dd>{{% md %}}The position of the action in the receipt rule
+{{% /md %}}</dd>
 
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Topic<wbr>Arn</td>
-            <td class="align-top">
-                
-                <code>string?</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-The ARN of an SNS topic to notify
- {{% /md %}}
+    <dt class="property-required"
+            title="Required">scope<span class="property-indicator"></span>
+        <span class="property-type">string</span>
+    </dt>
+    <dd>{{% md %}}The scope to apply
+{{% /md %}}</dd>
 
-            
-            </td>
-        </tr>
-    
-    </tbody>
-</table>
+    <dt class="property-optional"
+            title="Optional">topic<wbr>Arn<span class="property-indicator"></span>
+        <span class="property-type">string?</span>
+    </dt>
+    <dd>{{% md %}}The ARN of an SNS topic to notify
+{{% /md %}}</dd>
+
+</dl>
+{{% /choosable %}}
 
 
-{{% /lang %}}
+{{% choosable language python %}}
+<dl class="resources-properties">
 
+    <dt class="property-required"
+            title="Required">position<span class="property-indicator"></span>
+        <span class="property-type">float</span>
+    </dt>
+    <dd>{{% md %}}The position of the action in the receipt rule
+{{% /md %}}</dd>
 
-{{% lang go %}}
+    <dt class="property-required"
+            title="Required">scope<span class="property-indicator"></span>
+        <span class="property-type">str</span>
+    </dt>
+    <dd>{{% md %}}The scope to apply
+{{% /md %}}</dd>
 
+    <dt class="property-optional"
+            title="Optional">topic_<wbr>arn<span class="property-indicator"></span>
+        <span class="property-type">str</span>
+    </dt>
+    <dd>{{% md %}}The ARN of an SNS topic to notify
+{{% /md %}}</dd>
 
-<table class="ml-6">
-    <thead>
-        <tr>
-            <th>Argument</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-    
-        <tr>
-            <td class="align-top">Position</td>
-            <td class="align-top">
-                
-                <code>int</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The position of the action in the receipt rule
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Scope</td>
-            <td class="align-top">
-                
-                <code>string</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The scope to apply
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Topic<wbr>Arn</td>
-            <td class="align-top">
-                
-                <code>*string</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-The ARN of an SNS topic to notify
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-    </tbody>
-</table>
-
-
-{{% /lang %}}
-
-
-{{% lang nodejs %}}
-
-
-<table class="ml-6">
-    <thead>
-        <tr>
-            <th>Argument</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-    
-        <tr>
-            <td class="align-top">position</td>
-            <td class="align-top">
-                
-                <code>number</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The position of the action in the receipt rule
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">scope</td>
-            <td class="align-top">
-                
-                <code>string</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The scope to apply
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">topic<wbr>Arn</td>
-            <td class="align-top">
-                
-                <code>string?</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-The ARN of an SNS topic to notify
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-    </tbody>
-</table>
-
-
-{{% /lang %}}
-
-
-{{% lang python %}}
-
-
-<table class="ml-6">
-    <thead>
-        <tr>
-            <th>Argument</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-    
-        <tr>
-            <td class="align-top">position</td>
-            <td class="align-top">
-                
-                <code>float</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The position of the action in the receipt rule
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">scope</td>
-            <td class="align-top">
-                
-                <code>str</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The scope to apply
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">topic_<wbr>arn</td>
-            <td class="align-top">
-                
-                <code>str</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-The ARN of an SNS topic to notify
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-    </tbody>
-</table>
-
-
-{{% /lang %}}
+</dl>
+{{% /choosable %}}
 
 
 
@@ -4819,267 +2421,117 @@ The ARN of an SNS topic to notify
 
 
 
-{{< langchoose csharp nojavascript >}}
+
+{{% choosable language csharp %}}
+<dl class="resources-properties">
+
+    <dt class="property-required"
+            title="Required">Organization<wbr>Arn<span class="property-indicator"></span>
+        <span class="property-type">string</span>
+    </dt>
+    <dd>{{% md %}}The ARN of the WorkMail organization
+{{% /md %}}</dd>
+
+    <dt class="property-required"
+            title="Required">Position<span class="property-indicator"></span>
+        <span class="property-type">int</span>
+    </dt>
+    <dd>{{% md %}}The position of the action in the receipt rule
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Topic<wbr>Arn<span class="property-indicator"></span>
+        <span class="property-type">string?</span>
+    </dt>
+    <dd>{{% md %}}The ARN of an SNS topic to notify
+{{% /md %}}</dd>
+
+</dl>
+{{% /choosable %}}
 
 
-{{% lang csharp %}}
+{{% choosable language go %}}
+<dl class="resources-properties">
+
+    <dt class="property-required"
+            title="Required">Organization<wbr>Arn<span class="property-indicator"></span>
+        <span class="property-type">string</span>
+    </dt>
+    <dd>{{% md %}}The ARN of the WorkMail organization
+{{% /md %}}</dd>
+
+    <dt class="property-required"
+            title="Required">Position<span class="property-indicator"></span>
+        <span class="property-type">int</span>
+    </dt>
+    <dd>{{% md %}}The position of the action in the receipt rule
+{{% /md %}}</dd>
+
+    <dt class="property-optional"
+            title="Optional">Topic<wbr>Arn<span class="property-indicator"></span>
+        <span class="property-type">*string</span>
+    </dt>
+    <dd>{{% md %}}The ARN of an SNS topic to notify
+{{% /md %}}</dd>
+
+</dl>
+{{% /choosable %}}
 
 
-<table class="ml-6">
-    <thead>
-        <tr>
-            <th>Argument</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-    
-        <tr>
-            <td class="align-top">Organization<wbr>Arn</td>
-            <td class="align-top">
-                
-                <code>string</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The ARN of the WorkMail organization
- {{% /md %}}
+{{% choosable language nodejs %}}
+<dl class="resources-properties">
 
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Position</td>
-            <td class="align-top">
-                
-                <code>int</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The position of the action in the receipt rule
- {{% /md %}}
+    <dt class="property-required"
+            title="Required">organization<wbr>Arn<span class="property-indicator"></span>
+        <span class="property-type">string</span>
+    </dt>
+    <dd>{{% md %}}The ARN of the WorkMail organization
+{{% /md %}}</dd>
 
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Topic<wbr>Arn</td>
-            <td class="align-top">
-                
-                <code>string?</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-The ARN of an SNS topic to notify
- {{% /md %}}
+    <dt class="property-required"
+            title="Required">position<span class="property-indicator"></span>
+        <span class="property-type">number</span>
+    </dt>
+    <dd>{{% md %}}The position of the action in the receipt rule
+{{% /md %}}</dd>
 
-            
-            </td>
-        </tr>
-    
-    </tbody>
-</table>
+    <dt class="property-optional"
+            title="Optional">topic<wbr>Arn<span class="property-indicator"></span>
+        <span class="property-type">string?</span>
+    </dt>
+    <dd>{{% md %}}The ARN of an SNS topic to notify
+{{% /md %}}</dd>
+
+</dl>
+{{% /choosable %}}
 
 
-{{% /lang %}}
+{{% choosable language python %}}
+<dl class="resources-properties">
 
+    <dt class="property-required"
+            title="Required">organization<wbr>Arn<span class="property-indicator"></span>
+        <span class="property-type">str</span>
+    </dt>
+    <dd>{{% md %}}The ARN of the WorkMail organization
+{{% /md %}}</dd>
 
-{{% lang go %}}
+    <dt class="property-required"
+            title="Required">position<span class="property-indicator"></span>
+        <span class="property-type">float</span>
+    </dt>
+    <dd>{{% md %}}The position of the action in the receipt rule
+{{% /md %}}</dd>
 
+    <dt class="property-optional"
+            title="Optional">topic_<wbr>arn<span class="property-indicator"></span>
+        <span class="property-type">str</span>
+    </dt>
+    <dd>{{% md %}}The ARN of an SNS topic to notify
+{{% /md %}}</dd>
 
-<table class="ml-6">
-    <thead>
-        <tr>
-            <th>Argument</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-    
-        <tr>
-            <td class="align-top">Organization<wbr>Arn</td>
-            <td class="align-top">
-                
-                <code>string</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The ARN of the WorkMail organization
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Position</td>
-            <td class="align-top">
-                
-                <code>int</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The position of the action in the receipt rule
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">Topic<wbr>Arn</td>
-            <td class="align-top">
-                
-                <code>*string</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-The ARN of an SNS topic to notify
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-    </tbody>
-</table>
-
-
-{{% /lang %}}
-
-
-{{% lang nodejs %}}
-
-
-<table class="ml-6">
-    <thead>
-        <tr>
-            <th>Argument</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-    
-        <tr>
-            <td class="align-top">organization<wbr>Arn</td>
-            <td class="align-top">
-                
-                <code>string</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The ARN of the WorkMail organization
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">position</td>
-            <td class="align-top">
-                
-                <code>number</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The position of the action in the receipt rule
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">topic<wbr>Arn</td>
-            <td class="align-top">
-                
-                <code>string?</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-The ARN of an SNS topic to notify
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-    </tbody>
-</table>
-
-
-{{% /lang %}}
-
-
-{{% lang python %}}
-
-
-<table class="ml-6">
-    <thead>
-        <tr>
-            <th>Argument</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-    
-        <tr>
-            <td class="align-top">organization<wbr>Arn</td>
-            <td class="align-top">
-                
-                <code>str</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The ARN of the WorkMail organization
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">position</td>
-            <td class="align-top">
-                
-                <code>float</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Required)
-The position of the action in the receipt rule
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-        <tr>
-            <td class="align-top">topic_<wbr>arn</td>
-            <td class="align-top">
-                
-                <code>str</code>
-            </td>
-            <td class="align-top">{{% md %}} 
- (Optional)
-The ARN of an SNS topic to notify
- {{% /md %}}
-
-            
-            </td>
-        </tr>
-    
-    </tbody>
-</table>
-
-
-{{% /lang %}}
+</dl>
+{{% /choosable %}}
 
 
 

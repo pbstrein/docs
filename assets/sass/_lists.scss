@@ -1,0 +1,75 @@
+dl {
+    @apply my-8 p-1 flex flex-col items-start items-stretch bg-gray-100 border rounded border-gray-300 text-sm text-gray-700;
+
+    @screen lg {
+        @apply flex-row flex-wrap;
+
+        dt {
+            @apply w-1/3;
+        }
+
+        dd {
+            @apply w-2/3;
+        }
+    }
+
+    dt {
+        @apply px-4 font-semibold text-gray-700 rounded-l;
+    }
+
+    dd {
+        @apply bg-white rounded-r;
+
+        p {
+            margin: 0;
+        }
+    }
+
+    dt, dd {
+        @apply py-4 px-5;
+
+        &:not(:first-of-type) {
+            @apply border-t border-t border-gray-200;
+        }
+    }
+
+    &.resources-properties, &.resources-ctor-args {
+
+        dt {
+            @apply text-sm;
+
+            &.property-optional {
+
+
+            }
+
+            &.property-required {
+
+                .property-indicator {
+                    @apply inline-block rounded-full bg-orange-400 p-1 ml-2 cursor-pointer;
+                }
+            }
+
+            span {
+                @apply block font-normal font-mono mt-2 text-xs;
+
+                a {
+                    @apply text-blue-600;
+                }
+            }
+        }
+
+        dd {
+            code {
+                @apply bg-white px-0;
+            }
+        }
+
+        span {
+
+            &:nth-child(2) {
+                // @apply font-mono;
+            }
+        }
+    }
+}

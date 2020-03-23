@@ -12,13 +12,30 @@ as higher-level APIs that make it easier to deliver cloud applications and
 infrastructure.
 
 These APIs are available as packages in your chosen language's package manager
----npm for TypeScript/JavaScript and PyPI for Python. There is a dedicated package for
+--- npm for TypeScript/JavaScript and PyPI for Python. There is a dedicated package for
 each cloud that includes access to its full capabilities. In addition, Pulumi
 offers many convenience packages that make common tasks easier, like setting
 up a network, creating a Kubernetes cluster, and building and publishing containers
 to private registries.
 
-### Choose Your Language
+### Resources by Cloud Provider
+
+This is a lil' description that reads nice and explains what the things below are and what
+they will do when you click them. It's maybe a couple of lines or so.
+
+<div class="md:flex items-center justify-center">
+    <a class="md:w-1/3 p-8 block rounded border border-gray-400" href="{{< relref "/docs/reference/pkg/aws" >}}">
+        <img class="h-10 mx-auto" src="/logos/tech/aws.svg" alt="AWS">
+    </a>
+    <a class="md:w-1/3 md:mx-4 p-8 block rounded border border-gray-400 opacity-50 cursor-default" href="#">
+        <img class="h-10 mx-auto" src="/logos/tech/azure.svg" alt="Azure">
+    </a>
+    <a class="md:w-1/3 p-8 block rounded border border-gray-400 opacity-50 cursor-default" href="#">
+        <img class="h-10 mx-auto" src="/logos/tech/gcp.svg" alt="Google Cloud">
+    </a>
+</div>
+
+### Language-Specific SDKs
 
 {{% chooser language "javascript,typescript,python,go" / %}}
 
