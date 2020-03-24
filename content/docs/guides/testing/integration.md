@@ -1,6 +1,6 @@
 ---
 title: Integration Testing
-meta_desc: TODO
+meta_desc: "Guide to integration testing of Pulumi programs with ephemeral environments."
 weight: 2
 
 menu:

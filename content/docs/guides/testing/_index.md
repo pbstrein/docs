@@ -1,6 +1,6 @@
 ---
 title: Testing
-meta_desc: TODO.
+meta_desc: "Guide to automated testing of Pulumi programs: unit testing, integration testing, Policy as Code."
 menu:
     userguides:
         identifier: testing
