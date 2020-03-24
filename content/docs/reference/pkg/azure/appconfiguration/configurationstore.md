@@ -515,7 +515,7 @@ The following output properties are available:
                 
                 <code><a href="#configurationstoreprimaryreadkey">List&lt;Configuration<wbr>Store<wbr>Primary<wbr>Read<wbr>Key&gt;</a></code>
             </td>
-            <td class="align-top">{{% md %}} An `access_key` block as defined below containing the primary read access key.
+            <td class="align-top">{{% md %}} A `primary_read_key` block as defined below containing the primary read access key.
  {{% /md %}}
 
             
@@ -528,7 +528,7 @@ The following output properties are available:
                 
                 <code><a href="#configurationstoreprimarywritekey">List&lt;Configuration<wbr>Store<wbr>Primary<wbr>Write<wbr>Key&gt;</a></code>
             </td>
-            <td class="align-top">{{% md %}} An `access_key` block as defined below containing the primary write access key.
+            <td class="align-top">{{% md %}} A `primary_write_key` block as defined below containing the primary write access key.
  {{% /md %}}
 
             
@@ -554,7 +554,7 @@ The following output properties are available:
                 
                 <code><a href="#configurationstoresecondaryreadkey">List&lt;Configuration<wbr>Store<wbr>Secondary<wbr>Read<wbr>Key&gt;</a></code>
             </td>
-            <td class="align-top">{{% md %}} An `access_key` block as defined below containing the secondary read access key.
+            <td class="align-top">{{% md %}} A `secondary_read_key` block as defined below containing the secondary read access key.
  {{% /md %}}
 
             
@@ -567,7 +567,7 @@ The following output properties are available:
                 
                 <code><a href="#configurationstoresecondarywritekey">List&lt;Configuration<wbr>Store<wbr>Secondary<wbr>Write<wbr>Key&gt;</a></code>
             </td>
-            <td class="align-top">{{% md %}} An `access_key` block as defined below containing the secondary write access key.
+            <td class="align-top">{{% md %}} A `secondary_write_key` block as defined below containing the secondary write access key.
  {{% /md %}}
 
             
@@ -665,7 +665,7 @@ The following output properties are available:
                 
                 <code><a href="#configurationstoreprimaryreadkey">[]Configuration<wbr>Store<wbr>Primary<wbr>Read<wbr>Key</a></code>
             </td>
-            <td class="align-top">{{% md %}} An `access_key` block as defined below containing the primary read access key.
+            <td class="align-top">{{% md %}} A `primary_read_key` block as defined below containing the primary read access key.
  {{% /md %}}
 
             
@@ -678,7 +678,7 @@ The following output properties are available:
                 
                 <code><a href="#configurationstoreprimarywritekey">[]Configuration<wbr>Store<wbr>Primary<wbr>Write<wbr>Key</a></code>
             </td>
-            <td class="align-top">{{% md %}} An `access_key` block as defined below containing the primary write access key.
+            <td class="align-top">{{% md %}} A `primary_write_key` block as defined below containing the primary write access key.
  {{% /md %}}
 
             
@@ -704,7 +704,7 @@ The following output properties are available:
                 
                 <code><a href="#configurationstoresecondaryreadkey">[]Configuration<wbr>Store<wbr>Secondary<wbr>Read<wbr>Key</a></code>
             </td>
-            <td class="align-top">{{% md %}} An `access_key` block as defined below containing the secondary read access key.
+            <td class="align-top">{{% md %}} A `secondary_read_key` block as defined below containing the secondary read access key.
  {{% /md %}}
 
             
@@ -717,7 +717,7 @@ The following output properties are available:
                 
                 <code><a href="#configurationstoresecondarywritekey">[]Configuration<wbr>Store<wbr>Secondary<wbr>Write<wbr>Key</a></code>
             </td>
-            <td class="align-top">{{% md %}} An `access_key` block as defined below containing the secondary write access key.
+            <td class="align-top">{{% md %}} A `secondary_write_key` block as defined below containing the secondary write access key.
  {{% /md %}}
 
             
@@ -815,7 +815,7 @@ The following output properties are available:
                 
                 <code><a href="#configurationstoreprimaryreadkey">Configuration<wbr>Store<wbr>Primary<wbr>Read<wbr>Key[]</a></code>
             </td>
-            <td class="align-top">{{% md %}} An `access_key` block as defined below containing the primary read access key.
+            <td class="align-top">{{% md %}} A `primary_read_key` block as defined below containing the primary read access key.
  {{% /md %}}
 
             
@@ -828,7 +828,7 @@ The following output properties are available:
                 
                 <code><a href="#configurationstoreprimarywritekey">Configuration<wbr>Store<wbr>Primary<wbr>Write<wbr>Key[]</a></code>
             </td>
-            <td class="align-top">{{% md %}} An `access_key` block as defined below containing the primary write access key.
+            <td class="align-top">{{% md %}} A `primary_write_key` block as defined below containing the primary write access key.
  {{% /md %}}
 
             
@@ -854,7 +854,7 @@ The following output properties are available:
                 
                 <code><a href="#configurationstoresecondaryreadkey">Configuration<wbr>Store<wbr>Secondary<wbr>Read<wbr>Key[]</a></code>
             </td>
-            <td class="align-top">{{% md %}} An `access_key` block as defined below containing the secondary read access key.
+            <td class="align-top">{{% md %}} A `secondary_read_key` block as defined below containing the secondary read access key.
  {{% /md %}}
 
             
@@ -867,7 +867,7 @@ The following output properties are available:
                 
                 <code><a href="#configurationstoresecondarywritekey">Configuration<wbr>Store<wbr>Secondary<wbr>Write<wbr>Key[]</a></code>
             </td>
-            <td class="align-top">{{% md %}} An `access_key` block as defined below containing the secondary write access key.
+            <td class="align-top">{{% md %}} A `secondary_write_key` block as defined below containing the secondary write access key.
  {{% /md %}}
 
             
@@ -965,7 +965,7 @@ The following output properties are available:
                 
                 <code><a href="#configurationstoreprimaryreadkey">List[Configuration<wbr>Store<wbr>Primary<wbr>Read<wbr>Key]</a></code>
             </td>
-            <td class="align-top">{{% md %}} An `access_key` block as defined below containing the primary read access key.
+            <td class="align-top">{{% md %}} A `primary_read_key` block as defined below containing the primary read access key.
  {{% /md %}}
 
             
@@ -978,7 +978,7 @@ The following output properties are available:
                 
                 <code><a href="#configurationstoreprimarywritekey">List[Configuration<wbr>Store<wbr>Primary<wbr>Write<wbr>Key]</a></code>
             </td>
-            <td class="align-top">{{% md %}} An `access_key` block as defined below containing the primary write access key.
+            <td class="align-top">{{% md %}} A `primary_write_key` block as defined below containing the primary write access key.
  {{% /md %}}
 
             
@@ -1004,7 +1004,7 @@ The following output properties are available:
                 
                 <code><a href="#configurationstoresecondaryreadkey">List[Configuration<wbr>Store<wbr>Secondary<wbr>Read<wbr>Key]</a></code>
             </td>
-            <td class="align-top">{{% md %}} An `access_key` block as defined below containing the secondary read access key.
+            <td class="align-top">{{% md %}} A `secondary_read_key` block as defined below containing the secondary read access key.
  {{% /md %}}
 
             
@@ -1017,7 +1017,7 @@ The following output properties are available:
                 
                 <code><a href="#configurationstoresecondarywritekey">List[Configuration<wbr>Store<wbr>Secondary<wbr>Write<wbr>Key]</a></code>
             </td>
-            <td class="align-top">{{% md %}} An `access_key` block as defined below containing the secondary write access key.
+            <td class="align-top">{{% md %}} A `secondary_write_key` block as defined below containing the secondary write access key.
  {{% /md %}}
 
             
@@ -1182,7 +1182,7 @@ Specifies the name of the App Configuration. Changing this forces a new resource
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-An `access_key` block as defined below containing the primary read access key.
+A `primary_read_key` block as defined below containing the primary read access key.
  {{% /md %}}
 
             
@@ -1197,7 +1197,7 @@ An `access_key` block as defined below containing the primary read access key.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-An `access_key` block as defined below containing the primary write access key.
+A `primary_write_key` block as defined below containing the primary write access key.
  {{% /md %}}
 
             
@@ -1227,7 +1227,7 @@ The name of the resource group in which to create the App Configuration. Changin
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-An `access_key` block as defined below containing the secondary read access key.
+A `secondary_read_key` block as defined below containing the secondary read access key.
  {{% /md %}}
 
             
@@ -1242,7 +1242,7 @@ An `access_key` block as defined below containing the secondary read access key.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-An `access_key` block as defined below containing the secondary write access key.
+A `secondary_write_key` block as defined below containing the secondary write access key.
  {{% /md %}}
 
             
@@ -1352,7 +1352,7 @@ Specifies the name of the App Configuration. Changing this forces a new resource
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-An `access_key` block as defined below containing the primary read access key.
+A `primary_read_key` block as defined below containing the primary read access key.
  {{% /md %}}
 
             
@@ -1367,7 +1367,7 @@ An `access_key` block as defined below containing the primary read access key.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-An `access_key` block as defined below containing the primary write access key.
+A `primary_write_key` block as defined below containing the primary write access key.
  {{% /md %}}
 
             
@@ -1397,7 +1397,7 @@ The name of the resource group in which to create the App Configuration. Changin
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-An `access_key` block as defined below containing the secondary read access key.
+A `secondary_read_key` block as defined below containing the secondary read access key.
  {{% /md %}}
 
             
@@ -1412,7 +1412,7 @@ An `access_key` block as defined below containing the secondary read access key.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-An `access_key` block as defined below containing the secondary write access key.
+A `secondary_write_key` block as defined below containing the secondary write access key.
  {{% /md %}}
 
             
@@ -1522,7 +1522,7 @@ Specifies the name of the App Configuration. Changing this forces a new resource
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-An `access_key` block as defined below containing the primary read access key.
+A `primary_read_key` block as defined below containing the primary read access key.
  {{% /md %}}
 
             
@@ -1537,7 +1537,7 @@ An `access_key` block as defined below containing the primary read access key.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-An `access_key` block as defined below containing the primary write access key.
+A `primary_write_key` block as defined below containing the primary write access key.
  {{% /md %}}
 
             
@@ -1567,7 +1567,7 @@ The name of the resource group in which to create the App Configuration. Changin
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-An `access_key` block as defined below containing the secondary read access key.
+A `secondary_read_key` block as defined below containing the secondary read access key.
  {{% /md %}}
 
             
@@ -1582,7 +1582,7 @@ An `access_key` block as defined below containing the secondary read access key.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-An `access_key` block as defined below containing the secondary write access key.
+A `secondary_write_key` block as defined below containing the secondary write access key.
  {{% /md %}}
 
             
@@ -1692,7 +1692,7 @@ Specifies the name of the App Configuration. Changing this forces a new resource
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-An `access_key` block as defined below containing the primary read access key.
+A `primary_read_key` block as defined below containing the primary read access key.
  {{% /md %}}
 
             
@@ -1707,7 +1707,7 @@ An `access_key` block as defined below containing the primary read access key.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-An `access_key` block as defined below containing the primary write access key.
+A `primary_write_key` block as defined below containing the primary write access key.
  {{% /md %}}
 
             
@@ -1737,7 +1737,7 @@ The name of the resource group in which to create the App Configuration. Changin
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-An `access_key` block as defined below containing the secondary read access key.
+A `secondary_read_key` block as defined below containing the secondary read access key.
  {{% /md %}}
 
             
@@ -1752,7 +1752,7 @@ An `access_key` block as defined below containing the secondary read access key.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-An `access_key` block as defined below containing the secondary write access key.
+A `secondary_write_key` block as defined below containing the secondary write access key.
  {{% /md %}}
 
             
@@ -1845,7 +1845,7 @@ A mapping of tags to assign to the resource.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The connection string including the endpoint, id and secret.
+The Connection String for this Access Key - comprising of the Endpoint, ID and Secret.
  {{% /md %}}
 
             
@@ -1860,7 +1860,7 @@ The connection string including the endpoint, id and secret.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The ID of the access key.
+The ID of the Access Key.
  {{% /md %}}
 
             
@@ -1875,7 +1875,7 @@ The ID of the access key.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The secret of the access key.
+The Secret of the Access Key.
  {{% /md %}}
 
             
@@ -1910,7 +1910,7 @@ The secret of the access key.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The connection string including the endpoint, id and secret.
+The Connection String for this Access Key - comprising of the Endpoint, ID and Secret.
  {{% /md %}}
 
             
@@ -1925,7 +1925,7 @@ The connection string including the endpoint, id and secret.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The ID of the access key.
+The ID of the Access Key.
  {{% /md %}}
 
             
@@ -1940,7 +1940,7 @@ The ID of the access key.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The secret of the access key.
+The Secret of the Access Key.
  {{% /md %}}
 
             
@@ -1975,7 +1975,7 @@ The secret of the access key.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The connection string including the endpoint, id and secret.
+The Connection String for this Access Key - comprising of the Endpoint, ID and Secret.
  {{% /md %}}
 
             
@@ -1990,7 +1990,7 @@ The connection string including the endpoint, id and secret.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The ID of the access key.
+The ID of the Access Key.
  {{% /md %}}
 
             
@@ -2005,7 +2005,7 @@ The ID of the access key.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The secret of the access key.
+The Secret of the Access Key.
  {{% /md %}}
 
             
@@ -2040,7 +2040,7 @@ The secret of the access key.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The connection string including the endpoint, id and secret.
+The Connection String for this Access Key - comprising of the Endpoint, ID and Secret.
  {{% /md %}}
 
             
@@ -2055,7 +2055,7 @@ The connection string including the endpoint, id and secret.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The ID of the access key.
+The ID of the Access Key.
  {{% /md %}}
 
             
@@ -2070,7 +2070,7 @@ The ID of the access key.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The secret of the access key.
+The Secret of the Access Key.
  {{% /md %}}
 
             
@@ -2126,7 +2126,7 @@ The secret of the access key.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The connection string including the endpoint, id and secret.
+The Connection String for this Access Key - comprising of the Endpoint, ID and Secret.
  {{% /md %}}
 
             
@@ -2141,7 +2141,7 @@ The connection string including the endpoint, id and secret.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The ID of the access key.
+The ID of the Access Key.
  {{% /md %}}
 
             
@@ -2156,7 +2156,7 @@ The ID of the access key.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The secret of the access key.
+The Secret of the Access Key.
  {{% /md %}}
 
             
@@ -2191,7 +2191,7 @@ The secret of the access key.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The connection string including the endpoint, id and secret.
+The Connection String for this Access Key - comprising of the Endpoint, ID and Secret.
  {{% /md %}}
 
             
@@ -2206,7 +2206,7 @@ The connection string including the endpoint, id and secret.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The ID of the access key.
+The ID of the Access Key.
  {{% /md %}}
 
             
@@ -2221,7 +2221,7 @@ The ID of the access key.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The secret of the access key.
+The Secret of the Access Key.
  {{% /md %}}
 
             
@@ -2256,7 +2256,7 @@ The secret of the access key.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The connection string including the endpoint, id and secret.
+The Connection String for this Access Key - comprising of the Endpoint, ID and Secret.
  {{% /md %}}
 
             
@@ -2271,7 +2271,7 @@ The connection string including the endpoint, id and secret.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The ID of the access key.
+The ID of the Access Key.
  {{% /md %}}
 
             
@@ -2286,7 +2286,7 @@ The ID of the access key.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The secret of the access key.
+The Secret of the Access Key.
  {{% /md %}}
 
             
@@ -2321,7 +2321,7 @@ The secret of the access key.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The connection string including the endpoint, id and secret.
+The Connection String for this Access Key - comprising of the Endpoint, ID and Secret.
  {{% /md %}}
 
             
@@ -2336,7 +2336,7 @@ The connection string including the endpoint, id and secret.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The ID of the access key.
+The ID of the Access Key.
  {{% /md %}}
 
             
@@ -2351,7 +2351,7 @@ The ID of the access key.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The secret of the access key.
+The Secret of the Access Key.
  {{% /md %}}
 
             
@@ -2407,7 +2407,7 @@ The secret of the access key.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The connection string including the endpoint, id and secret.
+The Connection String for this Access Key - comprising of the Endpoint, ID and Secret.
  {{% /md %}}
 
             
@@ -2422,7 +2422,7 @@ The connection string including the endpoint, id and secret.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The ID of the access key.
+The ID of the Access Key.
  {{% /md %}}
 
             
@@ -2437,7 +2437,7 @@ The ID of the access key.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The secret of the access key.
+The Secret of the Access Key.
  {{% /md %}}
 
             
@@ -2472,7 +2472,7 @@ The secret of the access key.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The connection string including the endpoint, id and secret.
+The Connection String for this Access Key - comprising of the Endpoint, ID and Secret.
  {{% /md %}}
 
             
@@ -2487,7 +2487,7 @@ The connection string including the endpoint, id and secret.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The ID of the access key.
+The ID of the Access Key.
  {{% /md %}}
 
             
@@ -2502,7 +2502,7 @@ The ID of the access key.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The secret of the access key.
+The Secret of the Access Key.
  {{% /md %}}
 
             
@@ -2537,7 +2537,7 @@ The secret of the access key.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The connection string including the endpoint, id and secret.
+The Connection String for this Access Key - comprising of the Endpoint, ID and Secret.
  {{% /md %}}
 
             
@@ -2552,7 +2552,7 @@ The connection string including the endpoint, id and secret.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The ID of the access key.
+The ID of the Access Key.
  {{% /md %}}
 
             
@@ -2567,7 +2567,7 @@ The ID of the access key.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The secret of the access key.
+The Secret of the Access Key.
  {{% /md %}}
 
             
@@ -2602,7 +2602,7 @@ The secret of the access key.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The connection string including the endpoint, id and secret.
+The Connection String for this Access Key - comprising of the Endpoint, ID and Secret.
  {{% /md %}}
 
             
@@ -2617,7 +2617,7 @@ The connection string including the endpoint, id and secret.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The ID of the access key.
+The ID of the Access Key.
  {{% /md %}}
 
             
@@ -2632,7 +2632,7 @@ The ID of the access key.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The secret of the access key.
+The Secret of the Access Key.
  {{% /md %}}
 
             
@@ -2688,7 +2688,7 @@ The secret of the access key.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The connection string including the endpoint, id and secret.
+The Connection String for this Access Key - comprising of the Endpoint, ID and Secret.
  {{% /md %}}
 
             
@@ -2703,7 +2703,7 @@ The connection string including the endpoint, id and secret.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The ID of the access key.
+The ID of the Access Key.
  {{% /md %}}
 
             
@@ -2718,7 +2718,7 @@ The ID of the access key.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The secret of the access key.
+The Secret of the Access Key.
  {{% /md %}}
 
             
@@ -2753,7 +2753,7 @@ The secret of the access key.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The connection string including the endpoint, id and secret.
+The Connection String for this Access Key - comprising of the Endpoint, ID and Secret.
  {{% /md %}}
 
             
@@ -2768,7 +2768,7 @@ The connection string including the endpoint, id and secret.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The ID of the access key.
+The ID of the Access Key.
  {{% /md %}}
 
             
@@ -2783,7 +2783,7 @@ The ID of the access key.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The secret of the access key.
+The Secret of the Access Key.
  {{% /md %}}
 
             
@@ -2818,7 +2818,7 @@ The secret of the access key.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The connection string including the endpoint, id and secret.
+The Connection String for this Access Key - comprising of the Endpoint, ID and Secret.
  {{% /md %}}
 
             
@@ -2833,7 +2833,7 @@ The connection string including the endpoint, id and secret.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The ID of the access key.
+The ID of the Access Key.
  {{% /md %}}
 
             
@@ -2848,7 +2848,7 @@ The ID of the access key.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The secret of the access key.
+The Secret of the Access Key.
  {{% /md %}}
 
             
@@ -2883,7 +2883,7 @@ The secret of the access key.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The connection string including the endpoint, id and secret.
+The Connection String for this Access Key - comprising of the Endpoint, ID and Secret.
  {{% /md %}}
 
             
@@ -2898,7 +2898,7 @@ The connection string including the endpoint, id and secret.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The ID of the access key.
+The ID of the Access Key.
  {{% /md %}}
 
             
@@ -2913,7 +2913,7 @@ The ID of the access key.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The secret of the access key.
+The Secret of the Access Key.
  {{% /md %}}
 
             

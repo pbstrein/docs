@@ -82,6 +82,7 @@ The `Cache-Control` response header that is sent when this SAS token is used.
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+The connection string for the storage account to which this SAS applies. Typically directly from the `primary_connection_string` attribute of an `azure.storage.Account` resource.
  {{% /md %}}
 
             
@@ -281,6 +282,7 @@ The `Cache-Control` response header that is sent when this SAS token is used.
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+The connection string for the storage account to which this SAS applies. Typically directly from the `primary_connection_string` attribute of an `azure.storage.Account` resource.
  {{% /md %}}
 
             
@@ -480,6 +482,7 @@ The `Cache-Control` response header that is sent when this SAS token is used.
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+The connection string for the storage account to which this SAS applies. Typically directly from the `primary_connection_string` attribute of an `azure.storage.Account` resource.
  {{% /md %}}
 
             
@@ -679,6 +682,7 @@ The `Cache-Control` response header that is sent when this SAS token is used.
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+The connection string for the storage account to which this SAS applies. Typically directly from the `primary_connection_string` attribute of an `azure.storage.Account` resource.
  {{% /md %}}
 
             

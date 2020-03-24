@@ -14,6 +14,7 @@ block_external_search_index: true
 <ul class="api">
     <li><a href="database"><span class="symbol resource"></span>Database</a></li>
     <li><a href="databaseinstance"><span class="symbol resource"></span>DatabaseInstance</a></li>
+    <li><a href="sourcerepresentationinstance"><span class="symbol resource"></span>SourceRepresentationInstance</a></li>
     <li><a href="sslcert"><span class="symbol resource"></span>SslCert</a></li>
     <li><a href="user"><span class="symbol resource"></span>User</a></li>
 </ul>

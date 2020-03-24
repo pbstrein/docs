@@ -7,6 +7,29 @@ block_external_search_index: true
 table td p { margin-top: 0; margin-bottom: 0; }
 </style>
 
+Links an Automation Runbook and Schedule.
+
+## Example Usage
+
+This is an example of just the Job Schedule.
+
+```typescript
+import * as pulumi from "@pulumi/pulumi";
+import * as azure from "@pulumi/azure";
+
+const example = new azure.automation.JobSchedule("example", {
+    automationAccountName: "tf-automation-account",
+    parameters: {
+        resourcegroup: "tf-rgr-vm",
+        vmname: "TF-VM-01",
+    },
+    resourceGroupName: "tf-rgr-automation",
+    runbookName: "Get-VirtualMachine",
+    scheduleName: "hour",
+});
+```
+
+> This content is derived from https://github.com/terraform-providers/terraform-provider-azurerm/blob/master/website/docs/r/automation_job_schedule.html.markdown.
 
 
 

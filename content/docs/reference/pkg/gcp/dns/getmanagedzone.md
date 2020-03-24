@@ -295,7 +295,7 @@ The following output properties are available:
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}} The fully qualified DNS name of this zone, e.g. `example.com.`.
+            <td class="align-top">{{% md %}} The fully qualified DNS name of this zone, e.g. `example.io.`.
  {{% /md %}}
 
             
@@ -407,7 +407,7 @@ while private zones are visible only to Virtual Private Cloud resources.
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}} The fully qualified DNS name of this zone, e.g. `example.com.`.
+            <td class="align-top">{{% md %}} The fully qualified DNS name of this zone, e.g. `example.io.`.
  {{% /md %}}
 
             
@@ -519,7 +519,7 @@ while private zones are visible only to Virtual Private Cloud resources.
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}} The fully qualified DNS name of this zone, e.g. `example.com.`.
+            <td class="align-top">{{% md %}} The fully qualified DNS name of this zone, e.g. `example.io.`.
  {{% /md %}}
 
             
@@ -631,7 +631,7 @@ while private zones are visible only to Virtual Private Cloud resources.
                 
                 <code>str</code>
             </td>
-            <td class="align-top">{{% md %}} The fully qualified DNS name of this zone, e.g. `example.com.`.
+            <td class="align-top">{{% md %}} The fully qualified DNS name of this zone, e.g. `example.io.`.
  {{% /md %}}
 
             

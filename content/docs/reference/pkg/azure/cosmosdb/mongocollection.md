@@ -173,6 +173,7 @@ The name of the key to partition on for sharding. There must not be any other un
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The throughput of the MongoDB collection (RU/s). Must be set in increments of `100`. The minimum value is `400`. This must be set upon database creation otherwise it cannot be updated without a manual resource destroy-apply.
  {{% /md %}}
 
             
@@ -296,6 +297,7 @@ The name of the key to partition on for sharding. There must not be any other un
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The throughput of the MongoDB collection (RU/s). Must be set in increments of `100`. The minimum value is `400`. This must be set upon database creation otherwise it cannot be updated without a manual resource destroy-apply.
  {{% /md %}}
 
             
@@ -419,6 +421,7 @@ The name of the key to partition on for sharding. There must not be any other un
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The throughput of the MongoDB collection (RU/s). Must be set in increments of `100`. The minimum value is `400`. This must be set upon database creation otherwise it cannot be updated without a manual resource destroy-apply.
  {{% /md %}}
 
             
@@ -542,6 +545,7 @@ The name of the key to partition on for sharding. There must not be any other un
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The throughput of the MongoDB collection (RU/s). Must be set in increments of `100`. The minimum value is `400`. This must be set upon database creation otherwise it cannot be updated without a manual resource destroy-apply.
  {{% /md %}}
 
             
@@ -665,7 +669,8 @@ The following output properties are available:
                 
                 <code>int</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} The throughput of the MongoDB collection (RU/s). Must be set in increments of `100`. The minimum value is `400`. This must be set upon database creation otherwise it cannot be updated without a manual resource destroy-apply.
+ {{% /md %}}
 
             
             </td>
@@ -774,7 +779,8 @@ The following output properties are available:
                 
                 <code>int</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} The throughput of the MongoDB collection (RU/s). Must be set in increments of `100`. The minimum value is `400`. This must be set upon database creation otherwise it cannot be updated without a manual resource destroy-apply.
+ {{% /md %}}
 
             
             </td>
@@ -883,7 +889,8 @@ The following output properties are available:
                 
                 <code>number</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} The throughput of the MongoDB collection (RU/s). Must be set in increments of `100`. The minimum value is `400`. This must be set upon database creation otherwise it cannot be updated without a manual resource destroy-apply.
+ {{% /md %}}
 
             
             </td>
@@ -992,7 +999,8 @@ The following output properties are available:
                 
                 <code>float</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} The throughput of the MongoDB collection (RU/s). Must be set in increments of `100`. The minimum value is `400`. This must be set upon database creation otherwise it cannot be updated without a manual resource destroy-apply.
+ {{% /md %}}
 
             
             </td>
@@ -1174,6 +1182,7 @@ The name of the key to partition on for sharding. There must not be any other un
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The throughput of the MongoDB collection (RU/s). Must be set in increments of `100`. The minimum value is `400`. This must be set upon database creation otherwise it cannot be updated without a manual resource destroy-apply.
  {{% /md %}}
 
             
@@ -1297,6 +1306,7 @@ The name of the key to partition on for sharding. There must not be any other un
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The throughput of the MongoDB collection (RU/s). Must be set in increments of `100`. The minimum value is `400`. This must be set upon database creation otherwise it cannot be updated without a manual resource destroy-apply.
  {{% /md %}}
 
             
@@ -1420,6 +1430,7 @@ The name of the key to partition on for sharding. There must not be any other un
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The throughput of the MongoDB collection (RU/s). Must be set in increments of `100`. The minimum value is `400`. This must be set upon database creation otherwise it cannot be updated without a manual resource destroy-apply.
  {{% /md %}}
 
             
@@ -1543,6 +1554,7 @@ The name of the key to partition on for sharding. There must not be any other un
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The throughput of the MongoDB collection (RU/s). Must be set in increments of `100`. The minimum value is `400`. This must be set upon database creation otherwise it cannot be updated without a manual resource destroy-apply.
  {{% /md %}}
 
             

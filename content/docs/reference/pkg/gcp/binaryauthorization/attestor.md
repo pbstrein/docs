@@ -7,6 +7,16 @@ block_external_search_index: true
 table td p { margin-top: 0; margin-bottom: 0; }
 </style>
 
+An attestor that attests to container image artifacts.
+
+
+To get more information about Attestor, see:
+
+* [API documentation](https://cloud.google.com/binary-authorization/docs/reference/rest/)
+* How-to Guides
+    * [Official Documentation](https://cloud.google.com/binary-authorization/)
+
+> This content is derived from https://github.com/terraform-providers/terraform-provider-google/blob/master/website/docs/r/binary_authorization_attestor.html.markdown.
 
 
 

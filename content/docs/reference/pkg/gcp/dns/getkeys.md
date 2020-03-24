@@ -7,6 +7,11 @@ block_external_search_index: true
 table td p { margin-top: 0; margin-bottom: 0; }
 </style>
 
+Get the DNSKEY and DS records of DNSSEC-signed managed zones. For more information see the
+[official documentation](https://cloud.google.com/dns/docs/dnskeys/)
+and [API](https://cloud.google.com/dns/docs/reference/v1/dnsKeys).
+
+> This content is derived from https://github.com/terraform-providers/terraform-provider-google/blob/master/website/docs/d/datasource_dns_keys.html.markdown.
 
 
 
@@ -62,6 +67,7 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+The name or id of the Cloud DNS managed zone.
  {{% /md %}}
 
             
@@ -76,6 +82,7 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The ID of the project in which the resource belongs. If `project` is not provided, the provider project is used.
  {{% /md %}}
 
             
@@ -110,6 +117,7 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+The name or id of the Cloud DNS managed zone.
  {{% /md %}}
 
             
@@ -124,6 +132,7 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The ID of the project in which the resource belongs. If `project` is not provided, the provider project is used.
  {{% /md %}}
 
             
@@ -158,6 +167,7 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+The name or id of the Cloud DNS managed zone.
  {{% /md %}}
 
             
@@ -172,6 +182,7 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The ID of the project in which the resource belongs. If `project` is not provided, the provider project is used.
  {{% /md %}}
 
             
@@ -206,6 +217,7 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+The name or id of the Cloud DNS managed zone.
  {{% /md %}}
 
             
@@ -220,6 +232,7 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The ID of the project in which the resource belongs. If `project` is not provided, the provider project is used.
  {{% /md %}}
 
             
@@ -280,7 +293,8 @@ The following output properties are available:
                 
                 <code><a href="#getkeyskeysigningkey">List&lt;Get<wbr>Keys<wbr>Key<wbr>Signing<wbr>Key&gt;</a></code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} A list of Key-signing key (KSK) records. Structure is documented below. Additionally, the DS record is provided:
+ {{% /md %}}
 
             
             </td>
@@ -316,7 +330,8 @@ The following output properties are available:
                 
                 <code><a href="#getkeyszonesigningkey">List&lt;Get<wbr>Keys<wbr>Zone<wbr>Signing<wbr>Key&gt;</a></code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} A list of Zone-signing key (ZSK) records. Structure is documented below.
+ {{% /md %}}
 
             
             </td>
@@ -361,7 +376,8 @@ The following output properties are available:
                 
                 <code><a href="#getkeyskeysigningkey">[]Get<wbr>Keys<wbr>Key<wbr>Signing<wbr>Key</a></code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} A list of Key-signing key (KSK) records. Structure is documented below. Additionally, the DS record is provided:
+ {{% /md %}}
 
             
             </td>
@@ -397,7 +413,8 @@ The following output properties are available:
                 
                 <code><a href="#getkeyszonesigningkey">[]Get<wbr>Keys<wbr>Zone<wbr>Signing<wbr>Key</a></code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} A list of Zone-signing key (ZSK) records. Structure is documented below.
+ {{% /md %}}
 
             
             </td>
@@ -442,7 +459,8 @@ The following output properties are available:
                 
                 <code><a href="#getkeyskeysigningkey">Get<wbr>Keys<wbr>Key<wbr>Signing<wbr>Key[]</a></code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} A list of Key-signing key (KSK) records. Structure is documented below. Additionally, the DS record is provided:
+ {{% /md %}}
 
             
             </td>
@@ -478,7 +496,8 @@ The following output properties are available:
                 
                 <code><a href="#getkeyszonesigningkey">Get<wbr>Keys<wbr>Zone<wbr>Signing<wbr>Key[]</a></code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} A list of Zone-signing key (ZSK) records. Structure is documented below.
+ {{% /md %}}
 
             
             </td>
@@ -523,7 +542,8 @@ The following output properties are available:
                 
                 <code><a href="#getkeyskeysigningkey">List[Get<wbr>Keys<wbr>Key<wbr>Signing<wbr>Key]</a></code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} A list of Key-signing key (KSK) records. Structure is documented below. Additionally, the DS record is provided:
+ {{% /md %}}
 
             
             </td>
@@ -559,7 +579,8 @@ The following output properties are available:
                 
                 <code><a href="#getkeyszonesigningkey">List[Get<wbr>Keys<wbr>Zone<wbr>Signing<wbr>Key]</a></code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} A list of Zone-signing key (ZSK) records. Structure is documented below.
+ {{% /md %}}
 
             
             </td>
@@ -619,6 +640,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+String mnemonic specifying the DNSSEC algorithm of this key. Immutable after creation time. Possible values are `ecdsap256sha256`, `ecdsap384sha384`, `rsasha1`, `rsasha256`, and `rsasha512`.
  {{% /md %}}
 
             
@@ -633,6 +655,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+The time that this resource was created in the control plane. This is in RFC3339 text format.
  {{% /md %}}
 
             
@@ -647,6 +670,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+A mutable string of at most 1024 characters associated with this resource for the user&#39;s convenience.
  {{% /md %}}
 
             
@@ -661,6 +685,9 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+A list of cryptographic hashes of the DNSKEY resource record associated with this DnsKey. These digests are needed to construct a DS record that points at this DNS key. Each contains:
+- `digest` - The base-16 encoded bytes of this digest. Suitable for use in a DS resource record.
+- `type` - Specifies the algorithm used to calculate this digest. Possible values are `sha1`, `sha256` and `sha384`
  {{% /md %}}
 
             
@@ -675,6 +702,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+The DS record based on the KSK record. This is used when [delegating](https://cloud.google.com/dns/docs/dnssec-advanced#subdelegation) DNSSEC-signed subdomains.
  {{% /md %}}
 
             
@@ -689,6 +717,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+Unique identifier for the resource; defined by the server.
  {{% /md %}}
 
             
@@ -703,6 +732,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+Active keys will be used to sign subsequent changes to the ManagedZone. Inactive keys will still be present as DNSKEY Resource Records for the use of resolvers validating existing signatures.
  {{% /md %}}
 
             
@@ -717,6 +747,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+Length of the key in bits. Specified at creation time then immutable.
  {{% /md %}}
 
             
@@ -731,6 +762,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+The key tag is a non-cryptographic hash of the a DNSKEY resource record associated with this DnsKey. The key tag can be used to identify a DNSKEY more quickly (but it is not a unique identifier). In particular, the key tag is used in a parent zone&#39;s DS record to point at the DNSKEY in this child ManagedZone. The key tag is a number in the range [0, 65535] and the algorithm to calculate it is specified in RFC4034 Appendix B.
  {{% /md %}}
 
             
@@ -745,6 +777,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+Base64 encoded public half of this key.
  {{% /md %}}
 
             
@@ -779,6 +812,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+String mnemonic specifying the DNSSEC algorithm of this key. Immutable after creation time. Possible values are `ecdsap256sha256`, `ecdsap384sha384`, `rsasha1`, `rsasha256`, and `rsasha512`.
  {{% /md %}}
 
             
@@ -793,6 +827,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+The time that this resource was created in the control plane. This is in RFC3339 text format.
  {{% /md %}}
 
             
@@ -807,6 +842,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+A mutable string of at most 1024 characters associated with this resource for the user&#39;s convenience.
  {{% /md %}}
 
             
@@ -821,6 +857,9 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+A list of cryptographic hashes of the DNSKEY resource record associated with this DnsKey. These digests are needed to construct a DS record that points at this DNS key. Each contains:
+- `digest` - The base-16 encoded bytes of this digest. Suitable for use in a DS resource record.
+- `type` - Specifies the algorithm used to calculate this digest. Possible values are `sha1`, `sha256` and `sha384`
  {{% /md %}}
 
             
@@ -835,6 +874,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+The DS record based on the KSK record. This is used when [delegating](https://cloud.google.com/dns/docs/dnssec-advanced#subdelegation) DNSSEC-signed subdomains.
  {{% /md %}}
 
             
@@ -849,6 +889,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+Unique identifier for the resource; defined by the server.
  {{% /md %}}
 
             
@@ -863,6 +904,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+Active keys will be used to sign subsequent changes to the ManagedZone. Inactive keys will still be present as DNSKEY Resource Records for the use of resolvers validating existing signatures.
  {{% /md %}}
 
             
@@ -877,6 +919,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+Length of the key in bits. Specified at creation time then immutable.
  {{% /md %}}
 
             
@@ -891,6 +934,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+The key tag is a non-cryptographic hash of the a DNSKEY resource record associated with this DnsKey. The key tag can be used to identify a DNSKEY more quickly (but it is not a unique identifier). In particular, the key tag is used in a parent zone&#39;s DS record to point at the DNSKEY in this child ManagedZone. The key tag is a number in the range [0, 65535] and the algorithm to calculate it is specified in RFC4034 Appendix B.
  {{% /md %}}
 
             
@@ -905,6 +949,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+Base64 encoded public half of this key.
  {{% /md %}}
 
             
@@ -939,6 +984,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+String mnemonic specifying the DNSSEC algorithm of this key. Immutable after creation time. Possible values are `ecdsap256sha256`, `ecdsap384sha384`, `rsasha1`, `rsasha256`, and `rsasha512`.
  {{% /md %}}
 
             
@@ -953,6 +999,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+The time that this resource was created in the control plane. This is in RFC3339 text format.
  {{% /md %}}
 
             
@@ -967,6 +1014,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+A mutable string of at most 1024 characters associated with this resource for the user&#39;s convenience.
  {{% /md %}}
 
             
@@ -981,6 +1029,9 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+A list of cryptographic hashes of the DNSKEY resource record associated with this DnsKey. These digests are needed to construct a DS record that points at this DNS key. Each contains:
+- `digest` - The base-16 encoded bytes of this digest. Suitable for use in a DS resource record.
+- `type` - Specifies the algorithm used to calculate this digest. Possible values are `sha1`, `sha256` and `sha384`
  {{% /md %}}
 
             
@@ -995,6 +1046,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+The DS record based on the KSK record. This is used when [delegating](https://cloud.google.com/dns/docs/dnssec-advanced#subdelegation) DNSSEC-signed subdomains.
  {{% /md %}}
 
             
@@ -1009,6 +1061,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+Unique identifier for the resource; defined by the server.
  {{% /md %}}
 
             
@@ -1023,6 +1076,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+Active keys will be used to sign subsequent changes to the ManagedZone. Inactive keys will still be present as DNSKEY Resource Records for the use of resolvers validating existing signatures.
  {{% /md %}}
 
             
@@ -1037,6 +1091,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+Length of the key in bits. Specified at creation time then immutable.
  {{% /md %}}
 
             
@@ -1051,6 +1106,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+The key tag is a non-cryptographic hash of the a DNSKEY resource record associated with this DnsKey. The key tag can be used to identify a DNSKEY more quickly (but it is not a unique identifier). In particular, the key tag is used in a parent zone&#39;s DS record to point at the DNSKEY in this child ManagedZone. The key tag is a number in the range [0, 65535] and the algorithm to calculate it is specified in RFC4034 Appendix B.
  {{% /md %}}
 
             
@@ -1065,6 +1121,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+Base64 encoded public half of this key.
  {{% /md %}}
 
             
@@ -1099,6 +1156,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+String mnemonic specifying the DNSSEC algorithm of this key. Immutable after creation time. Possible values are `ecdsap256sha256`, `ecdsap384sha384`, `rsasha1`, `rsasha256`, and `rsasha512`.
  {{% /md %}}
 
             
@@ -1113,6 +1171,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+The time that this resource was created in the control plane. This is in RFC3339 text format.
  {{% /md %}}
 
             
@@ -1127,6 +1186,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+A mutable string of at most 1024 characters associated with this resource for the user&#39;s convenience.
  {{% /md %}}
 
             
@@ -1141,6 +1201,9 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+A list of cryptographic hashes of the DNSKEY resource record associated with this DnsKey. These digests are needed to construct a DS record that points at this DNS key. Each contains:
+- `digest` - The base-16 encoded bytes of this digest. Suitable for use in a DS resource record.
+- `type` - Specifies the algorithm used to calculate this digest. Possible values are `sha1`, `sha256` and `sha384`
  {{% /md %}}
 
             
@@ -1155,6 +1218,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+The DS record based on the KSK record. This is used when [delegating](https://cloud.google.com/dns/docs/dnssec-advanced#subdelegation) DNSSEC-signed subdomains.
  {{% /md %}}
 
             
@@ -1169,6 +1233,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+Unique identifier for the resource; defined by the server.
  {{% /md %}}
 
             
@@ -1183,6 +1248,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+Active keys will be used to sign subsequent changes to the ManagedZone. Inactive keys will still be present as DNSKEY Resource Records for the use of resolvers validating existing signatures.
  {{% /md %}}
 
             
@@ -1197,6 +1263,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+Length of the key in bits. Specified at creation time then immutable.
  {{% /md %}}
 
             
@@ -1211,6 +1278,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+The key tag is a non-cryptographic hash of the a DNSKEY resource record associated with this DnsKey. The key tag can be used to identify a DNSKEY more quickly (but it is not a unique identifier). In particular, the key tag is used in a parent zone&#39;s DS record to point at the DNSKEY in this child ManagedZone. The key tag is a number in the range [0, 65535] and the algorithm to calculate it is specified in RFC4034 Appendix B.
  {{% /md %}}
 
             
@@ -1225,6 +1293,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+Base64 encoded public half of this key.
  {{% /md %}}
 
             
@@ -1493,6 +1562,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+String mnemonic specifying the DNSSEC algorithm of this key. Immutable after creation time. Possible values are `ecdsap256sha256`, `ecdsap384sha384`, `rsasha1`, `rsasha256`, and `rsasha512`.
  {{% /md %}}
 
             
@@ -1507,6 +1577,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+The time that this resource was created in the control plane. This is in RFC3339 text format.
  {{% /md %}}
 
             
@@ -1521,6 +1592,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+A mutable string of at most 1024 characters associated with this resource for the user&#39;s convenience.
  {{% /md %}}
 
             
@@ -1535,6 +1607,9 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+A list of cryptographic hashes of the DNSKEY resource record associated with this DnsKey. These digests are needed to construct a DS record that points at this DNS key. Each contains:
+- `digest` - The base-16 encoded bytes of this digest. Suitable for use in a DS resource record.
+- `type` - Specifies the algorithm used to calculate this digest. Possible values are `sha1`, `sha256` and `sha384`
  {{% /md %}}
 
             
@@ -1549,6 +1624,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+Unique identifier for the resource; defined by the server.
  {{% /md %}}
 
             
@@ -1563,6 +1639,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+Active keys will be used to sign subsequent changes to the ManagedZone. Inactive keys will still be present as DNSKEY Resource Records for the use of resolvers validating existing signatures.
  {{% /md %}}
 
             
@@ -1577,6 +1654,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+Length of the key in bits. Specified at creation time then immutable.
  {{% /md %}}
 
             
@@ -1591,6 +1669,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+The key tag is a non-cryptographic hash of the a DNSKEY resource record associated with this DnsKey. The key tag can be used to identify a DNSKEY more quickly (but it is not a unique identifier). In particular, the key tag is used in a parent zone&#39;s DS record to point at the DNSKEY in this child ManagedZone. The key tag is a number in the range [0, 65535] and the algorithm to calculate it is specified in RFC4034 Appendix B.
  {{% /md %}}
 
             
@@ -1605,6 +1684,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+Base64 encoded public half of this key.
  {{% /md %}}
 
             
@@ -1639,6 +1719,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+String mnemonic specifying the DNSSEC algorithm of this key. Immutable after creation time. Possible values are `ecdsap256sha256`, `ecdsap384sha384`, `rsasha1`, `rsasha256`, and `rsasha512`.
  {{% /md %}}
 
             
@@ -1653,6 +1734,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+The time that this resource was created in the control plane. This is in RFC3339 text format.
  {{% /md %}}
 
             
@@ -1667,6 +1749,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+A mutable string of at most 1024 characters associated with this resource for the user&#39;s convenience.
  {{% /md %}}
 
             
@@ -1681,6 +1764,9 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+A list of cryptographic hashes of the DNSKEY resource record associated with this DnsKey. These digests are needed to construct a DS record that points at this DNS key. Each contains:
+- `digest` - The base-16 encoded bytes of this digest. Suitable for use in a DS resource record.
+- `type` - Specifies the algorithm used to calculate this digest. Possible values are `sha1`, `sha256` and `sha384`
  {{% /md %}}
 
             
@@ -1695,6 +1781,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+Unique identifier for the resource; defined by the server.
  {{% /md %}}
 
             
@@ -1709,6 +1796,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+Active keys will be used to sign subsequent changes to the ManagedZone. Inactive keys will still be present as DNSKEY Resource Records for the use of resolvers validating existing signatures.
  {{% /md %}}
 
             
@@ -1723,6 +1811,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+Length of the key in bits. Specified at creation time then immutable.
  {{% /md %}}
 
             
@@ -1737,6 +1826,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+The key tag is a non-cryptographic hash of the a DNSKEY resource record associated with this DnsKey. The key tag can be used to identify a DNSKEY more quickly (but it is not a unique identifier). In particular, the key tag is used in a parent zone&#39;s DS record to point at the DNSKEY in this child ManagedZone. The key tag is a number in the range [0, 65535] and the algorithm to calculate it is specified in RFC4034 Appendix B.
  {{% /md %}}
 
             
@@ -1751,6 +1841,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+Base64 encoded public half of this key.
  {{% /md %}}
 
             
@@ -1785,6 +1876,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+String mnemonic specifying the DNSSEC algorithm of this key. Immutable after creation time. Possible values are `ecdsap256sha256`, `ecdsap384sha384`, `rsasha1`, `rsasha256`, and `rsasha512`.
  {{% /md %}}
 
             
@@ -1799,6 +1891,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+The time that this resource was created in the control plane. This is in RFC3339 text format.
  {{% /md %}}
 
             
@@ -1813,6 +1906,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+A mutable string of at most 1024 characters associated with this resource for the user&#39;s convenience.
  {{% /md %}}
 
             
@@ -1827,6 +1921,9 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+A list of cryptographic hashes of the DNSKEY resource record associated with this DnsKey. These digests are needed to construct a DS record that points at this DNS key. Each contains:
+- `digest` - The base-16 encoded bytes of this digest. Suitable for use in a DS resource record.
+- `type` - Specifies the algorithm used to calculate this digest. Possible values are `sha1`, `sha256` and `sha384`
  {{% /md %}}
 
             
@@ -1841,6 +1938,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+Unique identifier for the resource; defined by the server.
  {{% /md %}}
 
             
@@ -1855,6 +1953,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+Active keys will be used to sign subsequent changes to the ManagedZone. Inactive keys will still be present as DNSKEY Resource Records for the use of resolvers validating existing signatures.
  {{% /md %}}
 
             
@@ -1869,6 +1968,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+Length of the key in bits. Specified at creation time then immutable.
  {{% /md %}}
 
             
@@ -1883,6 +1983,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+The key tag is a non-cryptographic hash of the a DNSKEY resource record associated with this DnsKey. The key tag can be used to identify a DNSKEY more quickly (but it is not a unique identifier). In particular, the key tag is used in a parent zone&#39;s DS record to point at the DNSKEY in this child ManagedZone. The key tag is a number in the range [0, 65535] and the algorithm to calculate it is specified in RFC4034 Appendix B.
  {{% /md %}}
 
             
@@ -1897,6 +1998,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+Base64 encoded public half of this key.
  {{% /md %}}
 
             
@@ -1931,6 +2033,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+String mnemonic specifying the DNSSEC algorithm of this key. Immutable after creation time. Possible values are `ecdsap256sha256`, `ecdsap384sha384`, `rsasha1`, `rsasha256`, and `rsasha512`.
  {{% /md %}}
 
             
@@ -1945,6 +2048,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+The time that this resource was created in the control plane. This is in RFC3339 text format.
  {{% /md %}}
 
             
@@ -1959,6 +2063,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+A mutable string of at most 1024 characters associated with this resource for the user&#39;s convenience.
  {{% /md %}}
 
             
@@ -1973,6 +2078,9 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+A list of cryptographic hashes of the DNSKEY resource record associated with this DnsKey. These digests are needed to construct a DS record that points at this DNS key. Each contains:
+- `digest` - The base-16 encoded bytes of this digest. Suitable for use in a DS resource record.
+- `type` - Specifies the algorithm used to calculate this digest. Possible values are `sha1`, `sha256` and `sha384`
  {{% /md %}}
 
             
@@ -1987,6 +2095,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+Unique identifier for the resource; defined by the server.
  {{% /md %}}
 
             
@@ -2001,6 +2110,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+Active keys will be used to sign subsequent changes to the ManagedZone. Inactive keys will still be present as DNSKEY Resource Records for the use of resolvers validating existing signatures.
  {{% /md %}}
 
             
@@ -2015,6 +2125,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+Length of the key in bits. Specified at creation time then immutable.
  {{% /md %}}
 
             
@@ -2029,6 +2140,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+The key tag is a non-cryptographic hash of the a DNSKEY resource record associated with this DnsKey. The key tag can be used to identify a DNSKEY more quickly (but it is not a unique identifier). In particular, the key tag is used in a parent zone&#39;s DS record to point at the DNSKEY in this child ManagedZone. The key tag is a number in the range [0, 65535] and the algorithm to calculate it is specified in RFC4034 Appendix B.
  {{% /md %}}
 
             
@@ -2043,6 +2155,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+Base64 encoded public half of this key.
  {{% /md %}}
 
             

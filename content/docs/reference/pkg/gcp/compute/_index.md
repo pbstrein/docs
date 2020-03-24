@@ -56,6 +56,7 @@ block_external_search_index: true
     <li><a href="regionautoscaler"><span class="symbol resource"></span>RegionAutoscaler</a></li>
     <li><a href="regionbackendservice"><span class="symbol resource"></span>RegionBackendService</a></li>
     <li><a href="regiondisk"><span class="symbol resource"></span>RegionDisk</a></li>
+    <li><a href="regiondiskresourcepolicyattachment"><span class="symbol resource"></span>RegionDiskResourcePolicyAttachment</a></li>
     <li><a href="regionhealthcheck"><span class="symbol resource"></span>RegionHealthCheck</a></li>
     <li><a href="regioninstancegroupmanager"><span class="symbol resource"></span>RegionInstanceGroupManager</a></li>
     <li><a href="regionsslcertificate"><span class="symbol resource"></span>RegionSslCertificate</a></li>
@@ -103,6 +104,7 @@ block_external_search_index: true
     <li><a href="getimage"><span class="symbol datasource"></span>GetImage</a></li>
     <li><a href="getinstance"><span class="symbol datasource"></span>GetInstance</a></li>
     <li><a href="getinstancegroup"><span class="symbol datasource"></span>GetInstanceGroup</a></li>
+    <li><a href="getinstanceserialport"><span class="symbol datasource"></span>GetInstanceSerialPort</a></li>
     <li><a href="getlbipranges"><span class="symbol datasource"></span>GetLBIPRanges</a></li>
     <li><a href="getnetblockipranges"><span class="symbol datasource"></span>GetNetblockIPRanges</a></li>
     <li><a href="getnetwork"><span class="symbol datasource"></span>GetNetwork</a></li>

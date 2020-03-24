@@ -144,7 +144,7 @@ The name of the resource group in which to create the route table. Changing this
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-[List of objects](https://www.terraform.io/docs/configuration/attr-as-blocks.html) representing routes. Each object accepts the arguments documented below.
+A list of objects representing routes. Each object accepts the arguments documented below.
  {{% /md %}}
 
             
@@ -254,7 +254,7 @@ The name of the resource group in which to create the route table. Changing this
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-[List of objects](https://www.terraform.io/docs/configuration/attr-as-blocks.html) representing routes. Each object accepts the arguments documented below.
+A list of objects representing routes. Each object accepts the arguments documented below.
  {{% /md %}}
 
             
@@ -364,7 +364,7 @@ The name of the resource group in which to create the route table. Changing this
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-[List of objects](https://www.terraform.io/docs/configuration/attr-as-blocks.html) representing routes. Each object accepts the arguments documented below.
+A list of objects representing routes. Each object accepts the arguments documented below.
  {{% /md %}}
 
             
@@ -474,7 +474,7 @@ The name of the resource group in which to create the route table. Changing this
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-[List of objects](https://www.terraform.io/docs/configuration/attr-as-blocks.html) representing routes. Each object accepts the arguments documented below.
+A list of objects representing routes. Each object accepts the arguments documented below.
  {{% /md %}}
 
             
@@ -588,7 +588,7 @@ The following output properties are available:
                 
                 <code><a href="#routetableroute">List&lt;Route<wbr>Table<wbr>Route&gt;</a></code>
             </td>
-            <td class="align-top">{{% md %}} [List of objects](https://www.terraform.io/docs/configuration/attr-as-blocks.html) representing routes. Each object accepts the arguments documented below.
+            <td class="align-top">{{% md %}} A list of objects representing routes. Each object accepts the arguments documented below.
  {{% /md %}}
 
             
@@ -699,7 +699,7 @@ The following output properties are available:
                 
                 <code><a href="#routetableroute">[]Route<wbr>Table<wbr>Route</a></code>
             </td>
-            <td class="align-top">{{% md %}} [List of objects](https://www.terraform.io/docs/configuration/attr-as-blocks.html) representing routes. Each object accepts the arguments documented below.
+            <td class="align-top">{{% md %}} A list of objects representing routes. Each object accepts the arguments documented below.
  {{% /md %}}
 
             
@@ -810,7 +810,7 @@ The following output properties are available:
                 
                 <code><a href="#routetableroute">Route<wbr>Table<wbr>Route[]</a></code>
             </td>
-            <td class="align-top">{{% md %}} [List of objects](https://www.terraform.io/docs/configuration/attr-as-blocks.html) representing routes. Each object accepts the arguments documented below.
+            <td class="align-top">{{% md %}} A list of objects representing routes. Each object accepts the arguments documented below.
  {{% /md %}}
 
             
@@ -921,7 +921,7 @@ The following output properties are available:
                 
                 <code><a href="#routetableroute">List[Route<wbr>Table<wbr>Route]</a></code>
             </td>
-            <td class="align-top">{{% md %}} [List of objects](https://www.terraform.io/docs/configuration/attr-as-blocks.html) representing routes. Each object accepts the arguments documented below.
+            <td class="align-top">{{% md %}} A list of objects representing routes. Each object accepts the arguments documented below.
  {{% /md %}}
 
             
@@ -1101,7 +1101,7 @@ The name of the resource group in which to create the route table. Changing this
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-[List of objects](https://www.terraform.io/docs/configuration/attr-as-blocks.html) representing routes. Each object accepts the arguments documented below.
+A list of objects representing routes. Each object accepts the arguments documented below.
  {{% /md %}}
 
             
@@ -1226,7 +1226,7 @@ The name of the resource group in which to create the route table. Changing this
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-[List of objects](https://www.terraform.io/docs/configuration/attr-as-blocks.html) representing routes. Each object accepts the arguments documented below.
+A list of objects representing routes. Each object accepts the arguments documented below.
  {{% /md %}}
 
             
@@ -1351,7 +1351,7 @@ The name of the resource group in which to create the route table. Changing this
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-[List of objects](https://www.terraform.io/docs/configuration/attr-as-blocks.html) representing routes. Each object accepts the arguments documented below.
+A list of objects representing routes. Each object accepts the arguments documented below.
  {{% /md %}}
 
             
@@ -1476,7 +1476,7 @@ The name of the resource group in which to create the route table. Changing this
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-[List of objects](https://www.terraform.io/docs/configuration/attr-as-blocks.html) representing routes. Each object accepts the arguments documented below.
+A list of objects representing routes. Each object accepts the arguments documented below.
  {{% /md %}}
 
             

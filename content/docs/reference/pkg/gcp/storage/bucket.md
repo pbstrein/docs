@@ -206,7 +206,7 @@ The bucket&#39;s encryption configuration.
  (Optional)
 When deleting a bucket, this
 boolean option will delete all contained objects. If you try to delete a
-bucket that contains objects, this provider will fail that run.
+bucket that contains objects, the provider will fail that run.
  {{% /md %}}
 
             
@@ -468,7 +468,7 @@ The bucket&#39;s encryption configuration.
  (Optional)
 When deleting a bucket, this
 boolean option will delete all contained objects. If you try to delete a
-bucket that contains objects, this provider will fail that run.
+bucket that contains objects, the provider will fail that run.
  {{% /md %}}
 
             
@@ -730,7 +730,7 @@ The bucket&#39;s encryption configuration.
  (Optional)
 When deleting a bucket, this
 boolean option will delete all contained objects. If you try to delete a
-bucket that contains objects, this provider will fail that run.
+bucket that contains objects, the provider will fail that run.
  {{% /md %}}
 
             
@@ -992,7 +992,7 @@ The bucket&#39;s encryption configuration.
  (Optional)
 When deleting a bucket, this
 boolean option will delete all contained objects. If you try to delete a
-bucket that contains objects, this provider will fail that run.
+bucket that contains objects, the provider will fail that run.
  {{% /md %}}
 
             
@@ -1258,7 +1258,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} When deleting a bucket, this
 boolean option will delete all contained objects. If you try to delete a
-bucket that contains objects, this provider will fail that run.
+bucket that contains objects, the provider will fail that run.
  {{% /md %}}
 
             
@@ -1514,7 +1514,7 @@ is not provided, the provider project is used.
             </td>
             <td class="align-top">{{% md %}} When deleting a bucket, this
 boolean option will delete all contained objects. If you try to delete a
-bucket that contains objects, this provider will fail that run.
+bucket that contains objects, the provider will fail that run.
  {{% /md %}}
 
             
@@ -1770,7 +1770,7 @@ is not provided, the provider project is used.
             </td>
             <td class="align-top">{{% md %}} When deleting a bucket, this
 boolean option will delete all contained objects. If you try to delete a
-bucket that contains objects, this provider will fail that run.
+bucket that contains objects, the provider will fail that run.
  {{% /md %}}
 
             
@@ -2026,7 +2026,7 @@ is not provided, the provider project is used.
             </td>
             <td class="align-top">{{% md %}} When deleting a bucket, this
 boolean option will delete all contained objects. If you try to delete a
-bucket that contains objects, this provider will fail that run.
+bucket that contains objects, the provider will fail that run.
  {{% /md %}}
 
             
@@ -2351,7 +2351,7 @@ The bucket&#39;s encryption configuration.
  (Optional)
 When deleting a bucket, this
 boolean option will delete all contained objects. If you try to delete a
-bucket that contains objects, this provider will fail that run.
+bucket that contains objects, the provider will fail that run.
  {{% /md %}}
 
             
@@ -2643,7 +2643,7 @@ The bucket&#39;s encryption configuration.
  (Optional)
 When deleting a bucket, this
 boolean option will delete all contained objects. If you try to delete a
-bucket that contains objects, this provider will fail that run.
+bucket that contains objects, the provider will fail that run.
  {{% /md %}}
 
             
@@ -2935,7 +2935,7 @@ The bucket&#39;s encryption configuration.
  (Optional)
 When deleting a bucket, this
 boolean option will delete all contained objects. If you try to delete a
-bucket that contains objects, this provider will fail that run.
+bucket that contains objects, the provider will fail that run.
  {{% /md %}}
 
             
@@ -3227,7 +3227,7 @@ The bucket&#39;s encryption configuration.
  (Optional)
 When deleting a bucket, this
 boolean option will delete all contained objects. If you try to delete a
-bucket that contains objects, this provider will fail that run.
+bucket that contains objects, the provider will fail that run.
  {{% /md %}}
 
             

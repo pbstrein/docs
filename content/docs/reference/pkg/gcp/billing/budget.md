@@ -7,6 +7,15 @@ block_external_search_index: true
 table td p { margin-top: 0; margin-bottom: 0; }
 </style>
 
+Budget configuration for a billing account.
+
+To get more information about Budget, see:
+
+* [API documentation](https://cloud.google.com/billing/docs/reference/budget/rest/v1beta1/billingAccounts.budgets)
+* How-to Guides
+    * [Creating a budget](https://cloud.google.com/billing/docs/how-to/budgets)
+
+> This content is derived from https://github.com/terraform-providers/terraform-provider-google/blob/master/website/docs/r/billing_budget.html.markdown.
 
 
 

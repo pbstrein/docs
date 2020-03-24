@@ -7,6 +7,41 @@ block_external_search_index: true
 table td p { margin-top: 0; margin-bottom: 0; }
 </style>
 
+Three different resources help you manage your IAM policy for KMS crypto key. Each of these resources serves a different use case:
+
+* `gcp.kms.CryptoKeyIAMPolicy`: Authoritative. Sets the IAM policy for the crypto key and replaces any existing policy already attached.
+* `gcp.kms.CryptoKeyIAMBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the crypto key are preserved.
+* `gcp.kms.CryptoKeyIAMMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the crypto key are preserved.
+
+> **Note:** `gcp.kms.CryptoKeyIAMPolicy` **cannot** be used in conjunction with `gcp.kms.CryptoKeyIAMBinding` and `gcp.kms.CryptoKeyIAMMember` or they will fight over what your policy should be.
+
+> **Note:** `gcp.kms.CryptoKeyIAMBinding` resources **can be** used in conjunction with `gcp.kms.CryptoKeyIAMMember` resources **only if** they do not grant privilege to the same role.
+
+With IAM Conditions:
+
+```typescript
+import * as pulumi from "@pulumi/pulumi";
+import * as gcp from "@pulumi/gcp";
+
+const admin = gcp.organizations.getIAMPolicy({
+    bindings: [{
+        condition: {
+            description: "Expiring at midnight of 2019-12-31",
+            expression: "request.time < timestamp(\"2020-01-01T00:00:00Z\")",
+            title: "expires_after_2019_12_31",
+        },
+        members: ["user:jane@example.com"],
+        role: "roles/cloudkms.cryptoKeyEncrypter",
+    }],
+});
+```
+
+With IAM Conditions:
+
+
+With IAM Conditions:
+
+> This content is derived from https://github.com/terraform-providers/terraform-provider-google/blob/master/website/docs/r/google_kms_crypto_key_iam.html.markdown.
 
 
 
@@ -81,7 +116,7 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
+An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
 Structure is documented below.
  {{% /md %}}
 
@@ -165,7 +200,7 @@ The role that should be applied. Note that custom roles must be of the format
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
+An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
 Structure is documented below.
  {{% /md %}}
 
@@ -249,7 +284,7 @@ The role that should be applied. Note that custom roles must be of the format
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
+An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
 Structure is documented below.
  {{% /md %}}
 
@@ -333,7 +368,7 @@ The role that should be applied. Note that custom roles must be of the format
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
+An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
 Structure is documented below.
  {{% /md %}}
 
@@ -429,7 +464,7 @@ The following output properties are available:
                 
                 <code><a href="#cryptokeyiammembercondition">Crypto<wbr>Key<wbr>IAMMember<wbr>Condition?</a></code>
             </td>
-            <td class="align-top">{{% md %}} ) An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
+            <td class="align-top">{{% md %}} An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
 Structure is documented below.
  {{% /md %}}
 
@@ -518,7 +553,7 @@ the provider&#39;s project setting will be used as a fallback.
                 
                 <code><a href="#cryptokeyiammembercondition">*Crypto<wbr>Key<wbr>IAMMember<wbr>Condition</a></code>
             </td>
-            <td class="align-top">{{% md %}} ) An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
+            <td class="align-top">{{% md %}} An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
 Structure is documented below.
  {{% /md %}}
 
@@ -607,7 +642,7 @@ the provider&#39;s project setting will be used as a fallback.
                 
                 <code><a href="#cryptokeyiammembercondition">Crypto<wbr>Key<wbr>IAMMember<wbr>Condition?</a></code>
             </td>
-            <td class="align-top">{{% md %}} ) An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
+            <td class="align-top">{{% md %}} An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
 Structure is documented below.
  {{% /md %}}
 
@@ -696,7 +731,7 @@ the provider&#39;s project setting will be used as a fallback.
                 
                 <code><a href="#cryptokeyiammembercondition">Dict[Crypto<wbr>Key<wbr>IAMMember<wbr>Condition]</a></code>
             </td>
-            <td class="align-top">{{% md %}} ) An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
+            <td class="align-top">{{% md %}} An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
 Structure is documented below.
  {{% /md %}}
 
@@ -846,7 +881,7 @@ The following state arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
+An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
 Structure is documented below.
  {{% /md %}}
 
@@ -945,7 +980,7 @@ The role that should be applied. Note that custom roles must be of the format
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
+An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
 Structure is documented below.
  {{% /md %}}
 
@@ -1044,7 +1079,7 @@ The role that should be applied. Note that custom roles must be of the format
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
+An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
 Structure is documented below.
  {{% /md %}}
 
@@ -1143,7 +1178,7 @@ The role that should be applied. Note that custom roles must be of the format
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
+An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
 Structure is documented below.
  {{% /md %}}
 

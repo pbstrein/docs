@@ -7,6 +7,9 @@ block_external_search_index: true
 table td p { margin-top: 0; margin-bottom: 0; }
 </style>
 
+App profile is a configuration object describing how Cloud Bigtable should treat traffic from a particular end user application.
+
+> This content is derived from https://github.com/terraform-providers/terraform-provider-google/blob/master/website/docs/r/bigtable_app_profile.html.markdown.
 
 
 

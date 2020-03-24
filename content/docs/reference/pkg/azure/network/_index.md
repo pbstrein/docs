@@ -51,6 +51,7 @@ block_external_search_index: true
     <li><a href="trafficmanagerendpoint"><span class="symbol resource"></span>TrafficManagerEndpoint</a></li>
     <li><a href="trafficmanagerprofile"><span class="symbol resource"></span>TrafficManagerProfile</a></li>
     <li><a href="virtualhub"><span class="symbol resource"></span>VirtualHub</a></li>
+    <li><a href="virtualhubconnection"><span class="symbol resource"></span>VirtualHubConnection</a></li>
     <li><a href="virtualnetwork"><span class="symbol resource"></span>VirtualNetwork</a></li>
     <li><a href="virtualnetworkgateway"><span class="symbol resource"></span>VirtualNetworkGateway</a></li>
     <li><a href="virtualnetworkgatewayconnection"><span class="symbol resource"></span>VirtualNetworkGatewayConnection</a></li>

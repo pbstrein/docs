@@ -7,6 +7,17 @@ block_external_search_index: true
 table td p { margin-top: 0; margin-bottom: 0; }
 </style>
 
+Represents a data transfer configuration. A transfer configuration
+contains all metadata needed to perform a data transfer.
+
+
+To get more information about Config, see:
+
+* [API documentation](https://cloud.google.com/bigquery/docs/reference/datatransfer/rest/v1/projects.locations.transferConfigs/create)
+* How-to Guides
+    * [Official Documentation](https://cloud.google.com/bigquery/docs/reference/datatransfer/rest/)
+
+> This content is derived from https://github.com/terraform-providers/terraform-provider-google/blob/master/website/docs/r/bigquery_data_transfer_config.html.markdown.
 
 
 

@@ -7,9 +7,9 @@ block_external_search_index: true
 table td p { margin-top: 0; margin-bottom: 0; }
 </style>
 
-## google\_organization\_iam\_audit\_config
-
 Allows management of audit logging config for a given service for a Google Cloud Platform Organization.
+
+## Example Usage
 
 ```typescript
 import * as pulumi from "@pulumi/pulumi";

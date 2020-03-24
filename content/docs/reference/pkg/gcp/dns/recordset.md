@@ -10,7 +10,10 @@ table td p { margin-top: 0; margin-bottom: 0; }
 Manages a set of DNS records within Google Cloud DNS. For more information see [the official documentation](https://cloud.google.com/dns/records/) and
 [API](https://cloud.google.com/dns/api/v1/resourceRecordSets).
 
-> **Note:** The provider treats this resource as an authoritative record set. This means existing records (including the default records) for the given type will be overwritten when you create this resource with this provider. In addition, the Google Cloud DNS API requires NS records to be present at all times, so this provider will not actually remove NS records during destroy but will report that it did.
+> **Note:** The provider treats this resource as an authoritative record set. This means existing records (including 
+the default records) for the given type will be overwritten when you create this resource in the provider. 
+In addition, the Google Cloud DNS API requires NS records to be present at all times, so the provider 
+will not actually remove NS records during destroy but will report that it did.
 
 > This content is derived from https://github.com/terraform-providers/terraform-provider-google/blob/master/website/docs/r/dns_record_set.html.markdown.
 
@@ -135,7 +138,7 @@ is not provided, the provider project is used.
             <td class="align-top">{{% md %}} 
  (Required)
 The string data for the records in this record set
-whose meaning depends on the DNS type. For TXT record, if the string data contains spaces, add surrounding `\&#34;` if you don&#39;t want your string to get split on spaces. To specify a single record value longer than 255 characters such as a TXT record for DKIM, add `\&#34;\&#34;` inside this provider&#39;s configuration string (e.g. `&#34;first255characters\&#34;\&#34;morecharacters&#34;`).
+whose meaning depends on the DNS type. For TXT record, if the string data contains spaces, add surrounding `\&#34;` if you don&#39;t want your string to get split on spaces. To specify a single record value longer than 255 characters such as a TXT record for DKIM, add `\&#34;\&#34;` inside the provider configuration string (e.g. `&#34;first255characters\&#34;\&#34;morecharacters&#34;`).
  {{% /md %}}
 
             
@@ -248,7 +251,7 @@ is not provided, the provider project is used.
             <td class="align-top">{{% md %}} 
  (Required)
 The string data for the records in this record set
-whose meaning depends on the DNS type. For TXT record, if the string data contains spaces, add surrounding `\&#34;` if you don&#39;t want your string to get split on spaces. To specify a single record value longer than 255 characters such as a TXT record for DKIM, add `\&#34;\&#34;` inside this provider&#39;s configuration string (e.g. `&#34;first255characters\&#34;\&#34;morecharacters&#34;`).
+whose meaning depends on the DNS type. For TXT record, if the string data contains spaces, add surrounding `\&#34;` if you don&#39;t want your string to get split on spaces. To specify a single record value longer than 255 characters such as a TXT record for DKIM, add `\&#34;\&#34;` inside the provider configuration string (e.g. `&#34;first255characters\&#34;\&#34;morecharacters&#34;`).
  {{% /md %}}
 
             
@@ -361,7 +364,7 @@ is not provided, the provider project is used.
             <td class="align-top">{{% md %}} 
  (Required)
 The string data for the records in this record set
-whose meaning depends on the DNS type. For TXT record, if the string data contains spaces, add surrounding `\&#34;` if you don&#39;t want your string to get split on spaces. To specify a single record value longer than 255 characters such as a TXT record for DKIM, add `\&#34;\&#34;` inside this provider&#39;s configuration string (e.g. `&#34;first255characters\&#34;\&#34;morecharacters&#34;`).
+whose meaning depends on the DNS type. For TXT record, if the string data contains spaces, add surrounding `\&#34;` if you don&#39;t want your string to get split on spaces. To specify a single record value longer than 255 characters such as a TXT record for DKIM, add `\&#34;\&#34;` inside the provider configuration string (e.g. `&#34;first255characters\&#34;\&#34;morecharacters&#34;`).
  {{% /md %}}
 
             
@@ -474,7 +477,7 @@ is not provided, the provider project is used.
             <td class="align-top">{{% md %}} 
  (Required)
 The string data for the records in this record set
-whose meaning depends on the DNS type. For TXT record, if the string data contains spaces, add surrounding `\&#34;` if you don&#39;t want your string to get split on spaces. To specify a single record value longer than 255 characters such as a TXT record for DKIM, add `\&#34;\&#34;` inside this provider&#39;s configuration string (e.g. `&#34;first255characters\&#34;\&#34;morecharacters&#34;`).
+whose meaning depends on the DNS type. For TXT record, if the string data contains spaces, add surrounding `\&#34;` if you don&#39;t want your string to get split on spaces. To specify a single record value longer than 255 characters such as a TXT record for DKIM, add `\&#34;\&#34;` inside the provider configuration string (e.g. `&#34;first255characters\&#34;\&#34;morecharacters&#34;`).
  {{% /md %}}
 
             
@@ -593,7 +596,7 @@ is not provided, the provider project is used.
                 <code>List<string></code>
             </td>
             <td class="align-top">{{% md %}} The string data for the records in this record set
-whose meaning depends on the DNS type. For TXT record, if the string data contains spaces, add surrounding `\&#34;` if you don&#39;t want your string to get split on spaces. To specify a single record value longer than 255 characters such as a TXT record for DKIM, add `\&#34;\&#34;` inside this provider&#39;s configuration string (e.g. `&#34;first255characters\&#34;\&#34;morecharacters&#34;`).
+whose meaning depends on the DNS type. For TXT record, if the string data contains spaces, add surrounding `\&#34;` if you don&#39;t want your string to get split on spaces. To specify a single record value longer than 255 characters such as a TXT record for DKIM, add `\&#34;\&#34;` inside the provider configuration string (e.g. `&#34;first255characters\&#34;\&#34;morecharacters&#34;`).
  {{% /md %}}
 
             
@@ -694,7 +697,7 @@ is not provided, the provider project is used.
                 <code>[]string</code>
             </td>
             <td class="align-top">{{% md %}} The string data for the records in this record set
-whose meaning depends on the DNS type. For TXT record, if the string data contains spaces, add surrounding `\&#34;` if you don&#39;t want your string to get split on spaces. To specify a single record value longer than 255 characters such as a TXT record for DKIM, add `\&#34;\&#34;` inside this provider&#39;s configuration string (e.g. `&#34;first255characters\&#34;\&#34;morecharacters&#34;`).
+whose meaning depends on the DNS type. For TXT record, if the string data contains spaces, add surrounding `\&#34;` if you don&#39;t want your string to get split on spaces. To specify a single record value longer than 255 characters such as a TXT record for DKIM, add `\&#34;\&#34;` inside the provider configuration string (e.g. `&#34;first255characters\&#34;\&#34;morecharacters&#34;`).
  {{% /md %}}
 
             
@@ -795,7 +798,7 @@ is not provided, the provider project is used.
                 <code>string[]</code>
             </td>
             <td class="align-top">{{% md %}} The string data for the records in this record set
-whose meaning depends on the DNS type. For TXT record, if the string data contains spaces, add surrounding `\&#34;` if you don&#39;t want your string to get split on spaces. To specify a single record value longer than 255 characters such as a TXT record for DKIM, add `\&#34;\&#34;` inside this provider&#39;s configuration string (e.g. `&#34;first255characters\&#34;\&#34;morecharacters&#34;`).
+whose meaning depends on the DNS type. For TXT record, if the string data contains spaces, add surrounding `\&#34;` if you don&#39;t want your string to get split on spaces. To specify a single record value longer than 255 characters such as a TXT record for DKIM, add `\&#34;\&#34;` inside the provider configuration string (e.g. `&#34;first255characters\&#34;\&#34;morecharacters&#34;`).
  {{% /md %}}
 
             
@@ -896,7 +899,7 @@ is not provided, the provider project is used.
                 <code>List[str]</code>
             </td>
             <td class="align-top">{{% md %}} The string data for the records in this record set
-whose meaning depends on the DNS type. For TXT record, if the string data contains spaces, add surrounding `\&#34;` if you don&#39;t want your string to get split on spaces. To specify a single record value longer than 255 characters such as a TXT record for DKIM, add `\&#34;\&#34;` inside this provider&#39;s configuration string (e.g. `&#34;first255characters\&#34;\&#34;morecharacters&#34;`).
+whose meaning depends on the DNS type. For TXT record, if the string data contains spaces, add surrounding `\&#34;` if you don&#39;t want your string to get split on spaces. To specify a single record value longer than 255 characters such as a TXT record for DKIM, add `\&#34;\&#34;` inside the provider configuration string (e.g. `&#34;first255characters\&#34;\&#34;morecharacters&#34;`).
  {{% /md %}}
 
             
@@ -1064,7 +1067,7 @@ is not provided, the provider project is used.
             <td class="align-top">{{% md %}} 
  (Optional)
 The string data for the records in this record set
-whose meaning depends on the DNS type. For TXT record, if the string data contains spaces, add surrounding `\&#34;` if you don&#39;t want your string to get split on spaces. To specify a single record value longer than 255 characters such as a TXT record for DKIM, add `\&#34;\&#34;` inside this provider&#39;s configuration string (e.g. `&#34;first255characters\&#34;\&#34;morecharacters&#34;`).
+whose meaning depends on the DNS type. For TXT record, if the string data contains spaces, add surrounding `\&#34;` if you don&#39;t want your string to get split on spaces. To specify a single record value longer than 255 characters such as a TXT record for DKIM, add `\&#34;\&#34;` inside the provider configuration string (e.g. `&#34;first255characters\&#34;\&#34;morecharacters&#34;`).
  {{% /md %}}
 
             
@@ -1177,7 +1180,7 @@ is not provided, the provider project is used.
             <td class="align-top">{{% md %}} 
  (Optional)
 The string data for the records in this record set
-whose meaning depends on the DNS type. For TXT record, if the string data contains spaces, add surrounding `\&#34;` if you don&#39;t want your string to get split on spaces. To specify a single record value longer than 255 characters such as a TXT record for DKIM, add `\&#34;\&#34;` inside this provider&#39;s configuration string (e.g. `&#34;first255characters\&#34;\&#34;morecharacters&#34;`).
+whose meaning depends on the DNS type. For TXT record, if the string data contains spaces, add surrounding `\&#34;` if you don&#39;t want your string to get split on spaces. To specify a single record value longer than 255 characters such as a TXT record for DKIM, add `\&#34;\&#34;` inside the provider configuration string (e.g. `&#34;first255characters\&#34;\&#34;morecharacters&#34;`).
  {{% /md %}}
 
             
@@ -1290,7 +1293,7 @@ is not provided, the provider project is used.
             <td class="align-top">{{% md %}} 
  (Optional)
 The string data for the records in this record set
-whose meaning depends on the DNS type. For TXT record, if the string data contains spaces, add surrounding `\&#34;` if you don&#39;t want your string to get split on spaces. To specify a single record value longer than 255 characters such as a TXT record for DKIM, add `\&#34;\&#34;` inside this provider&#39;s configuration string (e.g. `&#34;first255characters\&#34;\&#34;morecharacters&#34;`).
+whose meaning depends on the DNS type. For TXT record, if the string data contains spaces, add surrounding `\&#34;` if you don&#39;t want your string to get split on spaces. To specify a single record value longer than 255 characters such as a TXT record for DKIM, add `\&#34;\&#34;` inside the provider configuration string (e.g. `&#34;first255characters\&#34;\&#34;morecharacters&#34;`).
  {{% /md %}}
 
             
@@ -1403,7 +1406,7 @@ is not provided, the provider project is used.
             <td class="align-top">{{% md %}} 
  (Optional)
 The string data for the records in this record set
-whose meaning depends on the DNS type. For TXT record, if the string data contains spaces, add surrounding `\&#34;` if you don&#39;t want your string to get split on spaces. To specify a single record value longer than 255 characters such as a TXT record for DKIM, add `\&#34;\&#34;` inside this provider&#39;s configuration string (e.g. `&#34;first255characters\&#34;\&#34;morecharacters&#34;`).
+whose meaning depends on the DNS type. For TXT record, if the string data contains spaces, add surrounding `\&#34;` if you don&#39;t want your string to get split on spaces. To specify a single record value longer than 255 characters such as a TXT record for DKIM, add `\&#34;\&#34;` inside the provider configuration string (e.g. `&#34;first255characters\&#34;\&#34;morecharacters&#34;`).
  {{% /md %}}
 
             

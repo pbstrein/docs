@@ -19,7 +19,7 @@ Manages a Function App.
 
 <div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="k">new </span><span class="nx"><a href="/docs/reference/pkg/nodejs/pulumi/azure/appservice/#FunctionApp">FunctionApp</a></span><span class="p">(</span><span class="nx">name</span>: <span class="nx"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string">string</a></span><span class="p">, </span><span class="nx">args</span>: <span class="nx"><a href="/docs/reference/pkg/nodejs/pulumi/azure/appservice/#FunctionAppArgs">FunctionAppArgs</a></span><span class="p">, </span><span class="nx">opts</span>?: <span class="nx"><a href="/docs/reference/pkg/nodejs/pulumi/pulumi/pulumi/#CustomResourceOptions">pulumi.CustomResourceOptions</a></span><span class="p">);</span></code></pre></div>
 
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def </span><span class="nf">FunctionApp</span><span class="p">(resource_name, opts=None, </span>app_service_plan_id=None<span class="p">, </span>app_settings=None<span class="p">, </span>auth_settings=None<span class="p">, </span>client_affinity_enabled=None<span class="p">, </span>connection_strings=None<span class="p">, </span>enable_builtin_logging=None<span class="p">, </span>enabled=None<span class="p">, </span>https_only=None<span class="p">, </span>identity=None<span class="p">, </span>location=None<span class="p">, </span>name=None<span class="p">, </span>os_type=None<span class="p">, </span>resource_group_name=None<span class="p">, </span>site_config=None<span class="p">, </span>storage_connection_string=None<span class="p">, </span>tags=None<span class="p">, </span>version=None<span class="p">, __props__=None);</span></code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def </span><span class="nf">FunctionApp</span><span class="p">(resource_name, opts=None, </span>app_service_plan_id=None<span class="p">, </span>app_settings=None<span class="p">, </span>auth_settings=None<span class="p">, </span>client_affinity_enabled=None<span class="p">, </span>connection_strings=None<span class="p">, </span>daily_memory_time_quota=None<span class="p">, </span>enable_builtin_logging=None<span class="p">, </span>enabled=None<span class="p">, </span>https_only=None<span class="p">, </span>identity=None<span class="p">, </span>location=None<span class="p">, </span>name=None<span class="p">, </span>os_type=None<span class="p">, </span>resource_group_name=None<span class="p">, </span>site_config=None<span class="p">, </span>storage_connection_string=None<span class="p">, </span>tags=None<span class="p">, </span>version=None<span class="p">, __props__=None);</span></code></pre></div>
 
 <div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="k">func </span>NewFunctionApp<span class="p">(</span><span class="nx">ctx</span> *<span class="nx"><a href="https://pkg.go.dev/github.com/pulumi/pulumi/sdk/go/pulumi?tab=doc#Context">pulumi.Context</a></span><span class="p">, </span><span class="nx">name</span> <span class="nx"><a href="https://golang.org/pkg/builtin/#string">string</a></span><span class="p">, </span><span class="nx">args</span> <span class="nx"><a href="https://pkg.go.dev/github.com/pulumi/pulumi-azure/sdk/go/azure/appservice?tab=doc#FunctionAppArgs">FunctionAppArgs</a></span><span class="p">, </span><span class="nx">opts</span> ...<span class="nx"><a href="https://pkg.go.dev/github.com/pulumi/pulumi/sdk/go/pulumi?tab=doc#ResourceOption">pulumi.ResourceOption</a></span><span class="p">) (*<span class="nx"><a href="https://pkg.go.dev/github.com/pulumi/pulumi-azure/sdk/go/azure/appservice?tab=doc#FunctionApp">FunctionApp</a></span>, error)</span></code></pre></div>
 
@@ -145,6 +145,21 @@ Should the Function App send session affinity cookies, which route client reques
             <td class="align-top">{{% md %}} 
  (Optional)
 An `connection_string` block as defined below.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">Daily<wbr>Memory<wbr>Time<wbr>Quota</td>
+            <td class="align-top">
+                
+                <code>int?</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+The amount of memory in gigabyte-seconds that your application is allowed to consume per day. Setting this value only affects function apps under the consumption plan. Defaults to `0`.
  {{% /md %}}
 
             
@@ -427,6 +442,21 @@ An `connection_string` block as defined below.
         </tr>
     
         <tr>
+            <td class="align-top">Daily<wbr>Memory<wbr>Time<wbr>Quota</td>
+            <td class="align-top">
+                
+                <code>*int</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+The amount of memory in gigabyte-seconds that your application is allowed to consume per day. Setting this value only affects function apps under the consumption plan. Defaults to `0`.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
             <td class="align-top">Enable<wbr>Builtin<wbr>Logging</td>
             <td class="align-top">
                 
@@ -695,6 +725,21 @@ Should the Function App send session affinity cookies, which route client reques
             <td class="align-top">{{% md %}} 
  (Optional)
 An `connection_string` block as defined below.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">daily<wbr>Memory<wbr>Time<wbr>Quota</td>
+            <td class="align-top">
+                
+                <code>number?</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+The amount of memory in gigabyte-seconds that your application is allowed to consume per day. Setting this value only affects function apps under the consumption plan. Defaults to `0`.
  {{% /md %}}
 
             
@@ -977,6 +1022,21 @@ An `connection_string` block as defined below.
         </tr>
     
         <tr>
+            <td class="align-top">daily_<wbr>memory_<wbr>time_<wbr>quota</td>
+            <td class="align-top">
+                
+                <code>float</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+The amount of memory in gigabyte-seconds that your application is allowed to consume per day. Setting this value only affects function apps under the consumption plan. Defaults to `0`.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
             <td class="align-top">enable_<wbr>builtin_<wbr>logging</td>
             <td class="align-top">
                 
@@ -1249,6 +1309,19 @@ The following output properties are available:
                 <code><a href="#functionappconnectionstring">List&lt;Function<wbr>App<wbr>Connection<wbr>String&gt;</a></code>
             </td>
             <td class="align-top">{{% md %}} An `connection_string` block as defined below.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">Daily<wbr>Memory<wbr>Time<wbr>Quota</td>
+            <td class="align-top">
+                
+                <code>int?</code>
+            </td>
+            <td class="align-top">{{% md %}} The amount of memory in gigabyte-seconds that your application is allowed to consume per day. Setting this value only affects function apps under the consumption plan. Defaults to `0`.
  {{% /md %}}
 
             
@@ -1562,6 +1635,19 @@ The following output properties are available:
         </tr>
     
         <tr>
+            <td class="align-top">Daily<wbr>Memory<wbr>Time<wbr>Quota</td>
+            <td class="align-top">
+                
+                <code>*int</code>
+            </td>
+            <td class="align-top">{{% md %}} The amount of memory in gigabyte-seconds that your application is allowed to consume per day. Setting this value only affects function apps under the consumption plan. Defaults to `0`.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
             <td class="align-top">Default<wbr>Hostname</td>
             <td class="align-top">
                 
@@ -1861,6 +1947,19 @@ The following output properties are available:
                 <code><a href="#functionappconnectionstring">Function<wbr>App<wbr>Connection<wbr>String[]</a></code>
             </td>
             <td class="align-top">{{% md %}} An `connection_string` block as defined below.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">daily<wbr>Memory<wbr>Time<wbr>Quota</td>
+            <td class="align-top">
+                
+                <code>number?</code>
+            </td>
+            <td class="align-top">{{% md %}} The amount of memory in gigabyte-seconds that your application is allowed to consume per day. Setting this value only affects function apps under the consumption plan. Defaults to `0`.
  {{% /md %}}
 
             
@@ -2174,6 +2273,19 @@ The following output properties are available:
         </tr>
     
         <tr>
+            <td class="align-top">daily_<wbr>memory_<wbr>time_<wbr>quota</td>
+            <td class="align-top">
+                
+                <code>float</code>
+            </td>
+            <td class="align-top">{{% md %}} The amount of memory in gigabyte-seconds that your application is allowed to consume per day. Setting this value only affects function apps under the consumption plan. Defaults to `0`.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
             <td class="align-top">default_<wbr>hostname</td>
             <td class="align-top">
                 
@@ -2413,7 +2525,7 @@ The following output properties are available:
 
 <div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="k">public static </span><span class="nf">get</span><span class="p">(</span><span class="nx">name</span>: <span class="nx"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string">string</a></span><span class="p">, </span><span class="nx">id</span>: <span class="nx"><a href="/docs/reference/pkg/nodejs/pulumi/pulumi/#ID">pulumi.Input&lt;pulumi.ID&gt;</a></span><span class="p">, </span><span class="nx">state</span>?: <span class="nx"><a href="/docs/reference/pkg/nodejs/pulumi/azure/appservice/#FunctionAppState">FunctionAppState</a></span><span class="p">, </span><span class="nx">opts</span>?: <span class="nx"><a href="/docs/reference/pkg/nodejs/pulumi/pulumi/#CustomResourceOptions">pulumi.CustomResourceOptions</a></span><span class="p">): </span><span class="nx"><a href="/docs/reference/pkg/nodejs/pulumi/azure/appservice/#FunctionApp">FunctionApp</a></span></code></pre></div>
 
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">static </span><span class="nf">get</span><span class="p">(resource_name, id, opts=None, </span>app_service_plan_id=None<span class="p">, </span>app_settings=None<span class="p">, </span>auth_settings=None<span class="p">, </span>client_affinity_enabled=None<span class="p">, </span>connection_strings=None<span class="p">, </span>default_hostname=None<span class="p">, </span>enable_builtin_logging=None<span class="p">, </span>enabled=None<span class="p">, </span>https_only=None<span class="p">, </span>identity=None<span class="p">, </span>kind=None<span class="p">, </span>location=None<span class="p">, </span>name=None<span class="p">, </span>os_type=None<span class="p">, </span>outbound_ip_addresses=None<span class="p">, </span>possible_outbound_ip_addresses=None<span class="p">, </span>resource_group_name=None<span class="p">, </span>site_config=None<span class="p">, </span>site_credentials=None<span class="p">, </span>storage_connection_string=None<span class="p">, </span>tags=None<span class="p">, </span>version=None<span class="p">, __props__=None);</span></code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">static </span><span class="nf">get</span><span class="p">(resource_name, id, opts=None, </span>app_service_plan_id=None<span class="p">, </span>app_settings=None<span class="p">, </span>auth_settings=None<span class="p">, </span>client_affinity_enabled=None<span class="p">, </span>connection_strings=None<span class="p">, </span>daily_memory_time_quota=None<span class="p">, </span>default_hostname=None<span class="p">, </span>enable_builtin_logging=None<span class="p">, </span>enabled=None<span class="p">, </span>https_only=None<span class="p">, </span>identity=None<span class="p">, </span>kind=None<span class="p">, </span>location=None<span class="p">, </span>name=None<span class="p">, </span>os_type=None<span class="p">, </span>outbound_ip_addresses=None<span class="p">, </span>possible_outbound_ip_addresses=None<span class="p">, </span>resource_group_name=None<span class="p">, </span>site_config=None<span class="p">, </span>site_credentials=None<span class="p">, </span>storage_connection_string=None<span class="p">, </span>tags=None<span class="p">, </span>version=None<span class="p">, __props__=None);</span></code></pre></div>
 
 <div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="k">func </span>GetFunctionApp<span class="p">(</span><span class="nx">ctx</span> *<span class="nx"><a href="https://pkg.go.dev/github.com/pulumi/pulumi/sdk/go/pulumi?tab=doc#Context">pulumi.Context</a></span><span class="p">, </span><span class="nx">name</span> <span class="nx"><a href="https://golang.org/pkg/builtin/#string">string</a></span><span class="p">, </span><span class="nx">id</span> <span class="nx"><a href="https://pkg.go.dev/github.com/pulumi/pulumi/sdk/go/pulumi?tab=doc#IDInput">pulumi.IDInput</a></span><span class="p">, </span><span class="nx">state</span> *<span class="nx"><a href="https://pkg.go.dev/github.com/pulumi/pulumi-azure/sdk/go/azure/appservice?tab=doc#FunctionAppState">FunctionAppState</a></span><span class="p">, </span><span class="nx">opts</span> ...<span class="nx"><a href="https://pkg.go.dev/github.com/pulumi/pulumi/sdk/go/pulumi?tab=doc#ResourceOption">pulumi.ResourceOption</a></span><span class="p">) (*<span class="nx"><a href="https://pkg.go.dev/github.com/pulumi/pulumi-azure/sdk/go/azure/appservice?tab=doc#FunctionApp">FunctionApp</a></span>, error)</span></code></pre></div>
 
@@ -2542,6 +2654,21 @@ Should the Function App send session affinity cookies, which route client reques
             <td class="align-top">{{% md %}} 
  (Optional)
 An `connection_string` block as defined below.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">Daily<wbr>Memory<wbr>Time<wbr>Quota</td>
+            <td class="align-top">
+                
+                <code>int?</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+The amount of memory in gigabyte-seconds that your application is allowed to consume per day. Setting this value only affects function apps under the consumption plan. Defaults to `0`.
  {{% /md %}}
 
             
@@ -2899,6 +3026,21 @@ An `connection_string` block as defined below.
         </tr>
     
         <tr>
+            <td class="align-top">Daily<wbr>Memory<wbr>Time<wbr>Quota</td>
+            <td class="align-top">
+                
+                <code>*int</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+The amount of memory in gigabyte-seconds that your application is allowed to consume per day. Setting this value only affects function apps under the consumption plan. Defaults to `0`.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
             <td class="align-top">Default<wbr>Hostname</td>
             <td class="align-top">
                 
@@ -3249,6 +3391,21 @@ An `connection_string` block as defined below.
         </tr>
     
         <tr>
+            <td class="align-top">daily<wbr>Memory<wbr>Time<wbr>Quota</td>
+            <td class="align-top">
+                
+                <code>number?</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+The amount of memory in gigabyte-seconds that your application is allowed to consume per day. Setting this value only affects function apps under the consumption plan. Defaults to `0`.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
             <td class="align-top">default<wbr>Hostname</td>
             <td class="align-top">
                 
@@ -3592,6 +3749,21 @@ Should the Function App send session affinity cookies, which route client reques
             <td class="align-top">{{% md %}} 
  (Optional)
 An `connection_string` block as defined below.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">daily_<wbr>memory_<wbr>time_<wbr>quota</td>
+            <td class="align-top">
+                
+                <code>float</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+The amount of memory in gigabyte-seconds that your application is allowed to consume per day. Setting this value only affects function apps under the consumption plan. Defaults to `0`.
  {{% /md %}}
 
             
@@ -6765,7 +6937,7 @@ Specifies whether or not the http2 protocol should be enabled. Defaults to `fals
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-A [List of objects](https://www.terraform.io/docs/configuration/attr-as-blocks.html) representing ip restrictions as defined below.
+A list of objects representing ip restrictions as defined below.
  {{% /md %}}
 
             
@@ -6920,7 +7092,7 @@ Specifies whether or not the http2 protocol should be enabled. Defaults to `fals
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-A [List of objects](https://www.terraform.io/docs/configuration/attr-as-blocks.html) representing ip restrictions as defined below.
+A list of objects representing ip restrictions as defined below.
  {{% /md %}}
 
             
@@ -7075,7 +7247,7 @@ Specifies whether or not the http2 protocol should be enabled. Defaults to `fals
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-A [List of objects](https://www.terraform.io/docs/configuration/attr-as-blocks.html) representing ip restrictions as defined below.
+A list of objects representing ip restrictions as defined below.
  {{% /md %}}
 
             
@@ -7230,7 +7402,7 @@ Specifies whether or not the http2 protocol should be enabled. Defaults to `fals
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-A [List of objects](https://www.terraform.io/docs/configuration/attr-as-blocks.html) representing ip restrictions as defined below.
+A list of objects representing ip restrictions as defined below.
  {{% /md %}}
 
             

@@ -84,9 +84,7 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The idle interval after which the
-Subscription is automatically deleted, minimum of 5 minutes. Provided in the
-TimeSpan format.
+The idle interval after which the topic is automatically deleted as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). The minimum duration is `5` minutes or `P5M`.
  {{% /md %}}
 
             
@@ -101,9 +99,7 @@ TimeSpan format.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-Boolean flag which controls
-whether the Subscription has dead letter support when a message expires. Defaults
-to false.
+Boolean flag which controls whether the Subscription has dead letter support when a message expires. Defaults to `false`.
  {{% /md %}}
 
             
@@ -118,9 +114,7 @@ to false.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The TTL of messages sent to this Subscription
-if no TTL value is set on the message itself. Provided in the TimeSpan
-format.
+The Default message timespan to live as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). This is the duration after which the message expires, starting from when the message is sent to Service Bus. This is the default value used when TimeToLive is not set on a message itself.
  {{% /md %}}
 
             
@@ -135,8 +129,7 @@ format.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-Boolean flag which controls whether the
-Subscription supports batched operations. Defaults to false.
+Boolean flag which controls whether the Subscription supports batched operations. Defaults to `false`.
  {{% /md %}}
 
             
@@ -181,8 +174,7 @@ The name of a Queue or Topic to automatically forward messages to.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The lock duration for the subscription, maximum
-supported value is 5 minutes. Defaults to 1 minute.
+The lock duration for the subscription as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). The default value is `1` minute or `P1M`.
  {{% /md %}}
 
             
@@ -212,8 +204,7 @@ The maximum number of deliveries.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-Specifies the name of the ServiceBus Subscription resource.
-Changing this forces a new resource to be created.
+Specifies the name of the ServiceBus Subscription resource. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -228,8 +219,7 @@ Changing this forces a new resource to be created.
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
-The name of the ServiceBus Namespace to create
-this Subscription in. Changing this forces a new resource to be created.
+The name of the ServiceBus Namespace to create this Subscription in. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -244,9 +234,7 @@ this Subscription in. Changing this forces a new resource to be created.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-Boolean flag which controls whether this Subscription
-supports the concept of a session. Defaults to false. Changing this forces a
-new resource to be created.
+Boolean flag which controls whether this Subscription supports the concept of a session. Defaults to `false`. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -261,8 +249,7 @@ new resource to be created.
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
-The name of the resource group in which to
-create the namespace. Changing this forces a new resource to be created.
+The name of the resource group in which to create the namespace. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -277,8 +264,7 @@ create the namespace. Changing this forces a new resource to be created.
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
-The name of the ServiceBus Topic to create
-this Subscription in. Changing this forces a new resource to be created.
+The name of the ServiceBus Topic to create this Subscription in. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -313,9 +299,7 @@ this Subscription in. Changing this forces a new resource to be created.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The idle interval after which the
-Subscription is automatically deleted, minimum of 5 minutes. Provided in the
-TimeSpan format.
+The idle interval after which the topic is automatically deleted as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). The minimum duration is `5` minutes or `P5M`.
  {{% /md %}}
 
             
@@ -330,9 +314,7 @@ TimeSpan format.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-Boolean flag which controls
-whether the Subscription has dead letter support when a message expires. Defaults
-to false.
+Boolean flag which controls whether the Subscription has dead letter support when a message expires. Defaults to `false`.
  {{% /md %}}
 
             
@@ -347,9 +329,7 @@ to false.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The TTL of messages sent to this Subscription
-if no TTL value is set on the message itself. Provided in the TimeSpan
-format.
+The Default message timespan to live as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). This is the duration after which the message expires, starting from when the message is sent to Service Bus. This is the default value used when TimeToLive is not set on a message itself.
  {{% /md %}}
 
             
@@ -364,8 +344,7 @@ format.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-Boolean flag which controls whether the
-Subscription supports batched operations. Defaults to false.
+Boolean flag which controls whether the Subscription supports batched operations. Defaults to `false`.
  {{% /md %}}
 
             
@@ -410,8 +389,7 @@ The name of a Queue or Topic to automatically forward messages to.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The lock duration for the subscription, maximum
-supported value is 5 minutes. Defaults to 1 minute.
+The lock duration for the subscription as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). The default value is `1` minute or `P1M`.
  {{% /md %}}
 
             
@@ -441,8 +419,7 @@ The maximum number of deliveries.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-Specifies the name of the ServiceBus Subscription resource.
-Changing this forces a new resource to be created.
+Specifies the name of the ServiceBus Subscription resource. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -457,8 +434,7 @@ Changing this forces a new resource to be created.
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
-The name of the ServiceBus Namespace to create
-this Subscription in. Changing this forces a new resource to be created.
+The name of the ServiceBus Namespace to create this Subscription in. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -473,9 +449,7 @@ this Subscription in. Changing this forces a new resource to be created.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-Boolean flag which controls whether this Subscription
-supports the concept of a session. Defaults to false. Changing this forces a
-new resource to be created.
+Boolean flag which controls whether this Subscription supports the concept of a session. Defaults to `false`. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -490,8 +464,7 @@ new resource to be created.
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
-The name of the resource group in which to
-create the namespace. Changing this forces a new resource to be created.
+The name of the resource group in which to create the namespace. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -506,8 +479,7 @@ create the namespace. Changing this forces a new resource to be created.
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
-The name of the ServiceBus Topic to create
-this Subscription in. Changing this forces a new resource to be created.
+The name of the ServiceBus Topic to create this Subscription in. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -542,9 +514,7 @@ this Subscription in. Changing this forces a new resource to be created.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The idle interval after which the
-Subscription is automatically deleted, minimum of 5 minutes. Provided in the
-TimeSpan format.
+The idle interval after which the topic is automatically deleted as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). The minimum duration is `5` minutes or `P5M`.
  {{% /md %}}
 
             
@@ -559,9 +529,7 @@ TimeSpan format.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-Boolean flag which controls
-whether the Subscription has dead letter support when a message expires. Defaults
-to false.
+Boolean flag which controls whether the Subscription has dead letter support when a message expires. Defaults to `false`.
  {{% /md %}}
 
             
@@ -576,9 +544,7 @@ to false.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The TTL of messages sent to this Subscription
-if no TTL value is set on the message itself. Provided in the TimeSpan
-format.
+The Default message timespan to live as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). This is the duration after which the message expires, starting from when the message is sent to Service Bus. This is the default value used when TimeToLive is not set on a message itself.
  {{% /md %}}
 
             
@@ -593,8 +559,7 @@ format.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-Boolean flag which controls whether the
-Subscription supports batched operations. Defaults to false.
+Boolean flag which controls whether the Subscription supports batched operations. Defaults to `false`.
  {{% /md %}}
 
             
@@ -639,8 +604,7 @@ The name of a Queue or Topic to automatically forward messages to.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The lock duration for the subscription, maximum
-supported value is 5 minutes. Defaults to 1 minute.
+The lock duration for the subscription as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). The default value is `1` minute or `P1M`.
  {{% /md %}}
 
             
@@ -670,8 +634,7 @@ The maximum number of deliveries.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-Specifies the name of the ServiceBus Subscription resource.
-Changing this forces a new resource to be created.
+Specifies the name of the ServiceBus Subscription resource. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -686,8 +649,7 @@ Changing this forces a new resource to be created.
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
-The name of the ServiceBus Namespace to create
-this Subscription in. Changing this forces a new resource to be created.
+The name of the ServiceBus Namespace to create this Subscription in. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -702,9 +664,7 @@ this Subscription in. Changing this forces a new resource to be created.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-Boolean flag which controls whether this Subscription
-supports the concept of a session. Defaults to false. Changing this forces a
-new resource to be created.
+Boolean flag which controls whether this Subscription supports the concept of a session. Defaults to `false`. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -719,8 +679,7 @@ new resource to be created.
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
-The name of the resource group in which to
-create the namespace. Changing this forces a new resource to be created.
+The name of the resource group in which to create the namespace. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -735,8 +694,7 @@ create the namespace. Changing this forces a new resource to be created.
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
-The name of the ServiceBus Topic to create
-this Subscription in. Changing this forces a new resource to be created.
+The name of the ServiceBus Topic to create this Subscription in. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -771,9 +729,7 @@ this Subscription in. Changing this forces a new resource to be created.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The idle interval after which the
-Subscription is automatically deleted, minimum of 5 minutes. Provided in the
-TimeSpan format.
+The idle interval after which the topic is automatically deleted as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). The minimum duration is `5` minutes or `P5M`.
  {{% /md %}}
 
             
@@ -788,9 +744,7 @@ TimeSpan format.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-Boolean flag which controls
-whether the Subscription has dead letter support when a message expires. Defaults
-to false.
+Boolean flag which controls whether the Subscription has dead letter support when a message expires. Defaults to `false`.
  {{% /md %}}
 
             
@@ -805,9 +759,7 @@ to false.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The TTL of messages sent to this Subscription
-if no TTL value is set on the message itself. Provided in the TimeSpan
-format.
+The Default message timespan to live as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). This is the duration after which the message expires, starting from when the message is sent to Service Bus. This is the default value used when TimeToLive is not set on a message itself.
  {{% /md %}}
 
             
@@ -822,8 +774,7 @@ format.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-Boolean flag which controls whether the
-Subscription supports batched operations. Defaults to false.
+Boolean flag which controls whether the Subscription supports batched operations. Defaults to `false`.
  {{% /md %}}
 
             
@@ -868,8 +819,7 @@ The name of a Queue or Topic to automatically forward messages to.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The lock duration for the subscription, maximum
-supported value is 5 minutes. Defaults to 1 minute.
+The lock duration for the subscription as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). The default value is `1` minute or `P1M`.
  {{% /md %}}
 
             
@@ -899,8 +849,7 @@ The maximum number of deliveries.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-Specifies the name of the ServiceBus Subscription resource.
-Changing this forces a new resource to be created.
+Specifies the name of the ServiceBus Subscription resource. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -915,8 +864,7 @@ Changing this forces a new resource to be created.
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
-The name of the ServiceBus Namespace to create
-this Subscription in. Changing this forces a new resource to be created.
+The name of the ServiceBus Namespace to create this Subscription in. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -931,9 +879,7 @@ this Subscription in. Changing this forces a new resource to be created.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-Boolean flag which controls whether this Subscription
-supports the concept of a session. Defaults to false. Changing this forces a
-new resource to be created.
+Boolean flag which controls whether this Subscription supports the concept of a session. Defaults to `false`. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -948,8 +894,7 @@ new resource to be created.
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
-The name of the resource group in which to
-create the namespace. Changing this forces a new resource to be created.
+The name of the resource group in which to create the namespace. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -964,8 +909,7 @@ create the namespace. Changing this forces a new resource to be created.
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
-The name of the ServiceBus Topic to create
-this Subscription in. Changing this forces a new resource to be created.
+The name of the ServiceBus Topic to create this Subscription in. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -1012,9 +956,7 @@ The following output properties are available:
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}} The idle interval after which the
-Subscription is automatically deleted, minimum of 5 minutes. Provided in the
-TimeSpan format.
+            <td class="align-top">{{% md %}} The idle interval after which the topic is automatically deleted as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). The minimum duration is `5` minutes or `P5M`.
  {{% /md %}}
 
             
@@ -1027,9 +969,7 @@ TimeSpan format.
                 
                 <code>bool?</code>
             </td>
-            <td class="align-top">{{% md %}} Boolean flag which controls
-whether the Subscription has dead letter support when a message expires. Defaults
-to false.
+            <td class="align-top">{{% md %}} Boolean flag which controls whether the Subscription has dead letter support when a message expires. Defaults to `false`.
  {{% /md %}}
 
             
@@ -1042,9 +982,7 @@ to false.
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}} The TTL of messages sent to this Subscription
-if no TTL value is set on the message itself. Provided in the TimeSpan
-format.
+            <td class="align-top">{{% md %}} The Default message timespan to live as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). This is the duration after which the message expires, starting from when the message is sent to Service Bus. This is the default value used when TimeToLive is not set on a message itself.
  {{% /md %}}
 
             
@@ -1057,8 +995,7 @@ format.
                 
                 <code>bool?</code>
             </td>
-            <td class="align-top">{{% md %}} Boolean flag which controls whether the
-Subscription supports batched operations. Defaults to false.
+            <td class="align-top">{{% md %}} Boolean flag which controls whether the Subscription supports batched operations. Defaults to `false`.
  {{% /md %}}
 
             
@@ -1097,8 +1034,7 @@ Subscription supports batched operations. Defaults to false.
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}} The lock duration for the subscription, maximum
-supported value is 5 minutes. Defaults to 1 minute.
+            <td class="align-top">{{% md %}} The lock duration for the subscription as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). The default value is `1` minute or `P1M`.
  {{% /md %}}
 
             
@@ -1124,8 +1060,7 @@ supported value is 5 minutes. Defaults to 1 minute.
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}} Specifies the name of the ServiceBus Subscription resource.
-Changing this forces a new resource to be created.
+            <td class="align-top">{{% md %}} Specifies the name of the ServiceBus Subscription resource. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -1138,8 +1073,7 @@ Changing this forces a new resource to be created.
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}} The name of the ServiceBus Namespace to create
-this Subscription in. Changing this forces a new resource to be created.
+            <td class="align-top">{{% md %}} The name of the ServiceBus Namespace to create this Subscription in. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -1152,9 +1086,7 @@ this Subscription in. Changing this forces a new resource to be created.
                 
                 <code>bool?</code>
             </td>
-            <td class="align-top">{{% md %}} Boolean flag which controls whether this Subscription
-supports the concept of a session. Defaults to false. Changing this forces a
-new resource to be created.
+            <td class="align-top">{{% md %}} Boolean flag which controls whether this Subscription supports the concept of a session. Defaults to `false`. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -1167,8 +1099,7 @@ new resource to be created.
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}} The name of the resource group in which to
-create the namespace. Changing this forces a new resource to be created.
+            <td class="align-top">{{% md %}} The name of the resource group in which to create the namespace. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -1181,8 +1112,7 @@ create the namespace. Changing this forces a new resource to be created.
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}} The name of the ServiceBus Topic to create
-this Subscription in. Changing this forces a new resource to be created.
+            <td class="align-top">{{% md %}} The name of the ServiceBus Topic to create this Subscription in. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -1215,9 +1145,7 @@ this Subscription in. Changing this forces a new resource to be created.
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}} The idle interval after which the
-Subscription is automatically deleted, minimum of 5 minutes. Provided in the
-TimeSpan format.
+            <td class="align-top">{{% md %}} The idle interval after which the topic is automatically deleted as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). The minimum duration is `5` minutes or `P5M`.
  {{% /md %}}
 
             
@@ -1230,9 +1158,7 @@ TimeSpan format.
                 
                 <code>*bool</code>
             </td>
-            <td class="align-top">{{% md %}} Boolean flag which controls
-whether the Subscription has dead letter support when a message expires. Defaults
-to false.
+            <td class="align-top">{{% md %}} Boolean flag which controls whether the Subscription has dead letter support when a message expires. Defaults to `false`.
  {{% /md %}}
 
             
@@ -1245,9 +1171,7 @@ to false.
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}} The TTL of messages sent to this Subscription
-if no TTL value is set on the message itself. Provided in the TimeSpan
-format.
+            <td class="align-top">{{% md %}} The Default message timespan to live as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). This is the duration after which the message expires, starting from when the message is sent to Service Bus. This is the default value used when TimeToLive is not set on a message itself.
  {{% /md %}}
 
             
@@ -1260,8 +1184,7 @@ format.
                 
                 <code>*bool</code>
             </td>
-            <td class="align-top">{{% md %}} Boolean flag which controls whether the
-Subscription supports batched operations. Defaults to false.
+            <td class="align-top">{{% md %}} Boolean flag which controls whether the Subscription supports batched operations. Defaults to `false`.
  {{% /md %}}
 
             
@@ -1300,8 +1223,7 @@ Subscription supports batched operations. Defaults to false.
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}} The lock duration for the subscription, maximum
-supported value is 5 minutes. Defaults to 1 minute.
+            <td class="align-top">{{% md %}} The lock duration for the subscription as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). The default value is `1` minute or `P1M`.
  {{% /md %}}
 
             
@@ -1327,8 +1249,7 @@ supported value is 5 minutes. Defaults to 1 minute.
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}} Specifies the name of the ServiceBus Subscription resource.
-Changing this forces a new resource to be created.
+            <td class="align-top">{{% md %}} Specifies the name of the ServiceBus Subscription resource. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -1341,8 +1262,7 @@ Changing this forces a new resource to be created.
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}} The name of the ServiceBus Namespace to create
-this Subscription in. Changing this forces a new resource to be created.
+            <td class="align-top">{{% md %}} The name of the ServiceBus Namespace to create this Subscription in. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -1355,9 +1275,7 @@ this Subscription in. Changing this forces a new resource to be created.
                 
                 <code>*bool</code>
             </td>
-            <td class="align-top">{{% md %}} Boolean flag which controls whether this Subscription
-supports the concept of a session. Defaults to false. Changing this forces a
-new resource to be created.
+            <td class="align-top">{{% md %}} Boolean flag which controls whether this Subscription supports the concept of a session. Defaults to `false`. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -1370,8 +1288,7 @@ new resource to be created.
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}} The name of the resource group in which to
-create the namespace. Changing this forces a new resource to be created.
+            <td class="align-top">{{% md %}} The name of the resource group in which to create the namespace. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -1384,8 +1301,7 @@ create the namespace. Changing this forces a new resource to be created.
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}} The name of the ServiceBus Topic to create
-this Subscription in. Changing this forces a new resource to be created.
+            <td class="align-top">{{% md %}} The name of the ServiceBus Topic to create this Subscription in. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -1418,9 +1334,7 @@ this Subscription in. Changing this forces a new resource to be created.
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}} The idle interval after which the
-Subscription is automatically deleted, minimum of 5 minutes. Provided in the
-TimeSpan format.
+            <td class="align-top">{{% md %}} The idle interval after which the topic is automatically deleted as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). The minimum duration is `5` minutes or `P5M`.
  {{% /md %}}
 
             
@@ -1433,9 +1347,7 @@ TimeSpan format.
                 
                 <code>boolean?</code>
             </td>
-            <td class="align-top">{{% md %}} Boolean flag which controls
-whether the Subscription has dead letter support when a message expires. Defaults
-to false.
+            <td class="align-top">{{% md %}} Boolean flag which controls whether the Subscription has dead letter support when a message expires. Defaults to `false`.
  {{% /md %}}
 
             
@@ -1448,9 +1360,7 @@ to false.
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}} The TTL of messages sent to this Subscription
-if no TTL value is set on the message itself. Provided in the TimeSpan
-format.
+            <td class="align-top">{{% md %}} The Default message timespan to live as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). This is the duration after which the message expires, starting from when the message is sent to Service Bus. This is the default value used when TimeToLive is not set on a message itself.
  {{% /md %}}
 
             
@@ -1463,8 +1373,7 @@ format.
                 
                 <code>boolean?</code>
             </td>
-            <td class="align-top">{{% md %}} Boolean flag which controls whether the
-Subscription supports batched operations. Defaults to false.
+            <td class="align-top">{{% md %}} Boolean flag which controls whether the Subscription supports batched operations. Defaults to `false`.
  {{% /md %}}
 
             
@@ -1503,8 +1412,7 @@ Subscription supports batched operations. Defaults to false.
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}} The lock duration for the subscription, maximum
-supported value is 5 minutes. Defaults to 1 minute.
+            <td class="align-top">{{% md %}} The lock duration for the subscription as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). The default value is `1` minute or `P1M`.
  {{% /md %}}
 
             
@@ -1530,8 +1438,7 @@ supported value is 5 minutes. Defaults to 1 minute.
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}} Specifies the name of the ServiceBus Subscription resource.
-Changing this forces a new resource to be created.
+            <td class="align-top">{{% md %}} Specifies the name of the ServiceBus Subscription resource. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -1544,8 +1451,7 @@ Changing this forces a new resource to be created.
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}} The name of the ServiceBus Namespace to create
-this Subscription in. Changing this forces a new resource to be created.
+            <td class="align-top">{{% md %}} The name of the ServiceBus Namespace to create this Subscription in. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -1558,9 +1464,7 @@ this Subscription in. Changing this forces a new resource to be created.
                 
                 <code>boolean?</code>
             </td>
-            <td class="align-top">{{% md %}} Boolean flag which controls whether this Subscription
-supports the concept of a session. Defaults to false. Changing this forces a
-new resource to be created.
+            <td class="align-top">{{% md %}} Boolean flag which controls whether this Subscription supports the concept of a session. Defaults to `false`. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -1573,8 +1477,7 @@ new resource to be created.
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}} The name of the resource group in which to
-create the namespace. Changing this forces a new resource to be created.
+            <td class="align-top">{{% md %}} The name of the resource group in which to create the namespace. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -1587,8 +1490,7 @@ create the namespace. Changing this forces a new resource to be created.
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}} The name of the ServiceBus Topic to create
-this Subscription in. Changing this forces a new resource to be created.
+            <td class="align-top">{{% md %}} The name of the ServiceBus Topic to create this Subscription in. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -1621,9 +1523,7 @@ this Subscription in. Changing this forces a new resource to be created.
                 
                 <code>str</code>
             </td>
-            <td class="align-top">{{% md %}} The idle interval after which the
-Subscription is automatically deleted, minimum of 5 minutes. Provided in the
-TimeSpan format.
+            <td class="align-top">{{% md %}} The idle interval after which the topic is automatically deleted as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). The minimum duration is `5` minutes or `P5M`.
  {{% /md %}}
 
             
@@ -1636,9 +1536,7 @@ TimeSpan format.
                 
                 <code>bool</code>
             </td>
-            <td class="align-top">{{% md %}} Boolean flag which controls
-whether the Subscription has dead letter support when a message expires. Defaults
-to false.
+            <td class="align-top">{{% md %}} Boolean flag which controls whether the Subscription has dead letter support when a message expires. Defaults to `false`.
  {{% /md %}}
 
             
@@ -1651,9 +1549,7 @@ to false.
                 
                 <code>str</code>
             </td>
-            <td class="align-top">{{% md %}} The TTL of messages sent to this Subscription
-if no TTL value is set on the message itself. Provided in the TimeSpan
-format.
+            <td class="align-top">{{% md %}} The Default message timespan to live as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). This is the duration after which the message expires, starting from when the message is sent to Service Bus. This is the default value used when TimeToLive is not set on a message itself.
  {{% /md %}}
 
             
@@ -1666,8 +1562,7 @@ format.
                 
                 <code>bool</code>
             </td>
-            <td class="align-top">{{% md %}} Boolean flag which controls whether the
-Subscription supports batched operations. Defaults to false.
+            <td class="align-top">{{% md %}} Boolean flag which controls whether the Subscription supports batched operations. Defaults to `false`.
  {{% /md %}}
 
             
@@ -1706,8 +1601,7 @@ Subscription supports batched operations. Defaults to false.
                 
                 <code>str</code>
             </td>
-            <td class="align-top">{{% md %}} The lock duration for the subscription, maximum
-supported value is 5 minutes. Defaults to 1 minute.
+            <td class="align-top">{{% md %}} The lock duration for the subscription as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). The default value is `1` minute or `P1M`.
  {{% /md %}}
 
             
@@ -1733,8 +1627,7 @@ supported value is 5 minutes. Defaults to 1 minute.
                 
                 <code>str</code>
             </td>
-            <td class="align-top">{{% md %}} Specifies the name of the ServiceBus Subscription resource.
-Changing this forces a new resource to be created.
+            <td class="align-top">{{% md %}} Specifies the name of the ServiceBus Subscription resource. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -1747,8 +1640,7 @@ Changing this forces a new resource to be created.
                 
                 <code>str</code>
             </td>
-            <td class="align-top">{{% md %}} The name of the ServiceBus Namespace to create
-this Subscription in. Changing this forces a new resource to be created.
+            <td class="align-top">{{% md %}} The name of the ServiceBus Namespace to create this Subscription in. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -1761,9 +1653,7 @@ this Subscription in. Changing this forces a new resource to be created.
                 
                 <code>bool</code>
             </td>
-            <td class="align-top">{{% md %}} Boolean flag which controls whether this Subscription
-supports the concept of a session. Defaults to false. Changing this forces a
-new resource to be created.
+            <td class="align-top">{{% md %}} Boolean flag which controls whether this Subscription supports the concept of a session. Defaults to `false`. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -1776,8 +1666,7 @@ new resource to be created.
                 
                 <code>str</code>
             </td>
-            <td class="align-top">{{% md %}} The name of the resource group in which to
-create the namespace. Changing this forces a new resource to be created.
+            <td class="align-top">{{% md %}} The name of the resource group in which to create the namespace. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -1790,8 +1679,7 @@ create the namespace. Changing this forces a new resource to be created.
                 
                 <code>str</code>
             </td>
-            <td class="align-top">{{% md %}} The name of the ServiceBus Topic to create
-this Subscription in. Changing this forces a new resource to be created.
+            <td class="align-top">{{% md %}} The name of the ServiceBus Topic to create this Subscription in. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -1885,9 +1773,7 @@ The following state arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The idle interval after which the
-Subscription is automatically deleted, minimum of 5 minutes. Provided in the
-TimeSpan format.
+The idle interval after which the topic is automatically deleted as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). The minimum duration is `5` minutes or `P5M`.
  {{% /md %}}
 
             
@@ -1902,9 +1788,7 @@ TimeSpan format.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-Boolean flag which controls
-whether the Subscription has dead letter support when a message expires. Defaults
-to false.
+Boolean flag which controls whether the Subscription has dead letter support when a message expires. Defaults to `false`.
  {{% /md %}}
 
             
@@ -1919,9 +1803,7 @@ to false.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The TTL of messages sent to this Subscription
-if no TTL value is set on the message itself. Provided in the TimeSpan
-format.
+The Default message timespan to live as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). This is the duration after which the message expires, starting from when the message is sent to Service Bus. This is the default value used when TimeToLive is not set on a message itself.
  {{% /md %}}
 
             
@@ -1936,8 +1818,7 @@ format.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-Boolean flag which controls whether the
-Subscription supports batched operations. Defaults to false.
+Boolean flag which controls whether the Subscription supports batched operations. Defaults to `false`.
  {{% /md %}}
 
             
@@ -1982,8 +1863,7 @@ The name of a Queue or Topic to automatically forward messages to.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The lock duration for the subscription, maximum
-supported value is 5 minutes. Defaults to 1 minute.
+The lock duration for the subscription as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). The default value is `1` minute or `P1M`.
  {{% /md %}}
 
             
@@ -2013,8 +1893,7 @@ The maximum number of deliveries.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-Specifies the name of the ServiceBus Subscription resource.
-Changing this forces a new resource to be created.
+Specifies the name of the ServiceBus Subscription resource. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -2029,8 +1908,7 @@ Changing this forces a new resource to be created.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The name of the ServiceBus Namespace to create
-this Subscription in. Changing this forces a new resource to be created.
+The name of the ServiceBus Namespace to create this Subscription in. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -2045,9 +1923,7 @@ this Subscription in. Changing this forces a new resource to be created.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-Boolean flag which controls whether this Subscription
-supports the concept of a session. Defaults to false. Changing this forces a
-new resource to be created.
+Boolean flag which controls whether this Subscription supports the concept of a session. Defaults to `false`. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -2062,8 +1938,7 @@ new resource to be created.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The name of the resource group in which to
-create the namespace. Changing this forces a new resource to be created.
+The name of the resource group in which to create the namespace. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -2078,8 +1953,7 @@ create the namespace. Changing this forces a new resource to be created.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The name of the ServiceBus Topic to create
-this Subscription in. Changing this forces a new resource to be created.
+The name of the ServiceBus Topic to create this Subscription in. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -2114,9 +1988,7 @@ this Subscription in. Changing this forces a new resource to be created.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The idle interval after which the
-Subscription is automatically deleted, minimum of 5 minutes. Provided in the
-TimeSpan format.
+The idle interval after which the topic is automatically deleted as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). The minimum duration is `5` minutes or `P5M`.
  {{% /md %}}
 
             
@@ -2131,9 +2003,7 @@ TimeSpan format.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-Boolean flag which controls
-whether the Subscription has dead letter support when a message expires. Defaults
-to false.
+Boolean flag which controls whether the Subscription has dead letter support when a message expires. Defaults to `false`.
  {{% /md %}}
 
             
@@ -2148,9 +2018,7 @@ to false.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The TTL of messages sent to this Subscription
-if no TTL value is set on the message itself. Provided in the TimeSpan
-format.
+The Default message timespan to live as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). This is the duration after which the message expires, starting from when the message is sent to Service Bus. This is the default value used when TimeToLive is not set on a message itself.
  {{% /md %}}
 
             
@@ -2165,8 +2033,7 @@ format.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-Boolean flag which controls whether the
-Subscription supports batched operations. Defaults to false.
+Boolean flag which controls whether the Subscription supports batched operations. Defaults to `false`.
  {{% /md %}}
 
             
@@ -2211,8 +2078,7 @@ The name of a Queue or Topic to automatically forward messages to.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The lock duration for the subscription, maximum
-supported value is 5 minutes. Defaults to 1 minute.
+The lock duration for the subscription as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). The default value is `1` minute or `P1M`.
  {{% /md %}}
 
             
@@ -2242,8 +2108,7 @@ The maximum number of deliveries.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-Specifies the name of the ServiceBus Subscription resource.
-Changing this forces a new resource to be created.
+Specifies the name of the ServiceBus Subscription resource. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -2258,8 +2123,7 @@ Changing this forces a new resource to be created.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The name of the ServiceBus Namespace to create
-this Subscription in. Changing this forces a new resource to be created.
+The name of the ServiceBus Namespace to create this Subscription in. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -2274,9 +2138,7 @@ this Subscription in. Changing this forces a new resource to be created.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-Boolean flag which controls whether this Subscription
-supports the concept of a session. Defaults to false. Changing this forces a
-new resource to be created.
+Boolean flag which controls whether this Subscription supports the concept of a session. Defaults to `false`. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -2291,8 +2153,7 @@ new resource to be created.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The name of the resource group in which to
-create the namespace. Changing this forces a new resource to be created.
+The name of the resource group in which to create the namespace. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -2307,8 +2168,7 @@ create the namespace. Changing this forces a new resource to be created.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The name of the ServiceBus Topic to create
-this Subscription in. Changing this forces a new resource to be created.
+The name of the ServiceBus Topic to create this Subscription in. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -2343,9 +2203,7 @@ this Subscription in. Changing this forces a new resource to be created.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The idle interval after which the
-Subscription is automatically deleted, minimum of 5 minutes. Provided in the
-TimeSpan format.
+The idle interval after which the topic is automatically deleted as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). The minimum duration is `5` minutes or `P5M`.
  {{% /md %}}
 
             
@@ -2360,9 +2218,7 @@ TimeSpan format.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-Boolean flag which controls
-whether the Subscription has dead letter support when a message expires. Defaults
-to false.
+Boolean flag which controls whether the Subscription has dead letter support when a message expires. Defaults to `false`.
  {{% /md %}}
 
             
@@ -2377,9 +2233,7 @@ to false.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The TTL of messages sent to this Subscription
-if no TTL value is set on the message itself. Provided in the TimeSpan
-format.
+The Default message timespan to live as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). This is the duration after which the message expires, starting from when the message is sent to Service Bus. This is the default value used when TimeToLive is not set on a message itself.
  {{% /md %}}
 
             
@@ -2394,8 +2248,7 @@ format.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-Boolean flag which controls whether the
-Subscription supports batched operations. Defaults to false.
+Boolean flag which controls whether the Subscription supports batched operations. Defaults to `false`.
  {{% /md %}}
 
             
@@ -2440,8 +2293,7 @@ The name of a Queue or Topic to automatically forward messages to.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The lock duration for the subscription, maximum
-supported value is 5 minutes. Defaults to 1 minute.
+The lock duration for the subscription as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). The default value is `1` minute or `P1M`.
  {{% /md %}}
 
             
@@ -2471,8 +2323,7 @@ The maximum number of deliveries.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-Specifies the name of the ServiceBus Subscription resource.
-Changing this forces a new resource to be created.
+Specifies the name of the ServiceBus Subscription resource. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -2487,8 +2338,7 @@ Changing this forces a new resource to be created.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The name of the ServiceBus Namespace to create
-this Subscription in. Changing this forces a new resource to be created.
+The name of the ServiceBus Namespace to create this Subscription in. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -2503,9 +2353,7 @@ this Subscription in. Changing this forces a new resource to be created.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-Boolean flag which controls whether this Subscription
-supports the concept of a session. Defaults to false. Changing this forces a
-new resource to be created.
+Boolean flag which controls whether this Subscription supports the concept of a session. Defaults to `false`. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -2520,8 +2368,7 @@ new resource to be created.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The name of the resource group in which to
-create the namespace. Changing this forces a new resource to be created.
+The name of the resource group in which to create the namespace. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -2536,8 +2383,7 @@ create the namespace. Changing this forces a new resource to be created.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The name of the ServiceBus Topic to create
-this Subscription in. Changing this forces a new resource to be created.
+The name of the ServiceBus Topic to create this Subscription in. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -2572,9 +2418,7 @@ this Subscription in. Changing this forces a new resource to be created.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The idle interval after which the
-Subscription is automatically deleted, minimum of 5 minutes. Provided in the
-TimeSpan format.
+The idle interval after which the topic is automatically deleted as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). The minimum duration is `5` minutes or `P5M`.
  {{% /md %}}
 
             
@@ -2589,9 +2433,7 @@ TimeSpan format.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-Boolean flag which controls
-whether the Subscription has dead letter support when a message expires. Defaults
-to false.
+Boolean flag which controls whether the Subscription has dead letter support when a message expires. Defaults to `false`.
  {{% /md %}}
 
             
@@ -2606,9 +2448,7 @@ to false.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The TTL of messages sent to this Subscription
-if no TTL value is set on the message itself. Provided in the TimeSpan
-format.
+The Default message timespan to live as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). This is the duration after which the message expires, starting from when the message is sent to Service Bus. This is the default value used when TimeToLive is not set on a message itself.
  {{% /md %}}
 
             
@@ -2623,8 +2463,7 @@ format.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-Boolean flag which controls whether the
-Subscription supports batched operations. Defaults to false.
+Boolean flag which controls whether the Subscription supports batched operations. Defaults to `false`.
  {{% /md %}}
 
             
@@ -2669,8 +2508,7 @@ The name of a Queue or Topic to automatically forward messages to.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The lock duration for the subscription, maximum
-supported value is 5 minutes. Defaults to 1 minute.
+The lock duration for the subscription as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). The default value is `1` minute or `P1M`.
  {{% /md %}}
 
             
@@ -2700,8 +2538,7 @@ The maximum number of deliveries.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-Specifies the name of the ServiceBus Subscription resource.
-Changing this forces a new resource to be created.
+Specifies the name of the ServiceBus Subscription resource. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -2716,8 +2553,7 @@ Changing this forces a new resource to be created.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The name of the ServiceBus Namespace to create
-this Subscription in. Changing this forces a new resource to be created.
+The name of the ServiceBus Namespace to create this Subscription in. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -2732,9 +2568,7 @@ this Subscription in. Changing this forces a new resource to be created.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-Boolean flag which controls whether this Subscription
-supports the concept of a session. Defaults to false. Changing this forces a
-new resource to be created.
+Boolean flag which controls whether this Subscription supports the concept of a session. Defaults to `false`. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -2749,8 +2583,7 @@ new resource to be created.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The name of the resource group in which to
-create the namespace. Changing this forces a new resource to be created.
+The name of the resource group in which to create the namespace. Changing this forces a new resource to be created.
  {{% /md %}}
 
             
@@ -2765,8 +2598,7 @@ create the namespace. Changing this forces a new resource to be created.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The name of the ServiceBus Topic to create
-this Subscription in. Changing this forces a new resource to be created.
+The name of the ServiceBus Topic to create this Subscription in. Changing this forces a new resource to be created.
  {{% /md %}}
 
             

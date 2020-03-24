@@ -7,6 +7,10 @@ block_external_search_index: true
 table td p { margin-top: 0; margin-bottom: 0; }
 </style>
 
+UrlMaps are used to route requests to a backend service based on rules
+that you define for the host and path of an incoming URL.
+
+> This content is derived from https://github.com/terraform-providers/terraform-provider-google/blob/master/website/docs/r/compute_region_url_map.html.markdown.
 
 
 

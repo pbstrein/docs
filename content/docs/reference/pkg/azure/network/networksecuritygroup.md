@@ -133,7 +133,7 @@ The name of the resource group in which to create the network security group. Ch
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-[List of objects](https://www.terraform.io/docs/configuration/attr-as-blocks.html) representing security rules, as defined below.
+A list of objects representing security rules, as defined below.
  {{% /md %}}
 
             
@@ -228,7 +228,7 @@ The name of the resource group in which to create the network security group. Ch
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-[List of objects](https://www.terraform.io/docs/configuration/attr-as-blocks.html) representing security rules, as defined below.
+A list of objects representing security rules, as defined below.
  {{% /md %}}
 
             
@@ -323,7 +323,7 @@ The name of the resource group in which to create the network security group. Ch
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-[List of objects](https://www.terraform.io/docs/configuration/attr-as-blocks.html) representing security rules, as defined below.
+A list of objects representing security rules, as defined below.
  {{% /md %}}
 
             
@@ -418,7 +418,7 @@ The name of the resource group in which to create the network security group. Ch
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-[List of objects](https://www.terraform.io/docs/configuration/attr-as-blocks.html) representing security rules, as defined below.
+A list of objects representing security rules, as defined below.
  {{% /md %}}
 
             
@@ -519,7 +519,7 @@ The following output properties are available:
                 
                 <code><a href="#networksecuritygroupsecurityrule">List&lt;Network<wbr>Security<wbr>Group<wbr>Security<wbr>Rule&gt;</a></code>
             </td>
-            <td class="align-top">{{% md %}} [List of objects](https://www.terraform.io/docs/configuration/attr-as-blocks.html) representing security rules, as defined below.
+            <td class="align-top">{{% md %}} A list of objects representing security rules, as defined below.
  {{% /md %}}
 
             
@@ -604,7 +604,7 @@ The following output properties are available:
                 
                 <code><a href="#networksecuritygroupsecurityrule">[]Network<wbr>Security<wbr>Group<wbr>Security<wbr>Rule</a></code>
             </td>
-            <td class="align-top">{{% md %}} [List of objects](https://www.terraform.io/docs/configuration/attr-as-blocks.html) representing security rules, as defined below.
+            <td class="align-top">{{% md %}} A list of objects representing security rules, as defined below.
  {{% /md %}}
 
             
@@ -689,7 +689,7 @@ The following output properties are available:
                 
                 <code><a href="#networksecuritygroupsecurityrule">Network<wbr>Security<wbr>Group<wbr>Security<wbr>Rule[]</a></code>
             </td>
-            <td class="align-top">{{% md %}} [List of objects](https://www.terraform.io/docs/configuration/attr-as-blocks.html) representing security rules, as defined below.
+            <td class="align-top">{{% md %}} A list of objects representing security rules, as defined below.
  {{% /md %}}
 
             
@@ -774,7 +774,7 @@ The following output properties are available:
                 
                 <code><a href="#networksecuritygroupsecurityrule">List[Network<wbr>Security<wbr>Group<wbr>Security<wbr>Rule]</a></code>
             </td>
-            <td class="align-top">{{% md %}} [List of objects](https://www.terraform.io/docs/configuration/attr-as-blocks.html) representing security rules, as defined below.
+            <td class="align-top">{{% md %}} A list of objects representing security rules, as defined below.
  {{% /md %}}
 
             
@@ -926,7 +926,7 @@ The name of the resource group in which to create the network security group. Ch
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-[List of objects](https://www.terraform.io/docs/configuration/attr-as-blocks.html) representing security rules, as defined below.
+A list of objects representing security rules, as defined below.
  {{% /md %}}
 
             
@@ -1021,7 +1021,7 @@ The name of the resource group in which to create the network security group. Ch
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-[List of objects](https://www.terraform.io/docs/configuration/attr-as-blocks.html) representing security rules, as defined below.
+A list of objects representing security rules, as defined below.
  {{% /md %}}
 
             
@@ -1116,7 +1116,7 @@ The name of the resource group in which to create the network security group. Ch
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-[List of objects](https://www.terraform.io/docs/configuration/attr-as-blocks.html) representing security rules, as defined below.
+A list of objects representing security rules, as defined below.
  {{% /md %}}
 
             
@@ -1211,7 +1211,7 @@ The name of the resource group in which to create the network security group. Ch
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-[List of objects](https://www.terraform.io/docs/configuration/attr-as-blocks.html) representing security rules, as defined below.
+A list of objects representing security rules, as defined below.
  {{% /md %}}
 
             

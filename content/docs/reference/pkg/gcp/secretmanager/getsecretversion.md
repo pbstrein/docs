@@ -7,6 +7,9 @@ block_external_search_index: true
 table td p { margin-top: 0; margin-bottom: 0; }
 </style>
 
+Get a Secret Manager secret's version. For more information see the [official documentation](https://cloud.google.com/secret-manager/docs/) and [API](https://cloud.google.com/secret-manager/docs/reference/rest/v1beta1/projects.secrets.versions).
+
+> This content is derived from https://github.com/terraform-providers/terraform-provider-google/blob/master/website/docs/d/datasource_google_secret_manager_secret_version.html.markdown.
 
 
 
@@ -62,6 +65,8 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The project to get the secret version for. If it
+is not provided, the provider project is used.
  {{% /md %}}
 
             
@@ -76,6 +81,7 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+The secret to get the secret version for.
  {{% /md %}}
 
             
@@ -90,6 +96,8 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The version of the secret to get. If it
+is not provided, the latest version is retrieved.
  {{% /md %}}
 
             
@@ -124,6 +132,8 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The project to get the secret version for. If it
+is not provided, the provider project is used.
  {{% /md %}}
 
             
@@ -138,6 +148,7 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+The secret to get the secret version for.
  {{% /md %}}
 
             
@@ -152,6 +163,8 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The version of the secret to get. If it
+is not provided, the latest version is retrieved.
  {{% /md %}}
 
             
@@ -186,6 +199,8 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The project to get the secret version for. If it
+is not provided, the provider project is used.
  {{% /md %}}
 
             
@@ -200,6 +215,7 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+The secret to get the secret version for.
  {{% /md %}}
 
             
@@ -214,6 +230,8 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The version of the secret to get. If it
+is not provided, the latest version is retrieved.
  {{% /md %}}
 
             
@@ -248,6 +266,8 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The project to get the secret version for. If it
+is not provided, the provider project is used.
  {{% /md %}}
 
             
@@ -262,6 +282,7 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+The secret to get the secret version for.
  {{% /md %}}
 
             
@@ -276,6 +297,8 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The version of the secret to get. If it
+is not provided, the latest version is retrieved.
  {{% /md %}}
 
             
@@ -323,7 +346,8 @@ The following output properties are available:
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} The time at which the Secret was created.
+ {{% /md %}}
 
             
             </td>
@@ -335,7 +359,8 @@ The following output properties are available:
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} The time at which the Secret was destroyed. Only present if state is DESTROYED.
+ {{% /md %}}
 
             
             </td>
@@ -347,7 +372,8 @@ The following output properties are available:
                 
                 <code>bool</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} True if the current state of the SecretVersion is enabled.
+ {{% /md %}}
 
             
             </td>
@@ -372,7 +398,9 @@ The following output properties are available:
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} The resource name of the SecretVersion. Format:
+`projects/{{project}}/secrets/{{secret_id}}/versions/{{version}}`
+ {{% /md %}}
 
             
             </td>
@@ -408,7 +436,8 @@ The following output properties are available:
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} The secret data. No larger than 64KiB.
+ {{% /md %}}
 
             
             </td>
@@ -452,7 +481,8 @@ The following output properties are available:
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} The time at which the Secret was created.
+ {{% /md %}}
 
             
             </td>
@@ -464,7 +494,8 @@ The following output properties are available:
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} The time at which the Secret was destroyed. Only present if state is DESTROYED.
+ {{% /md %}}
 
             
             </td>
@@ -476,7 +507,8 @@ The following output properties are available:
                 
                 <code>bool</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} True if the current state of the SecretVersion is enabled.
+ {{% /md %}}
 
             
             </td>
@@ -501,7 +533,9 @@ The following output properties are available:
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} The resource name of the SecretVersion. Format:
+`projects/{{project}}/secrets/{{secret_id}}/versions/{{version}}`
+ {{% /md %}}
 
             
             </td>
@@ -537,7 +571,8 @@ The following output properties are available:
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} The secret data. No larger than 64KiB.
+ {{% /md %}}
 
             
             </td>
@@ -581,7 +616,8 @@ The following output properties are available:
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} The time at which the Secret was created.
+ {{% /md %}}
 
             
             </td>
@@ -593,7 +629,8 @@ The following output properties are available:
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} The time at which the Secret was destroyed. Only present if state is DESTROYED.
+ {{% /md %}}
 
             
             </td>
@@ -605,7 +642,8 @@ The following output properties are available:
                 
                 <code>boolean</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} True if the current state of the SecretVersion is enabled.
+ {{% /md %}}
 
             
             </td>
@@ -630,7 +668,9 @@ The following output properties are available:
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} The resource name of the SecretVersion. Format:
+`projects/{{project}}/secrets/{{secret_id}}/versions/{{version}}`
+ {{% /md %}}
 
             
             </td>
@@ -666,7 +706,8 @@ The following output properties are available:
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} The secret data. No larger than 64KiB.
+ {{% /md %}}
 
             
             </td>
@@ -710,7 +751,8 @@ The following output properties are available:
                 
                 <code>str</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} The time at which the Secret was created.
+ {{% /md %}}
 
             
             </td>
@@ -722,7 +764,8 @@ The following output properties are available:
                 
                 <code>str</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} The time at which the Secret was destroyed. Only present if state is DESTROYED.
+ {{% /md %}}
 
             
             </td>
@@ -734,7 +777,8 @@ The following output properties are available:
                 
                 <code>bool</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} True if the current state of the SecretVersion is enabled.
+ {{% /md %}}
 
             
             </td>
@@ -759,7 +803,9 @@ The following output properties are available:
                 
                 <code>str</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} The resource name of the SecretVersion. Format:
+`projects/{{project}}/secrets/{{secret_id}}/versions/{{version}}`
+ {{% /md %}}
 
             
             </td>
@@ -795,7 +841,8 @@ The following output properties are available:
                 
                 <code>str</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} The secret data. No larger than 64KiB.
+ {{% /md %}}
 
             
             </td>

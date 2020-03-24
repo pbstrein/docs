@@ -7,6 +7,28 @@ block_external_search_index: true
 table td p { margin-top: 0; margin-bottom: 0; }
 </style>
 
+A Google Cloud Redis instance.
+
+
+To get more information about Instance, see:
+
+* [API documentation](https://cloud.google.com/memorystore/docs/redis/reference/rest/)
+* How-to Guides
+    * [Official Documentation](https://cloud.google.com/memorystore/docs/redis/)
+
+## Example Usage - Redis Instance Basic
+
+
+```typescript
+import * as pulumi from "@pulumi/pulumi";
+import * as gcp from "@pulumi/gcp";
+
+const cache = new gcp.redis.Instance("cache", {
+    memorySizeGb: 1,
+});
+```
+
+> This content is derived from https://github.com/terraform-providers/terraform-provider-google/blob/master/website/docs/r/redis_instance.html.markdown.
 
 
 
@@ -16,7 +38,7 @@ table td p { margin-top: 0; margin-bottom: 0; }
 
 <div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="k">new </span><span class="nx"><a href="/docs/reference/pkg/nodejs/pulumi/gcp/redis/#Instance">Instance</a></span><span class="p">(</span><span class="nx">name</span>: <span class="nx"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string">string</a></span><span class="p">, </span><span class="nx">args</span>: <span class="nx"><a href="/docs/reference/pkg/nodejs/pulumi/gcp/redis/#InstanceArgs">InstanceArgs</a></span><span class="p">, </span><span class="nx">opts</span>?: <span class="nx"><a href="/docs/reference/pkg/nodejs/pulumi/pulumi/pulumi/#CustomResourceOptions">pulumi.CustomResourceOptions</a></span><span class="p">);</span></code></pre></div>
 
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def </span><span class="nf">Instance</span><span class="p">(resource_name, opts=None, </span>alternative_location_id=None<span class="p">, </span>authorized_network=None<span class="p">, </span>display_name=None<span class="p">, </span>labels=None<span class="p">, </span>location_id=None<span class="p">, </span>memory_size_gb=None<span class="p">, </span>name=None<span class="p">, </span>project=None<span class="p">, </span>redis_configs=None<span class="p">, </span>redis_version=None<span class="p">, </span>region=None<span class="p">, </span>reserved_ip_range=None<span class="p">, </span>tier=None<span class="p">, __props__=None);</span></code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def </span><span class="nf">Instance</span><span class="p">(resource_name, opts=None, </span>alternative_location_id=None<span class="p">, </span>authorized_network=None<span class="p">, </span>connect_mode=None<span class="p">, </span>display_name=None<span class="p">, </span>labels=None<span class="p">, </span>location_id=None<span class="p">, </span>memory_size_gb=None<span class="p">, </span>name=None<span class="p">, </span>project=None<span class="p">, </span>redis_configs=None<span class="p">, </span>redis_version=None<span class="p">, </span>region=None<span class="p">, </span>reserved_ip_range=None<span class="p">, </span>tier=None<span class="p">, __props__=None);</span></code></pre></div>
 
 <div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="k">func </span>NewInstance<span class="p">(</span><span class="nx">ctx</span> *<span class="nx"><a href="https://pkg.go.dev/github.com/pulumi/pulumi/sdk/go/pulumi?tab=doc#Context">pulumi.Context</a></span><span class="p">, </span><span class="nx">name</span> <span class="nx"><a href="https://golang.org/pkg/builtin/#string">string</a></span><span class="p">, </span><span class="nx">args</span> <span class="nx"><a href="https://pkg.go.dev/github.com/pulumi/pulumi-gcp/sdk/go/gcp/redis?tab=doc#InstanceArgs">InstanceArgs</a></span><span class="p">, </span><span class="nx">opts</span> ...<span class="nx"><a href="https://pkg.go.dev/github.com/pulumi/pulumi/sdk/go/pulumi?tab=doc#ResourceOption">pulumi.ResourceOption</a></span><span class="p">) (*<span class="nx"><a href="https://pkg.go.dev/github.com/pulumi/pulumi-gcp/sdk/go/gcp/redis?tab=doc#Instance">Instance</a></span>, error)</span></code></pre></div>
 
@@ -99,6 +121,22 @@ zones. If provided, it must be a different zone from the one provided in [locati
  (Optional)
 The full name of the Google Compute Engine network to which the instance is connected. If left unspecified, the default
 network will be used.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">Connect<wbr>Mode</td>
+            <td class="align-top">
+                
+                <code>string?</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+The connection mode of the Redis instance. Can be either &#39;DIRECT_PEERING&#39; or &#39;PRIVATE_SERVICE_ACCESS&#39;. The default
+connect mode if not provided is &#39;DIRECT_PEERING&#39;.
  {{% /md %}}
 
             
@@ -325,6 +363,22 @@ zones. If provided, it must be a different zone from the one provided in [locati
  (Optional)
 The full name of the Google Compute Engine network to which the instance is connected. If left unspecified, the default
 network will be used.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">Connect<wbr>Mode</td>
+            <td class="align-top">
+                
+                <code>*string</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+The connection mode of the Redis instance. Can be either &#39;DIRECT_PEERING&#39; or &#39;PRIVATE_SERVICE_ACCESS&#39;. The default
+connect mode if not provided is &#39;DIRECT_PEERING&#39;.
  {{% /md %}}
 
             
@@ -558,6 +612,22 @@ network will be used.
         </tr>
     
         <tr>
+            <td class="align-top">connect<wbr>Mode</td>
+            <td class="align-top">
+                
+                <code>string?</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+The connection mode of the Redis instance. Can be either &#39;DIRECT_PEERING&#39; or &#39;PRIVATE_SERVICE_ACCESS&#39;. The default
+connect mode if not provided is &#39;DIRECT_PEERING&#39;.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
             <td class="align-top">display<wbr>Name</td>
             <td class="align-top">
                 
@@ -777,6 +847,22 @@ zones. If provided, it must be a different zone from the one provided in [locati
  (Optional)
 The full name of the Google Compute Engine network to which the instance is connected. If left unspecified, the default
 network will be used.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">connect_<wbr>mode</td>
+            <td class="align-top">
+                
+                <code>str</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+The connection mode of the Redis instance. Can be either &#39;DIRECT_PEERING&#39; or &#39;PRIVATE_SERVICE_ACCESS&#39;. The default
+connect mode if not provided is &#39;DIRECT_PEERING&#39;.
  {{% /md %}}
 
             
@@ -1020,6 +1106,20 @@ network will be used.
         </tr>
     
         <tr>
+            <td class="align-top">Connect<wbr>Mode</td>
+            <td class="align-top">
+                
+                <code>string?</code>
+            </td>
+            <td class="align-top">{{% md %}} The connection mode of the Redis instance. Can be either &#39;DIRECT_PEERING&#39; or &#39;PRIVATE_SERVICE_ACCESS&#39;. The default
+connect mode if not provided is &#39;DIRECT_PEERING&#39;.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
             <td class="align-top">Create<wbr>Time</td>
             <td class="align-top">
                 
@@ -1267,6 +1367,20 @@ zones. If provided, it must be a different zone from the one provided in [locati
             </td>
             <td class="align-top">{{% md %}} The full name of the Google Compute Engine network to which the instance is connected. If left unspecified, the default
 network will be used.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">Connect<wbr>Mode</td>
+            <td class="align-top">
+                
+                <code>*string</code>
+            </td>
+            <td class="align-top">{{% md %}} The connection mode of the Redis instance. Can be either &#39;DIRECT_PEERING&#39; or &#39;PRIVATE_SERVICE_ACCESS&#39;. The default
+connect mode if not provided is &#39;DIRECT_PEERING&#39;.
  {{% /md %}}
 
             
@@ -1528,6 +1642,20 @@ network will be used.
         </tr>
     
         <tr>
+            <td class="align-top">connect<wbr>Mode</td>
+            <td class="align-top">
+                
+                <code>string?</code>
+            </td>
+            <td class="align-top">{{% md %}} The connection mode of the Redis instance. Can be either &#39;DIRECT_PEERING&#39; or &#39;PRIVATE_SERVICE_ACCESS&#39;. The default
+connect mode if not provided is &#39;DIRECT_PEERING&#39;.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
             <td class="align-top">create<wbr>Time</td>
             <td class="align-top">
                 
@@ -1775,6 +1903,20 @@ zones. If provided, it must be a different zone from the one provided in [locati
             </td>
             <td class="align-top">{{% md %}} The full name of the Google Compute Engine network to which the instance is connected. If left unspecified, the default
 network will be used.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">connect_<wbr>mode</td>
+            <td class="align-top">
+                
+                <code>str</code>
+            </td>
+            <td class="align-top">{{% md %}} The connection mode of the Redis instance. Can be either &#39;DIRECT_PEERING&#39; or &#39;PRIVATE_SERVICE_ACCESS&#39;. The default
+connect mode if not provided is &#39;DIRECT_PEERING&#39;.
  {{% /md %}}
 
             
@@ -2006,7 +2148,7 @@ available primary/replica instances
 
 <div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="k">public static </span><span class="nf">get</span><span class="p">(</span><span class="nx">name</span>: <span class="nx"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string">string</a></span><span class="p">, </span><span class="nx">id</span>: <span class="nx"><a href="/docs/reference/pkg/nodejs/pulumi/pulumi/#ID">pulumi.Input&lt;pulumi.ID&gt;</a></span><span class="p">, </span><span class="nx">state</span>?: <span class="nx"><a href="/docs/reference/pkg/nodejs/pulumi/gcp/redis/#InstanceState">InstanceState</a></span><span class="p">, </span><span class="nx">opts</span>?: <span class="nx"><a href="/docs/reference/pkg/nodejs/pulumi/pulumi/#CustomResourceOptions">pulumi.CustomResourceOptions</a></span><span class="p">): </span><span class="nx"><a href="/docs/reference/pkg/nodejs/pulumi/gcp/redis/#Instance">Instance</a></span></code></pre></div>
 
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">static </span><span class="nf">get</span><span class="p">(resource_name, id, opts=None, </span>alternative_location_id=None<span class="p">, </span>authorized_network=None<span class="p">, </span>create_time=None<span class="p">, </span>current_location_id=None<span class="p">, </span>display_name=None<span class="p">, </span>host=None<span class="p">, </span>labels=None<span class="p">, </span>location_id=None<span class="p">, </span>memory_size_gb=None<span class="p">, </span>name=None<span class="p">, </span>port=None<span class="p">, </span>project=None<span class="p">, </span>redis_configs=None<span class="p">, </span>redis_version=None<span class="p">, </span>region=None<span class="p">, </span>reserved_ip_range=None<span class="p">, </span>tier=None<span class="p">, __props__=None);</span></code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">static </span><span class="nf">get</span><span class="p">(resource_name, id, opts=None, </span>alternative_location_id=None<span class="p">, </span>authorized_network=None<span class="p">, </span>connect_mode=None<span class="p">, </span>create_time=None<span class="p">, </span>current_location_id=None<span class="p">, </span>display_name=None<span class="p">, </span>host=None<span class="p">, </span>labels=None<span class="p">, </span>location_id=None<span class="p">, </span>memory_size_gb=None<span class="p">, </span>name=None<span class="p">, </span>port=None<span class="p">, </span>project=None<span class="p">, </span>redis_configs=None<span class="p">, </span>redis_version=None<span class="p">, </span>region=None<span class="p">, </span>reserved_ip_range=None<span class="p">, </span>tier=None<span class="p">, __props__=None);</span></code></pre></div>
 
 <div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="k">func </span>GetInstance<span class="p">(</span><span class="nx">ctx</span> *<span class="nx"><a href="https://pkg.go.dev/github.com/pulumi/pulumi/sdk/go/pulumi?tab=doc#Context">pulumi.Context</a></span><span class="p">, </span><span class="nx">name</span> <span class="nx"><a href="https://golang.org/pkg/builtin/#string">string</a></span><span class="p">, </span><span class="nx">id</span> <span class="nx"><a href="https://pkg.go.dev/github.com/pulumi/pulumi/sdk/go/pulumi?tab=doc#IDInput">pulumi.IDInput</a></span><span class="p">, </span><span class="nx">state</span> *<span class="nx"><a href="https://pkg.go.dev/github.com/pulumi/pulumi-gcp/sdk/go/gcp/redis?tab=doc#InstanceState">InstanceState</a></span><span class="p">, </span><span class="nx">opts</span> ...<span class="nx"><a href="https://pkg.go.dev/github.com/pulumi/pulumi/sdk/go/pulumi?tab=doc#ResourceOption">pulumi.ResourceOption</a></span><span class="p">) (*<span class="nx"><a href="https://pkg.go.dev/github.com/pulumi/pulumi-gcp/sdk/go/gcp/redis?tab=doc#Instance">Instance</a></span>, error)</span></code></pre></div>
 
@@ -2092,6 +2234,22 @@ zones. If provided, it must be a different zone from the one provided in [locati
  (Optional)
 The full name of the Google Compute Engine network to which the instance is connected. If left unspecified, the default
 network will be used.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">Connect<wbr>Mode</td>
+            <td class="align-top">
+                
+                <code>string?</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+The connection mode of the Redis instance. Can be either &#39;DIRECT_PEERING&#39; or &#39;PRIVATE_SERVICE_ACCESS&#39;. The default
+connect mode if not provided is &#39;DIRECT_PEERING&#39;.
  {{% /md %}}
 
             
@@ -2380,6 +2538,22 @@ zones. If provided, it must be a different zone from the one provided in [locati
  (Optional)
 The full name of the Google Compute Engine network to which the instance is connected. If left unspecified, the default
 network will be used.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">Connect<wbr>Mode</td>
+            <td class="align-top">
+                
+                <code>*string</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+The connection mode of the Redis instance. Can be either &#39;DIRECT_PEERING&#39; or &#39;PRIVATE_SERVICE_ACCESS&#39;. The default
+connect mode if not provided is &#39;DIRECT_PEERING&#39;.
  {{% /md %}}
 
             
@@ -2675,6 +2849,22 @@ network will be used.
         </tr>
     
         <tr>
+            <td class="align-top">connect<wbr>Mode</td>
+            <td class="align-top">
+                
+                <code>string?</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+The connection mode of the Redis instance. Can be either &#39;DIRECT_PEERING&#39; or &#39;PRIVATE_SERVICE_ACCESS&#39;. The default
+connect mode if not provided is &#39;DIRECT_PEERING&#39;.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
             <td class="align-top">create<wbr>Time</td>
             <td class="align-top">
                 
@@ -2956,6 +3146,22 @@ zones. If provided, it must be a different zone from the one provided in [locati
  (Optional)
 The full name of the Google Compute Engine network to which the instance is connected. If left unspecified, the default
 network will be used.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">connect_<wbr>mode</td>
+            <td class="align-top">
+                
+                <code>str</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+The connection mode of the Redis instance. Can be either &#39;DIRECT_PEERING&#39; or &#39;PRIVATE_SERVICE_ACCESS&#39;. The default
+connect mode if not provided is &#39;DIRECT_PEERING&#39;.
  {{% /md %}}
 
             

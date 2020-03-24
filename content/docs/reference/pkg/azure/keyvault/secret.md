@@ -9,9 +9,6 @@ table td p { margin-top: 0; margin-bottom: 0; }
 
 Manages a Key Vault Secret.
 
-> **Note:** All arguments including the secret value will be stored in the raw state as plain-text.
-[Read more about sensitive data in state](https://www.terraform.io/docs/state/sensitive-data.html).
-
 > This content is derived from https://github.com/terraform-providers/terraform-provider-azurerm/blob/master/website/docs/r/key_vault_secret.html.markdown.
 
 

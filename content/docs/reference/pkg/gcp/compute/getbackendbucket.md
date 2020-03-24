@@ -7,6 +7,20 @@ block_external_search_index: true
 table td p { margin-top: 0; margin-bottom: 0; }
 </style>
 
+Get information about a BackendBucket.
+
+## Example Usage
+
+```typescript
+import * as pulumi from "@pulumi/pulumi";
+import * as gcp from "@pulumi/gcp";
+
+const my_backend_bucket = gcp.compute.getBackendBucket({
+    name: "my-backend",
+});
+```
+
+> This content is derived from https://github.com/terraform-providers/terraform-provider-google/blob/master/website/docs/d/datasource_google_compute_backend_bucket.html.markdown.
 
 
 
@@ -62,6 +76,7 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+Name of the resource.
  {{% /md %}}
 
             
@@ -76,6 +91,8 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The ID of the project in which the resource belongs. If it
+is not provided, the provider project is used.
  {{% /md %}}
 
             
@@ -110,6 +127,7 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+Name of the resource.
  {{% /md %}}
 
             
@@ -124,6 +142,8 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The ID of the project in which the resource belongs. If it
+is not provided, the provider project is used.
  {{% /md %}}
 
             
@@ -158,6 +178,7 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+Name of the resource.
  {{% /md %}}
 
             
@@ -172,6 +193,8 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The ID of the project in which the resource belongs. If it
+is not provided, the provider project is used.
  {{% /md %}}
 
             
@@ -206,6 +229,7 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+Name of the resource.
  {{% /md %}}
 
             
@@ -220,6 +244,8 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The ID of the project in which the resource belongs. If it
+is not provided, the provider project is used.
  {{% /md %}}
 
             
@@ -267,7 +293,8 @@ The following output properties are available:
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} Cloud Storage bucket name.
+ {{% /md %}}
 
             
             </td>
@@ -279,7 +306,8 @@ The following output properties are available:
                 
                 <code><a href="#getbackendbucketcdnpolicy">List&lt;Get<wbr>Backend<wbr>Bucket<wbr>Cdn<wbr>Policy&gt;</a></code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} Cloud CDN configuration for this Backend Bucket. Structure is documented below.
+ {{% /md %}}
 
             
             </td>
@@ -291,7 +319,8 @@ The following output properties are available:
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} Creation timestamp in RFC3339 text format.
+ {{% /md %}}
 
             
             </td>
@@ -303,7 +332,8 @@ The following output properties are available:
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} An optional textual description of the resource; provided by the client when the resource is created.
+ {{% /md %}}
 
             
             </td>
@@ -315,7 +345,8 @@ The following output properties are available:
                 
                 <code>bool</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} Whether Cloud CDN is enabled for this BackendBucket.
+ {{% /md %}}
 
             
             </td>
@@ -364,7 +395,8 @@ The following output properties are available:
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} The URI of the created resource.
+ {{% /md %}}
 
             
             </td>
@@ -396,7 +428,8 @@ The following output properties are available:
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} Cloud Storage bucket name.
+ {{% /md %}}
 
             
             </td>
@@ -408,7 +441,8 @@ The following output properties are available:
                 
                 <code><a href="#getbackendbucketcdnpolicy">[]Get<wbr>Backend<wbr>Bucket<wbr>Cdn<wbr>Policy</a></code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} Cloud CDN configuration for this Backend Bucket. Structure is documented below.
+ {{% /md %}}
 
             
             </td>
@@ -420,7 +454,8 @@ The following output properties are available:
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} Creation timestamp in RFC3339 text format.
+ {{% /md %}}
 
             
             </td>
@@ -432,7 +467,8 @@ The following output properties are available:
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} An optional textual description of the resource; provided by the client when the resource is created.
+ {{% /md %}}
 
             
             </td>
@@ -444,7 +480,8 @@ The following output properties are available:
                 
                 <code>bool</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} Whether Cloud CDN is enabled for this BackendBucket.
+ {{% /md %}}
 
             
             </td>
@@ -493,7 +530,8 @@ The following output properties are available:
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} The URI of the created resource.
+ {{% /md %}}
 
             
             </td>
@@ -525,7 +563,8 @@ The following output properties are available:
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} Cloud Storage bucket name.
+ {{% /md %}}
 
             
             </td>
@@ -537,7 +576,8 @@ The following output properties are available:
                 
                 <code><a href="#getbackendbucketcdnpolicy">Get<wbr>Backend<wbr>Bucket<wbr>Cdn<wbr>Policy[]</a></code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} Cloud CDN configuration for this Backend Bucket. Structure is documented below.
+ {{% /md %}}
 
             
             </td>
@@ -549,7 +589,8 @@ The following output properties are available:
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} Creation timestamp in RFC3339 text format.
+ {{% /md %}}
 
             
             </td>
@@ -561,7 +602,8 @@ The following output properties are available:
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} An optional textual description of the resource; provided by the client when the resource is created.
+ {{% /md %}}
 
             
             </td>
@@ -573,7 +615,8 @@ The following output properties are available:
                 
                 <code>boolean</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} Whether Cloud CDN is enabled for this BackendBucket.
+ {{% /md %}}
 
             
             </td>
@@ -622,7 +665,8 @@ The following output properties are available:
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} The URI of the created resource.
+ {{% /md %}}
 
             
             </td>
@@ -654,7 +698,8 @@ The following output properties are available:
                 
                 <code>str</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} Cloud Storage bucket name.
+ {{% /md %}}
 
             
             </td>
@@ -666,7 +711,8 @@ The following output properties are available:
                 
                 <code><a href="#getbackendbucketcdnpolicy">List[Get<wbr>Backend<wbr>Bucket<wbr>Cdn<wbr>Policy]</a></code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} Cloud CDN configuration for this Backend Bucket. Structure is documented below.
+ {{% /md %}}
 
             
             </td>
@@ -678,7 +724,8 @@ The following output properties are available:
                 
                 <code>str</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} Creation timestamp in RFC3339 text format.
+ {{% /md %}}
 
             
             </td>
@@ -690,7 +737,8 @@ The following output properties are available:
                 
                 <code>str</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} An optional textual description of the resource; provided by the client when the resource is created.
+ {{% /md %}}
 
             
             </td>
@@ -702,7 +750,8 @@ The following output properties are available:
                 
                 <code>bool</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} Whether Cloud CDN is enabled for this BackendBucket.
+ {{% /md %}}
 
             
             </td>
@@ -751,7 +800,8 @@ The following output properties are available:
                 
                 <code>str</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} The URI of the created resource.
+ {{% /md %}}
 
             
             </td>
@@ -811,6 +861,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+Maximum number of seconds the response to a signed URL request will be considered fresh. After this time period, the response will be revalidated before being served. When serving responses to signed URL requests, Cloud CDN will internally behave as though all responses from this backend had a &#34;Cache-Control: public, max-age=[TTL]&#34; header, regardless of any existing Cache-Control header. The actual headers served in responses will not be altered.
  {{% /md %}}
 
             
@@ -845,6 +896,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+Maximum number of seconds the response to a signed URL request will be considered fresh. After this time period, the response will be revalidated before being served. When serving responses to signed URL requests, Cloud CDN will internally behave as though all responses from this backend had a &#34;Cache-Control: public, max-age=[TTL]&#34; header, regardless of any existing Cache-Control header. The actual headers served in responses will not be altered.
  {{% /md %}}
 
             
@@ -879,6 +931,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+Maximum number of seconds the response to a signed URL request will be considered fresh. After this time period, the response will be revalidated before being served. When serving responses to signed URL requests, Cloud CDN will internally behave as though all responses from this backend had a &#34;Cache-Control: public, max-age=[TTL]&#34; header, regardless of any existing Cache-Control header. The actual headers served in responses will not be altered.
  {{% /md %}}
 
             
@@ -913,6 +966,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+Maximum number of seconds the response to a signed URL request will be considered fresh. After this time period, the response will be revalidated before being served. When serving responses to signed URL requests, Cloud CDN will internally behave as though all responses from this backend had a &#34;Cache-Control: public, max-age=[TTL]&#34; header, regardless of any existing Cache-Control header. The actual headers served in responses will not be altered.
  {{% /md %}}
 
             

@@ -19,7 +19,7 @@ Allows you to manage an Azure SQL Database
 
 <div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="k">new </span><span class="nx"><a href="/docs/reference/pkg/nodejs/pulumi/azure/sql/#Database">Database</a></span><span class="p">(</span><span class="nx">name</span>: <span class="nx"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string">string</a></span><span class="p">, </span><span class="nx">args</span>: <span class="nx"><a href="/docs/reference/pkg/nodejs/pulumi/azure/sql/#DatabaseArgs">DatabaseArgs</a></span><span class="p">, </span><span class="nx">opts</span>?: <span class="nx"><a href="/docs/reference/pkg/nodejs/pulumi/pulumi/pulumi/#CustomResourceOptions">pulumi.CustomResourceOptions</a></span><span class="p">);</span></code></pre></div>
 
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def </span><span class="nf">Database</span><span class="p">(resource_name, opts=None, </span>collation=None<span class="p">, </span>create_mode=None<span class="p">, </span>edition=None<span class="p">, </span>elastic_pool_name=None<span class="p">, </span>import_=None<span class="p">, </span>location=None<span class="p">, </span>max_size_bytes=None<span class="p">, </span>max_size_gb=None<span class="p">, </span>name=None<span class="p">, </span>read_scale=None<span class="p">, </span>requested_service_objective_id=None<span class="p">, </span>requested_service_objective_name=None<span class="p">, </span>resource_group_name=None<span class="p">, </span>restore_point_in_time=None<span class="p">, </span>server_name=None<span class="p">, </span>source_database_deletion_date=None<span class="p">, </span>source_database_id=None<span class="p">, </span>tags=None<span class="p">, </span>threat_detection_policy=None<span class="p">, </span>zone_redundant=None<span class="p">, __props__=None);</span></code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def </span><span class="nf">Database</span><span class="p">(resource_name, opts=None, </span>collation=None<span class="p">, </span>create_mode=None<span class="p">, </span>edition=None<span class="p">, </span>elastic_pool_name=None<span class="p">, </span>extended_auditing_policy=None<span class="p">, </span>import_=None<span class="p">, </span>location=None<span class="p">, </span>max_size_bytes=None<span class="p">, </span>max_size_gb=None<span class="p">, </span>name=None<span class="p">, </span>read_scale=None<span class="p">, </span>requested_service_objective_id=None<span class="p">, </span>requested_service_objective_name=None<span class="p">, </span>resource_group_name=None<span class="p">, </span>restore_point_in_time=None<span class="p">, </span>server_name=None<span class="p">, </span>source_database_deletion_date=None<span class="p">, </span>source_database_id=None<span class="p">, </span>tags=None<span class="p">, </span>threat_detection_policy=None<span class="p">, </span>zone_redundant=None<span class="p">, __props__=None);</span></code></pre></div>
 
 <div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="k">func </span>NewDatabase<span class="p">(</span><span class="nx">ctx</span> *<span class="nx"><a href="https://pkg.go.dev/github.com/pulumi/pulumi/sdk/go/pulumi?tab=doc#Context">pulumi.Context</a></span><span class="p">, </span><span class="nx">name</span> <span class="nx"><a href="https://golang.org/pkg/builtin/#string">string</a></span><span class="p">, </span><span class="nx">args</span> <span class="nx"><a href="https://pkg.go.dev/github.com/pulumi/pulumi-azure/sdk/go/azure/sql?tab=doc#DatabaseArgs">DatabaseArgs</a></span><span class="p">, </span><span class="nx">opts</span> ...<span class="nx"><a href="https://pkg.go.dev/github.com/pulumi/pulumi/sdk/go/pulumi?tab=doc#ResourceOption">pulumi.ResourceOption</a></span><span class="p">) (*<span class="nx"><a href="https://pkg.go.dev/github.com/pulumi/pulumi-azure/sdk/go/azure/sql?tab=doc#Database">Database</a></span>, error)</span></code></pre></div>
 
@@ -130,6 +130,21 @@ The edition of the database to be created. Applies only if `create_mode` is `Def
             <td class="align-top">{{% md %}} 
  (Optional)
 The name of the elastic database pool.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">Extended<wbr>Auditing<wbr>Policy</td>
+            <td class="align-top">
+                
+                <code><a href="#databaseextendedauditingpolicy">Database<wbr>Extended<wbr>Auditing<wbr>Policy<wbr>Args?</a></code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+A `extended_auditing_policy` block as defined below.
  {{% /md %}}
 
             
@@ -457,6 +472,21 @@ The name of the elastic database pool.
         </tr>
     
         <tr>
+            <td class="align-top">Extended<wbr>Auditing<wbr>Policy</td>
+            <td class="align-top">
+                
+                <code><a href="#databaseextendedauditingpolicy">*Database<wbr>Extended<wbr>Auditing<wbr>Policy</a></code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+A `extended_auditing_policy` block as defined below.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
             <td class="align-top">Import</td>
             <td class="align-top">
                 
@@ -777,6 +807,21 @@ The name of the elastic database pool.
         </tr>
     
         <tr>
+            <td class="align-top">extended<wbr>Auditing<wbr>Policy</td>
+            <td class="align-top">
+                
+                <code><a href="#databaseextendedauditingpolicy">Database<wbr>Extended<wbr>Auditing<wbr>Policy?</a></code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+A `extended_auditing_policy` block as defined below.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
             <td class="align-top">import</td>
             <td class="align-top">
                 
@@ -1090,6 +1135,21 @@ The edition of the database to be created. Applies only if `create_mode` is `Def
             <td class="align-top">{{% md %}} 
  (Optional)
 The name of the elastic database pool.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">extended_<wbr>auditing_<wbr>policy</td>
+            <td class="align-top">
+                
+                <code><a href="#databaseextendedauditingpolicy">Dict[Database<wbr>Extended<wbr>Auditing<wbr>Policy]</a></code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+A `extended_auditing_policy` block as defined below.
  {{% /md %}}
 
             
@@ -1461,6 +1521,19 @@ The following output properties are available:
         </tr>
     
         <tr>
+            <td class="align-top">Extended<wbr>Auditing<wbr>Policy</td>
+            <td class="align-top">
+                
+                <code><a href="#databaseextendedauditingpolicy">Database<wbr>Extended<wbr>Auditing<wbr>Policy?</a></code>
+            </td>
+            <td class="align-top">{{% md %}} A `extended_auditing_policy` block as defined below.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
             <td class="align-top">Import</td>
             <td class="align-top">
                 
@@ -1773,6 +1846,19 @@ The following output properties are available:
                 <code>string</code>
             </td>
             <td class="align-top">{{% md %}}  {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">Extended<wbr>Auditing<wbr>Policy</td>
+            <td class="align-top">
+                
+                <code><a href="#databaseextendedauditingpolicy">*Database<wbr>Extended<wbr>Auditing<wbr>Policy</a></code>
+            </td>
+            <td class="align-top">{{% md %}} A `extended_auditing_policy` block as defined below.
+ {{% /md %}}
 
             
             </td>
@@ -2097,6 +2183,19 @@ The following output properties are available:
         </tr>
     
         <tr>
+            <td class="align-top">extended<wbr>Auditing<wbr>Policy</td>
+            <td class="align-top">
+                
+                <code><a href="#databaseextendedauditingpolicy">Database<wbr>Extended<wbr>Auditing<wbr>Policy?</a></code>
+            </td>
+            <td class="align-top">{{% md %}} A `extended_auditing_policy` block as defined below.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
             <td class="align-top">import</td>
             <td class="align-top">
                 
@@ -2415,6 +2514,19 @@ The following output properties are available:
         </tr>
     
         <tr>
+            <td class="align-top">extended_<wbr>auditing_<wbr>policy</td>
+            <td class="align-top">
+                
+                <code><a href="#databaseextendedauditingpolicy">Dict[Database<wbr>Extended<wbr>Auditing<wbr>Policy]</a></code>
+            </td>
+            <td class="align-top">{{% md %}} A `extended_auditing_policy` block as defined below.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
             <td class="align-top">import_</td>
             <td class="align-top">
                 
@@ -2641,7 +2753,7 @@ The following output properties are available:
 
 <div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="k">public static </span><span class="nf">get</span><span class="p">(</span><span class="nx">name</span>: <span class="nx"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string">string</a></span><span class="p">, </span><span class="nx">id</span>: <span class="nx"><a href="/docs/reference/pkg/nodejs/pulumi/pulumi/#ID">pulumi.Input&lt;pulumi.ID&gt;</a></span><span class="p">, </span><span class="nx">state</span>?: <span class="nx"><a href="/docs/reference/pkg/nodejs/pulumi/azure/sql/#DatabaseState">DatabaseState</a></span><span class="p">, </span><span class="nx">opts</span>?: <span class="nx"><a href="/docs/reference/pkg/nodejs/pulumi/pulumi/#CustomResourceOptions">pulumi.CustomResourceOptions</a></span><span class="p">): </span><span class="nx"><a href="/docs/reference/pkg/nodejs/pulumi/azure/sql/#Database">Database</a></span></code></pre></div>
 
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">static </span><span class="nf">get</span><span class="p">(resource_name, id, opts=None, </span>collation=None<span class="p">, </span>create_mode=None<span class="p">, </span>creation_date=None<span class="p">, </span>default_secondary_location=None<span class="p">, </span>edition=None<span class="p">, </span>elastic_pool_name=None<span class="p">, </span>encryption=None<span class="p">, </span>import_=None<span class="p">, </span>location=None<span class="p">, </span>max_size_bytes=None<span class="p">, </span>max_size_gb=None<span class="p">, </span>name=None<span class="p">, </span>read_scale=None<span class="p">, </span>requested_service_objective_id=None<span class="p">, </span>requested_service_objective_name=None<span class="p">, </span>resource_group_name=None<span class="p">, </span>restore_point_in_time=None<span class="p">, </span>server_name=None<span class="p">, </span>source_database_deletion_date=None<span class="p">, </span>source_database_id=None<span class="p">, </span>tags=None<span class="p">, </span>threat_detection_policy=None<span class="p">, </span>zone_redundant=None<span class="p">, __props__=None);</span></code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">static </span><span class="nf">get</span><span class="p">(resource_name, id, opts=None, </span>collation=None<span class="p">, </span>create_mode=None<span class="p">, </span>creation_date=None<span class="p">, </span>default_secondary_location=None<span class="p">, </span>edition=None<span class="p">, </span>elastic_pool_name=None<span class="p">, </span>encryption=None<span class="p">, </span>extended_auditing_policy=None<span class="p">, </span>import_=None<span class="p">, </span>location=None<span class="p">, </span>max_size_bytes=None<span class="p">, </span>max_size_gb=None<span class="p">, </span>name=None<span class="p">, </span>read_scale=None<span class="p">, </span>requested_service_objective_id=None<span class="p">, </span>requested_service_objective_name=None<span class="p">, </span>resource_group_name=None<span class="p">, </span>restore_point_in_time=None<span class="p">, </span>server_name=None<span class="p">, </span>source_database_deletion_date=None<span class="p">, </span>source_database_id=None<span class="p">, </span>tags=None<span class="p">, </span>threat_detection_policy=None<span class="p">, </span>zone_redundant=None<span class="p">, __props__=None);</span></code></pre></div>
 
 <div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="k">func </span>GetDatabase<span class="p">(</span><span class="nx">ctx</span> *<span class="nx"><a href="https://pkg.go.dev/github.com/pulumi/pulumi/sdk/go/pulumi?tab=doc#Context">pulumi.Context</a></span><span class="p">, </span><span class="nx">name</span> <span class="nx"><a href="https://golang.org/pkg/builtin/#string">string</a></span><span class="p">, </span><span class="nx">id</span> <span class="nx"><a href="https://pkg.go.dev/github.com/pulumi/pulumi/sdk/go/pulumi?tab=doc#IDInput">pulumi.IDInput</a></span><span class="p">, </span><span class="nx">state</span> *<span class="nx"><a href="https://pkg.go.dev/github.com/pulumi/pulumi-azure/sdk/go/azure/sql?tab=doc#DatabaseState">DatabaseState</a></span><span class="p">, </span><span class="nx">opts</span> ...<span class="nx"><a href="https://pkg.go.dev/github.com/pulumi/pulumi/sdk/go/pulumi?tab=doc#ResourceOption">pulumi.ResourceOption</a></span><span class="p">) (*<span class="nx"><a href="https://pkg.go.dev/github.com/pulumi/pulumi-azure/sdk/go/azure/sql?tab=doc#Database">Database</a></span>, error)</span></code></pre></div>
 
@@ -2799,6 +2911,21 @@ The name of the elastic database pool.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">Extended<wbr>Auditing<wbr>Policy</td>
+            <td class="align-top">
+                
+                <code><a href="#databaseextendedauditingpolicy">Database<wbr>Extended<wbr>Auditing<wbr>Policy<wbr>Args?</a></code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+A `extended_auditing_policy` block as defined below.
  {{% /md %}}
 
             
@@ -3170,6 +3297,21 @@ The name of the elastic database pool.
         </tr>
     
         <tr>
+            <td class="align-top">Extended<wbr>Auditing<wbr>Policy</td>
+            <td class="align-top">
+                
+                <code><a href="#databaseextendedauditingpolicy">*Database<wbr>Extended<wbr>Auditing<wbr>Policy</a></code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+A `extended_auditing_policy` block as defined below.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
             <td class="align-top">Import</td>
             <td class="align-top">
                 
@@ -3527,6 +3669,21 @@ The name of the elastic database pool.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">extended<wbr>Auditing<wbr>Policy</td>
+            <td class="align-top">
+                
+                <code><a href="#databaseextendedauditingpolicy">Database<wbr>Extended<wbr>Auditing<wbr>Policy?</a></code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+A `extended_auditing_policy` block as defined below.
  {{% /md %}}
 
             
@@ -3898,6 +4055,21 @@ The name of the elastic database pool.
         </tr>
     
         <tr>
+            <td class="align-top">extended_<wbr>auditing_<wbr>policy</td>
+            <td class="align-top">
+                
+                <code><a href="#databaseextendedauditingpolicy">Dict[Database<wbr>Extended<wbr>Auditing<wbr>Policy]</a></code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+A `extended_auditing_policy` block as defined below.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
             <td class="align-top">import_</td>
             <td class="align-top">
                 
@@ -4153,6 +4325,339 @@ Whether or not this database is zone redundant, which means the replicas of this
 
 
 ## Supporting Types
+
+#### DatabaseExtendedAuditingPolicy
+{{% lang nodejs %}}
+> See the <a href="/docs/reference/pkg/nodejs/pulumi/azure/types/input/#DatabaseExtendedAuditingPolicy">input</a> and <a href="/docs/reference/pkg/nodejs/pulumi/azure/types/output/#DatabaseExtendedAuditingPolicy">output</a> API doc for this type.
+{{% /lang %}}
+
+{{% lang go %}}
+> See the <a href="https://pkg.go.dev/github.com/pulumi/pulumi-azure/sdk/go/azure/sql?tab=doc#DatabaseExtendedAuditingPolicyArgs">input</a> and <a href="https://pkg.go.dev/github.com/pulumi/pulumi-azure/sdk/go/azure/sql?tab=doc#DatabaseExtendedAuditingPolicyOutput">output</a> API doc for this type.
+{{% /lang %}}
+
+{{% lang csharp %}}
+> See the <a href="/docs/reference/pkg/dotnet/Pulumi.Azure/Pulumi.Azure.Sql.DatabaseExtendedAuditingPolicyArgs.html">input</a> and <a href="/docs/reference/pkg/dotnet/Pulumi.Azure/Pulumi.Azure.Sql.DatabaseExtendedAuditingPolicy.html">output</a> API doc for this type.
+{{% /lang %}}
+
+
+
+{{< langchoose csharp nojavascript >}}
+
+
+{{% lang csharp %}}
+
+
+<table class="ml-6">
+    <thead>
+        <tr>
+            <th>Argument</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+    
+        <tr>
+            <td class="align-top">Retention<wbr>In<wbr>Days</td>
+            <td class="align-top">
+                
+                <code>int?</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">Storage<wbr>Account<wbr>Access<wbr>Key</td>
+            <td class="align-top">
+                
+                <code>string</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Required)
+Specifies the identifier key of the Threat Detection audit storage account. Required if `state` is `Enabled`.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">Storage<wbr>Account<wbr>Access<wbr>Key<wbr>Is<wbr>Secondary</td>
+            <td class="align-top">
+                
+                <code>bool?</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">Storage<wbr>Endpoint</td>
+            <td class="align-top">
+                
+                <code>string</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Required)
+Specifies the blob storage endpoint (e.g. https://MyAccount.blob.core.windows.net). This blob storage will hold all Threat Detection audit logs. Required if `state` is `Enabled`.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+    </tbody>
+</table>
+
+
+{{% /lang %}}
+
+
+{{% lang go %}}
+
+
+<table class="ml-6">
+    <thead>
+        <tr>
+            <th>Argument</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+    
+        <tr>
+            <td class="align-top">Retention<wbr>In<wbr>Days</td>
+            <td class="align-top">
+                
+                <code>*int</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">Storage<wbr>Account<wbr>Access<wbr>Key</td>
+            <td class="align-top">
+                
+                <code>string</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Required)
+Specifies the identifier key of the Threat Detection audit storage account. Required if `state` is `Enabled`.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">Storage<wbr>Account<wbr>Access<wbr>Key<wbr>Is<wbr>Secondary</td>
+            <td class="align-top">
+                
+                <code>*bool</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">Storage<wbr>Endpoint</td>
+            <td class="align-top">
+                
+                <code>string</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Required)
+Specifies the blob storage endpoint (e.g. https://MyAccount.blob.core.windows.net). This blob storage will hold all Threat Detection audit logs. Required if `state` is `Enabled`.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+    </tbody>
+</table>
+
+
+{{% /lang %}}
+
+
+{{% lang nodejs %}}
+
+
+<table class="ml-6">
+    <thead>
+        <tr>
+            <th>Argument</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+    
+        <tr>
+            <td class="align-top">retention<wbr>In<wbr>Days</td>
+            <td class="align-top">
+                
+                <code>number?</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">storage<wbr>Account<wbr>Access<wbr>Key</td>
+            <td class="align-top">
+                
+                <code>string</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Required)
+Specifies the identifier key of the Threat Detection audit storage account. Required if `state` is `Enabled`.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">storage<wbr>Account<wbr>Access<wbr>Key<wbr>Is<wbr>Secondary</td>
+            <td class="align-top">
+                
+                <code>boolean?</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">storage<wbr>Endpoint</td>
+            <td class="align-top">
+                
+                <code>string</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Required)
+Specifies the blob storage endpoint (e.g. https://MyAccount.blob.core.windows.net). This blob storage will hold all Threat Detection audit logs. Required if `state` is `Enabled`.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+    </tbody>
+</table>
+
+
+{{% /lang %}}
+
+
+{{% lang python %}}
+
+
+<table class="ml-6">
+    <thead>
+        <tr>
+            <th>Argument</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+    
+        <tr>
+            <td class="align-top">retention_<wbr>in_<wbr>days</td>
+            <td class="align-top">
+                
+                <code>float</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">storage_<wbr>account_<wbr>access_<wbr>key</td>
+            <td class="align-top">
+                
+                <code>str</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Required)
+Specifies the identifier key of the Threat Detection audit storage account. Required if `state` is `Enabled`.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">storage<wbr>Account<wbr>Access<wbr>Key<wbr>Is<wbr>Secondary</td>
+            <td class="align-top">
+                
+                <code>bool</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">storage_<wbr>endpoint</td>
+            <td class="align-top">
+                
+                <code>str</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Required)
+Specifies the blob storage endpoint (e.g. https://MyAccount.blob.core.windows.net). This blob storage will hold all Threat Detection audit logs. Required if `state` is `Enabled`.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+    </tbody>
+</table>
+
+
+{{% /lang %}}
+
+
+
+
 
 #### DatabaseImport
 {{% lang nodejs %}}

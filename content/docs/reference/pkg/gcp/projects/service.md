@@ -116,6 +116,7 @@ If `false` or unset, an error will be generated if any enabled services depend o
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+If true, disable the service when the resource is destroyed.  Defaults to true.  May be useful in the event that a project is long-lived but the infrastructure running in that project changes frequently.
  {{% /md %}}
 
             
@@ -196,6 +197,7 @@ If `false` or unset, an error will be generated if any enabled services depend o
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+If true, disable the service when the resource is destroyed.  Defaults to true.  May be useful in the event that a project is long-lived but the infrastructure running in that project changes frequently.
  {{% /md %}}
 
             
@@ -276,6 +278,7 @@ If `false` or unset, an error will be generated if any enabled services depend o
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+If true, disable the service when the resource is destroyed.  Defaults to true.  May be useful in the event that a project is long-lived but the infrastructure running in that project changes frequently.
  {{% /md %}}
 
             
@@ -356,6 +359,7 @@ If `false` or unset, an error will be generated if any enabled services depend o
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+If true, disable the service when the resource is destroyed.  Defaults to true.  May be useful in the event that a project is long-lived but the infrastructure running in that project changes frequently.
  {{% /md %}}
 
             
@@ -446,7 +450,8 @@ If `false` or unset, an error will be generated if any enabled services depend o
                 
                 <code>bool?</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} If true, disable the service when the resource is destroyed.  Defaults to true.  May be useful in the event that a project is long-lived but the infrastructure running in that project changes frequently.
+ {{% /md %}}
 
             
             </td>
@@ -518,7 +523,8 @@ If `false` or unset, an error will be generated if any enabled services depend o
                 
                 <code>*bool</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} If true, disable the service when the resource is destroyed.  Defaults to true.  May be useful in the event that a project is long-lived but the infrastructure running in that project changes frequently.
+ {{% /md %}}
 
             
             </td>
@@ -590,7 +596,8 @@ If `false` or unset, an error will be generated if any enabled services depend o
                 
                 <code>boolean?</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} If true, disable the service when the resource is destroyed.  Defaults to true.  May be useful in the event that a project is long-lived but the infrastructure running in that project changes frequently.
+ {{% /md %}}
 
             
             </td>
@@ -662,7 +669,8 @@ If `false` or unset, an error will be generated if any enabled services depend o
                 
                 <code>bool</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} If true, disable the service when the resource is destroyed.  Defaults to true.  May be useful in the event that a project is long-lived but the infrastructure running in that project changes frequently.
+ {{% /md %}}
 
             
             </td>
@@ -797,6 +805,7 @@ If `false` or unset, an error will be generated if any enabled services depend o
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+If true, disable the service when the resource is destroyed.  Defaults to true.  May be useful in the event that a project is long-lived but the infrastructure running in that project changes frequently.
  {{% /md %}}
 
             
@@ -877,6 +886,7 @@ If `false` or unset, an error will be generated if any enabled services depend o
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+If true, disable the service when the resource is destroyed.  Defaults to true.  May be useful in the event that a project is long-lived but the infrastructure running in that project changes frequently.
  {{% /md %}}
 
             
@@ -957,6 +967,7 @@ If `false` or unset, an error will be generated if any enabled services depend o
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+If true, disable the service when the resource is destroyed.  Defaults to true.  May be useful in the event that a project is long-lived but the infrastructure running in that project changes frequently.
  {{% /md %}}
 
             
@@ -1037,6 +1048,7 @@ If `false` or unset, an error will be generated if any enabled services depend o
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+If true, disable the service when the resource is destroyed.  Defaults to true.  May be useful in the event that a project is long-lived but the infrastructure running in that project changes frequently.
  {{% /md %}}
 
             

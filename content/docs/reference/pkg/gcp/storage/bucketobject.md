@@ -135,7 +135,7 @@ directive to specify caching behavior of object data. If omitted and object is a
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-Data as `string` to be uploaded. Must be defined if `source` is not. **Note**: The `content` field is marked as sensitive. To view the raw contents of the object, please define an [output](https://www.terraform.io/docs/configuration/outputs.html).
+Data as `string` to be uploaded. Must be defined if `source` is not. **Note**: The `content` field is marked as sensitive.
  {{% /md %}}
 
             
@@ -338,7 +338,7 @@ directive to specify caching behavior of object data. If omitted and object is a
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-Data as `string` to be uploaded. Must be defined if `source` is not. **Note**: The `content` field is marked as sensitive. To view the raw contents of the object, please define an [output](https://www.terraform.io/docs/configuration/outputs.html).
+Data as `string` to be uploaded. Must be defined if `source` is not. **Note**: The `content` field is marked as sensitive.
  {{% /md %}}
 
             
@@ -541,7 +541,7 @@ directive to specify caching behavior of object data. If omitted and object is a
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-Data as `string` to be uploaded. Must be defined if `source` is not. **Note**: The `content` field is marked as sensitive. To view the raw contents of the object, please define an [output](https://www.terraform.io/docs/configuration/outputs.html).
+Data as `string` to be uploaded. Must be defined if `source` is not. **Note**: The `content` field is marked as sensitive.
  {{% /md %}}
 
             
@@ -744,7 +744,7 @@ directive to specify caching behavior of object data. If omitted and object is a
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-Data as `string` to be uploaded. Must be defined if `source` is not. **Note**: The `content` field is marked as sensitive. To view the raw contents of the object, please define an [output](https://www.terraform.io/docs/configuration/outputs.html).
+Data as `string` to be uploaded. Must be defined if `source` is not. **Note**: The `content` field is marked as sensitive.
  {{% /md %}}
 
             
@@ -955,7 +955,7 @@ directive to specify caching behavior of object data. If omitted and object is a
                 
                 <code>string?</code>
             </td>
-            <td class="align-top">{{% md %}} Data as `string` to be uploaded. Must be defined if `source` is not. **Note**: The `content` field is marked as sensitive. To view the raw contents of the object, please define an [output](https://www.terraform.io/docs/configuration/outputs.html).
+            <td class="align-top">{{% md %}} Data as `string` to be uploaded. Must be defined if `source` is not. **Note**: The `content` field is marked as sensitive.
  {{% /md %}}
 
             
@@ -1187,7 +1187,7 @@ directive to specify caching behavior of object data. If omitted and object is a
                 
                 <code>*string</code>
             </td>
-            <td class="align-top">{{% md %}} Data as `string` to be uploaded. Must be defined if `source` is not. **Note**: The `content` field is marked as sensitive. To view the raw contents of the object, please define an [output](https://www.terraform.io/docs/configuration/outputs.html).
+            <td class="align-top">{{% md %}} Data as `string` to be uploaded. Must be defined if `source` is not. **Note**: The `content` field is marked as sensitive.
  {{% /md %}}
 
             
@@ -1419,7 +1419,7 @@ directive to specify caching behavior of object data. If omitted and object is a
                 
                 <code>string?</code>
             </td>
-            <td class="align-top">{{% md %}} Data as `string` to be uploaded. Must be defined if `source` is not. **Note**: The `content` field is marked as sensitive. To view the raw contents of the object, please define an [output](https://www.terraform.io/docs/configuration/outputs.html).
+            <td class="align-top">{{% md %}} Data as `string` to be uploaded. Must be defined if `source` is not. **Note**: The `content` field is marked as sensitive.
  {{% /md %}}
 
             
@@ -1651,7 +1651,7 @@ directive to specify caching behavior of object data. If omitted and object is a
                 
                 <code>str</code>
             </td>
-            <td class="align-top">{{% md %}} Data as `string` to be uploaded. Must be defined if `source` is not. **Note**: The `content` field is marked as sensitive. To view the raw contents of the object, please define an [output](https://www.terraform.io/docs/configuration/outputs.html).
+            <td class="align-top">{{% md %}} Data as `string` to be uploaded. Must be defined if `source` is not. **Note**: The `content` field is marked as sensitive.
  {{% /md %}}
 
             
@@ -1948,7 +1948,7 @@ directive to specify caching behavior of object data. If omitted and object is a
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-Data as `string` to be uploaded. Must be defined if `source` is not. **Note**: The `content` field is marked as sensitive. To view the raw contents of the object, please define an [output](https://www.terraform.io/docs/configuration/outputs.html).
+Data as `string` to be uploaded. Must be defined if `source` is not. **Note**: The `content` field is marked as sensitive.
  {{% /md %}}
 
             
@@ -2212,7 +2212,7 @@ directive to specify caching behavior of object data. If omitted and object is a
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-Data as `string` to be uploaded. Must be defined if `source` is not. **Note**: The `content` field is marked as sensitive. To view the raw contents of the object, please define an [output](https://www.terraform.io/docs/configuration/outputs.html).
+Data as `string` to be uploaded. Must be defined if `source` is not. **Note**: The `content` field is marked as sensitive.
  {{% /md %}}
 
             
@@ -2476,7 +2476,7 @@ directive to specify caching behavior of object data. If omitted and object is a
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-Data as `string` to be uploaded. Must be defined if `source` is not. **Note**: The `content` field is marked as sensitive. To view the raw contents of the object, please define an [output](https://www.terraform.io/docs/configuration/outputs.html).
+Data as `string` to be uploaded. Must be defined if `source` is not. **Note**: The `content` field is marked as sensitive.
  {{% /md %}}
 
             
@@ -2740,7 +2740,7 @@ directive to specify caching behavior of object data. If omitted and object is a
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-Data as `string` to be uploaded. Must be defined if `source` is not. **Note**: The `content` field is marked as sensitive. To view the raw contents of the object, please define an [output](https://www.terraform.io/docs/configuration/outputs.html).
+Data as `string` to be uploaded. Must be defined if `source` is not. **Note**: The `content` field is marked as sensitive.
  {{% /md %}}
 
             

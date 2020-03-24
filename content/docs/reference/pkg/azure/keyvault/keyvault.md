@@ -7,6 +7,15 @@ block_external_search_index: true
 table td p { margin-top: 0; margin-bottom: 0; }
 </style>
 
+Manages a Key Vault.
+
+## Disclaimers
+
+> **Note:** It's possible to define Key Vault Access Policies both within the `azure.keyvault.KeyVault` resource via the `access_policy` block and by using the `azure.keyvault.AccessPolicy` resource. However it's not possible to use both methods to manage Access Policies within a KeyVault, since there'll be conflicts.
+
+> **Note:** This provi will automatically recover a soft-deleted Key Vault during Creation if one is found - you can opt out of this using the `features` configuration within the Provider configuration block.
+
+> This content is derived from https://github.com/terraform-providers/terraform-provider-azurerm/blob/master/website/docs/r/key_vault.html.markdown.
 
 
 
@@ -81,7 +90,7 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-[A list](https://www.terraform.io/docs/configuration/attr-as-blocks.html) of up to 16 objects describing access policies, as described below.
+A list of up to 16 objects describing access policies, as described below.
  {{% /md %}}
 
             
@@ -296,7 +305,7 @@ The Azure Active Directory tenant ID that should be used for authenticating requ
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-[A list](https://www.terraform.io/docs/configuration/attr-as-blocks.html) of up to 16 objects describing access policies, as described below.
+A list of up to 16 objects describing access policies, as described below.
  {{% /md %}}
 
             
@@ -511,7 +520,7 @@ The Azure Active Directory tenant ID that should be used for authenticating requ
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-[A list](https://www.terraform.io/docs/configuration/attr-as-blocks.html) of up to 16 objects describing access policies, as described below.
+A list of up to 16 objects describing access policies, as described below.
  {{% /md %}}
 
             
@@ -726,7 +735,7 @@ The Azure Active Directory tenant ID that should be used for authenticating requ
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-[A list](https://www.terraform.io/docs/configuration/attr-as-blocks.html) of up to 16 objects describing access policies, as described below.
+A list of up to 16 objects describing access policies, as described below.
  {{% /md %}}
 
             
@@ -953,7 +962,7 @@ The following output properties are available:
                 
                 <code><a href="#keyvaultaccesspolicy">List&lt;Key<wbr>Vault<wbr>Access<wbr>Policy&gt;</a></code>
             </td>
-            <td class="align-top">{{% md %}} [A list](https://www.terraform.io/docs/configuration/attr-as-blocks.html) of up to 16 objects describing access policies, as described below.
+            <td class="align-top">{{% md %}} A list of up to 16 objects describing access policies, as described below.
  {{% /md %}}
 
             
@@ -1155,7 +1164,7 @@ The following output properties are available:
                 
                 <code><a href="#keyvaultaccesspolicy">[]Key<wbr>Vault<wbr>Access<wbr>Policy</a></code>
             </td>
-            <td class="align-top">{{% md %}} [A list](https://www.terraform.io/docs/configuration/attr-as-blocks.html) of up to 16 objects describing access policies, as described below.
+            <td class="align-top">{{% md %}} A list of up to 16 objects describing access policies, as described below.
  {{% /md %}}
 
             
@@ -1357,7 +1366,7 @@ The following output properties are available:
                 
                 <code><a href="#keyvaultaccesspolicy">Key<wbr>Vault<wbr>Access<wbr>Policy[]</a></code>
             </td>
-            <td class="align-top">{{% md %}} [A list](https://www.terraform.io/docs/configuration/attr-as-blocks.html) of up to 16 objects describing access policies, as described below.
+            <td class="align-top">{{% md %}} A list of up to 16 objects describing access policies, as described below.
  {{% /md %}}
 
             
@@ -1559,7 +1568,7 @@ The following output properties are available:
                 
                 <code><a href="#keyvaultaccesspolicy">List[Key<wbr>Vault<wbr>Access<wbr>Policy]</a></code>
             </td>
-            <td class="align-top">{{% md %}} [A list](https://www.terraform.io/docs/configuration/attr-as-blocks.html) of up to 16 objects describing access policies, as described below.
+            <td class="align-top">{{% md %}} A list of up to 16 objects describing access policies, as described below.
  {{% /md %}}
 
             
@@ -1822,7 +1831,7 @@ The following state arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-[A list](https://www.terraform.io/docs/configuration/attr-as-blocks.html) of up to 16 objects describing access policies, as described below.
+A list of up to 16 objects describing access policies, as described below.
  {{% /md %}}
 
             
@@ -2052,7 +2061,7 @@ The URI of the Key Vault, used for performing operations on keys and secrets.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-[A list](https://www.terraform.io/docs/configuration/attr-as-blocks.html) of up to 16 objects describing access policies, as described below.
+A list of up to 16 objects describing access policies, as described below.
  {{% /md %}}
 
             
@@ -2282,7 +2291,7 @@ The URI of the Key Vault, used for performing operations on keys and secrets.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-[A list](https://www.terraform.io/docs/configuration/attr-as-blocks.html) of up to 16 objects describing access policies, as described below.
+A list of up to 16 objects describing access policies, as described below.
  {{% /md %}}
 
             
@@ -2512,7 +2521,7 @@ The URI of the Key Vault, used for performing operations on keys and secrets.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-[A list](https://www.terraform.io/docs/configuration/attr-as-blocks.html) of up to 16 objects describing access policies, as described below.
+A list of up to 16 objects describing access policies, as described below.
  {{% /md %}}
 
             

@@ -7404,7 +7404,7 @@ Is HTTP2 Enabled on this App Service? Defaults to `false`.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-A [List of objects](https://www.terraform.io/docs/configuration/attr-as-blocks.html) representing ip restrictions as defined below.
+A list of objects representing ip restrictions as defined below.
  {{% /md %}}
 
             
@@ -7781,7 +7781,7 @@ Is HTTP2 Enabled on this App Service? Defaults to `false`.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-A [List of objects](https://www.terraform.io/docs/configuration/attr-as-blocks.html) representing ip restrictions as defined below.
+A list of objects representing ip restrictions as defined below.
  {{% /md %}}
 
             
@@ -8158,7 +8158,7 @@ Is HTTP2 Enabled on this App Service? Defaults to `false`.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-A [List of objects](https://www.terraform.io/docs/configuration/attr-as-blocks.html) representing ip restrictions as defined below.
+A list of objects representing ip restrictions as defined below.
  {{% /md %}}
 
             
@@ -8535,7 +8535,7 @@ Is HTTP2 Enabled on this App Service? Defaults to `false`.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-A [List of objects](https://www.terraform.io/docs/configuration/attr-as-blocks.html) representing ip restrictions as defined below.
+A list of objects representing ip restrictions as defined below.
  {{% /md %}}
 
             

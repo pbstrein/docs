@@ -184,7 +184,7 @@ for more information.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The name of the node pool. If left blank, this provider will
+The name of the node pool. If left blank, the provider will
 auto-generate a unique name.
  {{% /md %}}
 
@@ -248,7 +248,7 @@ update the number of nodes per instance group but should not be used alongside `
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-)
+
 The list of zones in which the node pool&#39;s nodes should be located. Nodes must
 be in the region of their regional cluster or in the same region as their
 cluster&#39;s zone for zonal clusters. If unspecified, the cluster-level
@@ -283,6 +283,9 @@ the provider-configured project will be used.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+Specify node upgrade settings to change how many nodes GKE attempts to
+upgrade at once. The number of nodes upgraded simultaneously is the sum of `max_surge` and `max_unavailable`.
+The maximum number of nodes upgraded simultaneously is limited to 20.
  {{% /md %}}
 
             
@@ -300,9 +303,9 @@ the provider-configured project will be used.
 The Kubernetes version for the nodes in this pool. Note that if this field
 and `auto_upgrade` are both specified, they will fight each other for what the node version should
 be, so setting both is highly discouraged. While a fuzzy version can be specified, it&#39;s
-recommended that you specify explicit versions as this provider will see spurious diffs
+recommended that you specify explicit versions as the provider will see spurious diffs
 when fuzzy versions are used. See the `gcp.container.getEngineVersions` data source&#39;s
-`version_prefix` field to approximate fuzzy versions.
+`version_prefix` field to approximate fuzzy versions in a provider-compatible way.
  {{% /md %}}
 
             
@@ -435,7 +438,7 @@ for more information.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The name of the node pool. If left blank, this provider will
+The name of the node pool. If left blank, the provider will
 auto-generate a unique name.
  {{% /md %}}
 
@@ -499,7 +502,7 @@ update the number of nodes per instance group but should not be used alongside `
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-)
+
 The list of zones in which the node pool&#39;s nodes should be located. Nodes must
 be in the region of their regional cluster or in the same region as their
 cluster&#39;s zone for zonal clusters. If unspecified, the cluster-level
@@ -534,6 +537,9 @@ the provider-configured project will be used.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+Specify node upgrade settings to change how many nodes GKE attempts to
+upgrade at once. The number of nodes upgraded simultaneously is the sum of `max_surge` and `max_unavailable`.
+The maximum number of nodes upgraded simultaneously is limited to 20.
  {{% /md %}}
 
             
@@ -551,9 +557,9 @@ the provider-configured project will be used.
 The Kubernetes version for the nodes in this pool. Note that if this field
 and `auto_upgrade` are both specified, they will fight each other for what the node version should
 be, so setting both is highly discouraged. While a fuzzy version can be specified, it&#39;s
-recommended that you specify explicit versions as this provider will see spurious diffs
+recommended that you specify explicit versions as the provider will see spurious diffs
 when fuzzy versions are used. See the `gcp.container.getEngineVersions` data source&#39;s
-`version_prefix` field to approximate fuzzy versions.
+`version_prefix` field to approximate fuzzy versions in a provider-compatible way.
  {{% /md %}}
 
             
@@ -686,7 +692,7 @@ for more information.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The name of the node pool. If left blank, this provider will
+The name of the node pool. If left blank, the provider will
 auto-generate a unique name.
  {{% /md %}}
 
@@ -750,7 +756,7 @@ update the number of nodes per instance group but should not be used alongside `
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-)
+
 The list of zones in which the node pool&#39;s nodes should be located. Nodes must
 be in the region of their regional cluster or in the same region as their
 cluster&#39;s zone for zonal clusters. If unspecified, the cluster-level
@@ -785,6 +791,9 @@ the provider-configured project will be used.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+Specify node upgrade settings to change how many nodes GKE attempts to
+upgrade at once. The number of nodes upgraded simultaneously is the sum of `max_surge` and `max_unavailable`.
+The maximum number of nodes upgraded simultaneously is limited to 20.
  {{% /md %}}
 
             
@@ -802,9 +811,9 @@ the provider-configured project will be used.
 The Kubernetes version for the nodes in this pool. Note that if this field
 and `auto_upgrade` are both specified, they will fight each other for what the node version should
 be, so setting both is highly discouraged. While a fuzzy version can be specified, it&#39;s
-recommended that you specify explicit versions as this provider will see spurious diffs
+recommended that you specify explicit versions as the provider will see spurious diffs
 when fuzzy versions are used. See the `gcp.container.getEngineVersions` data source&#39;s
-`version_prefix` field to approximate fuzzy versions.
+`version_prefix` field to approximate fuzzy versions in a provider-compatible way.
  {{% /md %}}
 
             
@@ -937,7 +946,7 @@ for more information.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The name of the node pool. If left blank, this provider will
+The name of the node pool. If left blank, the provider will
 auto-generate a unique name.
  {{% /md %}}
 
@@ -1001,7 +1010,7 @@ update the number of nodes per instance group but should not be used alongside `
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-)
+
 The list of zones in which the node pool&#39;s nodes should be located. Nodes must
 be in the region of their regional cluster or in the same region as their
 cluster&#39;s zone for zonal clusters. If unspecified, the cluster-level
@@ -1036,6 +1045,9 @@ the provider-configured project will be used.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+Specify node upgrade settings to change how many nodes GKE attempts to
+upgrade at once. The number of nodes upgraded simultaneously is the sum of `max_surge` and `max_unavailable`.
+The maximum number of nodes upgraded simultaneously is limited to 20.
  {{% /md %}}
 
             
@@ -1053,9 +1065,9 @@ the provider-configured project will be used.
 The Kubernetes version for the nodes in this pool. Note that if this field
 and `auto_upgrade` are both specified, they will fight each other for what the node version should
 be, so setting both is highly discouraged. While a fuzzy version can be specified, it&#39;s
-recommended that you specify explicit versions as this provider will see spurious diffs
+recommended that you specify explicit versions as the provider will see spurious diffs
 when fuzzy versions are used. See the `gcp.container.getEngineVersions` data source&#39;s
-`version_prefix` field to approximate fuzzy versions.
+`version_prefix` field to approximate fuzzy versions in a provider-compatible way.
  {{% /md %}}
 
             
@@ -1201,7 +1213,7 @@ for more information.
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}} The name of the node pool. If left blank, this provider will
+            <td class="align-top">{{% md %}} The name of the node pool. If left blank, the provider will
 auto-generate a unique name.
  {{% /md %}}
 
@@ -1257,7 +1269,7 @@ update the number of nodes per instance group but should not be used alongside `
                 
                 <code>List<string></code>
             </td>
-            <td class="align-top">{{% md %}} )
+            <td class="align-top">{{% md %}} 
 The list of zones in which the node pool&#39;s nodes should be located. Nodes must
 be in the region of their regional cluster or in the same region as their
 cluster&#39;s zone for zonal clusters. If unspecified, the cluster-level
@@ -1286,9 +1298,12 @@ the provider-configured project will be used.
             <td class="align-top">Upgrade<wbr>Settings</td>
             <td class="align-top">
                 
-                <code><a href="#nodepoolupgradesettings">Node<wbr>Pool<wbr>Upgrade<wbr>Settings?</a></code>
+                <code><a href="#nodepoolupgradesettings">Node<wbr>Pool<wbr>Upgrade<wbr>Settings</a></code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} Specify node upgrade settings to change how many nodes GKE attempts to
+upgrade at once. The number of nodes upgraded simultaneously is the sum of `max_surge` and `max_unavailable`.
+The maximum number of nodes upgraded simultaneously is limited to 20.
+ {{% /md %}}
 
             
             </td>
@@ -1303,9 +1318,9 @@ the provider-configured project will be used.
             <td class="align-top">{{% md %}} The Kubernetes version for the nodes in this pool. Note that if this field
 and `auto_upgrade` are both specified, they will fight each other for what the node version should
 be, so setting both is highly discouraged. While a fuzzy version can be specified, it&#39;s
-recommended that you specify explicit versions as this provider will see spurious diffs
+recommended that you specify explicit versions as the provider will see spurious diffs
 when fuzzy versions are used. See the `gcp.container.getEngineVersions` data source&#39;s
-`version_prefix` field to approximate fuzzy versions.
+`version_prefix` field to approximate fuzzy versions in a provider-compatible way.
  {{% /md %}}
 
             
@@ -1437,7 +1452,7 @@ for more information.
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}} The name of the node pool. If left blank, this provider will
+            <td class="align-top">{{% md %}} The name of the node pool. If left blank, the provider will
 auto-generate a unique name.
  {{% /md %}}
 
@@ -1493,7 +1508,7 @@ update the number of nodes per instance group but should not be used alongside `
                 
                 <code>[]string</code>
             </td>
-            <td class="align-top">{{% md %}} )
+            <td class="align-top">{{% md %}} 
 The list of zones in which the node pool&#39;s nodes should be located. Nodes must
 be in the region of their regional cluster or in the same region as their
 cluster&#39;s zone for zonal clusters. If unspecified, the cluster-level
@@ -1522,9 +1537,12 @@ the provider-configured project will be used.
             <td class="align-top">Upgrade<wbr>Settings</td>
             <td class="align-top">
                 
-                <code><a href="#nodepoolupgradesettings">*Node<wbr>Pool<wbr>Upgrade<wbr>Settings</a></code>
+                <code><a href="#nodepoolupgradesettings">Node<wbr>Pool<wbr>Upgrade<wbr>Settings</a></code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} Specify node upgrade settings to change how many nodes GKE attempts to
+upgrade at once. The number of nodes upgraded simultaneously is the sum of `max_surge` and `max_unavailable`.
+The maximum number of nodes upgraded simultaneously is limited to 20.
+ {{% /md %}}
 
             
             </td>
@@ -1539,9 +1557,9 @@ the provider-configured project will be used.
             <td class="align-top">{{% md %}} The Kubernetes version for the nodes in this pool. Note that if this field
 and `auto_upgrade` are both specified, they will fight each other for what the node version should
 be, so setting both is highly discouraged. While a fuzzy version can be specified, it&#39;s
-recommended that you specify explicit versions as this provider will see spurious diffs
+recommended that you specify explicit versions as the provider will see spurious diffs
 when fuzzy versions are used. See the `gcp.container.getEngineVersions` data source&#39;s
-`version_prefix` field to approximate fuzzy versions.
+`version_prefix` field to approximate fuzzy versions in a provider-compatible way.
  {{% /md %}}
 
             
@@ -1673,7 +1691,7 @@ for more information.
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}} The name of the node pool. If left blank, this provider will
+            <td class="align-top">{{% md %}} The name of the node pool. If left blank, the provider will
 auto-generate a unique name.
  {{% /md %}}
 
@@ -1729,7 +1747,7 @@ update the number of nodes per instance group but should not be used alongside `
                 
                 <code>string[]</code>
             </td>
-            <td class="align-top">{{% md %}} )
+            <td class="align-top">{{% md %}} 
 The list of zones in which the node pool&#39;s nodes should be located. Nodes must
 be in the region of their regional cluster or in the same region as their
 cluster&#39;s zone for zonal clusters. If unspecified, the cluster-level
@@ -1758,9 +1776,12 @@ the provider-configured project will be used.
             <td class="align-top">upgrade<wbr>Settings</td>
             <td class="align-top">
                 
-                <code><a href="#nodepoolupgradesettings">Node<wbr>Pool<wbr>Upgrade<wbr>Settings?</a></code>
+                <code><a href="#nodepoolupgradesettings">Node<wbr>Pool<wbr>Upgrade<wbr>Settings</a></code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} Specify node upgrade settings to change how many nodes GKE attempts to
+upgrade at once. The number of nodes upgraded simultaneously is the sum of `max_surge` and `max_unavailable`.
+The maximum number of nodes upgraded simultaneously is limited to 20.
+ {{% /md %}}
 
             
             </td>
@@ -1775,9 +1796,9 @@ the provider-configured project will be used.
             <td class="align-top">{{% md %}} The Kubernetes version for the nodes in this pool. Note that if this field
 and `auto_upgrade` are both specified, they will fight each other for what the node version should
 be, so setting both is highly discouraged. While a fuzzy version can be specified, it&#39;s
-recommended that you specify explicit versions as this provider will see spurious diffs
+recommended that you specify explicit versions as the provider will see spurious diffs
 when fuzzy versions are used. See the `gcp.container.getEngineVersions` data source&#39;s
-`version_prefix` field to approximate fuzzy versions.
+`version_prefix` field to approximate fuzzy versions in a provider-compatible way.
  {{% /md %}}
 
             
@@ -1909,7 +1930,7 @@ for more information.
                 
                 <code>str</code>
             </td>
-            <td class="align-top">{{% md %}} The name of the node pool. If left blank, this provider will
+            <td class="align-top">{{% md %}} The name of the node pool. If left blank, the provider will
 auto-generate a unique name.
  {{% /md %}}
 
@@ -1965,7 +1986,7 @@ update the number of nodes per instance group but should not be used alongside `
                 
                 <code>List[str]</code>
             </td>
-            <td class="align-top">{{% md %}} )
+            <td class="align-top">{{% md %}} 
 The list of zones in which the node pool&#39;s nodes should be located. Nodes must
 be in the region of their regional cluster or in the same region as their
 cluster&#39;s zone for zonal clusters. If unspecified, the cluster-level
@@ -1996,7 +2017,10 @@ the provider-configured project will be used.
                 
                 <code><a href="#nodepoolupgradesettings">Dict[Node<wbr>Pool<wbr>Upgrade<wbr>Settings]</a></code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} Specify node upgrade settings to change how many nodes GKE attempts to
+upgrade at once. The number of nodes upgraded simultaneously is the sum of `max_surge` and `max_unavailable`.
+The maximum number of nodes upgraded simultaneously is limited to 20.
+ {{% /md %}}
 
             
             </td>
@@ -2011,9 +2035,9 @@ the provider-configured project will be used.
             <td class="align-top">{{% md %}} The Kubernetes version for the nodes in this pool. Note that if this field
 and `auto_upgrade` are both specified, they will fight each other for what the node version should
 be, so setting both is highly discouraged. While a fuzzy version can be specified, it&#39;s
-recommended that you specify explicit versions as this provider will see spurious diffs
+recommended that you specify explicit versions as the provider will see spurious diffs
 when fuzzy versions are used. See the `gcp.container.getEngineVersions` data source&#39;s
-`version_prefix` field to approximate fuzzy versions.
+`version_prefix` field to approximate fuzzy versions in a provider-compatible way.
  {{% /md %}}
 
             
@@ -2220,7 +2244,7 @@ for more information.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The name of the node pool. If left blank, this provider will
+The name of the node pool. If left blank, the provider will
 auto-generate a unique name.
  {{% /md %}}
 
@@ -2284,7 +2308,7 @@ update the number of nodes per instance group but should not be used alongside `
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-)
+
 The list of zones in which the node pool&#39;s nodes should be located. Nodes must
 be in the region of their regional cluster or in the same region as their
 cluster&#39;s zone for zonal clusters. If unspecified, the cluster-level
@@ -2319,6 +2343,9 @@ the provider-configured project will be used.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+Specify node upgrade settings to change how many nodes GKE attempts to
+upgrade at once. The number of nodes upgraded simultaneously is the sum of `max_surge` and `max_unavailable`.
+The maximum number of nodes upgraded simultaneously is limited to 20.
  {{% /md %}}
 
             
@@ -2336,9 +2363,9 @@ the provider-configured project will be used.
 The Kubernetes version for the nodes in this pool. Note that if this field
 and `auto_upgrade` are both specified, they will fight each other for what the node version should
 be, so setting both is highly discouraged. While a fuzzy version can be specified, it&#39;s
-recommended that you specify explicit versions as this provider will see spurious diffs
+recommended that you specify explicit versions as the provider will see spurious diffs
 when fuzzy versions are used. See the `gcp.container.getEngineVersions` data source&#39;s
-`version_prefix` field to approximate fuzzy versions.
+`version_prefix` field to approximate fuzzy versions in a provider-compatible way.
  {{% /md %}}
 
             
@@ -2486,7 +2513,7 @@ for more information.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The name of the node pool. If left blank, this provider will
+The name of the node pool. If left blank, the provider will
 auto-generate a unique name.
  {{% /md %}}
 
@@ -2550,7 +2577,7 @@ update the number of nodes per instance group but should not be used alongside `
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-)
+
 The list of zones in which the node pool&#39;s nodes should be located. Nodes must
 be in the region of their regional cluster or in the same region as their
 cluster&#39;s zone for zonal clusters. If unspecified, the cluster-level
@@ -2585,6 +2612,9 @@ the provider-configured project will be used.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+Specify node upgrade settings to change how many nodes GKE attempts to
+upgrade at once. The number of nodes upgraded simultaneously is the sum of `max_surge` and `max_unavailable`.
+The maximum number of nodes upgraded simultaneously is limited to 20.
  {{% /md %}}
 
             
@@ -2602,9 +2632,9 @@ the provider-configured project will be used.
 The Kubernetes version for the nodes in this pool. Note that if this field
 and `auto_upgrade` are both specified, they will fight each other for what the node version should
 be, so setting both is highly discouraged. While a fuzzy version can be specified, it&#39;s
-recommended that you specify explicit versions as this provider will see spurious diffs
+recommended that you specify explicit versions as the provider will see spurious diffs
 when fuzzy versions are used. See the `gcp.container.getEngineVersions` data source&#39;s
-`version_prefix` field to approximate fuzzy versions.
+`version_prefix` field to approximate fuzzy versions in a provider-compatible way.
  {{% /md %}}
 
             
@@ -2752,7 +2782,7 @@ for more information.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The name of the node pool. If left blank, this provider will
+The name of the node pool. If left blank, the provider will
 auto-generate a unique name.
  {{% /md %}}
 
@@ -2816,7 +2846,7 @@ update the number of nodes per instance group but should not be used alongside `
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-)
+
 The list of zones in which the node pool&#39;s nodes should be located. Nodes must
 be in the region of their regional cluster or in the same region as their
 cluster&#39;s zone for zonal clusters. If unspecified, the cluster-level
@@ -2851,6 +2881,9 @@ the provider-configured project will be used.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+Specify node upgrade settings to change how many nodes GKE attempts to
+upgrade at once. The number of nodes upgraded simultaneously is the sum of `max_surge` and `max_unavailable`.
+The maximum number of nodes upgraded simultaneously is limited to 20.
  {{% /md %}}
 
             
@@ -2868,9 +2901,9 @@ the provider-configured project will be used.
 The Kubernetes version for the nodes in this pool. Note that if this field
 and `auto_upgrade` are both specified, they will fight each other for what the node version should
 be, so setting both is highly discouraged. While a fuzzy version can be specified, it&#39;s
-recommended that you specify explicit versions as this provider will see spurious diffs
+recommended that you specify explicit versions as the provider will see spurious diffs
 when fuzzy versions are used. See the `gcp.container.getEngineVersions` data source&#39;s
-`version_prefix` field to approximate fuzzy versions.
+`version_prefix` field to approximate fuzzy versions in a provider-compatible way.
  {{% /md %}}
 
             
@@ -3018,7 +3051,7 @@ for more information.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-The name of the node pool. If left blank, this provider will
+The name of the node pool. If left blank, the provider will
 auto-generate a unique name.
  {{% /md %}}
 
@@ -3082,7 +3115,7 @@ update the number of nodes per instance group but should not be used alongside `
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-)
+
 The list of zones in which the node pool&#39;s nodes should be located. Nodes must
 be in the region of their regional cluster or in the same region as their
 cluster&#39;s zone for zonal clusters. If unspecified, the cluster-level
@@ -3117,6 +3150,9 @@ the provider-configured project will be used.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+Specify node upgrade settings to change how many nodes GKE attempts to
+upgrade at once. The number of nodes upgraded simultaneously is the sum of `max_surge` and `max_unavailable`.
+The maximum number of nodes upgraded simultaneously is limited to 20.
  {{% /md %}}
 
             
@@ -3134,9 +3170,9 @@ the provider-configured project will be used.
 The Kubernetes version for the nodes in this pool. Note that if this field
 and `auto_upgrade` are both specified, they will fight each other for what the node version should
 be, so setting both is highly discouraged. While a fuzzy version can be specified, it&#39;s
-recommended that you specify explicit versions as this provider will see spurious diffs
+recommended that you specify explicit versions as the provider will see spurious diffs
 when fuzzy versions are used. See the `gcp.container.getEngineVersions` data source&#39;s
-`version_prefix` field to approximate fuzzy versions.
+`version_prefix` field to approximate fuzzy versions in a provider-compatible way.
  {{% /md %}}
 
             

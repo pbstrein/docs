@@ -7,6 +7,36 @@ block_external_search_index: true
 table td p { margin-top: 0; margin-bottom: 0; }
 </style>
 
+Configuration for an automated build in response to source repository changes.
+
+
+To get more information about Trigger, see:
+
+* [API documentation](https://cloud.google.com/cloud-build/docs/api/reference/rest/)
+* How-to Guides
+    * [Automating builds using build triggers](https://cloud.google.com/cloud-build/docs/running-builds/automate-builds)
+
+## Example Usage - Cloudbuild Trigger Filename
+
+
+```typescript
+import * as pulumi from "@pulumi/pulumi";
+import * as gcp from "@pulumi/gcp";
+
+const filename_trigger = new gcp.cloudbuild.Trigger("filename-trigger", {
+    filename: "cloudbuild.yaml",
+    substitutions: {
+        _BAZ: "qux",
+        _FOO: "bar",
+    },
+    triggerTemplate: {
+        branchName: "master",
+        repoName: "my-repo",
+    },
+});
+```
+
+> This content is derived from https://github.com/terraform-providers/terraform-provider-google/blob/master/website/docs/r/cloudbuild_trigger.html.markdown.
 
 
 
@@ -176,9 +206,9 @@ the change has no files that are outside of the ignoredFiles globs, then we do n
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-ignoredFiles and includedFiles are file glob matches using http://godoc/pkg/path/filepath#Match extended with support
-for &#39;**&#39;. If any of the files altered in the commit pass the ignoredFiles filter and includedFiles is empty, then as far
-as this filter is concerned, we should trigger the build. If any of the files altered in the commit pass the
+ignoredFiles and includedFiles are file glob matches using https://golang.org/pkg/path/filepath/#Match extended with
+support for &#39;**&#39;. If any of the files altered in the commit pass the ignoredFiles filter and includedFiles is empty,
+then as far as this filter is concerned, we should trigger the build. If any of the files altered in the commit pass the
 ignoredFiles filter and includedFiles is not empty, then we make sure that at least one of those files matches a
 includedFiles glob. If not, then we do not trigger a build.
  {{% /md %}}
@@ -373,9 +403,9 @@ the change has no files that are outside of the ignoredFiles globs, then we do n
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-ignoredFiles and includedFiles are file glob matches using http://godoc/pkg/path/filepath#Match extended with support
-for &#39;**&#39;. If any of the files altered in the commit pass the ignoredFiles filter and includedFiles is empty, then as far
-as this filter is concerned, we should trigger the build. If any of the files altered in the commit pass the
+ignoredFiles and includedFiles are file glob matches using https://golang.org/pkg/path/filepath/#Match extended with
+support for &#39;**&#39;. If any of the files altered in the commit pass the ignoredFiles filter and includedFiles is empty,
+then as far as this filter is concerned, we should trigger the build. If any of the files altered in the commit pass the
 ignoredFiles filter and includedFiles is not empty, then we make sure that at least one of those files matches a
 includedFiles glob. If not, then we do not trigger a build.
  {{% /md %}}
@@ -570,9 +600,9 @@ the change has no files that are outside of the ignoredFiles globs, then we do n
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-ignoredFiles and includedFiles are file glob matches using http://godoc/pkg/path/filepath#Match extended with support
-for &#39;**&#39;. If any of the files altered in the commit pass the ignoredFiles filter and includedFiles is empty, then as far
-as this filter is concerned, we should trigger the build. If any of the files altered in the commit pass the
+ignoredFiles and includedFiles are file glob matches using https://golang.org/pkg/path/filepath/#Match extended with
+support for &#39;**&#39;. If any of the files altered in the commit pass the ignoredFiles filter and includedFiles is empty,
+then as far as this filter is concerned, we should trigger the build. If any of the files altered in the commit pass the
 ignoredFiles filter and includedFiles is not empty, then we make sure that at least one of those files matches a
 includedFiles glob. If not, then we do not trigger a build.
  {{% /md %}}
@@ -767,9 +797,9 @@ the change has no files that are outside of the ignoredFiles globs, then we do n
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-ignoredFiles and includedFiles are file glob matches using http://godoc/pkg/path/filepath#Match extended with support
-for &#39;**&#39;. If any of the files altered in the commit pass the ignoredFiles filter and includedFiles is empty, then as far
-as this filter is concerned, we should trigger the build. If any of the files altered in the commit pass the
+ignoredFiles and includedFiles are file glob matches using https://golang.org/pkg/path/filepath/#Match extended with
+support for &#39;**&#39;. If any of the files altered in the commit pass the ignoredFiles filter and includedFiles is empty,
+then as far as this filter is concerned, we should trigger the build. If any of the files altered in the commit pass the
 ignoredFiles filter and includedFiles is not empty, then we make sure that at least one of those files matches a
 includedFiles glob. If not, then we do not trigger a build.
  {{% /md %}}
@@ -977,9 +1007,9 @@ the change has no files that are outside of the ignoredFiles globs, then we do n
                 
                 <code>List<string>?</code>
             </td>
-            <td class="align-top">{{% md %}} ignoredFiles and includedFiles are file glob matches using http://godoc/pkg/path/filepath#Match extended with support
-for &#39;**&#39;. If any of the files altered in the commit pass the ignoredFiles filter and includedFiles is empty, then as far
-as this filter is concerned, we should trigger the build. If any of the files altered in the commit pass the
+            <td class="align-top">{{% md %}} ignoredFiles and includedFiles are file glob matches using https://golang.org/pkg/path/filepath/#Match extended with
+support for &#39;**&#39;. If any of the files altered in the commit pass the ignoredFiles filter and includedFiles is empty,
+then as far as this filter is concerned, we should trigger the build. If any of the files altered in the commit pass the
 ignoredFiles filter and includedFiles is not empty, then we make sure that at least one of those files matches a
 includedFiles glob. If not, then we do not trigger a build.
  {{% /md %}}
@@ -1178,9 +1208,9 @@ the change has no files that are outside of the ignoredFiles globs, then we do n
                 
                 <code>[]string</code>
             </td>
-            <td class="align-top">{{% md %}} ignoredFiles and includedFiles are file glob matches using http://godoc/pkg/path/filepath#Match extended with support
-for &#39;**&#39;. If any of the files altered in the commit pass the ignoredFiles filter and includedFiles is empty, then as far
-as this filter is concerned, we should trigger the build. If any of the files altered in the commit pass the
+            <td class="align-top">{{% md %}} ignoredFiles and includedFiles are file glob matches using https://golang.org/pkg/path/filepath/#Match extended with
+support for &#39;**&#39;. If any of the files altered in the commit pass the ignoredFiles filter and includedFiles is empty,
+then as far as this filter is concerned, we should trigger the build. If any of the files altered in the commit pass the
 ignoredFiles filter and includedFiles is not empty, then we make sure that at least one of those files matches a
 includedFiles glob. If not, then we do not trigger a build.
  {{% /md %}}
@@ -1379,9 +1409,9 @@ the change has no files that are outside of the ignoredFiles globs, then we do n
                 
                 <code>string[]?</code>
             </td>
-            <td class="align-top">{{% md %}} ignoredFiles and includedFiles are file glob matches using http://godoc/pkg/path/filepath#Match extended with support
-for &#39;**&#39;. If any of the files altered in the commit pass the ignoredFiles filter and includedFiles is empty, then as far
-as this filter is concerned, we should trigger the build. If any of the files altered in the commit pass the
+            <td class="align-top">{{% md %}} ignoredFiles and includedFiles are file glob matches using https://golang.org/pkg/path/filepath/#Match extended with
+support for &#39;**&#39;. If any of the files altered in the commit pass the ignoredFiles filter and includedFiles is empty,
+then as far as this filter is concerned, we should trigger the build. If any of the files altered in the commit pass the
 ignoredFiles filter and includedFiles is not empty, then we make sure that at least one of those files matches a
 includedFiles glob. If not, then we do not trigger a build.
  {{% /md %}}
@@ -1580,9 +1610,9 @@ the change has no files that are outside of the ignoredFiles globs, then we do n
                 
                 <code>List[str]</code>
             </td>
-            <td class="align-top">{{% md %}} ignoredFiles and includedFiles are file glob matches using http://godoc/pkg/path/filepath#Match extended with support
-for &#39;**&#39;. If any of the files altered in the commit pass the ignoredFiles filter and includedFiles is empty, then as far
-as this filter is concerned, we should trigger the build. If any of the files altered in the commit pass the
+            <td class="align-top">{{% md %}} ignoredFiles and includedFiles are file glob matches using https://golang.org/pkg/path/filepath/#Match extended with
+support for &#39;**&#39;. If any of the files altered in the commit pass the ignoredFiles filter and includedFiles is empty,
+then as far as this filter is concerned, we should trigger the build. If any of the files altered in the commit pass the
 ignoredFiles filter and includedFiles is not empty, then we make sure that at least one of those files matches a
 includedFiles glob. If not, then we do not trigger a build.
  {{% /md %}}
@@ -1856,9 +1886,9 @@ the change has no files that are outside of the ignoredFiles globs, then we do n
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-ignoredFiles and includedFiles are file glob matches using http://godoc/pkg/path/filepath#Match extended with support
-for &#39;**&#39;. If any of the files altered in the commit pass the ignoredFiles filter and includedFiles is empty, then as far
-as this filter is concerned, we should trigger the build. If any of the files altered in the commit pass the
+ignoredFiles and includedFiles are file glob matches using https://golang.org/pkg/path/filepath/#Match extended with
+support for &#39;**&#39;. If any of the files altered in the commit pass the ignoredFiles filter and includedFiles is empty,
+then as far as this filter is concerned, we should trigger the build. If any of the files altered in the commit pass the
 ignoredFiles filter and includedFiles is not empty, then we make sure that at least one of those files matches a
 includedFiles glob. If not, then we do not trigger a build.
  {{% /md %}}
@@ -2083,9 +2113,9 @@ the change has no files that are outside of the ignoredFiles globs, then we do n
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-ignoredFiles and includedFiles are file glob matches using http://godoc/pkg/path/filepath#Match extended with support
-for &#39;**&#39;. If any of the files altered in the commit pass the ignoredFiles filter and includedFiles is empty, then as far
-as this filter is concerned, we should trigger the build. If any of the files altered in the commit pass the
+ignoredFiles and includedFiles are file glob matches using https://golang.org/pkg/path/filepath/#Match extended with
+support for &#39;**&#39;. If any of the files altered in the commit pass the ignoredFiles filter and includedFiles is empty,
+then as far as this filter is concerned, we should trigger the build. If any of the files altered in the commit pass the
 ignoredFiles filter and includedFiles is not empty, then we make sure that at least one of those files matches a
 includedFiles glob. If not, then we do not trigger a build.
  {{% /md %}}
@@ -2310,9 +2340,9 @@ the change has no files that are outside of the ignoredFiles globs, then we do n
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-ignoredFiles and includedFiles are file glob matches using http://godoc/pkg/path/filepath#Match extended with support
-for &#39;**&#39;. If any of the files altered in the commit pass the ignoredFiles filter and includedFiles is empty, then as far
-as this filter is concerned, we should trigger the build. If any of the files altered in the commit pass the
+ignoredFiles and includedFiles are file glob matches using https://golang.org/pkg/path/filepath/#Match extended with
+support for &#39;**&#39;. If any of the files altered in the commit pass the ignoredFiles filter and includedFiles is empty,
+then as far as this filter is concerned, we should trigger the build. If any of the files altered in the commit pass the
 ignoredFiles filter and includedFiles is not empty, then we make sure that at least one of those files matches a
 includedFiles glob. If not, then we do not trigger a build.
  {{% /md %}}
@@ -2537,9 +2567,9 @@ the change has no files that are outside of the ignoredFiles globs, then we do n
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-ignoredFiles and includedFiles are file glob matches using http://godoc/pkg/path/filepath#Match extended with support
-for &#39;**&#39;. If any of the files altered in the commit pass the ignoredFiles filter and includedFiles is empty, then as far
-as this filter is concerned, we should trigger the build. If any of the files altered in the commit pass the
+ignoredFiles and includedFiles are file glob matches using https://golang.org/pkg/path/filepath/#Match extended with
+support for &#39;**&#39;. If any of the files altered in the commit pass the ignoredFiles filter and includedFiles is empty,
+then as far as this filter is concerned, we should trigger the build. If any of the files altered in the commit pass the
 ignoredFiles filter and includedFiles is not empty, then we make sure that at least one of those files matches a
 includedFiles glob. If not, then we do not trigger a build.
  {{% /md %}}

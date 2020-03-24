@@ -9,7 +9,7 @@ table td p { margin-top: 0; margin-bottom: 0; }
 
 Manages a single key/value pair on metadata common to all instances for
 a project in GCE. Using `gcp.compute.ProjectMetadataItem` lets you
-manage a single key/value setting with this provider rather than the entire
+manage a single key/value setting in the provider rather than the entire
 project metadata map.
 
 ## Example Usage

@@ -15,3 +15,8 @@ block_external_search_index: true
     <li><a href="configurationstore"><span class="symbol resource"></span>ConfigurationStore</a></li>
 </ul>
 
+<h3>Functions</h3>
+<ul class="api">
+    <li><a href="getconfigurationstore"><span class="symbol datasource"></span>GetConfigurationStore</a></li>
+</ul>
+

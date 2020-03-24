@@ -7,6 +7,16 @@ block_external_search_index: true
 table td p { margin-top: 0; margin-bottom: 0; }
 </style>
 
+This represents the rollout state. This is part of the game server
+deployment.
+
+To get more information about GameServerDeploymentRollout, see:
+
+* [API documentation](https://cloud.google.com/game-servers/docs/reference/rest/v1beta/GameServerDeploymentRollout)
+* How-to Guides
+    * [Official Documentation](https://cloud.google.com/game-servers/docs)
+
+> This content is derived from https://github.com/terraform-providers/terraform-provider-google/blob/master/website/docs/r/game_services_game_server_deployment_rollout.html.markdown.
 
 
 

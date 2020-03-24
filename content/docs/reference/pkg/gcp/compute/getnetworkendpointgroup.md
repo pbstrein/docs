@@ -7,6 +7,26 @@ block_external_search_index: true
 table td p { margin-top: 0; margin-bottom: 0; }
 </style>
 
+Use this data source to access a Network Endpoint Group's attributes.
+
+The NEG may be found by providing either a `self_link`, or a `name` and a `zone`.
+
+## Example Usage
+
+```typescript
+import * as pulumi from "@pulumi/pulumi";
+import * as gcp from "@pulumi/gcp";
+
+const neg1 = gcp.compute.getNetworkEndpointGroup({
+    name: "k8s1-abcdef01-myns-mysvc-8080-4b6bac43",
+    zone: "us-central1-a",
+});
+const neg2 = gcp.compute.getNetworkEndpointGroup({
+    selfLink: "https://www.googleapis.com/compute/v1/projects/myproject/zones/us-central1-a/networkEndpointGroups/k8s1-abcdef01-myns-mysvc-8080-4b6bac43",
+});
+```
+
+> This content is derived from https://github.com/terraform-providers/terraform-provider-google/blob/master/website/docs/d/datasource_google_compute_network_endpoint_group.html.markdown.
 
 
 
@@ -62,6 +82,8 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The Network Endpoint Group name.
+Provide either this or a `self_link`.
  {{% /md %}}
 
             
@@ -76,6 +98,7 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The Network Endpoint Group self\_link.
  {{% /md %}}
 
             
@@ -90,6 +113,7 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The Network Endpoint Group availability zone.
  {{% /md %}}
 
             
@@ -124,6 +148,8 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The Network Endpoint Group name.
+Provide either this or a `self_link`.
  {{% /md %}}
 
             
@@ -138,6 +164,7 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The Network Endpoint Group self\_link.
  {{% /md %}}
 
             
@@ -152,6 +179,7 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The Network Endpoint Group availability zone.
  {{% /md %}}
 
             
@@ -186,6 +214,8 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The Network Endpoint Group name.
+Provide either this or a `self_link`.
  {{% /md %}}
 
             
@@ -200,6 +230,7 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The Network Endpoint Group self\_link.
  {{% /md %}}
 
             
@@ -214,6 +245,7 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The Network Endpoint Group availability zone.
  {{% /md %}}
 
             
@@ -248,6 +280,8 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The Network Endpoint Group name.
+Provide either this or a `self_link`.
  {{% /md %}}
 
             
@@ -262,6 +296,7 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The Network Endpoint Group self\_link.
  {{% /md %}}
 
             
@@ -276,6 +311,7 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The Network Endpoint Group availability zone.
  {{% /md %}}
 
             
@@ -323,7 +359,8 @@ The following output properties are available:
                 
                 <code>int</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} The NEG default port.
+ {{% /md %}}
 
             
             </td>
@@ -335,7 +372,8 @@ The following output properties are available:
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} The NEG description.
+ {{% /md %}}
 
             
             </td>
@@ -372,7 +410,8 @@ The following output properties are available:
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} The network to which all network endpoints in the NEG belong.
+ {{% /md %}}
 
             
             </td>
@@ -384,7 +423,8 @@ The following output properties are available:
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} Type of network endpoints in this network endpoint group.
+ {{% /md %}}
 
             
             </td>
@@ -420,7 +460,8 @@ The following output properties are available:
                 
                 <code>int</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} Number of network endpoints in the network endpoint group.
+ {{% /md %}}
 
             
             </td>
@@ -432,7 +473,8 @@ The following output properties are available:
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} subnetwork to which all network endpoints in the NEG belong.
+ {{% /md %}}
 
             
             </td>
@@ -476,7 +518,8 @@ The following output properties are available:
                 
                 <code>int</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} The NEG default port.
+ {{% /md %}}
 
             
             </td>
@@ -488,7 +531,8 @@ The following output properties are available:
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} The NEG description.
+ {{% /md %}}
 
             
             </td>
@@ -525,7 +569,8 @@ The following output properties are available:
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} The network to which all network endpoints in the NEG belong.
+ {{% /md %}}
 
             
             </td>
@@ -537,7 +582,8 @@ The following output properties are available:
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} Type of network endpoints in this network endpoint group.
+ {{% /md %}}
 
             
             </td>
@@ -573,7 +619,8 @@ The following output properties are available:
                 
                 <code>int</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} Number of network endpoints in the network endpoint group.
+ {{% /md %}}
 
             
             </td>
@@ -585,7 +632,8 @@ The following output properties are available:
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} subnetwork to which all network endpoints in the NEG belong.
+ {{% /md %}}
 
             
             </td>
@@ -629,7 +677,8 @@ The following output properties are available:
                 
                 <code>number</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} The NEG default port.
+ {{% /md %}}
 
             
             </td>
@@ -641,7 +690,8 @@ The following output properties are available:
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} The NEG description.
+ {{% /md %}}
 
             
             </td>
@@ -678,7 +728,8 @@ The following output properties are available:
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} The network to which all network endpoints in the NEG belong.
+ {{% /md %}}
 
             
             </td>
@@ -690,7 +741,8 @@ The following output properties are available:
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} Type of network endpoints in this network endpoint group.
+ {{% /md %}}
 
             
             </td>
@@ -726,7 +778,8 @@ The following output properties are available:
                 
                 <code>number</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} Number of network endpoints in the network endpoint group.
+ {{% /md %}}
 
             
             </td>
@@ -738,7 +791,8 @@ The following output properties are available:
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} subnetwork to which all network endpoints in the NEG belong.
+ {{% /md %}}
 
             
             </td>
@@ -782,7 +836,8 @@ The following output properties are available:
                 
                 <code>float</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} The NEG default port.
+ {{% /md %}}
 
             
             </td>
@@ -794,7 +849,8 @@ The following output properties are available:
                 
                 <code>str</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} The NEG description.
+ {{% /md %}}
 
             
             </td>
@@ -831,7 +887,8 @@ The following output properties are available:
                 
                 <code>str</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} The network to which all network endpoints in the NEG belong.
+ {{% /md %}}
 
             
             </td>
@@ -843,7 +900,8 @@ The following output properties are available:
                 
                 <code>str</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} Type of network endpoints in this network endpoint group.
+ {{% /md %}}
 
             
             </td>
@@ -879,7 +937,8 @@ The following output properties are available:
                 
                 <code>float</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} Number of network endpoints in the network endpoint group.
+ {{% /md %}}
 
             
             </td>
@@ -891,7 +950,8 @@ The following output properties are available:
                 
                 <code>str</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} subnetwork to which all network endpoints in the NEG belong.
+ {{% /md %}}
 
             
             </td>

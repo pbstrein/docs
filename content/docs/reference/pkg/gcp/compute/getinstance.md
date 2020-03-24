@@ -489,6 +489,18 @@ The following output properties are available:
         </tr>
     
         <tr>
+            <td class="align-top">Current<wbr>Status</td>
+            <td class="align-top">
+                
+                <code>string</code>
+            </td>
+            <td class="align-top">{{% md %}}  {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
             <td class="align-top">Deletion<wbr>Protection</td>
             <td class="align-top">
                 
@@ -898,6 +910,18 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} The CPU platform used by this instance.
  {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">Current<wbr>Status</td>
+            <td class="align-top">
+                
+                <code>string</code>
+            </td>
+            <td class="align-top">{{% md %}}  {{% /md %}}
 
             
             </td>
@@ -1319,6 +1343,18 @@ The following output properties are available:
         </tr>
     
         <tr>
+            <td class="align-top">current<wbr>Status</td>
+            <td class="align-top">
+                
+                <code>string</code>
+            </td>
+            <td class="align-top">{{% md %}}  {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
             <td class="align-top">deletion<wbr>Protection</td>
             <td class="align-top">
                 
@@ -1728,6 +1764,18 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} The CPU platform used by this instance.
  {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">current_<wbr>status</td>
+            <td class="align-top">
+                
+                <code>str</code>
+            </td>
+            <td class="align-top">{{% md %}}  {{% /md %}}
 
             
             </td>

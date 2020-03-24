@@ -7,6 +7,32 @@ block_external_search_index: true
 table td p { margin-top: 0; margin-bottom: 0; }
 </style>
 
+Provides a detailed description of a Note.
+
+
+To get more information about Note, see:
+
+* [API documentation](https://cloud.google.com/container-analysis/api/reference/rest/)
+* How-to Guides
+    * [Official Documentation](https://cloud.google.com/container-analysis/)
+
+## Example Usage - Container Analysis Note Basic
+
+
+```typescript
+import * as pulumi from "@pulumi/pulumi";
+import * as gcp from "@pulumi/gcp";
+
+const note = new gcp.containeranalysis.Note("note", {
+    attestationAuthority: {
+        hint: {
+            humanReadableName: "Attestor Note",
+        },
+    },
+});
+```
+
+> This content is derived from https://github.com/terraform-providers/terraform-provider-google/blob/master/website/docs/r/container_analysis_note.html.markdown.
 
 
 

@@ -15,6 +15,7 @@ block_external_search_index: true
     <li><a href="appprofile"><span class="symbol resource"></span>AppProfile</a></li>
     <li><a href="datatransferconfig"><span class="symbol resource"></span>DataTransferConfig</a></li>
     <li><a href="dataset"><span class="symbol resource"></span>Dataset</a></li>
+    <li><a href="reservation"><span class="symbol resource"></span>Reservation</a></li>
     <li><a href="table"><span class="symbol resource"></span>Table</a></li>
 </ul>
 

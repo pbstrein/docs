@@ -22,7 +22,7 @@ construction to achieve fine-grained programmatic control over provider settings
 
 <div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="k">new </span><span class="nx"><a href="/docs/reference/pkg/nodejs/pulumi/gcp//#Provider">Provider</a></span><span class="p">(</span><span class="nx">name</span>: <span class="nx"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string">string</a></span><span class="p">, </span><span class="nx">args</span>?: <span class="nx"><a href="/docs/reference/pkg/nodejs/pulumi/gcp//#ProviderArgs">ProviderArgs</a></span><span class="p">, </span><span class="nx">opts</span>?: <span class="nx"><a href="/docs/reference/pkg/nodejs/pulumi/pulumi/pulumi/#CustomResourceOptions">pulumi.CustomResourceOptions</a></span><span class="p">);</span></code></pre></div>
 
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def </span><span class="nf">Provider</span><span class="p">(resource_name, opts=None, </span>access_context_manager_custom_endpoint=None<span class="p">, </span>access_token=None<span class="p">, </span>app_engine_custom_endpoint=None<span class="p">, </span>batching=None<span class="p">, </span>big_query_custom_endpoint=None<span class="p">, </span>bigquery_data_transfer_custom_endpoint=None<span class="p">, </span>bigtable_custom_endpoint=None<span class="p">, </span>billing_custom_endpoint=None<span class="p">, </span>binary_authorization_custom_endpoint=None<span class="p">, </span>cloud_billing_custom_endpoint=None<span class="p">, </span>cloud_build_custom_endpoint=None<span class="p">, </span>cloud_functions_custom_endpoint=None<span class="p">, </span>cloud_iot_custom_endpoint=None<span class="p">, </span>cloud_run_custom_endpoint=None<span class="p">, </span>cloud_scheduler_custom_endpoint=None<span class="p">, </span>cloud_tasks_custom_endpoint=None<span class="p">, </span>composer_custom_endpoint=None<span class="p">, </span>compute_beta_custom_endpoint=None<span class="p">, </span>compute_custom_endpoint=None<span class="p">, </span>container_analysis_custom_endpoint=None<span class="p">, </span>container_beta_custom_endpoint=None<span class="p">, </span>container_custom_endpoint=None<span class="p">, </span>credentials=None<span class="p">, </span>data_fusion_custom_endpoint=None<span class="p">, </span>dataflow_custom_endpoint=None<span class="p">, </span>dataproc_beta_custom_endpoint=None<span class="p">, </span>dataproc_custom_endpoint=None<span class="p">, </span>datastore_custom_endpoint=None<span class="p">, </span>deployment_manager_custom_endpoint=None<span class="p">, </span>dialogflow_custom_endpoint=None<span class="p">, </span>dns_beta_custom_endpoint=None<span class="p">, </span>dns_custom_endpoint=None<span class="p">, </span>filestore_custom_endpoint=None<span class="p">, </span>firestore_custom_endpoint=None<span class="p">, </span>game_services_custom_endpoint=None<span class="p">, </span>healthcare_custom_endpoint=None<span class="p">, </span>iam_credentials_custom_endpoint=None<span class="p">, </span>iam_custom_endpoint=None<span class="p">, </span>iap_custom_endpoint=None<span class="p">, </span>identity_platform_custom_endpoint=None<span class="p">, </span>kms_custom_endpoint=None<span class="p">, </span>logging_custom_endpoint=None<span class="p">, </span>ml_engine_custom_endpoint=None<span class="p">, </span>monitoring_custom_endpoint=None<span class="p">, </span>project=None<span class="p">, </span>pubsub_custom_endpoint=None<span class="p">, </span>redis_custom_endpoint=None<span class="p">, </span>region=None<span class="p">, </span>request_timeout=None<span class="p">, </span>resource_manager_custom_endpoint=None<span class="p">, </span>resource_manager_v2beta1_custom_endpoint=None<span class="p">, </span>runtime_config_custom_endpoint=None<span class="p">, </span>runtimeconfig_custom_endpoint=None<span class="p">, </span>scopes=None<span class="p">, </span>secret_manager_custom_endpoint=None<span class="p">, </span>security_center_custom_endpoint=None<span class="p">, </span>security_scanner_custom_endpoint=None<span class="p">, </span>service_management_custom_endpoint=None<span class="p">, </span>service_networking_custom_endpoint=None<span class="p">, </span>service_usage_custom_endpoint=None<span class="p">, </span>source_repo_custom_endpoint=None<span class="p">, </span>spanner_custom_endpoint=None<span class="p">, </span>sql_custom_endpoint=None<span class="p">, </span>storage_custom_endpoint=None<span class="p">, </span>storage_transfer_custom_endpoint=None<span class="p">, </span>tpu_custom_endpoint=None<span class="p">, </span>user_project_override=None<span class="p">, </span>vpc_access_custom_endpoint=None<span class="p">, </span>zone=None<span class="p">, __props__=None);</span></code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def </span><span class="nf">Provider</span><span class="p">(resource_name, opts=None, </span>access_context_manager_custom_endpoint=None<span class="p">, </span>access_token=None<span class="p">, </span>app_engine_custom_endpoint=None<span class="p">, </span>batching=None<span class="p">, </span>big_query_custom_endpoint=None<span class="p">, </span>bigquery_data_transfer_custom_endpoint=None<span class="p">, </span>bigquery_reservation_custom_endpoint=None<span class="p">, </span>bigtable_custom_endpoint=None<span class="p">, </span>billing_custom_endpoint=None<span class="p">, </span>binary_authorization_custom_endpoint=None<span class="p">, </span>cloud_billing_custom_endpoint=None<span class="p">, </span>cloud_build_custom_endpoint=None<span class="p">, </span>cloud_functions_custom_endpoint=None<span class="p">, </span>cloud_iot_custom_endpoint=None<span class="p">, </span>cloud_run_custom_endpoint=None<span class="p">, </span>cloud_scheduler_custom_endpoint=None<span class="p">, </span>cloud_tasks_custom_endpoint=None<span class="p">, </span>composer_custom_endpoint=None<span class="p">, </span>compute_beta_custom_endpoint=None<span class="p">, </span>compute_custom_endpoint=None<span class="p">, </span>container_analysis_custom_endpoint=None<span class="p">, </span>container_beta_custom_endpoint=None<span class="p">, </span>container_custom_endpoint=None<span class="p">, </span>credentials=None<span class="p">, </span>data_fusion_custom_endpoint=None<span class="p">, </span>dataflow_custom_endpoint=None<span class="p">, </span>dataproc_beta_custom_endpoint=None<span class="p">, </span>dataproc_custom_endpoint=None<span class="p">, </span>datastore_custom_endpoint=None<span class="p">, </span>deployment_manager_custom_endpoint=None<span class="p">, </span>dialogflow_custom_endpoint=None<span class="p">, </span>dns_beta_custom_endpoint=None<span class="p">, </span>dns_custom_endpoint=None<span class="p">, </span>filestore_custom_endpoint=None<span class="p">, </span>firestore_custom_endpoint=None<span class="p">, </span>game_services_custom_endpoint=None<span class="p">, </span>healthcare_custom_endpoint=None<span class="p">, </span>iam_credentials_custom_endpoint=None<span class="p">, </span>iam_custom_endpoint=None<span class="p">, </span>iap_custom_endpoint=None<span class="p">, </span>identity_platform_custom_endpoint=None<span class="p">, </span>kms_custom_endpoint=None<span class="p">, </span>logging_custom_endpoint=None<span class="p">, </span>ml_engine_custom_endpoint=None<span class="p">, </span>monitoring_custom_endpoint=None<span class="p">, </span>project=None<span class="p">, </span>pubsub_custom_endpoint=None<span class="p">, </span>redis_custom_endpoint=None<span class="p">, </span>region=None<span class="p">, </span>request_timeout=None<span class="p">, </span>resource_manager_custom_endpoint=None<span class="p">, </span>resource_manager_v2beta1_custom_endpoint=None<span class="p">, </span>runtime_config_custom_endpoint=None<span class="p">, </span>runtimeconfig_custom_endpoint=None<span class="p">, </span>scopes=None<span class="p">, </span>secret_manager_custom_endpoint=None<span class="p">, </span>security_center_custom_endpoint=None<span class="p">, </span>security_scanner_custom_endpoint=None<span class="p">, </span>service_management_custom_endpoint=None<span class="p">, </span>service_networking_custom_endpoint=None<span class="p">, </span>service_usage_custom_endpoint=None<span class="p">, </span>source_repo_custom_endpoint=None<span class="p">, </span>spanner_custom_endpoint=None<span class="p">, </span>sql_custom_endpoint=None<span class="p">, </span>storage_custom_endpoint=None<span class="p">, </span>storage_transfer_custom_endpoint=None<span class="p">, </span>tpu_custom_endpoint=None<span class="p">, </span>user_project_override=None<span class="p">, </span>vpc_access_custom_endpoint=None<span class="p">, </span>zone=None<span class="p">, __props__=None);</span></code></pre></div>
 
 <div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="k">func </span>NewProvider<span class="p">(</span><span class="nx">ctx</span> *<span class="nx"><a href="https://pkg.go.dev/github.com/pulumi/pulumi/sdk/go/pulumi?tab=doc#Context">pulumi.Context</a></span><span class="p">, </span><span class="nx">name</span> <span class="nx"><a href="https://golang.org/pkg/builtin/#string">string</a></span><span class="p">, </span><span class="nx">args</span> *<span class="nx"><a href="https://pkg.go.dev/github.com/pulumi/pulumi-gcp/sdk/go/gcp/?tab=doc#ProviderArgs">ProviderArgs</a></span><span class="p">, </span><span class="nx">opts</span> ...<span class="nx"><a href="https://pkg.go.dev/github.com/pulumi/pulumi/sdk/go/pulumi?tab=doc#ResourceOption">pulumi.ResourceOption</a></span><span class="p">) (*<span class="nx"><a href="https://pkg.go.dev/github.com/pulumi/pulumi-gcp/sdk/go/gcp/?tab=doc#Provider">Provider</a></span>, error)</span></code></pre></div>
 
@@ -151,6 +151,20 @@ The following arguments are supported:
     
         <tr>
             <td class="align-top">Bigquery<wbr>Data<wbr>Transfer<wbr>Custom<wbr>Endpoint</td>
+            <td class="align-top">
+                
+                <code>string?</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">Bigquery<wbr>Reservation<wbr>Custom<wbr>Endpoint</td>
             <td class="align-top">
                 
                 <code>string?</code>
@@ -1150,6 +1164,20 @@ The following arguments are supported:
         </tr>
     
         <tr>
+            <td class="align-top">Bigquery<wbr>Reservation<wbr>Custom<wbr>Endpoint</td>
+            <td class="align-top">
+                
+                <code>*string</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
             <td class="align-top">Bigtable<wbr>Custom<wbr>Endpoint</td>
             <td class="align-top">
                 
@@ -2136,6 +2164,20 @@ The following arguments are supported:
         </tr>
     
         <tr>
+            <td class="align-top">bigquery<wbr>Reservation<wbr>Custom<wbr>Endpoint</td>
+            <td class="align-top">
+                
+                <code>string?</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
             <td class="align-top">bigtable<wbr>Custom<wbr>Endpoint</td>
             <td class="align-top">
                 
@@ -3109,6 +3151,20 @@ The following arguments are supported:
     
         <tr>
             <td class="align-top">bigquery_<wbr>data_<wbr>transfer_<wbr>custom_<wbr>endpoint</td>
+            <td class="align-top">
+                
+                <code>str</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">bigquery_<wbr>reservation_<wbr>custom_<wbr>endpoint</td>
             <td class="align-top">
                 
                 <code>str</code>

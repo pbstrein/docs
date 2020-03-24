@@ -128,7 +128,7 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-If true, allows this provider to stop the instance to update its properties.
+If true, allows this prvider to stop the instance to update its properties.
 If you try to update a property that requires stopping the instance without setting this field, the update will fail.
  {{% /md %}}
 
@@ -193,7 +193,7 @@ This defaults to false.
             <td class="align-top">{{% md %}} 
  (Optional)
 Enable deletion protection on this instance. Defaults to false.
-**Note:** you must disable deletion protection before removing the resource, or the instance cannot be deleted and the deployment will not complete successfully.
+**Note:** you must disable deletion protection before removing the resource (e.g., via `pulumi destroy`), or the instance cannot be deleted and the provider run will not complete successfully.
  {{% /md %}}
 
             
@@ -255,6 +255,8 @@ Enable [Virtual Displays](https://cloud.google.com/compute/docs/instances/enable
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+List of the type and count of accelerator cards attached to the instance. Structure documented below.
+**Note:** GPU accelerators can only be used with `on_host_maintenance` option set to TERMINATE.
  {{% /md %}}
 
             
@@ -337,7 +339,13 @@ An alternative to using the
 startup-script metadata key, except this one forces the instance to be
 recreated (thus re-running the script) if it is changed. This replaces the
 startup-script metadata key on the created instance and thus the two
-mechanisms are not allowed to be used simultaneously.
+mechanisms are not allowed to be used simultaneously.  Users are free to use
+either mechanism - the only distinction is that this separate attribute
+willl cause a recreate on modification.  On import, `metadata_startup_script`
+will be set, but `metadata.startup-script` will not - if you choose to use the
+other mechanism, you will see a diff immediately after import, which will cause a
+destroy/recreate operation.  You may want to modify your state file manually
+using `pulumi stack` commands, depending on your use case.
  {{% /md %}}
 
             
@@ -532,7 +540,7 @@ The zone that the machine should be created in.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-If true, allows this provider to stop the instance to update its properties.
+If true, allows this prvider to stop the instance to update its properties.
 If you try to update a property that requires stopping the instance without setting this field, the update will fail.
  {{% /md %}}
 
@@ -597,7 +605,7 @@ This defaults to false.
             <td class="align-top">{{% md %}} 
  (Optional)
 Enable deletion protection on this instance. Defaults to false.
-**Note:** you must disable deletion protection before removing the resource, or the instance cannot be deleted and the deployment will not complete successfully.
+**Note:** you must disable deletion protection before removing the resource (e.g., via `pulumi destroy`), or the instance cannot be deleted and the provider run will not complete successfully.
  {{% /md %}}
 
             
@@ -659,6 +667,8 @@ Enable [Virtual Displays](https://cloud.google.com/compute/docs/instances/enable
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+List of the type and count of accelerator cards attached to the instance. Structure documented below.
+**Note:** GPU accelerators can only be used with `on_host_maintenance` option set to TERMINATE.
  {{% /md %}}
 
             
@@ -741,7 +751,13 @@ An alternative to using the
 startup-script metadata key, except this one forces the instance to be
 recreated (thus re-running the script) if it is changed. This replaces the
 startup-script metadata key on the created instance and thus the two
-mechanisms are not allowed to be used simultaneously.
+mechanisms are not allowed to be used simultaneously.  Users are free to use
+either mechanism - the only distinction is that this separate attribute
+willl cause a recreate on modification.  On import, `metadata_startup_script`
+will be set, but `metadata.startup-script` will not - if you choose to use the
+other mechanism, you will see a diff immediately after import, which will cause a
+destroy/recreate operation.  You may want to modify your state file manually
+using `pulumi stack` commands, depending on your use case.
  {{% /md %}}
 
             
@@ -936,7 +952,7 @@ The zone that the machine should be created in.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-If true, allows this provider to stop the instance to update its properties.
+If true, allows this prvider to stop the instance to update its properties.
 If you try to update a property that requires stopping the instance without setting this field, the update will fail.
  {{% /md %}}
 
@@ -1001,7 +1017,7 @@ This defaults to false.
             <td class="align-top">{{% md %}} 
  (Optional)
 Enable deletion protection on this instance. Defaults to false.
-**Note:** you must disable deletion protection before removing the resource, or the instance cannot be deleted and the deployment will not complete successfully.
+**Note:** you must disable deletion protection before removing the resource (e.g., via `pulumi destroy`), or the instance cannot be deleted and the provider run will not complete successfully.
  {{% /md %}}
 
             
@@ -1063,6 +1079,8 @@ Enable [Virtual Displays](https://cloud.google.com/compute/docs/instances/enable
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+List of the type and count of accelerator cards attached to the instance. Structure documented below.
+**Note:** GPU accelerators can only be used with `on_host_maintenance` option set to TERMINATE.
  {{% /md %}}
 
             
@@ -1145,7 +1163,13 @@ An alternative to using the
 startup-script metadata key, except this one forces the instance to be
 recreated (thus re-running the script) if it is changed. This replaces the
 startup-script metadata key on the created instance and thus the two
-mechanisms are not allowed to be used simultaneously.
+mechanisms are not allowed to be used simultaneously.  Users are free to use
+either mechanism - the only distinction is that this separate attribute
+willl cause a recreate on modification.  On import, `metadata_startup_script`
+will be set, but `metadata.startup-script` will not - if you choose to use the
+other mechanism, you will see a diff immediately after import, which will cause a
+destroy/recreate operation.  You may want to modify your state file manually
+using `pulumi stack` commands, depending on your use case.
  {{% /md %}}
 
             
@@ -1340,7 +1364,7 @@ The zone that the machine should be created in.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-If true, allows this provider to stop the instance to update its properties.
+If true, allows this prvider to stop the instance to update its properties.
 If you try to update a property that requires stopping the instance without setting this field, the update will fail.
  {{% /md %}}
 
@@ -1405,7 +1429,7 @@ This defaults to false.
             <td class="align-top">{{% md %}} 
  (Optional)
 Enable deletion protection on this instance. Defaults to false.
-**Note:** you must disable deletion protection before removing the resource, or the instance cannot be deleted and the deployment will not complete successfully.
+**Note:** you must disable deletion protection before removing the resource (e.g., via `pulumi destroy`), or the instance cannot be deleted and the provider run will not complete successfully.
  {{% /md %}}
 
             
@@ -1467,6 +1491,8 @@ Enable [Virtual Displays](https://cloud.google.com/compute/docs/instances/enable
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+List of the type and count of accelerator cards attached to the instance. Structure documented below.
+**Note:** GPU accelerators can only be used with `on_host_maintenance` option set to TERMINATE.
  {{% /md %}}
 
             
@@ -1549,7 +1575,13 @@ An alternative to using the
 startup-script metadata key, except this one forces the instance to be
 recreated (thus re-running the script) if it is changed. This replaces the
 startup-script metadata key on the created instance and thus the two
-mechanisms are not allowed to be used simultaneously.
+mechanisms are not allowed to be used simultaneously.  Users are free to use
+either mechanism - the only distinction is that this separate attribute
+willl cause a recreate on modification.  On import, `metadata_startup_script`
+will be set, but `metadata.startup-script` will not - if you choose to use the
+other mechanism, you will see a diff immediately after import, which will cause a
+destroy/recreate operation.  You may want to modify your state file manually
+using `pulumi stack` commands, depending on your use case.
  {{% /md %}}
 
             
@@ -1756,7 +1788,7 @@ The following output properties are available:
                 
                 <code>bool?</code>
             </td>
-            <td class="align-top">{{% md %}} If true, allows this provider to stop the instance to update its properties.
+            <td class="align-top">{{% md %}} If true, allows this prvider to stop the instance to update its properties.
 If you try to update a property that requires stopping the instance without setting this field, the update will fail.
  {{% /md %}}
 
@@ -1820,13 +1852,25 @@ This defaults to false.
         </tr>
     
         <tr>
+            <td class="align-top">Current<wbr>Status</td>
+            <td class="align-top">
+                
+                <code>string</code>
+            </td>
+            <td class="align-top">{{% md %}}  {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
             <td class="align-top">Deletion<wbr>Protection</td>
             <td class="align-top">
                 
                 <code>bool?</code>
             </td>
             <td class="align-top">{{% md %}} Enable deletion protection on this instance. Defaults to false.
-**Note:** you must disable deletion protection before removing the resource, or the instance cannot be deleted and the deployment will not complete successfully.
+**Note:** you must disable deletion protection before removing the resource (e.g., via `pulumi destroy`), or the instance cannot be deleted and the provider run will not complete successfully.
  {{% /md %}}
 
             
@@ -1880,7 +1924,9 @@ This defaults to false.
                 
                 <code><a href="#instanceguestaccelerator">List&lt;Instance<wbr>Guest<wbr>Accelerator&gt;</a></code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} List of the type and count of accelerator cards attached to the instance. Structure documented below.
+**Note:** GPU accelerators can only be used with `on_host_maintenance` option set to TERMINATE.
+ {{% /md %}}
 
             
             </td>
@@ -1991,7 +2037,13 @@ Add them to your config in order to keep them attached to your instance.
 startup-script metadata key, except this one forces the instance to be
 recreated (thus re-running the script) if it is changed. This replaces the
 startup-script metadata key on the created instance and thus the two
-mechanisms are not allowed to be used simultaneously.
+mechanisms are not allowed to be used simultaneously.  Users are free to use
+either mechanism - the only distinction is that this separate attribute
+willl cause a recreate on modification.  On import, `metadata_startup_script`
+will be set, but `metadata.startup-script` will not - if you choose to use the
+other mechanism, you will see a diff immediately after import, which will cause a
+destroy/recreate operation.  You may want to modify your state file manually
+using `pulumi stack` commands, depending on your use case.
  {{% /md %}}
 
             
@@ -2190,7 +2242,7 @@ Structure is documented below.
                 
                 <code>*bool</code>
             </td>
-            <td class="align-top">{{% md %}} If true, allows this provider to stop the instance to update its properties.
+            <td class="align-top">{{% md %}} If true, allows this prvider to stop the instance to update its properties.
 If you try to update a property that requires stopping the instance without setting this field, the update will fail.
  {{% /md %}}
 
@@ -2254,13 +2306,25 @@ This defaults to false.
         </tr>
     
         <tr>
+            <td class="align-top">Current<wbr>Status</td>
+            <td class="align-top">
+                
+                <code>string</code>
+            </td>
+            <td class="align-top">{{% md %}}  {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
             <td class="align-top">Deletion<wbr>Protection</td>
             <td class="align-top">
                 
                 <code>*bool</code>
             </td>
             <td class="align-top">{{% md %}} Enable deletion protection on this instance. Defaults to false.
-**Note:** you must disable deletion protection before removing the resource, or the instance cannot be deleted and the deployment will not complete successfully.
+**Note:** you must disable deletion protection before removing the resource (e.g., via `pulumi destroy`), or the instance cannot be deleted and the provider run will not complete successfully.
  {{% /md %}}
 
             
@@ -2314,7 +2378,9 @@ This defaults to false.
                 
                 <code><a href="#instanceguestaccelerator">[]Instance<wbr>Guest<wbr>Accelerator</a></code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} List of the type and count of accelerator cards attached to the instance. Structure documented below.
+**Note:** GPU accelerators can only be used with `on_host_maintenance` option set to TERMINATE.
+ {{% /md %}}
 
             
             </td>
@@ -2425,7 +2491,13 @@ Add them to your config in order to keep them attached to your instance.
 startup-script metadata key, except this one forces the instance to be
 recreated (thus re-running the script) if it is changed. This replaces the
 startup-script metadata key on the created instance and thus the two
-mechanisms are not allowed to be used simultaneously.
+mechanisms are not allowed to be used simultaneously.  Users are free to use
+either mechanism - the only distinction is that this separate attribute
+willl cause a recreate on modification.  On import, `metadata_startup_script`
+will be set, but `metadata.startup-script` will not - if you choose to use the
+other mechanism, you will see a diff immediately after import, which will cause a
+destroy/recreate operation.  You may want to modify your state file manually
+using `pulumi stack` commands, depending on your use case.
  {{% /md %}}
 
             
@@ -2624,7 +2696,7 @@ Structure is documented below.
                 
                 <code>boolean?</code>
             </td>
-            <td class="align-top">{{% md %}} If true, allows this provider to stop the instance to update its properties.
+            <td class="align-top">{{% md %}} If true, allows this prvider to stop the instance to update its properties.
 If you try to update a property that requires stopping the instance without setting this field, the update will fail.
  {{% /md %}}
 
@@ -2688,13 +2760,25 @@ This defaults to false.
         </tr>
     
         <tr>
+            <td class="align-top">current<wbr>Status</td>
+            <td class="align-top">
+                
+                <code>string</code>
+            </td>
+            <td class="align-top">{{% md %}}  {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
             <td class="align-top">deletion<wbr>Protection</td>
             <td class="align-top">
                 
                 <code>boolean?</code>
             </td>
             <td class="align-top">{{% md %}} Enable deletion protection on this instance. Defaults to false.
-**Note:** you must disable deletion protection before removing the resource, or the instance cannot be deleted and the deployment will not complete successfully.
+**Note:** you must disable deletion protection before removing the resource (e.g., via `pulumi destroy`), or the instance cannot be deleted and the provider run will not complete successfully.
  {{% /md %}}
 
             
@@ -2748,7 +2832,9 @@ This defaults to false.
                 
                 <code><a href="#instanceguestaccelerator">Instance<wbr>Guest<wbr>Accelerator[]</a></code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} List of the type and count of accelerator cards attached to the instance. Structure documented below.
+**Note:** GPU accelerators can only be used with `on_host_maintenance` option set to TERMINATE.
+ {{% /md %}}
 
             
             </td>
@@ -2859,7 +2945,13 @@ Add them to your config in order to keep them attached to your instance.
 startup-script metadata key, except this one forces the instance to be
 recreated (thus re-running the script) if it is changed. This replaces the
 startup-script metadata key on the created instance and thus the two
-mechanisms are not allowed to be used simultaneously.
+mechanisms are not allowed to be used simultaneously.  Users are free to use
+either mechanism - the only distinction is that this separate attribute
+willl cause a recreate on modification.  On import, `metadata_startup_script`
+will be set, but `metadata.startup-script` will not - if you choose to use the
+other mechanism, you will see a diff immediately after import, which will cause a
+destroy/recreate operation.  You may want to modify your state file manually
+using `pulumi stack` commands, depending on your use case.
  {{% /md %}}
 
             
@@ -3058,7 +3150,7 @@ Structure is documented below.
                 
                 <code>bool</code>
             </td>
-            <td class="align-top">{{% md %}} If true, allows this provider to stop the instance to update its properties.
+            <td class="align-top">{{% md %}} If true, allows this prvider to stop the instance to update its properties.
 If you try to update a property that requires stopping the instance without setting this field, the update will fail.
  {{% /md %}}
 
@@ -3122,13 +3214,25 @@ This defaults to false.
         </tr>
     
         <tr>
+            <td class="align-top">current_<wbr>status</td>
+            <td class="align-top">
+                
+                <code>str</code>
+            </td>
+            <td class="align-top">{{% md %}}  {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
             <td class="align-top">deletion_<wbr>protection</td>
             <td class="align-top">
                 
                 <code>bool</code>
             </td>
             <td class="align-top">{{% md %}} Enable deletion protection on this instance. Defaults to false.
-**Note:** you must disable deletion protection before removing the resource, or the instance cannot be deleted and the deployment will not complete successfully.
+**Note:** you must disable deletion protection before removing the resource (e.g., via `pulumi destroy`), or the instance cannot be deleted and the provider run will not complete successfully.
  {{% /md %}}
 
             
@@ -3182,7 +3286,9 @@ This defaults to false.
                 
                 <code><a href="#instanceguestaccelerator">List[Instance<wbr>Guest<wbr>Accelerator]</a></code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} List of the type and count of accelerator cards attached to the instance. Structure documented below.
+**Note:** GPU accelerators can only be used with `on_host_maintenance` option set to TERMINATE.
+ {{% /md %}}
 
             
             </td>
@@ -3293,7 +3399,13 @@ Add them to your config in order to keep them attached to your instance.
 startup-script metadata key, except this one forces the instance to be
 recreated (thus re-running the script) if it is changed. This replaces the
 startup-script metadata key on the created instance and thus the two
-mechanisms are not allowed to be used simultaneously.
+mechanisms are not allowed to be used simultaneously.  Users are free to use
+either mechanism - the only distinction is that this separate attribute
+willl cause a recreate on modification.  On import, `metadata_startup_script`
+will be set, but `metadata.startup-script` will not - if you choose to use the
+other mechanism, you will see a diff immediately after import, which will cause a
+destroy/recreate operation.  You may want to modify your state file manually
+using `pulumi stack` commands, depending on your use case.
  {{% /md %}}
 
             
@@ -3485,7 +3597,7 @@ Structure is documented below.
 
 <div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="k">public static </span><span class="nf">get</span><span class="p">(</span><span class="nx">name</span>: <span class="nx"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string">string</a></span><span class="p">, </span><span class="nx">id</span>: <span class="nx"><a href="/docs/reference/pkg/nodejs/pulumi/pulumi/#ID">pulumi.Input&lt;pulumi.ID&gt;</a></span><span class="p">, </span><span class="nx">state</span>?: <span class="nx"><a href="/docs/reference/pkg/nodejs/pulumi/gcp/compute/#InstanceState">InstanceState</a></span><span class="p">, </span><span class="nx">opts</span>?: <span class="nx"><a href="/docs/reference/pkg/nodejs/pulumi/pulumi/#CustomResourceOptions">pulumi.CustomResourceOptions</a></span><span class="p">): </span><span class="nx"><a href="/docs/reference/pkg/nodejs/pulumi/gcp/compute/#Instance">Instance</a></span></code></pre></div>
 
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">static </span><span class="nf">get</span><span class="p">(resource_name, id, opts=None, </span>allow_stopping_for_update=None<span class="p">, </span>attached_disks=None<span class="p">, </span>boot_disk=None<span class="p">, </span>can_ip_forward=None<span class="p">, </span>cpu_platform=None<span class="p">, </span>deletion_protection=None<span class="p">, </span>description=None<span class="p">, </span>desired_status=None<span class="p">, </span>enable_display=None<span class="p">, </span>guest_accelerators=None<span class="p">, </span>hostname=None<span class="p">, </span>instance_id=None<span class="p">, </span>label_fingerprint=None<span class="p">, </span>labels=None<span class="p">, </span>machine_type=None<span class="p">, </span>metadata=None<span class="p">, </span>metadata_fingerprint=None<span class="p">, </span>metadata_startup_script=None<span class="p">, </span>min_cpu_platform=None<span class="p">, </span>name=None<span class="p">, </span>network_interfaces=None<span class="p">, </span>project=None<span class="p">, </span>scheduling=None<span class="p">, </span>scratch_disks=None<span class="p">, </span>self_link=None<span class="p">, </span>service_account=None<span class="p">, </span>shielded_instance_config=None<span class="p">, </span>tags=None<span class="p">, </span>tags_fingerprint=None<span class="p">, </span>zone=None<span class="p">, __props__=None);</span></code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">static </span><span class="nf">get</span><span class="p">(resource_name, id, opts=None, </span>allow_stopping_for_update=None<span class="p">, </span>attached_disks=None<span class="p">, </span>boot_disk=None<span class="p">, </span>can_ip_forward=None<span class="p">, </span>cpu_platform=None<span class="p">, </span>current_status=None<span class="p">, </span>deletion_protection=None<span class="p">, </span>description=None<span class="p">, </span>desired_status=None<span class="p">, </span>enable_display=None<span class="p">, </span>guest_accelerators=None<span class="p">, </span>hostname=None<span class="p">, </span>instance_id=None<span class="p">, </span>label_fingerprint=None<span class="p">, </span>labels=None<span class="p">, </span>machine_type=None<span class="p">, </span>metadata=None<span class="p">, </span>metadata_fingerprint=None<span class="p">, </span>metadata_startup_script=None<span class="p">, </span>min_cpu_platform=None<span class="p">, </span>name=None<span class="p">, </span>network_interfaces=None<span class="p">, </span>project=None<span class="p">, </span>scheduling=None<span class="p">, </span>scratch_disks=None<span class="p">, </span>self_link=None<span class="p">, </span>service_account=None<span class="p">, </span>shielded_instance_config=None<span class="p">, </span>tags=None<span class="p">, </span>tags_fingerprint=None<span class="p">, </span>zone=None<span class="p">, __props__=None);</span></code></pre></div>
 
 <div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="k">func </span>GetInstance<span class="p">(</span><span class="nx">ctx</span> *<span class="nx"><a href="https://pkg.go.dev/github.com/pulumi/pulumi/sdk/go/pulumi?tab=doc#Context">pulumi.Context</a></span><span class="p">, </span><span class="nx">name</span> <span class="nx"><a href="https://golang.org/pkg/builtin/#string">string</a></span><span class="p">, </span><span class="nx">id</span> <span class="nx"><a href="https://pkg.go.dev/github.com/pulumi/pulumi/sdk/go/pulumi?tab=doc#IDInput">pulumi.IDInput</a></span><span class="p">, </span><span class="nx">state</span> *<span class="nx"><a href="https://pkg.go.dev/github.com/pulumi/pulumi-gcp/sdk/go/gcp/compute?tab=doc#InstanceState">InstanceState</a></span><span class="p">, </span><span class="nx">opts</span> ...<span class="nx"><a href="https://pkg.go.dev/github.com/pulumi/pulumi/sdk/go/pulumi?tab=doc#ResourceOption">pulumi.ResourceOption</a></span><span class="p">) (*<span class="nx"><a href="https://pkg.go.dev/github.com/pulumi/pulumi-gcp/sdk/go/gcp/compute?tab=doc#Instance">Instance</a></span>, error)</span></code></pre></div>
 
@@ -3553,7 +3665,7 @@ The following state arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-If true, allows this provider to stop the instance to update its properties.
+If true, allows this prvider to stop the instance to update its properties.
 If you try to update a property that requires stopping the instance without setting this field, the update will fail.
  {{% /md %}}
 
@@ -3625,6 +3737,20 @@ The CPU platform used by this instance.
         </tr>
     
         <tr>
+            <td class="align-top">Current<wbr>Status</td>
+            <td class="align-top">
+                
+                <code>string?</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
             <td class="align-top">Deletion<wbr>Protection</td>
             <td class="align-top">
                 
@@ -3633,7 +3759,7 @@ The CPU platform used by this instance.
             <td class="align-top">{{% md %}} 
  (Optional)
 Enable deletion protection on this instance. Defaults to false.
-**Note:** you must disable deletion protection before removing the resource, or the instance cannot be deleted and the deployment will not complete successfully.
+**Note:** you must disable deletion protection before removing the resource (e.g., via `pulumi destroy`), or the instance cannot be deleted and the provider run will not complete successfully.
  {{% /md %}}
 
             
@@ -3695,6 +3821,8 @@ Enable [Virtual Displays](https://cloud.google.com/compute/docs/instances/enable
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+List of the type and count of accelerator cards attached to the instance. Structure documented below.
+**Note:** GPU accelerators can only be used with `on_host_maintenance` option set to TERMINATE.
  {{% /md %}}
 
             
@@ -3822,7 +3950,13 @@ An alternative to using the
 startup-script metadata key, except this one forces the instance to be
 recreated (thus re-running the script) if it is changed. This replaces the
 startup-script metadata key on the created instance and thus the two
-mechanisms are not allowed to be used simultaneously.
+mechanisms are not allowed to be used simultaneously.  Users are free to use
+either mechanism - the only distinction is that this separate attribute
+willl cause a recreate on modification.  On import, `metadata_startup_script`
+will be set, but `metadata.startup-script` will not - if you choose to use the
+other mechanism, you will see a diff immediately after import, which will cause a
+destroy/recreate operation.  You may want to modify your state file manually
+using `pulumi stack` commands, depending on your use case.
  {{% /md %}}
 
             
@@ -4047,7 +4181,7 @@ The zone that the machine should be created in.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-If true, allows this provider to stop the instance to update its properties.
+If true, allows this prvider to stop the instance to update its properties.
 If you try to update a property that requires stopping the instance without setting this field, the update will fail.
  {{% /md %}}
 
@@ -4119,6 +4253,20 @@ The CPU platform used by this instance.
         </tr>
     
         <tr>
+            <td class="align-top">Current<wbr>Status</td>
+            <td class="align-top">
+                
+                <code>*string</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
             <td class="align-top">Deletion<wbr>Protection</td>
             <td class="align-top">
                 
@@ -4127,7 +4275,7 @@ The CPU platform used by this instance.
             <td class="align-top">{{% md %}} 
  (Optional)
 Enable deletion protection on this instance. Defaults to false.
-**Note:** you must disable deletion protection before removing the resource, or the instance cannot be deleted and the deployment will not complete successfully.
+**Note:** you must disable deletion protection before removing the resource (e.g., via `pulumi destroy`), or the instance cannot be deleted and the provider run will not complete successfully.
  {{% /md %}}
 
             
@@ -4189,6 +4337,8 @@ Enable [Virtual Displays](https://cloud.google.com/compute/docs/instances/enable
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+List of the type and count of accelerator cards attached to the instance. Structure documented below.
+**Note:** GPU accelerators can only be used with `on_host_maintenance` option set to TERMINATE.
  {{% /md %}}
 
             
@@ -4316,7 +4466,13 @@ An alternative to using the
 startup-script metadata key, except this one forces the instance to be
 recreated (thus re-running the script) if it is changed. This replaces the
 startup-script metadata key on the created instance and thus the two
-mechanisms are not allowed to be used simultaneously.
+mechanisms are not allowed to be used simultaneously.  Users are free to use
+either mechanism - the only distinction is that this separate attribute
+willl cause a recreate on modification.  On import, `metadata_startup_script`
+will be set, but `metadata.startup-script` will not - if you choose to use the
+other mechanism, you will see a diff immediately after import, which will cause a
+destroy/recreate operation.  You may want to modify your state file manually
+using `pulumi stack` commands, depending on your use case.
  {{% /md %}}
 
             
@@ -4541,7 +4697,7 @@ The zone that the machine should be created in.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-If true, allows this provider to stop the instance to update its properties.
+If true, allows this prvider to stop the instance to update its properties.
 If you try to update a property that requires stopping the instance without setting this field, the update will fail.
  {{% /md %}}
 
@@ -4613,6 +4769,20 @@ The CPU platform used by this instance.
         </tr>
     
         <tr>
+            <td class="align-top">current<wbr>Status</td>
+            <td class="align-top">
+                
+                <code>string?</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
             <td class="align-top">deletion<wbr>Protection</td>
             <td class="align-top">
                 
@@ -4621,7 +4791,7 @@ The CPU platform used by this instance.
             <td class="align-top">{{% md %}} 
  (Optional)
 Enable deletion protection on this instance. Defaults to false.
-**Note:** you must disable deletion protection before removing the resource, or the instance cannot be deleted and the deployment will not complete successfully.
+**Note:** you must disable deletion protection before removing the resource (e.g., via `pulumi destroy`), or the instance cannot be deleted and the provider run will not complete successfully.
  {{% /md %}}
 
             
@@ -4683,6 +4853,8 @@ Enable [Virtual Displays](https://cloud.google.com/compute/docs/instances/enable
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+List of the type and count of accelerator cards attached to the instance. Structure documented below.
+**Note:** GPU accelerators can only be used with `on_host_maintenance` option set to TERMINATE.
  {{% /md %}}
 
             
@@ -4810,7 +4982,13 @@ An alternative to using the
 startup-script metadata key, except this one forces the instance to be
 recreated (thus re-running the script) if it is changed. This replaces the
 startup-script metadata key on the created instance and thus the two
-mechanisms are not allowed to be used simultaneously.
+mechanisms are not allowed to be used simultaneously.  Users are free to use
+either mechanism - the only distinction is that this separate attribute
+willl cause a recreate on modification.  On import, `metadata_startup_script`
+will be set, but `metadata.startup-script` will not - if you choose to use the
+other mechanism, you will see a diff immediately after import, which will cause a
+destroy/recreate operation.  You may want to modify your state file manually
+using `pulumi stack` commands, depending on your use case.
  {{% /md %}}
 
             
@@ -5035,7 +5213,7 @@ The zone that the machine should be created in.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-If true, allows this provider to stop the instance to update its properties.
+If true, allows this prvider to stop the instance to update its properties.
 If you try to update a property that requires stopping the instance without setting this field, the update will fail.
  {{% /md %}}
 
@@ -5107,6 +5285,20 @@ The CPU platform used by this instance.
         </tr>
     
         <tr>
+            <td class="align-top">current_<wbr>status</td>
+            <td class="align-top">
+                
+                <code>str</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
             <td class="align-top">deletion_<wbr>protection</td>
             <td class="align-top">
                 
@@ -5115,7 +5307,7 @@ The CPU platform used by this instance.
             <td class="align-top">{{% md %}} 
  (Optional)
 Enable deletion protection on this instance. Defaults to false.
-**Note:** you must disable deletion protection before removing the resource, or the instance cannot be deleted and the deployment will not complete successfully.
+**Note:** you must disable deletion protection before removing the resource (e.g., via `pulumi destroy`), or the instance cannot be deleted and the provider run will not complete successfully.
  {{% /md %}}
 
             
@@ -5177,6 +5369,8 @@ Enable [Virtual Displays](https://cloud.google.com/compute/docs/instances/enable
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+List of the type and count of accelerator cards attached to the instance. Structure documented below.
+**Note:** GPU accelerators can only be used with `on_host_maintenance` option set to TERMINATE.
  {{% /md %}}
 
             
@@ -5304,7 +5498,13 @@ An alternative to using the
 startup-script metadata key, except this one forces the instance to be
 recreated (thus re-running the script) if it is changed. This replaces the
 startup-script metadata key on the created instance and thus the two
-mechanisms are not allowed to be used simultaneously.
+mechanisms are not allowed to be used simultaneously.  Users are free to use
+either mechanism - the only distinction is that this separate attribute
+willl cause a recreate on modification.  On import, `metadata_startup_script`
+will be set, but `metadata.startup-script` will not - if you choose to use the
+other mechanism, you will see a diff immediately after import, which will cause a
+destroy/recreate operation.  You may want to modify your state file manually
+using `pulumi stack` commands, depending on your use case.
  {{% /md %}}
 
             

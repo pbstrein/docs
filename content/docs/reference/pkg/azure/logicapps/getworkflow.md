@@ -286,6 +286,32 @@ The following output properties are available:
         </tr>
     
         <tr>
+            <td class="align-top">Connector<wbr>Endpoint<wbr>Ip<wbr>Addresses</td>
+            <td class="align-top">
+                
+                <code>List<string></code>
+            </td>
+            <td class="align-top">{{% md %}} The list of access endpoint ip addresses of connector.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">Connector<wbr>Outbound<wbr>Ip<wbr>Addresses</td>
+            <td class="align-top">
+                
+                <code>List<string></code>
+            </td>
+            <td class="align-top">{{% md %}} The list of outgoing ip addresses of connector.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
             <td class="align-top">Id</td>
             <td class="align-top">
                 
@@ -355,6 +381,32 @@ The following output properties are available:
                 <code>Dictionary<string, string></code>
             </td>
             <td class="align-top">{{% md %}} A mapping of tags assigned to the resource.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">Workflow<wbr>Endpoint<wbr>Ip<wbr>Addresses</td>
+            <td class="align-top">
+                
+                <code>List<string></code>
+            </td>
+            <td class="align-top">{{% md %}} The list of access endpoint ip addresses of workflow.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">Workflow<wbr>Outbound<wbr>Ip<wbr>Addresses</td>
+            <td class="align-top">
+                
+                <code>List<string></code>
+            </td>
+            <td class="align-top">{{% md %}} The list of outgoing ip addresses of workflow.
  {{% /md %}}
 
             
@@ -421,6 +473,32 @@ The following output properties are available:
         </tr>
     
         <tr>
+            <td class="align-top">Connector<wbr>Endpoint<wbr>Ip<wbr>Addresses</td>
+            <td class="align-top">
+                
+                <code>[]string</code>
+            </td>
+            <td class="align-top">{{% md %}} The list of access endpoint ip addresses of connector.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">Connector<wbr>Outbound<wbr>Ip<wbr>Addresses</td>
+            <td class="align-top">
+                
+                <code>[]string</code>
+            </td>
+            <td class="align-top">{{% md %}} The list of outgoing ip addresses of connector.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
             <td class="align-top">Id</td>
             <td class="align-top">
                 
@@ -497,6 +575,32 @@ The following output properties are available:
         </tr>
     
         <tr>
+            <td class="align-top">Workflow<wbr>Endpoint<wbr>Ip<wbr>Addresses</td>
+            <td class="align-top">
+                
+                <code>[]string</code>
+            </td>
+            <td class="align-top">{{% md %}} The list of access endpoint ip addresses of workflow.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">Workflow<wbr>Outbound<wbr>Ip<wbr>Addresses</td>
+            <td class="align-top">
+                
+                <code>[]string</code>
+            </td>
+            <td class="align-top">{{% md %}} The list of outgoing ip addresses of workflow.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
             <td class="align-top">Workflow<wbr>Schema</td>
             <td class="align-top">
                 
@@ -549,6 +653,32 @@ The following output properties are available:
                 <code>string</code>
             </td>
             <td class="align-top">{{% md %}} The Access Endpoint for the Logic App Workflow
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">connector<wbr>Endpoint<wbr>Ip<wbr>Addresses</td>
+            <td class="align-top">
+                
+                <code>string[]</code>
+            </td>
+            <td class="align-top">{{% md %}} The list of access endpoint ip addresses of connector.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">connector<wbr>Outbound<wbr>Ip<wbr>Addresses</td>
+            <td class="align-top">
+                
+                <code>string[]</code>
+            </td>
+            <td class="align-top">{{% md %}} The list of outgoing ip addresses of connector.
  {{% /md %}}
 
             
@@ -632,6 +762,32 @@ The following output properties are available:
         </tr>
     
         <tr>
+            <td class="align-top">workflow<wbr>Endpoint<wbr>Ip<wbr>Addresses</td>
+            <td class="align-top">
+                
+                <code>string[]</code>
+            </td>
+            <td class="align-top">{{% md %}} The list of access endpoint ip addresses of workflow.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">workflow<wbr>Outbound<wbr>Ip<wbr>Addresses</td>
+            <td class="align-top">
+                
+                <code>string[]</code>
+            </td>
+            <td class="align-top">{{% md %}} The list of outgoing ip addresses of workflow.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
             <td class="align-top">workflow<wbr>Schema</td>
             <td class="align-top">
                 
@@ -684,6 +840,32 @@ The following output properties are available:
                 <code>str</code>
             </td>
             <td class="align-top">{{% md %}} The Access Endpoint for the Logic App Workflow
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">connector_<wbr>endpoint_<wbr>ip_<wbr>addresses</td>
+            <td class="align-top">
+                
+                <code>List[str]</code>
+            </td>
+            <td class="align-top">{{% md %}} The list of access endpoint ip addresses of connector.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">connector_<wbr>outbound_<wbr>ip_<wbr>addresses</td>
+            <td class="align-top">
+                
+                <code>List[str]</code>
+            </td>
+            <td class="align-top">{{% md %}} The list of outgoing ip addresses of connector.
  {{% /md %}}
 
             
@@ -760,6 +942,32 @@ The following output properties are available:
                 <code>Dict[str, str]</code>
             </td>
             <td class="align-top">{{% md %}} A mapping of tags assigned to the resource.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">workflow_<wbr>endpoint_<wbr>ip_<wbr>addresses</td>
+            <td class="align-top">
+                
+                <code>List[str]</code>
+            </td>
+            <td class="align-top">{{% md %}} The list of access endpoint ip addresses of workflow.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">workflow_<wbr>outbound_<wbr>ip_<wbr>addresses</td>
+            <td class="align-top">
+                
+                <code>List[str]</code>
+            </td>
+            <td class="align-top">{{% md %}} The list of outgoing ip addresses of workflow.
  {{% /md %}}
 
             

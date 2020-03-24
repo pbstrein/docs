@@ -29,11 +29,11 @@ const bigDataJob = new gcp.dataflow.Job("big_data_job", {
 
 ## Note on "destroy" / "apply"
 
-There are many types of Dataflow jobs.  Some Dataflow jobs run constantly, getting new data from (e.g.) a GCS bucket, and outputting data continuously.  Some jobs process a set amount of data then terminate.  All jobs can fail while running due to programming errors or other issues.  In this way, Dataflow jobs are different from most other resources.
+There are many types of Dataflow jobs.  Some Dataflow jobs run constantly, getting new data from (e.g.) a GCS bucket, and outputting data continuously.  Some jobs process a set amount of data then terminate.  All jobs can fail while running due to programming errors or other issues.  In this way, Dataflow jobs are different from most other Google resources.
 
 The Dataflow resource is considered 'existing' while it is in a nonterminal state.  If it reaches a terminal state (e.g. 'FAILED', 'COMPLETE', 'CANCELLED'), it will be recreated on the next 'apply'.  This is as expected for jobs which run continuously, but may surprise users who use this resource for other kinds of Dataflow jobs.
 
-A Dataflow job which is 'destroyed' may be "cancelled" or "drained".  If "cancelled", the job terminates - any data written remains where it is, but no new data will be processed.  If "drained", no new data will enter the pipeline, but any data currently in the pipeline will finish being processed.  The default is "cancelled", but if a user sets `on_delete` to `"drain"` in the configuration, you may experience a long wait for your destroy to complete.
+A Dataflow job which is 'destroyed' may be "cancelled" or "drained".  If "cancelled", the job terminates - any data written remains where it is, but no new data will be processed.  If "drained", no new data will enter the pipeline, but any data currently in the pipeline will finish being processed.  The default is "cancelled", but if a user sets `on_delete` to `"drain"` in the configuration, you may experience a long wait for your `pulumi destroy` to complete.
 
 > This content is derived from https://github.com/terraform-providers/terraform-provider-google/blob/master/website/docs/r/dataflow_job.html.markdown.
 
@@ -203,7 +203,7 @@ The network to which VMs will be assigned. If it is not provided, &#34;default&#
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-One of &#34;drain&#34; or &#34;cancel&#34;.  Specifies behavior of deletion during a destroy.  See above note.
+One of &#34;drain&#34; or &#34;cancel&#34;.  Specifies behavior of deletion during `pulumi destroy`.  See above note.
  {{% /md %}}
 
             
@@ -450,7 +450,7 @@ The network to which VMs will be assigned. If it is not provided, &#34;default&#
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-One of &#34;drain&#34; or &#34;cancel&#34;.  Specifies behavior of deletion during a destroy.  See above note.
+One of &#34;drain&#34; or &#34;cancel&#34;.  Specifies behavior of deletion during `pulumi destroy`.  See above note.
  {{% /md %}}
 
             
@@ -697,7 +697,7 @@ The network to which VMs will be assigned. If it is not provided, &#34;default&#
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-One of &#34;drain&#34; or &#34;cancel&#34;.  Specifies behavior of deletion during a destroy.  See above note.
+One of &#34;drain&#34; or &#34;cancel&#34;.  Specifies behavior of deletion during `pulumi destroy`.  See above note.
  {{% /md %}}
 
             
@@ -944,7 +944,7 @@ The network to which VMs will be assigned. If it is not provided, &#34;default&#
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-One of &#34;drain&#34; or &#34;cancel&#34;.  Specifies behavior of deletion during a destroy.  See above note.
+One of &#34;drain&#34; or &#34;cancel&#34;.  Specifies behavior of deletion during `pulumi destroy`.  See above note.
  {{% /md %}}
 
             
@@ -1204,7 +1204,7 @@ Unless explicitly set in config, these labels will be ignored to prevent diffs o
                 
                 <code>string?</code>
             </td>
-            <td class="align-top">{{% md %}} One of &#34;drain&#34; or &#34;cancel&#34;.  Specifies behavior of deletion during a destroy.  See above note.
+            <td class="align-top">{{% md %}} One of &#34;drain&#34; or &#34;cancel&#34;.  Specifies behavior of deletion during `pulumi destroy`.  See above note.
  {{% /md %}}
 
             
@@ -1460,7 +1460,7 @@ Unless explicitly set in config, these labels will be ignored to prevent diffs o
                 
                 <code>*string</code>
             </td>
-            <td class="align-top">{{% md %}} One of &#34;drain&#34; or &#34;cancel&#34;.  Specifies behavior of deletion during a destroy.  See above note.
+            <td class="align-top">{{% md %}} One of &#34;drain&#34; or &#34;cancel&#34;.  Specifies behavior of deletion during `pulumi destroy`.  See above note.
  {{% /md %}}
 
             
@@ -1716,7 +1716,7 @@ Unless explicitly set in config, these labels will be ignored to prevent diffs o
                 
                 <code>string?</code>
             </td>
-            <td class="align-top">{{% md %}} One of &#34;drain&#34; or &#34;cancel&#34;.  Specifies behavior of deletion during a destroy.  See above note.
+            <td class="align-top">{{% md %}} One of &#34;drain&#34; or &#34;cancel&#34;.  Specifies behavior of deletion during `pulumi destroy`.  See above note.
  {{% /md %}}
 
             
@@ -1972,7 +1972,7 @@ Unless explicitly set in config, these labels will be ignored to prevent diffs o
                 
                 <code>str</code>
             </td>
-            <td class="align-top">{{% md %}} One of &#34;drain&#34; or &#34;cancel&#34;.  Specifies behavior of deletion during a destroy.  See above note.
+            <td class="align-top">{{% md %}} One of &#34;drain&#34; or &#34;cancel&#34;.  Specifies behavior of deletion during `pulumi destroy`.  See above note.
  {{% /md %}}
 
             
@@ -2303,7 +2303,7 @@ The network to which VMs will be assigned. If it is not provided, &#34;default&#
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-One of &#34;drain&#34; or &#34;cancel&#34;.  Specifies behavior of deletion during a destroy.  See above note.
+One of &#34;drain&#34; or &#34;cancel&#34;.  Specifies behavior of deletion during `pulumi destroy`.  See above note.
  {{% /md %}}
 
             
@@ -2595,7 +2595,7 @@ The network to which VMs will be assigned. If it is not provided, &#34;default&#
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-One of &#34;drain&#34; or &#34;cancel&#34;.  Specifies behavior of deletion during a destroy.  See above note.
+One of &#34;drain&#34; or &#34;cancel&#34;.  Specifies behavior of deletion during `pulumi destroy`.  See above note.
  {{% /md %}}
 
             
@@ -2887,7 +2887,7 @@ The network to which VMs will be assigned. If it is not provided, &#34;default&#
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-One of &#34;drain&#34; or &#34;cancel&#34;.  Specifies behavior of deletion during a destroy.  See above note.
+One of &#34;drain&#34; or &#34;cancel&#34;.  Specifies behavior of deletion during `pulumi destroy`.  See above note.
  {{% /md %}}
 
             
@@ -3179,7 +3179,7 @@ The network to which VMs will be assigned. If it is not provided, &#34;default&#
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-One of &#34;drain&#34; or &#34;cancel&#34;.  Specifies behavior of deletion during a destroy.  See above note.
+One of &#34;drain&#34; or &#34;cancel&#34;.  Specifies behavior of deletion during `pulumi destroy`.  See above note.
  {{% /md %}}
 
             

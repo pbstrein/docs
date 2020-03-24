@@ -154,6 +154,7 @@ The name of the Resource Group in which the API Management Service exists. Chang
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The XML Content for this Policy as a string.
  {{% /md %}}
 
             
@@ -248,6 +249,7 @@ The name of the Resource Group in which the API Management Service exists. Chang
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The XML Content for this Policy as a string.
  {{% /md %}}
 
             
@@ -342,6 +344,7 @@ The name of the Resource Group in which the API Management Service exists. Chang
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The XML Content for this Policy as a string.
  {{% /md %}}
 
             
@@ -436,6 +439,7 @@ The name of the Resource Group in which the API Management Service exists. Chang
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The XML Content for this Policy as a string.
  {{% /md %}}
 
             
@@ -536,7 +540,8 @@ The following output properties are available:
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} The XML Content for this Policy as a string.
+ {{% /md %}}
 
             
             </td>
@@ -620,7 +625,8 @@ The following output properties are available:
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} The XML Content for this Policy as a string.
+ {{% /md %}}
 
             
             </td>
@@ -704,7 +710,8 @@ The following output properties are available:
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} The XML Content for this Policy as a string.
+ {{% /md %}}
 
             
             </td>
@@ -788,7 +795,8 @@ The following output properties are available:
                 
                 <code>str</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} The XML Content for this Policy as a string.
+ {{% /md %}}
 
             
             </td>
@@ -939,6 +947,7 @@ The name of the Resource Group in which the API Management Service exists. Chang
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The XML Content for this Policy as a string.
  {{% /md %}}
 
             
@@ -1033,6 +1042,7 @@ The name of the Resource Group in which the API Management Service exists. Chang
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The XML Content for this Policy as a string.
  {{% /md %}}
 
             
@@ -1127,6 +1137,7 @@ The name of the Resource Group in which the API Management Service exists. Chang
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The XML Content for this Policy as a string.
  {{% /md %}}
 
             
@@ -1221,6 +1232,7 @@ The name of the Resource Group in which the API Management Service exists. Chang
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The XML Content for this Policy as a string.
  {{% /md %}}
 
             

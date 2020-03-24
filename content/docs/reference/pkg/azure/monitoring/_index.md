@@ -27,5 +27,7 @@ block_external_search_index: true
     <li><a href="getactiongroup"><span class="symbol datasource"></span>GetActionGroup</a></li>
     <li><a href="getdiagnosticcategories"><span class="symbol datasource"></span>GetDiagnosticCategories</a></li>
     <li><a href="getlogprofile"><span class="symbol datasource"></span>GetLogProfile</a></li>
+    <li><a href="getscheduledqueryrulesalert"><span class="symbol datasource"></span>GetScheduledQueryRulesAlert</a></li>
+    <li><a href="getscheduledqueryruleslog"><span class="symbol datasource"></span>GetScheduledQueryRulesLog</a></li>
 </ul>
 

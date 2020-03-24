@@ -7,6 +7,14 @@ block_external_search_index: true
 table td p { margin-top: 0; margin-bottom: 0; }
 </style>
 
+Rules to match an HTTP request and dispatch that request to a service.
+
+
+To get more information about ApplicationUrlDispatchRules, see:
+
+* [API documentation](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps#UrlDispatchRule)
+
+> This content is derived from https://github.com/terraform-providers/terraform-provider-google/blob/master/website/docs/r/app_engine_application_url_dispatch_rules.html.markdown.
 
 
 

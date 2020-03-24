@@ -13816,10 +13816,10 @@ The name of the Application Gateway. Changing this forces a new resource to be c
             <td class="align-top">Data</td>
             <td class="align-top">
                 
-                <code>string</code>
+                <code>string?</code>
             </td>
             <td class="align-top">{{% md %}} 
- (Required)
+ (Optional)
  {{% /md %}}
 
             
@@ -13835,6 +13835,20 @@ The name of the Application Gateway. Changing this forces a new resource to be c
             <td class="align-top">{{% md %}} 
  (Optional)
 The ID of the Rewrite Rule Set
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">Key<wbr>Vault<wbr>Secret<wbr>Id</td>
+            <td class="align-top">
+                
+                <code>string?</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
  {{% /md %}}
 
             
@@ -13860,10 +13874,10 @@ The name of the Application Gateway. Changing this forces a new resource to be c
             <td class="align-top">Password</td>
             <td class="align-top">
                 
-                <code>string</code>
+                <code>string?</code>
             </td>
             <td class="align-top">{{% md %}} 
- (Required)
+ (Optional)
  {{% /md %}}
 
             
@@ -13909,10 +13923,10 @@ The Public Certificate Data associated with the SSL Certificate.
             <td class="align-top">Data</td>
             <td class="align-top">
                 
-                <code>string</code>
+                <code>*string</code>
             </td>
             <td class="align-top">{{% md %}} 
- (Required)
+ (Optional)
  {{% /md %}}
 
             
@@ -13928,6 +13942,20 @@ The Public Certificate Data associated with the SSL Certificate.
             <td class="align-top">{{% md %}} 
  (Optional)
 The ID of the Rewrite Rule Set
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">Key<wbr>Vault<wbr>Secret<wbr>Id</td>
+            <td class="align-top">
+                
+                <code>*string</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
  {{% /md %}}
 
             
@@ -13953,10 +13981,10 @@ The name of the Application Gateway. Changing this forces a new resource to be c
             <td class="align-top">Password</td>
             <td class="align-top">
                 
-                <code>string</code>
+                <code>*string</code>
             </td>
             <td class="align-top">{{% md %}} 
- (Required)
+ (Optional)
  {{% /md %}}
 
             
@@ -14002,10 +14030,10 @@ The Public Certificate Data associated with the SSL Certificate.
             <td class="align-top">data</td>
             <td class="align-top">
                 
-                <code>string</code>
+                <code>string?</code>
             </td>
             <td class="align-top">{{% md %}} 
- (Required)
+ (Optional)
  {{% /md %}}
 
             
@@ -14021,6 +14049,20 @@ The Public Certificate Data associated with the SSL Certificate.
             <td class="align-top">{{% md %}} 
  (Optional)
 The ID of the Rewrite Rule Set
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">key<wbr>Vault<wbr>Secret<wbr>Id</td>
+            <td class="align-top">
+                
+                <code>string?</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
  {{% /md %}}
 
             
@@ -14046,10 +14088,10 @@ The name of the Application Gateway. Changing this forces a new resource to be c
             <td class="align-top">password</td>
             <td class="align-top">
                 
-                <code>string</code>
+                <code>string?</code>
             </td>
             <td class="align-top">{{% md %}} 
- (Required)
+ (Optional)
  {{% /md %}}
 
             
@@ -14098,7 +14140,7 @@ The Public Certificate Data associated with the SSL Certificate.
                 <code>str</code>
             </td>
             <td class="align-top">{{% md %}} 
- (Required)
+ (Optional)
  {{% /md %}}
 
             
@@ -14114,6 +14156,20 @@ The Public Certificate Data associated with the SSL Certificate.
             <td class="align-top">{{% md %}} 
  (Optional)
 The ID of the Rewrite Rule Set
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">key_<wbr>vault_<wbr>secret_<wbr>id</td>
+            <td class="align-top">
+                
+                <code>str</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
  {{% /md %}}
 
             
@@ -14142,7 +14198,7 @@ The name of the Application Gateway. Changing this forces a new resource to be c
                 <code>str</code>
             </td>
             <td class="align-top">{{% md %}} 
- (Required)
+ (Optional)
  {{% /md %}}
 
             

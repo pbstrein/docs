@@ -7,6 +7,21 @@ block_external_search_index: true
 table td p { margin-top: 0; margin-bottom: 0; }
 </style>
 
+Get a router within GCE from its name and VPC.
+
+## Example Usage
+
+```typescript
+import * as pulumi from "@pulumi/pulumi";
+import * as gcp from "@pulumi/gcp";
+
+const my_router = gcp.compute.getRouter({
+    name: "myrouter-us-east1",
+    network: "my-network",
+});
+```
+
+> This content is derived from https://github.com/terraform-providers/terraform-provider-google/blob/master/website/docs/d/datasource_compute_router.html.markdown.
 
 
 
@@ -62,6 +77,7 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+The name of the router.
  {{% /md %}}
 
             
@@ -76,6 +92,7 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+The VPC network on which this router lives.
  {{% /md %}}
 
             
@@ -90,6 +107,8 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The ID of the project in which the resource
+belongs. If it is not provided, the provider project is used.
  {{% /md %}}
 
             
@@ -104,6 +123,8 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The region this router has been created in. If
+unspecified, this defaults to the region configured in the provider.
  {{% /md %}}
 
             
@@ -138,6 +159,7 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+The name of the router.
  {{% /md %}}
 
             
@@ -152,6 +174,7 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+The VPC network on which this router lives.
  {{% /md %}}
 
             
@@ -166,6 +189,8 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The ID of the project in which the resource
+belongs. If it is not provided, the provider project is used.
  {{% /md %}}
 
             
@@ -180,6 +205,8 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The region this router has been created in. If
+unspecified, this defaults to the region configured in the provider.
  {{% /md %}}
 
             
@@ -214,6 +241,7 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+The name of the router.
  {{% /md %}}
 
             
@@ -228,6 +256,7 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+The VPC network on which this router lives.
  {{% /md %}}
 
             
@@ -242,6 +271,8 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The ID of the project in which the resource
+belongs. If it is not provided, the provider project is used.
  {{% /md %}}
 
             
@@ -256,6 +287,8 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The region this router has been created in. If
+unspecified, this defaults to the region configured in the provider.
  {{% /md %}}
 
             
@@ -290,6 +323,7 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+The name of the router.
  {{% /md %}}
 
             
@@ -304,6 +338,7 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+The VPC network on which this router lives.
  {{% /md %}}
 
             
@@ -318,6 +353,8 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The ID of the project in which the resource
+belongs. If it is not provided, the provider project is used.
  {{% /md %}}
 
             
@@ -332,6 +369,8 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The region this router has been created in. If
+unspecified, this defaults to the region configured in the provider.
  {{% /md %}}
 
             

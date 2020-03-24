@@ -7,6 +7,18 @@ block_external_search_index: true
 table td p { margin-top: 0; margin-bottom: 0; }
 </style>
 
+Represents a NodeTemplate resource. Node templates specify properties
+for creating sole-tenant nodes, such as node type, vCPU and memory
+requirements, node affinity labels, and region.
+
+
+To get more information about NodeTemplate, see:
+
+* [API documentation](https://cloud.google.com/compute/docs/reference/rest/v1/nodeTemplates)
+* How-to Guides
+    * [Sole-Tenant Nodes](https://cloud.google.com/compute/docs/nodes/)
+
+> This content is derived from https://github.com/terraform-providers/terraform-provider-google/blob/master/website/docs/r/compute_node_template.html.markdown.
 
 
 

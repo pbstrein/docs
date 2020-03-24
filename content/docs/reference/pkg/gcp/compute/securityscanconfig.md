@@ -7,6 +7,15 @@ block_external_search_index: true
 table td p { margin-top: 0; margin-bottom: 0; }
 </style>
 
+A ScanConfig resource contains the configurations to launch a scan.
+
+To get more information about ScanConfig, see:
+
+* [API documentation](https://cloud.google.com/security-scanner/docs/reference/rest/v1beta/projects.scanConfigs)
+* How-to Guides
+    * [Using Cloud Security Scanner](https://cloud.google.com/security-scanner/docs/scanning)
+
+> This content is derived from https://github.com/terraform-providers/terraform-provider-google/blob/master/website/docs/r/security_scanner_scan_config.html.markdown.
 
 
 

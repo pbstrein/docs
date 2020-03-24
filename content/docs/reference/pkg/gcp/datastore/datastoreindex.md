@@ -7,6 +7,38 @@ block_external_search_index: true
 table td p { margin-top: 0; margin-bottom: 0; }
 </style>
 
+Describes a composite index for Cloud Datastore.
+
+
+To get more information about Index, see:
+
+* [API documentation](https://cloud.google.com/datastore/docs/reference/admin/rest/v1/projects.indexes)
+* How-to Guides
+    * [Official Documentation](https://cloud.google.com/datastore/docs/concepts/indexes)
+
+## Example Usage - Datastore Index
+
+
+```typescript
+import * as pulumi from "@pulumi/pulumi";
+import * as gcp from "@pulumi/gcp";
+
+const defaultDataStoreIndex = new gcp.datastore.DataStoreIndex("default", {
+    kind: "foo",
+    properties: [
+        {
+            direction: "ASCENDING",
+            name: "property_a",
+        },
+        {
+            direction: "ASCENDING",
+            name: "property_b",
+        },
+    ],
+});
+```
+
+> This content is derived from https://github.com/terraform-providers/terraform-provider-google/blob/master/website/docs/r/datastore_index.html.markdown.
 
 
 

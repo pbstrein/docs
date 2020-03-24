@@ -7,6 +7,66 @@ block_external_search_index: true
 table td p { margin-top: 0; margin-bottom: 0; }
 </style>
 
+A NotificationChannel is a medium through which an alert is delivered
+when a policy violation is detected. Examples of channels include email, SMS,
+and third-party messaging applications. Fields containing sensitive information
+like authentication tokens or contact info are only partially populated on retrieval.
+
+Notification Channels are designed to be flexible and are made up of a supported `type`
+and labels to configure that channel. Each `type` has specific labels that need to be
+present for that channel to be correctly configured. The labels that are required to be
+present for one channel `type` are often different than those required for another.
+Due to these loose constraints it's often best to set up a channel through the UI
+and import it to the provider when setting up a brand new channel type to determine which
+labels are required.
+
+A list of supported channels per project the `list` endpoint can be
+accessed programmatically or through the api explorer at  https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.notificationChannelDescriptors/list .
+This provides the channel type and all of the required labels that must be passed.
+
+
+To get more information about NotificationChannel, see:
+
+* [API documentation](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.notificationChannels)
+* How-to Guides
+    * [Notification Options](https://cloud.google.com/monitoring/support/notification-options)
+    * [Monitoring API Documentation](https://cloud.google.com/monitoring/api/v3/)
+
+## Example Usage - Notification Channel Basic
+
+
+```typescript
+import * as pulumi from "@pulumi/pulumi";
+import * as gcp from "@pulumi/gcp";
+
+const basic = new gcp.monitoring.NotificationChannel("basic", {
+    displayName: "Test Notification Channel",
+    labels: {
+        email_address: "fake_email@blahblah.com",
+    },
+    type: "email",
+});
+```
+## Example Usage - Notification Channel Sensitive
+
+
+```typescript
+import * as pulumi from "@pulumi/pulumi";
+import * as gcp from "@pulumi/gcp";
+
+const defaultNotificationChannel = new gcp.monitoring.NotificationChannel("default", {
+    displayName: "Test Slack Channel",
+    labels: {
+        channel_name: "#foobar",
+    },
+    sensitiveLabels: {
+        authToken: "one",
+    },
+    type: "slack",
+});
+```
+
+> This content is derived from https://github.com/terraform-providers/terraform-provider-google/blob/master/website/docs/r/monitoring_notification_channel.html.markdown.
 
 
 
@@ -16,7 +76,7 @@ table td p { margin-top: 0; margin-bottom: 0; }
 
 <div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="k">new </span><span class="nx"><a href="/docs/reference/pkg/nodejs/pulumi/gcp/monitoring/#NotificationChannel">NotificationChannel</a></span><span class="p">(</span><span class="nx">name</span>: <span class="nx"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string">string</a></span><span class="p">, </span><span class="nx">args</span>: <span class="nx"><a href="/docs/reference/pkg/nodejs/pulumi/gcp/monitoring/#NotificationChannelArgs">NotificationChannelArgs</a></span><span class="p">, </span><span class="nx">opts</span>?: <span class="nx"><a href="/docs/reference/pkg/nodejs/pulumi/pulumi/pulumi/#CustomResourceOptions">pulumi.CustomResourceOptions</a></span><span class="p">);</span></code></pre></div>
 
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def </span><span class="nf">NotificationChannel</span><span class="p">(resource_name, opts=None, </span>description=None<span class="p">, </span>display_name=None<span class="p">, </span>enabled=None<span class="p">, </span>labels=None<span class="p">, </span>project=None<span class="p">, </span>type=None<span class="p">, </span>user_labels=None<span class="p">, __props__=None);</span></code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def </span><span class="nf">NotificationChannel</span><span class="p">(resource_name, opts=None, </span>description=None<span class="p">, </span>display_name=None<span class="p">, </span>enabled=None<span class="p">, </span>labels=None<span class="p">, </span>project=None<span class="p">, </span>sensitive_labels=None<span class="p">, </span>type=None<span class="p">, </span>user_labels=None<span class="p">, __props__=None);</span></code></pre></div>
 
 <div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="k">func </span>NewNotificationChannel<span class="p">(</span><span class="nx">ctx</span> *<span class="nx"><a href="https://pkg.go.dev/github.com/pulumi/pulumi/sdk/go/pulumi?tab=doc#Context">pulumi.Context</a></span><span class="p">, </span><span class="nx">name</span> <span class="nx"><a href="https://golang.org/pkg/builtin/#string">string</a></span><span class="p">, </span><span class="nx">args</span> <span class="nx"><a href="https://pkg.go.dev/github.com/pulumi/pulumi-gcp/sdk/go/gcp/monitoring?tab=doc#NotificationChannelArgs">NotificationChannelArgs</a></span><span class="p">, </span><span class="nx">opts</span> ...<span class="nx"><a href="https://pkg.go.dev/github.com/pulumi/pulumi/sdk/go/pulumi?tab=doc#ResourceOption">pulumi.ResourceOption</a></span><span class="p">) (*<span class="nx"><a href="https://pkg.go.dev/github.com/pulumi/pulumi-gcp/sdk/go/gcp/monitoring?tab=doc#NotificationChannel">NotificationChannel</a></span>, error)</span></code></pre></div>
 
@@ -133,11 +193,9 @@ same set of alerting policies on the channel at some point in the future.
             <td class="align-top">{{% md %}} 
  (Optional)
 Configuration fields that define the channel and its behavior. The permissible and required labels are specified in the
-NotificationChannelDescriptor corresponding to the type field. **Note**: Some NotificationChannelDescriptor labels are
-sensitive and the API will return an partially-obfuscated value. For example, for &#39;&#34;type&#34;: &#34;slack&#34;&#39; channels, an
-&#39;auth_token&#39; label with value &#34;SECRET&#34; will be obfuscated as &#34;**CRET&#34;. In order to avoid a diff, Terraform will use the
-state value if it appears that the obfuscated value matches the state value in length/unobfuscated characters. However,
-Terraform will not detect a diff if the obfuscated portion of the value was changed outside of Terraform.
+NotificationChannelDescriptor corresponding to the type field. Labels with sensitive data are obfuscated by the API and
+therefore Terraform cannot determine if there are upstream changes to these fields. They can also be configured via the
+sensitive_labels block, but cannot be configured in both places.
  {{% /md %}}
 
             
@@ -154,6 +212,25 @@ Terraform will not detect a diff if the obfuscated portion of the value was chan
  (Optional)
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">Sensitive<wbr>Labels</td>
+            <td class="align-top">
+                
+                <code><a href="#notificationchannelsensitivelabels">Notification<wbr>Channel<wbr>Sensitive<wbr>Labels<wbr>Args?</a></code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+Different notification type behaviors are configured primarily using the the &#39;labels&#39; field on this resource. This block
+contains the labels which contain secrets or passwords so that they can be marked sensitive and hidden from plan output.
+The name of the field, eg: password, will be the key in the &#39;labels&#39; map in the api request. Credentials may not be
+specified in both locations and will cause an error. Changing from one location to a different credential configuration
+in the config will require an apply to update state.
  {{% /md %}}
 
             
@@ -276,11 +353,9 @@ same set of alerting policies on the channel at some point in the future.
             <td class="align-top">{{% md %}} 
  (Optional)
 Configuration fields that define the channel and its behavior. The permissible and required labels are specified in the
-NotificationChannelDescriptor corresponding to the type field. **Note**: Some NotificationChannelDescriptor labels are
-sensitive and the API will return an partially-obfuscated value. For example, for &#39;&#34;type&#34;: &#34;slack&#34;&#39; channels, an
-&#39;auth_token&#39; label with value &#34;SECRET&#34; will be obfuscated as &#34;**CRET&#34;. In order to avoid a diff, Terraform will use the
-state value if it appears that the obfuscated value matches the state value in length/unobfuscated characters. However,
-Terraform will not detect a diff if the obfuscated portion of the value was changed outside of Terraform.
+NotificationChannelDescriptor corresponding to the type field. Labels with sensitive data are obfuscated by the API and
+therefore Terraform cannot determine if there are upstream changes to these fields. They can also be configured via the
+sensitive_labels block, but cannot be configured in both places.
  {{% /md %}}
 
             
@@ -297,6 +372,25 @@ Terraform will not detect a diff if the obfuscated portion of the value was chan
  (Optional)
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">Sensitive<wbr>Labels</td>
+            <td class="align-top">
+                
+                <code><a href="#notificationchannelsensitivelabels">*Notification<wbr>Channel<wbr>Sensitive<wbr>Labels</a></code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+Different notification type behaviors are configured primarily using the the &#39;labels&#39; field on this resource. This block
+contains the labels which contain secrets or passwords so that they can be marked sensitive and hidden from plan output.
+The name of the field, eg: password, will be the key in the &#39;labels&#39; map in the api request. Credentials may not be
+specified in both locations and will cause an error. Changing from one location to a different credential configuration
+in the config will require an apply to update state.
  {{% /md %}}
 
             
@@ -419,11 +513,9 @@ same set of alerting policies on the channel at some point in the future.
             <td class="align-top">{{% md %}} 
  (Optional)
 Configuration fields that define the channel and its behavior. The permissible and required labels are specified in the
-NotificationChannelDescriptor corresponding to the type field. **Note**: Some NotificationChannelDescriptor labels are
-sensitive and the API will return an partially-obfuscated value. For example, for &#39;&#34;type&#34;: &#34;slack&#34;&#39; channels, an
-&#39;auth_token&#39; label with value &#34;SECRET&#34; will be obfuscated as &#34;**CRET&#34;. In order to avoid a diff, Terraform will use the
-state value if it appears that the obfuscated value matches the state value in length/unobfuscated characters. However,
-Terraform will not detect a diff if the obfuscated portion of the value was changed outside of Terraform.
+NotificationChannelDescriptor corresponding to the type field. Labels with sensitive data are obfuscated by the API and
+therefore Terraform cannot determine if there are upstream changes to these fields. They can also be configured via the
+sensitive_labels block, but cannot be configured in both places.
  {{% /md %}}
 
             
@@ -440,6 +532,25 @@ Terraform will not detect a diff if the obfuscated portion of the value was chan
  (Optional)
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">sensitive<wbr>Labels</td>
+            <td class="align-top">
+                
+                <code><a href="#notificationchannelsensitivelabels">Notification<wbr>Channel<wbr>Sensitive<wbr>Labels?</a></code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+Different notification type behaviors are configured primarily using the the &#39;labels&#39; field on this resource. This block
+contains the labels which contain secrets or passwords so that they can be marked sensitive and hidden from plan output.
+The name of the field, eg: password, will be the key in the &#39;labels&#39; map in the api request. Credentials may not be
+specified in both locations and will cause an error. Changing from one location to a different credential configuration
+in the config will require an apply to update state.
  {{% /md %}}
 
             
@@ -562,11 +673,9 @@ same set of alerting policies on the channel at some point in the future.
             <td class="align-top">{{% md %}} 
  (Optional)
 Configuration fields that define the channel and its behavior. The permissible and required labels are specified in the
-NotificationChannelDescriptor corresponding to the type field. **Note**: Some NotificationChannelDescriptor labels are
-sensitive and the API will return an partially-obfuscated value. For example, for &#39;&#34;type&#34;: &#34;slack&#34;&#39; channels, an
-&#39;auth_token&#39; label with value &#34;SECRET&#34; will be obfuscated as &#34;**CRET&#34;. In order to avoid a diff, Terraform will use the
-state value if it appears that the obfuscated value matches the state value in length/unobfuscated characters. However,
-Terraform will not detect a diff if the obfuscated portion of the value was changed outside of Terraform.
+NotificationChannelDescriptor corresponding to the type field. Labels with sensitive data are obfuscated by the API and
+therefore Terraform cannot determine if there are upstream changes to these fields. They can also be configured via the
+sensitive_labels block, but cannot be configured in both places.
  {{% /md %}}
 
             
@@ -583,6 +692,25 @@ Terraform will not detect a diff if the obfuscated portion of the value was chan
  (Optional)
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">sensitive_<wbr>labels</td>
+            <td class="align-top">
+                
+                <code><a href="#notificationchannelsensitivelabels">Dict[Notification<wbr>Channel<wbr>Sensitive<wbr>Labels]</a></code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+Different notification type behaviors are configured primarily using the the &#39;labels&#39; field on this resource. This block
+contains the labels which contain secrets or passwords so that they can be marked sensitive and hidden from plan output.
+The name of the field, eg: password, will be the key in the &#39;labels&#39; map in the api request. Credentials may not be
+specified in both locations and will cause an error. Changing from one location to a different credential configuration
+in the config will require an apply to update state.
  {{% /md %}}
 
             
@@ -711,11 +839,9 @@ same set of alerting policies on the channel at some point in the future.
                 <code>Dictionary<string, string>?</code>
             </td>
             <td class="align-top">{{% md %}} Configuration fields that define the channel and its behavior. The permissible and required labels are specified in the
-NotificationChannelDescriptor corresponding to the type field. **Note**: Some NotificationChannelDescriptor labels are
-sensitive and the API will return an partially-obfuscated value. For example, for &#39;&#34;type&#34;: &#34;slack&#34;&#39; channels, an
-&#39;auth_token&#39; label with value &#34;SECRET&#34; will be obfuscated as &#34;**CRET&#34;. In order to avoid a diff, Terraform will use the
-state value if it appears that the obfuscated value matches the state value in length/unobfuscated characters. However,
-Terraform will not detect a diff if the obfuscated portion of the value was changed outside of Terraform.
+NotificationChannelDescriptor corresponding to the type field. Labels with sensitive data are obfuscated by the API and
+therefore Terraform cannot determine if there are upstream changes to these fields. They can also be configured via the
+sensitive_labels block, but cannot be configured in both places.
  {{% /md %}}
 
             
@@ -744,6 +870,23 @@ Terraform will not detect a diff if the obfuscated portion of the value was chan
             </td>
             <td class="align-top">{{% md %}} The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">Sensitive<wbr>Labels</td>
+            <td class="align-top">
+                
+                <code><a href="#notificationchannelsensitivelabels">Notification<wbr>Channel<wbr>Sensitive<wbr>Labels?</a></code>
+            </td>
+            <td class="align-top">{{% md %}} Different notification type behaviors are configured primarily using the the &#39;labels&#39; field on this resource. This block
+contains the labels which contain secrets or passwords so that they can be marked sensitive and hidden from plan output.
+The name of the field, eg: password, will be the key in the &#39;labels&#39; map in the api request. Credentials may not be
+specified in both locations and will cause an error. Changing from one location to a different credential configuration
+in the config will require an apply to update state.
  {{% /md %}}
 
             
@@ -873,11 +1016,9 @@ same set of alerting policies on the channel at some point in the future.
                 <code>map[string]string</code>
             </td>
             <td class="align-top">{{% md %}} Configuration fields that define the channel and its behavior. The permissible and required labels are specified in the
-NotificationChannelDescriptor corresponding to the type field. **Note**: Some NotificationChannelDescriptor labels are
-sensitive and the API will return an partially-obfuscated value. For example, for &#39;&#34;type&#34;: &#34;slack&#34;&#39; channels, an
-&#39;auth_token&#39; label with value &#34;SECRET&#34; will be obfuscated as &#34;**CRET&#34;. In order to avoid a diff, Terraform will use the
-state value if it appears that the obfuscated value matches the state value in length/unobfuscated characters. However,
-Terraform will not detect a diff if the obfuscated portion of the value was changed outside of Terraform.
+NotificationChannelDescriptor corresponding to the type field. Labels with sensitive data are obfuscated by the API and
+therefore Terraform cannot determine if there are upstream changes to these fields. They can also be configured via the
+sensitive_labels block, but cannot be configured in both places.
  {{% /md %}}
 
             
@@ -906,6 +1047,23 @@ Terraform will not detect a diff if the obfuscated portion of the value was chan
             </td>
             <td class="align-top">{{% md %}} The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">Sensitive<wbr>Labels</td>
+            <td class="align-top">
+                
+                <code><a href="#notificationchannelsensitivelabels">*Notification<wbr>Channel<wbr>Sensitive<wbr>Labels</a></code>
+            </td>
+            <td class="align-top">{{% md %}} Different notification type behaviors are configured primarily using the the &#39;labels&#39; field on this resource. This block
+contains the labels which contain secrets or passwords so that they can be marked sensitive and hidden from plan output.
+The name of the field, eg: password, will be the key in the &#39;labels&#39; map in the api request. Credentials may not be
+specified in both locations and will cause an error. Changing from one location to a different credential configuration
+in the config will require an apply to update state.
  {{% /md %}}
 
             
@@ -1035,11 +1193,9 @@ same set of alerting policies on the channel at some point in the future.
                 <code>{[key: string]: string}?</code>
             </td>
             <td class="align-top">{{% md %}} Configuration fields that define the channel and its behavior. The permissible and required labels are specified in the
-NotificationChannelDescriptor corresponding to the type field. **Note**: Some NotificationChannelDescriptor labels are
-sensitive and the API will return an partially-obfuscated value. For example, for &#39;&#34;type&#34;: &#34;slack&#34;&#39; channels, an
-&#39;auth_token&#39; label with value &#34;SECRET&#34; will be obfuscated as &#34;**CRET&#34;. In order to avoid a diff, Terraform will use the
-state value if it appears that the obfuscated value matches the state value in length/unobfuscated characters. However,
-Terraform will not detect a diff if the obfuscated portion of the value was changed outside of Terraform.
+NotificationChannelDescriptor corresponding to the type field. Labels with sensitive data are obfuscated by the API and
+therefore Terraform cannot determine if there are upstream changes to these fields. They can also be configured via the
+sensitive_labels block, but cannot be configured in both places.
  {{% /md %}}
 
             
@@ -1068,6 +1224,23 @@ Terraform will not detect a diff if the obfuscated portion of the value was chan
             </td>
             <td class="align-top">{{% md %}} The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">sensitive<wbr>Labels</td>
+            <td class="align-top">
+                
+                <code><a href="#notificationchannelsensitivelabels">Notification<wbr>Channel<wbr>Sensitive<wbr>Labels?</a></code>
+            </td>
+            <td class="align-top">{{% md %}} Different notification type behaviors are configured primarily using the the &#39;labels&#39; field on this resource. This block
+contains the labels which contain secrets or passwords so that they can be marked sensitive and hidden from plan output.
+The name of the field, eg: password, will be the key in the &#39;labels&#39; map in the api request. Credentials may not be
+specified in both locations and will cause an error. Changing from one location to a different credential configuration
+in the config will require an apply to update state.
  {{% /md %}}
 
             
@@ -1197,11 +1370,9 @@ same set of alerting policies on the channel at some point in the future.
                 <code>Dict[str, str]</code>
             </td>
             <td class="align-top">{{% md %}} Configuration fields that define the channel and its behavior. The permissible and required labels are specified in the
-NotificationChannelDescriptor corresponding to the type field. **Note**: Some NotificationChannelDescriptor labels are
-sensitive and the API will return an partially-obfuscated value. For example, for &#39;&#34;type&#34;: &#34;slack&#34;&#39; channels, an
-&#39;auth_token&#39; label with value &#34;SECRET&#34; will be obfuscated as &#34;**CRET&#34;. In order to avoid a diff, Terraform will use the
-state value if it appears that the obfuscated value matches the state value in length/unobfuscated characters. However,
-Terraform will not detect a diff if the obfuscated portion of the value was changed outside of Terraform.
+NotificationChannelDescriptor corresponding to the type field. Labels with sensitive data are obfuscated by the API and
+therefore Terraform cannot determine if there are upstream changes to these fields. They can also be configured via the
+sensitive_labels block, but cannot be configured in both places.
  {{% /md %}}
 
             
@@ -1230,6 +1401,23 @@ Terraform will not detect a diff if the obfuscated portion of the value was chan
             </td>
             <td class="align-top">{{% md %}} The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">sensitive_<wbr>labels</td>
+            <td class="align-top">
+                
+                <code><a href="#notificationchannelsensitivelabels">Dict[Notification<wbr>Channel<wbr>Sensitive<wbr>Labels]</a></code>
+            </td>
+            <td class="align-top">{{% md %}} Different notification type behaviors are configured primarily using the the &#39;labels&#39; field on this resource. This block
+contains the labels which contain secrets or passwords so that they can be marked sensitive and hidden from plan output.
+The name of the field, eg: password, will be the key in the &#39;labels&#39; map in the api request. Credentials may not be
+specified in both locations and will cause an error. Changing from one location to a different credential configuration
+in the config will require an apply to update state.
  {{% /md %}}
 
             
@@ -1306,7 +1494,7 @@ UpdateNotificationChannel operation. To change the value of this field, you must
 
 <div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="k">public static </span><span class="nf">get</span><span class="p">(</span><span class="nx">name</span>: <span class="nx"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string">string</a></span><span class="p">, </span><span class="nx">id</span>: <span class="nx"><a href="/docs/reference/pkg/nodejs/pulumi/pulumi/#ID">pulumi.Input&lt;pulumi.ID&gt;</a></span><span class="p">, </span><span class="nx">state</span>?: <span class="nx"><a href="/docs/reference/pkg/nodejs/pulumi/gcp/monitoring/#NotificationChannelState">NotificationChannelState</a></span><span class="p">, </span><span class="nx">opts</span>?: <span class="nx"><a href="/docs/reference/pkg/nodejs/pulumi/pulumi/#CustomResourceOptions">pulumi.CustomResourceOptions</a></span><span class="p">): </span><span class="nx"><a href="/docs/reference/pkg/nodejs/pulumi/gcp/monitoring/#NotificationChannel">NotificationChannel</a></span></code></pre></div>
 
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">static </span><span class="nf">get</span><span class="p">(resource_name, id, opts=None, </span>description=None<span class="p">, </span>display_name=None<span class="p">, </span>enabled=None<span class="p">, </span>labels=None<span class="p">, </span>name=None<span class="p">, </span>project=None<span class="p">, </span>type=None<span class="p">, </span>user_labels=None<span class="p">, </span>verification_status=None<span class="p">, __props__=None);</span></code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">static </span><span class="nf">get</span><span class="p">(resource_name, id, opts=None, </span>description=None<span class="p">, </span>display_name=None<span class="p">, </span>enabled=None<span class="p">, </span>labels=None<span class="p">, </span>name=None<span class="p">, </span>project=None<span class="p">, </span>sensitive_labels=None<span class="p">, </span>type=None<span class="p">, </span>user_labels=None<span class="p">, </span>verification_status=None<span class="p">, __props__=None);</span></code></pre></div>
 
 <div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="k">func </span>GetNotificationChannel<span class="p">(</span><span class="nx">ctx</span> *<span class="nx"><a href="https://pkg.go.dev/github.com/pulumi/pulumi/sdk/go/pulumi?tab=doc#Context">pulumi.Context</a></span><span class="p">, </span><span class="nx">name</span> <span class="nx"><a href="https://golang.org/pkg/builtin/#string">string</a></span><span class="p">, </span><span class="nx">id</span> <span class="nx"><a href="https://pkg.go.dev/github.com/pulumi/pulumi/sdk/go/pulumi?tab=doc#IDInput">pulumi.IDInput</a></span><span class="p">, </span><span class="nx">state</span> *<span class="nx"><a href="https://pkg.go.dev/github.com/pulumi/pulumi-gcp/sdk/go/gcp/monitoring?tab=doc#NotificationChannelState">NotificationChannelState</a></span><span class="p">, </span><span class="nx">opts</span> ...<span class="nx"><a href="https://pkg.go.dev/github.com/pulumi/pulumi/sdk/go/pulumi?tab=doc#ResourceOption">pulumi.ResourceOption</a></span><span class="p">) (*<span class="nx"><a href="https://pkg.go.dev/github.com/pulumi/pulumi-gcp/sdk/go/gcp/monitoring?tab=doc#NotificationChannel">NotificationChannel</a></span>, error)</span></code></pre></div>
 
@@ -1426,11 +1614,9 @@ same set of alerting policies on the channel at some point in the future.
             <td class="align-top">{{% md %}} 
  (Optional)
 Configuration fields that define the channel and its behavior. The permissible and required labels are specified in the
-NotificationChannelDescriptor corresponding to the type field. **Note**: Some NotificationChannelDescriptor labels are
-sensitive and the API will return an partially-obfuscated value. For example, for &#39;&#34;type&#34;: &#34;slack&#34;&#39; channels, an
-&#39;auth_token&#39; label with value &#34;SECRET&#34; will be obfuscated as &#34;**CRET&#34;. In order to avoid a diff, Terraform will use the
-state value if it appears that the obfuscated value matches the state value in length/unobfuscated characters. However,
-Terraform will not detect a diff if the obfuscated portion of the value was changed outside of Terraform.
+NotificationChannelDescriptor corresponding to the type field. Labels with sensitive data are obfuscated by the API and
+therefore Terraform cannot determine if there are upstream changes to these fields. They can also be configured via the
+sensitive_labels block, but cannot be configured in both places.
  {{% /md %}}
 
             
@@ -1463,6 +1649,25 @@ The full REST resource name for this channel. The syntax is: projects/[PROJECT_I
  (Optional)
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">Sensitive<wbr>Labels</td>
+            <td class="align-top">
+                
+                <code><a href="#notificationchannelsensitivelabels">Notification<wbr>Channel<wbr>Sensitive<wbr>Labels<wbr>Args?</a></code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+Different notification type behaviors are configured primarily using the the &#39;labels&#39; field on this resource. This block
+contains the labels which contain secrets or passwords so that they can be marked sensitive and hidden from plan output.
+The name of the field, eg: password, will be the key in the &#39;labels&#39; map in the api request. Credentials may not be
+specified in both locations and will cause an error. Changing from one location to a different credential configuration
+in the config will require an apply to update state.
  {{% /md %}}
 
             
@@ -1606,11 +1811,9 @@ same set of alerting policies on the channel at some point in the future.
             <td class="align-top">{{% md %}} 
  (Optional)
 Configuration fields that define the channel and its behavior. The permissible and required labels are specified in the
-NotificationChannelDescriptor corresponding to the type field. **Note**: Some NotificationChannelDescriptor labels are
-sensitive and the API will return an partially-obfuscated value. For example, for &#39;&#34;type&#34;: &#34;slack&#34;&#39; channels, an
-&#39;auth_token&#39; label with value &#34;SECRET&#34; will be obfuscated as &#34;**CRET&#34;. In order to avoid a diff, Terraform will use the
-state value if it appears that the obfuscated value matches the state value in length/unobfuscated characters. However,
-Terraform will not detect a diff if the obfuscated portion of the value was changed outside of Terraform.
+NotificationChannelDescriptor corresponding to the type field. Labels with sensitive data are obfuscated by the API and
+therefore Terraform cannot determine if there are upstream changes to these fields. They can also be configured via the
+sensitive_labels block, but cannot be configured in both places.
  {{% /md %}}
 
             
@@ -1643,6 +1846,25 @@ The full REST resource name for this channel. The syntax is: projects/[PROJECT_I
  (Optional)
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">Sensitive<wbr>Labels</td>
+            <td class="align-top">
+                
+                <code><a href="#notificationchannelsensitivelabels">*Notification<wbr>Channel<wbr>Sensitive<wbr>Labels</a></code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+Different notification type behaviors are configured primarily using the the &#39;labels&#39; field on this resource. This block
+contains the labels which contain secrets or passwords so that they can be marked sensitive and hidden from plan output.
+The name of the field, eg: password, will be the key in the &#39;labels&#39; map in the api request. Credentials may not be
+specified in both locations and will cause an error. Changing from one location to a different credential configuration
+in the config will require an apply to update state.
  {{% /md %}}
 
             
@@ -1786,11 +2008,9 @@ same set of alerting policies on the channel at some point in the future.
             <td class="align-top">{{% md %}} 
  (Optional)
 Configuration fields that define the channel and its behavior. The permissible and required labels are specified in the
-NotificationChannelDescriptor corresponding to the type field. **Note**: Some NotificationChannelDescriptor labels are
-sensitive and the API will return an partially-obfuscated value. For example, for &#39;&#34;type&#34;: &#34;slack&#34;&#39; channels, an
-&#39;auth_token&#39; label with value &#34;SECRET&#34; will be obfuscated as &#34;**CRET&#34;. In order to avoid a diff, Terraform will use the
-state value if it appears that the obfuscated value matches the state value in length/unobfuscated characters. However,
-Terraform will not detect a diff if the obfuscated portion of the value was changed outside of Terraform.
+NotificationChannelDescriptor corresponding to the type field. Labels with sensitive data are obfuscated by the API and
+therefore Terraform cannot determine if there are upstream changes to these fields. They can also be configured via the
+sensitive_labels block, but cannot be configured in both places.
  {{% /md %}}
 
             
@@ -1823,6 +2043,25 @@ The full REST resource name for this channel. The syntax is: projects/[PROJECT_I
  (Optional)
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">sensitive<wbr>Labels</td>
+            <td class="align-top">
+                
+                <code><a href="#notificationchannelsensitivelabels">Notification<wbr>Channel<wbr>Sensitive<wbr>Labels?</a></code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+Different notification type behaviors are configured primarily using the the &#39;labels&#39; field on this resource. This block
+contains the labels which contain secrets or passwords so that they can be marked sensitive and hidden from plan output.
+The name of the field, eg: password, will be the key in the &#39;labels&#39; map in the api request. Credentials may not be
+specified in both locations and will cause an error. Changing from one location to a different credential configuration
+in the config will require an apply to update state.
  {{% /md %}}
 
             
@@ -1966,11 +2205,9 @@ same set of alerting policies on the channel at some point in the future.
             <td class="align-top">{{% md %}} 
  (Optional)
 Configuration fields that define the channel and its behavior. The permissible and required labels are specified in the
-NotificationChannelDescriptor corresponding to the type field. **Note**: Some NotificationChannelDescriptor labels are
-sensitive and the API will return an partially-obfuscated value. For example, for &#39;&#34;type&#34;: &#34;slack&#34;&#39; channels, an
-&#39;auth_token&#39; label with value &#34;SECRET&#34; will be obfuscated as &#34;**CRET&#34;. In order to avoid a diff, Terraform will use the
-state value if it appears that the obfuscated value matches the state value in length/unobfuscated characters. However,
-Terraform will not detect a diff if the obfuscated portion of the value was changed outside of Terraform.
+NotificationChannelDescriptor corresponding to the type field. Labels with sensitive data are obfuscated by the API and
+therefore Terraform cannot determine if there are upstream changes to these fields. They can also be configured via the
+sensitive_labels block, but cannot be configured in both places.
  {{% /md %}}
 
             
@@ -2003,6 +2240,25 @@ The full REST resource name for this channel. The syntax is: projects/[PROJECT_I
  (Optional)
 The ID of the project in which the resource belongs.
 If it is not provided, the provider project is used.
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">sensitive_<wbr>labels</td>
+            <td class="align-top">
+                
+                <code><a href="#notificationchannelsensitivelabels">Dict[Notification<wbr>Channel<wbr>Sensitive<wbr>Labels]</a></code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+Different notification type behaviors are configured primarily using the the &#39;labels&#39; field on this resource. This block
+contains the labels which contain secrets or passwords so that they can be marked sensitive and hidden from plan output.
+The name of the field, eg: password, will be the key in the &#39;labels&#39; map in the api request. Credentials may not be
+specified in both locations and will cause an error. Changing from one location to a different credential configuration
+in the config will require an apply to update state.
  {{% /md %}}
 
             
@@ -2073,6 +2329,280 @@ UpdateNotificationChannel operation. To change the value of this field, you must
 {{% /lang %}}
 
 
+
+
+
+
+
+
+
+
+## Supporting Types
+
+#### NotificationChannelSensitiveLabels
+{{% lang nodejs %}}
+> See the <a href="/docs/reference/pkg/nodejs/pulumi/gcp/types/input/#NotificationChannelSensitiveLabels">input</a> and <a href="/docs/reference/pkg/nodejs/pulumi/gcp/types/output/#NotificationChannelSensitiveLabels">output</a> API doc for this type.
+{{% /lang %}}
+
+{{% lang go %}}
+> See the <a href="https://pkg.go.dev/github.com/pulumi/pulumi-gcp/sdk/go/gcp/monitoring?tab=doc#NotificationChannelSensitiveLabelsArgs">input</a> and <a href="https://pkg.go.dev/github.com/pulumi/pulumi-gcp/sdk/go/gcp/monitoring?tab=doc#NotificationChannelSensitiveLabelsOutput">output</a> API doc for this type.
+{{% /lang %}}
+
+{{% lang csharp %}}
+> See the <a href="/docs/reference/pkg/dotnet/Pulumi.Gcp/Pulumi.Gcp.Monitoring.NotificationChannelSensitiveLabelsArgs.html">input</a> and <a href="/docs/reference/pkg/dotnet/Pulumi.Gcp/Pulumi.Gcp.Monitoring.NotificationChannelSensitiveLabels.html">output</a> API doc for this type.
+{{% /lang %}}
+
+
+
+{{< langchoose csharp nojavascript >}}
+
+
+{{% lang csharp %}}
+
+
+<table class="ml-6">
+    <thead>
+        <tr>
+            <th>Argument</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+    
+        <tr>
+            <td class="align-top">Auth<wbr>Token</td>
+            <td class="align-top">
+                
+                <code>string?</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">Password</td>
+            <td class="align-top">
+                
+                <code>string?</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">Service<wbr>Key</td>
+            <td class="align-top">
+                
+                <code>string?</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+    </tbody>
+</table>
+
+
+{{% /lang %}}
+
+
+{{% lang go %}}
+
+
+<table class="ml-6">
+    <thead>
+        <tr>
+            <th>Argument</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+    
+        <tr>
+            <td class="align-top">Auth<wbr>Token</td>
+            <td class="align-top">
+                
+                <code>*string</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">Password</td>
+            <td class="align-top">
+                
+                <code>*string</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">Service<wbr>Key</td>
+            <td class="align-top">
+                
+                <code>*string</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+    </tbody>
+</table>
+
+
+{{% /lang %}}
+
+
+{{% lang nodejs %}}
+
+
+<table class="ml-6">
+    <thead>
+        <tr>
+            <th>Argument</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+    
+        <tr>
+            <td class="align-top">auth<wbr>Token</td>
+            <td class="align-top">
+                
+                <code>string?</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">password</td>
+            <td class="align-top">
+                
+                <code>string?</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">service<wbr>Key</td>
+            <td class="align-top">
+                
+                <code>string?</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+    </tbody>
+</table>
+
+
+{{% /lang %}}
+
+
+{{% lang python %}}
+
+
+<table class="ml-6">
+    <thead>
+        <tr>
+            <th>Argument</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+    
+        <tr>
+            <td class="align-top">auth<wbr>Token</td>
+            <td class="align-top">
+                
+                <code>str</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">password</td>
+            <td class="align-top">
+                
+                <code>str</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">service<wbr>Key</td>
+            <td class="align-top">
+                
+                <code>str</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+    </tbody>
+</table>
+
+
+{{% /lang %}}
 
 
 

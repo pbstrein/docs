@@ -16,6 +16,7 @@ block_external_search_index: true
     <li><a href="kubernetescluster"><span class="symbol resource"></span>KubernetesCluster</a></li>
     <li><a href="kubernetesclusternodepool"><span class="symbol resource"></span>KubernetesClusterNodePool</a></li>
     <li><a href="registry"><span class="symbol resource"></span>Registry</a></li>
+    <li><a href="registrywebhook"><span class="symbol resource"></span>RegistryWebhook</a></li>
     <li><a href="registrywebook"><span class="symbol resource"></span>RegistryWebook</a></li>
 </ul>
 

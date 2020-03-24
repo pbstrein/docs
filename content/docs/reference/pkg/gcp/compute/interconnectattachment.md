@@ -7,6 +7,10 @@ block_external_search_index: true
 table td p { margin-top: 0; margin-bottom: 0; }
 </style>
 
+Represents an InterconnectAttachment (VLAN attachment) resource. For more
+information, see Creating VLAN Attachments.
+
+> This content is derived from https://github.com/terraform-providers/terraform-provider-google/blob/master/website/docs/r/compute_interconnect_attachment.html.markdown.
 
 
 

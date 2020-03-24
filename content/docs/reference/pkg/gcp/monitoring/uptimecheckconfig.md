@@ -7,6 +7,71 @@ block_external_search_index: true
 table td p { margin-top: 0; margin-bottom: 0; }
 </style>
 
+This message configures which resources and services to monitor for availability.
+
+
+To get more information about UptimeCheckConfig, see:
+
+* [API documentation](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.uptimeCheckConfigs)
+* How-to Guides
+    * [Official Documentation](https://cloud.google.com/monitoring/uptime-checks/)
+
+## Example Usage - Uptime Check Config Http
+
+
+```typescript
+import * as pulumi from "@pulumi/pulumi";
+import * as gcp from "@pulumi/gcp";
+
+const http = new gcp.monitoring.UptimeCheckConfig("http", {
+    contentMatchers: [{
+        content: "example",
+    }],
+    displayName: "http-uptime-check",
+    httpCheck: {
+        path: "/some-path",
+        port: 8010,
+    },
+    monitoredResource: {
+        labels: {
+            host: "192.168.1.1",
+            project_id: "my-project-name",
+        },
+        type: "uptime_url",
+    },
+    timeout: "60s",
+});
+```
+## Example Usage - Uptime Check Config Https
+
+
+```typescript
+import * as pulumi from "@pulumi/pulumi";
+import * as gcp from "@pulumi/gcp";
+
+const https = new gcp.monitoring.UptimeCheckConfig("https", {
+    contentMatchers: [{
+        content: "example",
+    }],
+    displayName: "https-uptime-check",
+    httpCheck: {
+        path: "/some-path",
+        port: 443,
+        useSsl: true,
+        validateSsl: true,
+    },
+    monitoredResource: {
+        labels: {
+            host: "192.168.1.1",
+            project_id: "my-project-name",
+        },
+        type: "uptime_url",
+    },
+    timeout: "60s",
+});
+```
+
+> This content is derived from https://github.com/terraform-providers/terraform-provider-google/blob/master/website/docs/r/monitoring_uptime_check_config.html.markdown.
 
 
 

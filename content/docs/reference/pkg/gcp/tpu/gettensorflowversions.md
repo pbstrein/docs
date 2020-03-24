@@ -7,6 +7,18 @@ block_external_search_index: true
 table td p { margin-top: 0; margin-bottom: 0; }
 </style>
 
+Get TensorFlow versions available for a project. For more information see the [official documentation](https://cloud.google.com/tpu/docs/) and [API](https://cloud.google.com/tpu/docs/reference/rest/v1/projects.locations.tensorflowVersions).
+
+## Example Usage
+
+```typescript
+import * as pulumi from "@pulumi/pulumi";
+import * as gcp from "@pulumi/gcp";
+
+const available = gcp.tpu.getTensorflowVersions();
+```
+
+> This content is derived from https://github.com/terraform-providers/terraform-provider-google/blob/master/website/docs/d/datasource_tpu_tensorflow_versions.html.markdown.
 
 
 
@@ -62,6 +74,8 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The project to list versions for. If it
+is not provided, the provider project is used.
  {{% /md %}}
 
             
@@ -76,6 +90,8 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The zone to list versions for. If it
+is not provided, the provider zone is used.
  {{% /md %}}
 
             
@@ -110,6 +126,8 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The project to list versions for. If it
+is not provided, the provider project is used.
  {{% /md %}}
 
             
@@ -124,6 +142,8 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The zone to list versions for. If it
+is not provided, the provider zone is used.
  {{% /md %}}
 
             
@@ -158,6 +178,8 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The project to list versions for. If it
+is not provided, the provider project is used.
  {{% /md %}}
 
             
@@ -172,6 +194,8 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The zone to list versions for. If it
+is not provided, the provider zone is used.
  {{% /md %}}
 
             
@@ -206,6 +230,8 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The project to list versions for. If it
+is not provided, the provider project is used.
  {{% /md %}}
 
             
@@ -220,6 +246,8 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The zone to list versions for. If it
+is not provided, the provider zone is used.
  {{% /md %}}
 
             
@@ -292,7 +320,8 @@ The following output properties are available:
                 
                 <code>List<string></code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} The list of TensorFlow versions available for the given project and zone.
+ {{% /md %}}
 
             
             </td>
@@ -361,7 +390,8 @@ The following output properties are available:
                 
                 <code>[]string</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} The list of TensorFlow versions available for the given project and zone.
+ {{% /md %}}
 
             
             </td>
@@ -430,7 +460,8 @@ The following output properties are available:
                 
                 <code>string[]</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} The list of TensorFlow versions available for the given project and zone.
+ {{% /md %}}
 
             
             </td>
@@ -499,7 +530,8 @@ The following output properties are available:
                 
                 <code>List[str]</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} The list of TensorFlow versions available for the given project and zone.
+ {{% /md %}}
 
             
             </td>

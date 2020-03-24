@@ -290,7 +290,7 @@ Structure is documented below.
             <td class="align-top">{{% md %}} 
  (Optional)
 Whether to wait for all instances to be created/updated before
-returning. Note that if this is set to true and the operation does not succeed, this provider will
+returning. Note that if this is set to true and the operation does not succeed, the provider will
 continue trying until it times out.
  {{% /md %}}
 
@@ -527,7 +527,7 @@ Structure is documented below.
             <td class="align-top">{{% md %}} 
  (Optional)
 Whether to wait for all instances to be created/updated before
-returning. Note that if this is set to true and the operation does not succeed, this provider will
+returning. Note that if this is set to true and the operation does not succeed, the provider will
 continue trying until it times out.
  {{% /md %}}
 
@@ -764,7 +764,7 @@ Structure is documented below.
             <td class="align-top">{{% md %}} 
  (Optional)
 Whether to wait for all instances to be created/updated before
-returning. Note that if this is set to true and the operation does not succeed, this provider will
+returning. Note that if this is set to true and the operation does not succeed, the provider will
 continue trying until it times out.
  {{% /md %}}
 
@@ -1001,7 +1001,7 @@ Structure is documented below.
             <td class="align-top">{{% md %}} 
  (Optional)
 Whether to wait for all instances to be created/updated before
-returning. Note that if this is set to true and the operation does not succeed, this provider will
+returning. Note that if this is set to true and the operation does not succeed, the provider will
 continue trying until it times out.
  {{% /md %}}
 
@@ -1265,7 +1265,7 @@ Structure is documented below.
                 <code>bool?</code>
             </td>
             <td class="align-top">{{% md %}} Whether to wait for all instances to be created/updated before
-returning. Note that if this is set to true and the operation does not succeed, this provider will
+returning. Note that if this is set to true and the operation does not succeed, the provider will
 continue trying until it times out.
  {{% /md %}}
 
@@ -1515,7 +1515,7 @@ Structure is documented below.
                 <code>*bool</code>
             </td>
             <td class="align-top">{{% md %}} Whether to wait for all instances to be created/updated before
-returning. Note that if this is set to true and the operation does not succeed, this provider will
+returning. Note that if this is set to true and the operation does not succeed, the provider will
 continue trying until it times out.
  {{% /md %}}
 
@@ -1765,7 +1765,7 @@ Structure is documented below.
                 <code>boolean?</code>
             </td>
             <td class="align-top">{{% md %}} Whether to wait for all instances to be created/updated before
-returning. Note that if this is set to true and the operation does not succeed, this provider will
+returning. Note that if this is set to true and the operation does not succeed, the provider will
 continue trying until it times out.
  {{% /md %}}
 
@@ -2015,7 +2015,7 @@ Structure is documented below.
                 <code>bool</code>
             </td>
             <td class="align-top">{{% md %}} Whether to wait for all instances to be created/updated before
-returning. Note that if this is set to true and the operation does not succeed, this provider will
+returning. Note that if this is set to true and the operation does not succeed, the provider will
 continue trying until it times out.
  {{% /md %}}
 
@@ -2356,7 +2356,7 @@ Structure is documented below.
             <td class="align-top">{{% md %}} 
  (Optional)
 Whether to wait for all instances to be created/updated before
-returning. Note that if this is set to true and the operation does not succeed, this provider will
+returning. Note that if this is set to true and the operation does not succeed, the provider will
 continue trying until it times out.
  {{% /md %}}
 
@@ -2638,7 +2638,7 @@ Structure is documented below.
             <td class="align-top">{{% md %}} 
  (Optional)
 Whether to wait for all instances to be created/updated before
-returning. Note that if this is set to true and the operation does not succeed, this provider will
+returning. Note that if this is set to true and the operation does not succeed, the provider will
 continue trying until it times out.
  {{% /md %}}
 
@@ -2920,7 +2920,7 @@ Structure is documented below.
             <td class="align-top">{{% md %}} 
  (Optional)
 Whether to wait for all instances to be created/updated before
-returning. Note that if this is set to true and the operation does not succeed, this provider will
+returning. Note that if this is set to true and the operation does not succeed, the provider will
 continue trying until it times out.
  {{% /md %}}
 
@@ -3202,7 +3202,7 @@ Structure is documented below.
             <td class="align-top">{{% md %}} 
  (Optional)
 Whether to wait for all instances to be created/updated before
-returning. Note that if this is set to true and the operation does not succeed, this provider will
+returning. Note that if this is set to true and the operation does not succeed, the provider will
 continue trying until it times out.
  {{% /md %}}
 

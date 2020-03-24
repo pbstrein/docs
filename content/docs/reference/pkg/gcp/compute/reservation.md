@@ -7,6 +7,42 @@ block_external_search_index: true
 table td p { margin-top: 0; margin-bottom: 0; }
 </style>
 
+Represents a reservation resource. A reservation ensures that capacity is
+held in a specific zone even if the reserved VMs are not running.
+
+Reservations apply only to Compute Engine, Cloud Dataproc, and Google
+Kubernetes Engine VM usage.Reservations do not apply to `f1-micro` or
+`g1-small` machine types, preemptible VMs, sole tenant nodes, or other
+services not listed above
+like Cloud SQL and Dataflow.
+
+
+To get more information about Reservation, see:
+
+* [API documentation](https://cloud.google.com/compute/docs/reference/rest/v1/reservations)
+* How-to Guides
+    * [Reserving zonal resources](https://cloud.google.com/compute/docs/instances/reserving-zonal-resources)
+
+## Example Usage - Reservation Basic
+
+
+```typescript
+import * as pulumi from "@pulumi/pulumi";
+import * as gcp from "@pulumi/gcp";
+
+const gceReservation = new gcp.compute.Reservation("gce_reservation", {
+    specificReservation: {
+        count: 1,
+        instanceProperties: {
+            machineType: "n2-standard-2",
+            minCpuPlatform: "Intel Cascade Lake",
+        },
+    },
+    zone: "us-central1-a",
+});
+```
+
+> This content is derived from https://github.com/terraform-providers/terraform-provider-google/blob/master/website/docs/r/compute_reservation.html.markdown.
 
 
 

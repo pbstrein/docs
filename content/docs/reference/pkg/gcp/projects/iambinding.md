@@ -7,6 +7,99 @@ block_external_search_index: true
 table td p { margin-top: 0; margin-bottom: 0; }
 </style>
 
+Four different resources help you manage your IAM policy for a project. Each of these resources serves a different use case:
+
+* `gcp.projects.IAMPolicy`: Authoritative. Sets the IAM policy for the project and replaces any existing policy already attached.
+* `gcp.projects.IAMBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the project are preserved.
+* `gcp.projects.IAMMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the project are preserved.
+* `gcp.projects.IAMAuditConfig`: Authoritative for a given service. Updates the IAM policy to enable audit logging for the given service.
+
+
+> **Note:** `gcp.projects.IAMPolicy` **cannot** be used in conjunction with `gcp.projects.IAMBinding`, `gcp.projects.IAMMember`, or `gcp.projects.IAMAuditConfig` or they will fight over what your policy should be.
+
+> **Note:** `gcp.projects.IAMBinding` resources **can be** used in conjunction with `gcp.projects.IAMMember` resources **only if** they do not grant privilege to the same role.
+
+## google\_project\_iam\_binding
+
+> **Note:** If `role` is set to `roles/owner` and you don't specify a user or service account you have access to in `members`, you can lock yourself out of your project.
+
+```typescript
+import * as pulumi from "@pulumi/pulumi";
+import * as gcp from "@pulumi/gcp";
+
+const project = new gcp.projects.IAMBinding("project", {
+    members: ["user:jane@example.com"],
+    project: "your-project-id",
+    role: "roles/editor",
+});
+```
+
+With IAM Conditions:
+
+```typescript
+import * as pulumi from "@pulumi/pulumi";
+import * as gcp from "@pulumi/gcp";
+
+const project = new gcp.projects.IAMBinding("project", {
+    condition: {
+        description: "Expiring at midnight of 2019-12-31",
+        expression: "request.time < timestamp(\"2020-01-01T00:00:00Z\")",
+        title: "expires_after_2019_12_31",
+    },
+    members: ["user:jane@example.com"],
+    project: "your-project-id",
+    role: "roles/editor",
+});
+```
+
+## google\_project\_iam\_member
+
+```typescript
+import * as pulumi from "@pulumi/pulumi";
+import * as gcp from "@pulumi/gcp";
+
+const project = new gcp.projects.IAMMember("project", {
+    member: "user:jane@example.com",
+    project: "your-project-id",
+    role: "roles/editor",
+});
+```
+
+With IAM Conditions:
+
+```typescript
+import * as pulumi from "@pulumi/pulumi";
+import * as gcp from "@pulumi/gcp";
+
+const project = new gcp.projects.IAMMember("project", {
+    condition: {
+        description: "Expiring at midnight of 2019-12-31",
+        expression: "request.time < timestamp(\"2020-01-01T00:00:00Z\")",
+        title: "expires_after_2019_12_31",
+    },
+    member: "user:jane@example.com",
+    project: "your-project-id",
+    role: "roles/editor",
+});
+```
+
+## google\_project\_iam\_audit\_config
+
+```typescript
+import * as pulumi from "@pulumi/pulumi";
+import * as gcp from "@pulumi/gcp";
+
+const project = new gcp.projects.IAMAuditConfig("project", {
+    auditLogConfigs: [{
+        exemptedMembers: ["user:joebloggs@hashicorp.com"],
+        logType: "DATA_READ",
+    }],
+    project: "your-project-id",
+    service: "allServices",
+});
+```
+
+> This content is derived from https://github.com/terraform-providers/terraform-provider-google/blob/master/website/docs/r/google_project_iam.html.markdown.
 
 
 
@@ -81,7 +174,7 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
+An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
 Structure is documented below.
  {{% /md %}}
 
@@ -165,7 +258,7 @@ The role that should be applied. Only one
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
+An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
 Structure is documented below.
  {{% /md %}}
 
@@ -249,7 +342,7 @@ The role that should be applied. Only one
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
+An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
 Structure is documented below.
  {{% /md %}}
 
@@ -333,7 +426,7 @@ The role that should be applied. Only one
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
+An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
 Structure is documented below.
  {{% /md %}}
 
@@ -429,7 +522,7 @@ The following output properties are available:
                 
                 <code><a href="#iambindingcondition">IAMBinding<wbr>Condition?</a></code>
             </td>
-            <td class="align-top">{{% md %}} ) An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
+            <td class="align-top">{{% md %}} An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
 Structure is documented below.
  {{% /md %}}
 
@@ -518,7 +611,7 @@ will not be inferred from the provider.
                 
                 <code><a href="#iambindingcondition">*IAMBinding<wbr>Condition</a></code>
             </td>
-            <td class="align-top">{{% md %}} ) An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
+            <td class="align-top">{{% md %}} An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
 Structure is documented below.
  {{% /md %}}
 
@@ -607,7 +700,7 @@ will not be inferred from the provider.
                 
                 <code><a href="#iambindingcondition">IAMBinding<wbr>Condition?</a></code>
             </td>
-            <td class="align-top">{{% md %}} ) An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
+            <td class="align-top">{{% md %}} An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
 Structure is documented below.
  {{% /md %}}
 
@@ -696,7 +789,7 @@ will not be inferred from the provider.
                 
                 <code><a href="#iambindingcondition">Dict[IAMBinding<wbr>Condition]</a></code>
             </td>
-            <td class="align-top">{{% md %}} ) An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
+            <td class="align-top">{{% md %}} An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
 Structure is documented below.
  {{% /md %}}
 
@@ -846,7 +939,7 @@ The following state arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
+An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
 Structure is documented below.
  {{% /md %}}
 
@@ -945,7 +1038,7 @@ The role that should be applied. Only one
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
+An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
 Structure is documented below.
  {{% /md %}}
 
@@ -1044,7 +1137,7 @@ The role that should be applied. Only one
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
+An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
 Structure is documented below.
  {{% /md %}}
 
@@ -1143,7 +1236,7 @@ The role that should be applied. Only one
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
+An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
 Structure is documented below.
  {{% /md %}}
 

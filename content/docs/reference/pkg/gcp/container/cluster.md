@@ -161,7 +161,7 @@ Structure is documented below.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-)
+
 Per-cluster configuration of Node Auto-Provisioning with Cluster Autoscaler to
 automatically adjust the size of the cluster and create/delete node pools based
 on the current needs of the cluster&#39;s workload. See the
@@ -199,7 +199,7 @@ only work for routes-based clusters, where `ip_allocation_policy` is not defined
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-).
+.
 Structure is documented below.
  {{% /md %}}
 
@@ -264,7 +264,7 @@ If enabled, all container images will be validated by Google Binary Authorizatio
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-)
+
 Whether Intra-node visibility is enabled for this cluster. This makes same node pod to pod traffic visible for VPC network.
  {{% /md %}}
 
@@ -315,7 +315,7 @@ Defaults to `false`
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) Enable Shielded Nodes features on all nodes in this cluster.  Defaults to `false`.
+Enable Shielded Nodes features on all nodes in this cluster.  Defaults to `false`.
  {{% /md %}}
 
             
@@ -330,7 +330,7 @@ Defaults to `false`
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) Whether to enable Cloud TPU resources in this cluster.
+Whether to enable Cloud TPU resources in this cluster.
 See the [official documentation](https://cloud.google.com/tpu/docs/kubernetes-engine-setup).
  {{% /md %}}
 
@@ -480,7 +480,8 @@ current master version--use the read-only `master_version` field to obtain that.
 If unset, the cluster&#39;s version will be set by GKE to the version of the most recent
 official release (which is not necessarily the latest version).  Most users will find
 the `gcp.container.getEngineVersions` data source useful - it indicates which versions
-are available, and can be use to approximate fuzzy versions. If you intend to specify versions manually,
+are available, and can be use to approximate fuzzy versions in a
+provider-compatible way. If you intend to specify versions manually,
 [the docs](https://cloud.google.com/kubernetes-engine/versioning-and-upgrades#specifying_cluster_version)
 describe the various acceptable formats for this field.
  {{% /md %}}
@@ -629,9 +630,9 @@ The Kubernetes version on the nodes. Must either be unset
 or set to the same value as `min_master_version` on create. Defaults to the default
 version set by GKE which is not necessarily the latest version. This only affects
 nodes in the default node pool. While a fuzzy version can be specified, it&#39;s
-recommended that you specify explicit versions as this provider will see spurious diffs
+recommended that you specify explicit versions as the provider will see spurious diffs
 when fuzzy versions are used. See the `gcp.container.getEngineVersions` data source&#39;s
-`version_prefix` field to approximate fuzzy versions.
+`version_prefix` field to approximate fuzzy versions in a provider-compatible way.
 To update nodes in other node pools, use the `version` attribute on the node pool.
  {{% /md %}}
 
@@ -647,7 +648,7 @@ To update nodes in other node pools, use the `version` attribute on the node poo
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) Configuration for the
+Configuration for the
 [PodSecurityPolicy](https://cloud.google.com/kubernetes-engine/docs/how-to/pod-security-policies) feature.
 Structure is documented below.
  {{% /md %}}
@@ -696,7 +697,7 @@ is not provided, the provider project is used.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) Configuration options for the
+Configuration options for the
 [Release channel](https://cloud.google.com/kubernetes-engine/docs/concepts/release-channels)
 feature, which provide more control over automatic upgrades of your GKE clusters. Structure is documented below.
  {{% /md %}}
@@ -746,7 +747,7 @@ The GCE resource labels (a map of key/value pairs) to be applied to the cluster.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) Configuration for the
+Configuration for the
 [ResourceUsageExportConfig](https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-usage-metering) feature.
 Structure is documented below.
  {{% /md %}}
@@ -779,7 +780,7 @@ subnetwork in which the cluster&#39;s instances are launched.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-)
+
 Vertical Pod Autoscaling automatically adjusts the resources of pods controlled by it.
 Structure is documented below.
  {{% /md %}}
@@ -796,7 +797,7 @@ Structure is documented below.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-)
+
 Workload Identity allows Kubernetes service accounts to act as a user-managed
 [Google IAM Service Account](https://cloud.google.com/iam/docs/service-accounts#user-managed_service_accounts).
 Structure is documented below.
@@ -867,7 +868,7 @@ Structure is documented below.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-)
+
 Per-cluster configuration of Node Auto-Provisioning with Cluster Autoscaler to
 automatically adjust the size of the cluster and create/delete node pools based
 on the current needs of the cluster&#39;s workload. See the
@@ -905,7 +906,7 @@ only work for routes-based clusters, where `ip_allocation_policy` is not defined
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-).
+.
 Structure is documented below.
  {{% /md %}}
 
@@ -970,7 +971,7 @@ If enabled, all container images will be validated by Google Binary Authorizatio
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-)
+
 Whether Intra-node visibility is enabled for this cluster. This makes same node pod to pod traffic visible for VPC network.
  {{% /md %}}
 
@@ -1021,7 +1022,7 @@ Defaults to `false`
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) Enable Shielded Nodes features on all nodes in this cluster.  Defaults to `false`.
+Enable Shielded Nodes features on all nodes in this cluster.  Defaults to `false`.
  {{% /md %}}
 
             
@@ -1036,7 +1037,7 @@ Defaults to `false`
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) Whether to enable Cloud TPU resources in this cluster.
+Whether to enable Cloud TPU resources in this cluster.
 See the [official documentation](https://cloud.google.com/tpu/docs/kubernetes-engine-setup).
  {{% /md %}}
 
@@ -1186,7 +1187,8 @@ current master version--use the read-only `master_version` field to obtain that.
 If unset, the cluster&#39;s version will be set by GKE to the version of the most recent
 official release (which is not necessarily the latest version).  Most users will find
 the `gcp.container.getEngineVersions` data source useful - it indicates which versions
-are available, and can be use to approximate fuzzy versions. If you intend to specify versions manually,
+are available, and can be use to approximate fuzzy versions in a
+provider-compatible way. If you intend to specify versions manually,
 [the docs](https://cloud.google.com/kubernetes-engine/versioning-and-upgrades#specifying_cluster_version)
 describe the various acceptable formats for this field.
  {{% /md %}}
@@ -1335,9 +1337,9 @@ The Kubernetes version on the nodes. Must either be unset
 or set to the same value as `min_master_version` on create. Defaults to the default
 version set by GKE which is not necessarily the latest version. This only affects
 nodes in the default node pool. While a fuzzy version can be specified, it&#39;s
-recommended that you specify explicit versions as this provider will see spurious diffs
+recommended that you specify explicit versions as the provider will see spurious diffs
 when fuzzy versions are used. See the `gcp.container.getEngineVersions` data source&#39;s
-`version_prefix` field to approximate fuzzy versions.
+`version_prefix` field to approximate fuzzy versions in a provider-compatible way.
 To update nodes in other node pools, use the `version` attribute on the node pool.
  {{% /md %}}
 
@@ -1353,7 +1355,7 @@ To update nodes in other node pools, use the `version` attribute on the node poo
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) Configuration for the
+Configuration for the
 [PodSecurityPolicy](https://cloud.google.com/kubernetes-engine/docs/how-to/pod-security-policies) feature.
 Structure is documented below.
  {{% /md %}}
@@ -1402,7 +1404,7 @@ is not provided, the provider project is used.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) Configuration options for the
+Configuration options for the
 [Release channel](https://cloud.google.com/kubernetes-engine/docs/concepts/release-channels)
 feature, which provide more control over automatic upgrades of your GKE clusters. Structure is documented below.
  {{% /md %}}
@@ -1452,7 +1454,7 @@ The GCE resource labels (a map of key/value pairs) to be applied to the cluster.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) Configuration for the
+Configuration for the
 [ResourceUsageExportConfig](https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-usage-metering) feature.
 Structure is documented below.
  {{% /md %}}
@@ -1485,7 +1487,7 @@ subnetwork in which the cluster&#39;s instances are launched.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-)
+
 Vertical Pod Autoscaling automatically adjusts the resources of pods controlled by it.
 Structure is documented below.
  {{% /md %}}
@@ -1502,7 +1504,7 @@ Structure is documented below.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-)
+
 Workload Identity allows Kubernetes service accounts to act as a user-managed
 [Google IAM Service Account](https://cloud.google.com/iam/docs/service-accounts#user-managed_service_accounts).
 Structure is documented below.
@@ -1573,7 +1575,7 @@ Structure is documented below.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-)
+
 Per-cluster configuration of Node Auto-Provisioning with Cluster Autoscaler to
 automatically adjust the size of the cluster and create/delete node pools based
 on the current needs of the cluster&#39;s workload. See the
@@ -1611,7 +1613,7 @@ only work for routes-based clusters, where `ip_allocation_policy` is not defined
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-).
+.
 Structure is documented below.
  {{% /md %}}
 
@@ -1676,7 +1678,7 @@ If enabled, all container images will be validated by Google Binary Authorizatio
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-)
+
 Whether Intra-node visibility is enabled for this cluster. This makes same node pod to pod traffic visible for VPC network.
  {{% /md %}}
 
@@ -1727,7 +1729,7 @@ Defaults to `false`
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) Enable Shielded Nodes features on all nodes in this cluster.  Defaults to `false`.
+Enable Shielded Nodes features on all nodes in this cluster.  Defaults to `false`.
  {{% /md %}}
 
             
@@ -1742,7 +1744,7 @@ Defaults to `false`
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) Whether to enable Cloud TPU resources in this cluster.
+Whether to enable Cloud TPU resources in this cluster.
 See the [official documentation](https://cloud.google.com/tpu/docs/kubernetes-engine-setup).
  {{% /md %}}
 
@@ -1892,7 +1894,8 @@ current master version--use the read-only `master_version` field to obtain that.
 If unset, the cluster&#39;s version will be set by GKE to the version of the most recent
 official release (which is not necessarily the latest version).  Most users will find
 the `gcp.container.getEngineVersions` data source useful - it indicates which versions
-are available, and can be use to approximate fuzzy versions. If you intend to specify versions manually,
+are available, and can be use to approximate fuzzy versions in a
+provider-compatible way. If you intend to specify versions manually,
 [the docs](https://cloud.google.com/kubernetes-engine/versioning-and-upgrades#specifying_cluster_version)
 describe the various acceptable formats for this field.
  {{% /md %}}
@@ -2041,9 +2044,9 @@ The Kubernetes version on the nodes. Must either be unset
 or set to the same value as `min_master_version` on create. Defaults to the default
 version set by GKE which is not necessarily the latest version. This only affects
 nodes in the default node pool. While a fuzzy version can be specified, it&#39;s
-recommended that you specify explicit versions as this provider will see spurious diffs
+recommended that you specify explicit versions as the provider will see spurious diffs
 when fuzzy versions are used. See the `gcp.container.getEngineVersions` data source&#39;s
-`version_prefix` field to approximate fuzzy versions.
+`version_prefix` field to approximate fuzzy versions in a provider-compatible way.
 To update nodes in other node pools, use the `version` attribute on the node pool.
  {{% /md %}}
 
@@ -2059,7 +2062,7 @@ To update nodes in other node pools, use the `version` attribute on the node poo
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) Configuration for the
+Configuration for the
 [PodSecurityPolicy](https://cloud.google.com/kubernetes-engine/docs/how-to/pod-security-policies) feature.
 Structure is documented below.
  {{% /md %}}
@@ -2108,7 +2111,7 @@ is not provided, the provider project is used.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) Configuration options for the
+Configuration options for the
 [Release channel](https://cloud.google.com/kubernetes-engine/docs/concepts/release-channels)
 feature, which provide more control over automatic upgrades of your GKE clusters. Structure is documented below.
  {{% /md %}}
@@ -2158,7 +2161,7 @@ The GCE resource labels (a map of key/value pairs) to be applied to the cluster.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) Configuration for the
+Configuration for the
 [ResourceUsageExportConfig](https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-usage-metering) feature.
 Structure is documented below.
  {{% /md %}}
@@ -2191,7 +2194,7 @@ subnetwork in which the cluster&#39;s instances are launched.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-)
+
 Vertical Pod Autoscaling automatically adjusts the resources of pods controlled by it.
 Structure is documented below.
  {{% /md %}}
@@ -2208,7 +2211,7 @@ Structure is documented below.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-)
+
 Workload Identity allows Kubernetes service accounts to act as a user-managed
 [Google IAM Service Account](https://cloud.google.com/iam/docs/service-accounts#user-managed_service_accounts).
 Structure is documented below.
@@ -2279,7 +2282,7 @@ Structure is documented below.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-)
+
 Per-cluster configuration of Node Auto-Provisioning with Cluster Autoscaler to
 automatically adjust the size of the cluster and create/delete node pools based
 on the current needs of the cluster&#39;s workload. See the
@@ -2317,7 +2320,7 @@ only work for routes-based clusters, where `ip_allocation_policy` is not defined
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-).
+.
 Structure is documented below.
  {{% /md %}}
 
@@ -2382,7 +2385,7 @@ If enabled, all container images will be validated by Google Binary Authorizatio
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-)
+
 Whether Intra-node visibility is enabled for this cluster. This makes same node pod to pod traffic visible for VPC network.
  {{% /md %}}
 
@@ -2433,7 +2436,7 @@ Defaults to `false`
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) Enable Shielded Nodes features on all nodes in this cluster.  Defaults to `false`.
+Enable Shielded Nodes features on all nodes in this cluster.  Defaults to `false`.
  {{% /md %}}
 
             
@@ -2448,7 +2451,7 @@ Defaults to `false`
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) Whether to enable Cloud TPU resources in this cluster.
+Whether to enable Cloud TPU resources in this cluster.
 See the [official documentation](https://cloud.google.com/tpu/docs/kubernetes-engine-setup).
  {{% /md %}}
 
@@ -2598,7 +2601,8 @@ current master version--use the read-only `master_version` field to obtain that.
 If unset, the cluster&#39;s version will be set by GKE to the version of the most recent
 official release (which is not necessarily the latest version).  Most users will find
 the `gcp.container.getEngineVersions` data source useful - it indicates which versions
-are available, and can be use to approximate fuzzy versions. If you intend to specify versions manually,
+are available, and can be use to approximate fuzzy versions in a
+provider-compatible way. If you intend to specify versions manually,
 [the docs](https://cloud.google.com/kubernetes-engine/versioning-and-upgrades#specifying_cluster_version)
 describe the various acceptable formats for this field.
  {{% /md %}}
@@ -2747,9 +2751,9 @@ The Kubernetes version on the nodes. Must either be unset
 or set to the same value as `min_master_version` on create. Defaults to the default
 version set by GKE which is not necessarily the latest version. This only affects
 nodes in the default node pool. While a fuzzy version can be specified, it&#39;s
-recommended that you specify explicit versions as this provider will see spurious diffs
+recommended that you specify explicit versions as the provider will see spurious diffs
 when fuzzy versions are used. See the `gcp.container.getEngineVersions` data source&#39;s
-`version_prefix` field to approximate fuzzy versions.
+`version_prefix` field to approximate fuzzy versions in a provider-compatible way.
 To update nodes in other node pools, use the `version` attribute on the node pool.
  {{% /md %}}
 
@@ -2765,7 +2769,7 @@ To update nodes in other node pools, use the `version` attribute on the node poo
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) Configuration for the
+Configuration for the
 [PodSecurityPolicy](https://cloud.google.com/kubernetes-engine/docs/how-to/pod-security-policies) feature.
 Structure is documented below.
  {{% /md %}}
@@ -2814,7 +2818,7 @@ is not provided, the provider project is used.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) Configuration options for the
+Configuration options for the
 [Release channel](https://cloud.google.com/kubernetes-engine/docs/concepts/release-channels)
 feature, which provide more control over automatic upgrades of your GKE clusters. Structure is documented below.
  {{% /md %}}
@@ -2864,7 +2868,7 @@ The GCE resource labels (a map of key/value pairs) to be applied to the cluster.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) Configuration for the
+Configuration for the
 [ResourceUsageExportConfig](https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-usage-metering) feature.
 Structure is documented below.
  {{% /md %}}
@@ -2897,7 +2901,7 @@ subnetwork in which the cluster&#39;s instances are launched.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-)
+
 Vertical Pod Autoscaling automatically adjusts the resources of pods controlled by it.
 Structure is documented below.
  {{% /md %}}
@@ -2914,7 +2918,7 @@ Structure is documented below.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-)
+
 Workload Identity allows Kubernetes service accounts to act as a user-managed
 [Google IAM Service Account](https://cloud.google.com/iam/docs/service-accounts#user-managed_service_accounts).
 Structure is documented below.
@@ -2993,7 +2997,7 @@ Structure is documented below.
                 
                 <code><a href="#clusterclusterautoscaling">Cluster<wbr>Cluster<wbr>Autoscaling</a></code>
             </td>
-            <td class="align-top">{{% md %}} )
+            <td class="align-top">{{% md %}} 
 Per-cluster configuration of Node Auto-Provisioning with Cluster Autoscaler to
 automatically adjust the size of the cluster and create/delete node pools based
 on the current needs of the cluster&#39;s workload. See the
@@ -3027,7 +3031,7 @@ only work for routes-based clusters, where `ip_allocation_policy` is not defined
                 
                 <code><a href="#clusterdatabaseencryption">Cluster<wbr>Database<wbr>Encryption</a></code>
             </td>
-            <td class="align-top">{{% md %}} ).
+            <td class="align-top">{{% md %}} .
 Structure is documented below.
  {{% /md %}}
 
@@ -3084,7 +3088,7 @@ If enabled, all container images will be validated by Google Binary Authorizatio
                 
                 <code>bool?</code>
             </td>
-            <td class="align-top">{{% md %}} )
+            <td class="align-top">{{% md %}} 
 Whether Intra-node visibility is enabled for this cluster. This makes same node pod to pod traffic visible for VPC network.
  {{% /md %}}
 
@@ -3129,7 +3133,7 @@ Defaults to `false`
                 
                 <code>bool?</code>
             </td>
-            <td class="align-top">{{% md %}} ) Enable Shielded Nodes features on all nodes in this cluster.  Defaults to `false`.
+            <td class="align-top">{{% md %}} Enable Shielded Nodes features on all nodes in this cluster.  Defaults to `false`.
  {{% /md %}}
 
             
@@ -3142,7 +3146,7 @@ Defaults to `false`
                 
                 <code>bool?</code>
             </td>
-            <td class="align-top">{{% md %}} ) Whether to enable Cloud TPU resources in this cluster.
+            <td class="align-top">{{% md %}} Whether to enable Cloud TPU resources in this cluster.
 See the [official documentation](https://cloud.google.com/tpu/docs/kubernetes-engine-setup).
  {{% /md %}}
 
@@ -3331,7 +3335,8 @@ current master version--use the read-only `master_version` field to obtain that.
 If unset, the cluster&#39;s version will be set by GKE to the version of the most recent
 official release (which is not necessarily the latest version).  Most users will find
 the `gcp.container.getEngineVersions` data source useful - it indicates which versions
-are available, and can be use to approximate fuzzy versions. If you intend to specify versions manually,
+are available, and can be use to approximate fuzzy versions in a
+provider-compatible way. If you intend to specify versions manually,
 [the docs](https://cloud.google.com/kubernetes-engine/versioning-and-upgrades#specifying_cluster_version)
 describe the various acceptable formats for this field.
  {{% /md %}}
@@ -3464,9 +3469,9 @@ gcp.container.NodePool resource instead of this property.
 or set to the same value as `min_master_version` on create. Defaults to the default
 version set by GKE which is not necessarily the latest version. This only affects
 nodes in the default node pool. While a fuzzy version can be specified, it&#39;s
-recommended that you specify explicit versions as this provider will see spurious diffs
+recommended that you specify explicit versions as the provider will see spurious diffs
 when fuzzy versions are used. See the `gcp.container.getEngineVersions` data source&#39;s
-`version_prefix` field to approximate fuzzy versions.
+`version_prefix` field to approximate fuzzy versions in a provider-compatible way.
 To update nodes in other node pools, use the `version` attribute on the node pool.
  {{% /md %}}
 
@@ -3492,7 +3497,7 @@ To update nodes in other node pools, use the `version` attribute on the node poo
                 
                 <code><a href="#clusterpodsecuritypolicyconfig">Cluster<wbr>Pod<wbr>Security<wbr>Policy<wbr>Config?</a></code>
             </td>
-            <td class="align-top">{{% md %}} ) Configuration for the
+            <td class="align-top">{{% md %}} Configuration for the
 [PodSecurityPolicy](https://cloud.google.com/kubernetes-engine/docs/how-to/pod-security-policies) feature.
 Structure is documented below.
  {{% /md %}}
@@ -3535,7 +3540,7 @@ is not provided, the provider project is used.
                 
                 <code><a href="#clusterreleasechannel">Cluster<wbr>Release<wbr>Channel</a></code>
             </td>
-            <td class="align-top">{{% md %}} ) Configuration options for the
+            <td class="align-top">{{% md %}} Configuration options for the
 [Release channel](https://cloud.google.com/kubernetes-engine/docs/concepts/release-channels)
 feature, which provide more control over automatic upgrades of your GKE clusters. Structure is documented below.
  {{% /md %}}
@@ -3579,7 +3584,7 @@ setting `initial_node_count` to at least `1`.
                 
                 <code><a href="#clusterresourceusageexportconfig">Cluster<wbr>Resource<wbr>Usage<wbr>Export<wbr>Config?</a></code>
             </td>
-            <td class="align-top">{{% md %}} ) Configuration for the
+            <td class="align-top">{{% md %}} Configuration for the
 [ResourceUsageExportConfig](https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-usage-metering) feature.
 Structure is documented below.
  {{% /md %}}
@@ -3624,7 +3629,10 @@ subnetwork in which the cluster&#39;s instances are launched.
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} (Optional) The IP address range of the Cloud TPUs in this cluster, in
+[CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+notation (e.g. `1.2.3.4/29`).
+ {{% /md %}}
 
             
             </td>
@@ -3636,7 +3644,7 @@ subnetwork in which the cluster&#39;s instances are launched.
                 
                 <code><a href="#clusterverticalpodautoscaling">Cluster<wbr>Vertical<wbr>Pod<wbr>Autoscaling?</a></code>
             </td>
-            <td class="align-top">{{% md %}} )
+            <td class="align-top">{{% md %}} 
 Vertical Pod Autoscaling automatically adjusts the resources of pods controlled by it.
 Structure is documented below.
  {{% /md %}}
@@ -3651,7 +3659,7 @@ Structure is documented below.
                 
                 <code><a href="#clusterworkloadidentityconfig">Cluster<wbr>Workload<wbr>Identity<wbr>Config?</a></code>
             </td>
-            <td class="align-top">{{% md %}} )
+            <td class="align-top">{{% md %}} 
 Workload Identity allows Kubernetes service accounts to act as a user-managed
 [Google IAM Service Account](https://cloud.google.com/iam/docs/service-accounts#user-managed_service_accounts).
 Structure is documented below.
@@ -3716,7 +3724,7 @@ Structure is documented below.
                 
                 <code><a href="#clusterclusterautoscaling">Cluster<wbr>Cluster<wbr>Autoscaling</a></code>
             </td>
-            <td class="align-top">{{% md %}} )
+            <td class="align-top">{{% md %}} 
 Per-cluster configuration of Node Auto-Provisioning with Cluster Autoscaler to
 automatically adjust the size of the cluster and create/delete node pools based
 on the current needs of the cluster&#39;s workload. See the
@@ -3750,7 +3758,7 @@ only work for routes-based clusters, where `ip_allocation_policy` is not defined
                 
                 <code><a href="#clusterdatabaseencryption">Cluster<wbr>Database<wbr>Encryption</a></code>
             </td>
-            <td class="align-top">{{% md %}} ).
+            <td class="align-top">{{% md %}} .
 Structure is documented below.
  {{% /md %}}
 
@@ -3807,7 +3815,7 @@ If enabled, all container images will be validated by Google Binary Authorizatio
                 
                 <code>*bool</code>
             </td>
-            <td class="align-top">{{% md %}} )
+            <td class="align-top">{{% md %}} 
 Whether Intra-node visibility is enabled for this cluster. This makes same node pod to pod traffic visible for VPC network.
  {{% /md %}}
 
@@ -3852,7 +3860,7 @@ Defaults to `false`
                 
                 <code>*bool</code>
             </td>
-            <td class="align-top">{{% md %}} ) Enable Shielded Nodes features on all nodes in this cluster.  Defaults to `false`.
+            <td class="align-top">{{% md %}} Enable Shielded Nodes features on all nodes in this cluster.  Defaults to `false`.
  {{% /md %}}
 
             
@@ -3865,7 +3873,7 @@ Defaults to `false`
                 
                 <code>*bool</code>
             </td>
-            <td class="align-top">{{% md %}} ) Whether to enable Cloud TPU resources in this cluster.
+            <td class="align-top">{{% md %}} Whether to enable Cloud TPU resources in this cluster.
 See the [official documentation](https://cloud.google.com/tpu/docs/kubernetes-engine-setup).
  {{% /md %}}
 
@@ -4054,7 +4062,8 @@ current master version--use the read-only `master_version` field to obtain that.
 If unset, the cluster&#39;s version will be set by GKE to the version of the most recent
 official release (which is not necessarily the latest version).  Most users will find
 the `gcp.container.getEngineVersions` data source useful - it indicates which versions
-are available, and can be use to approximate fuzzy versions. If you intend to specify versions manually,
+are available, and can be use to approximate fuzzy versions in a
+provider-compatible way. If you intend to specify versions manually,
 [the docs](https://cloud.google.com/kubernetes-engine/versioning-and-upgrades#specifying_cluster_version)
 describe the various acceptable formats for this field.
  {{% /md %}}
@@ -4187,9 +4196,9 @@ gcp.container.NodePool resource instead of this property.
 or set to the same value as `min_master_version` on create. Defaults to the default
 version set by GKE which is not necessarily the latest version. This only affects
 nodes in the default node pool. While a fuzzy version can be specified, it&#39;s
-recommended that you specify explicit versions as this provider will see spurious diffs
+recommended that you specify explicit versions as the provider will see spurious diffs
 when fuzzy versions are used. See the `gcp.container.getEngineVersions` data source&#39;s
-`version_prefix` field to approximate fuzzy versions.
+`version_prefix` field to approximate fuzzy versions in a provider-compatible way.
 To update nodes in other node pools, use the `version` attribute on the node pool.
  {{% /md %}}
 
@@ -4215,7 +4224,7 @@ To update nodes in other node pools, use the `version` attribute on the node poo
                 
                 <code><a href="#clusterpodsecuritypolicyconfig">*Cluster<wbr>Pod<wbr>Security<wbr>Policy<wbr>Config</a></code>
             </td>
-            <td class="align-top">{{% md %}} ) Configuration for the
+            <td class="align-top">{{% md %}} Configuration for the
 [PodSecurityPolicy](https://cloud.google.com/kubernetes-engine/docs/how-to/pod-security-policies) feature.
 Structure is documented below.
  {{% /md %}}
@@ -4258,7 +4267,7 @@ is not provided, the provider project is used.
                 
                 <code><a href="#clusterreleasechannel">Cluster<wbr>Release<wbr>Channel</a></code>
             </td>
-            <td class="align-top">{{% md %}} ) Configuration options for the
+            <td class="align-top">{{% md %}} Configuration options for the
 [Release channel](https://cloud.google.com/kubernetes-engine/docs/concepts/release-channels)
 feature, which provide more control over automatic upgrades of your GKE clusters. Structure is documented below.
  {{% /md %}}
@@ -4302,7 +4311,7 @@ setting `initial_node_count` to at least `1`.
                 
                 <code><a href="#clusterresourceusageexportconfig">*Cluster<wbr>Resource<wbr>Usage<wbr>Export<wbr>Config</a></code>
             </td>
-            <td class="align-top">{{% md %}} ) Configuration for the
+            <td class="align-top">{{% md %}} Configuration for the
 [ResourceUsageExportConfig](https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-usage-metering) feature.
 Structure is documented below.
  {{% /md %}}
@@ -4347,7 +4356,10 @@ subnetwork in which the cluster&#39;s instances are launched.
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} (Optional) The IP address range of the Cloud TPUs in this cluster, in
+[CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+notation (e.g. `1.2.3.4/29`).
+ {{% /md %}}
 
             
             </td>
@@ -4359,7 +4371,7 @@ subnetwork in which the cluster&#39;s instances are launched.
                 
                 <code><a href="#clusterverticalpodautoscaling">*Cluster<wbr>Vertical<wbr>Pod<wbr>Autoscaling</a></code>
             </td>
-            <td class="align-top">{{% md %}} )
+            <td class="align-top">{{% md %}} 
 Vertical Pod Autoscaling automatically adjusts the resources of pods controlled by it.
 Structure is documented below.
  {{% /md %}}
@@ -4374,7 +4386,7 @@ Structure is documented below.
                 
                 <code><a href="#clusterworkloadidentityconfig">*Cluster<wbr>Workload<wbr>Identity<wbr>Config</a></code>
             </td>
-            <td class="align-top">{{% md %}} )
+            <td class="align-top">{{% md %}} 
 Workload Identity allows Kubernetes service accounts to act as a user-managed
 [Google IAM Service Account](https://cloud.google.com/iam/docs/service-accounts#user-managed_service_accounts).
 Structure is documented below.
@@ -4439,7 +4451,7 @@ Structure is documented below.
                 
                 <code><a href="#clusterclusterautoscaling">Cluster<wbr>Cluster<wbr>Autoscaling</a></code>
             </td>
-            <td class="align-top">{{% md %}} )
+            <td class="align-top">{{% md %}} 
 Per-cluster configuration of Node Auto-Provisioning with Cluster Autoscaler to
 automatically adjust the size of the cluster and create/delete node pools based
 on the current needs of the cluster&#39;s workload. See the
@@ -4473,7 +4485,7 @@ only work for routes-based clusters, where `ip_allocation_policy` is not defined
                 
                 <code><a href="#clusterdatabaseencryption">Cluster<wbr>Database<wbr>Encryption</a></code>
             </td>
-            <td class="align-top">{{% md %}} ).
+            <td class="align-top">{{% md %}} .
 Structure is documented below.
  {{% /md %}}
 
@@ -4530,7 +4542,7 @@ If enabled, all container images will be validated by Google Binary Authorizatio
                 
                 <code>boolean?</code>
             </td>
-            <td class="align-top">{{% md %}} )
+            <td class="align-top">{{% md %}} 
 Whether Intra-node visibility is enabled for this cluster. This makes same node pod to pod traffic visible for VPC network.
  {{% /md %}}
 
@@ -4575,7 +4587,7 @@ Defaults to `false`
                 
                 <code>boolean?</code>
             </td>
-            <td class="align-top">{{% md %}} ) Enable Shielded Nodes features on all nodes in this cluster.  Defaults to `false`.
+            <td class="align-top">{{% md %}} Enable Shielded Nodes features on all nodes in this cluster.  Defaults to `false`.
  {{% /md %}}
 
             
@@ -4588,7 +4600,7 @@ Defaults to `false`
                 
                 <code>boolean?</code>
             </td>
-            <td class="align-top">{{% md %}} ) Whether to enable Cloud TPU resources in this cluster.
+            <td class="align-top">{{% md %}} Whether to enable Cloud TPU resources in this cluster.
 See the [official documentation](https://cloud.google.com/tpu/docs/kubernetes-engine-setup).
  {{% /md %}}
 
@@ -4777,7 +4789,8 @@ current master version--use the read-only `master_version` field to obtain that.
 If unset, the cluster&#39;s version will be set by GKE to the version of the most recent
 official release (which is not necessarily the latest version).  Most users will find
 the `gcp.container.getEngineVersions` data source useful - it indicates which versions
-are available, and can be use to approximate fuzzy versions. If you intend to specify versions manually,
+are available, and can be use to approximate fuzzy versions in a
+provider-compatible way. If you intend to specify versions manually,
 [the docs](https://cloud.google.com/kubernetes-engine/versioning-and-upgrades#specifying_cluster_version)
 describe the various acceptable formats for this field.
  {{% /md %}}
@@ -4910,9 +4923,9 @@ gcp.container.NodePool resource instead of this property.
 or set to the same value as `min_master_version` on create. Defaults to the default
 version set by GKE which is not necessarily the latest version. This only affects
 nodes in the default node pool. While a fuzzy version can be specified, it&#39;s
-recommended that you specify explicit versions as this provider will see spurious diffs
+recommended that you specify explicit versions as the provider will see spurious diffs
 when fuzzy versions are used. See the `gcp.container.getEngineVersions` data source&#39;s
-`version_prefix` field to approximate fuzzy versions.
+`version_prefix` field to approximate fuzzy versions in a provider-compatible way.
 To update nodes in other node pools, use the `version` attribute on the node pool.
  {{% /md %}}
 
@@ -4938,7 +4951,7 @@ To update nodes in other node pools, use the `version` attribute on the node poo
                 
                 <code><a href="#clusterpodsecuritypolicyconfig">Cluster<wbr>Pod<wbr>Security<wbr>Policy<wbr>Config?</a></code>
             </td>
-            <td class="align-top">{{% md %}} ) Configuration for the
+            <td class="align-top">{{% md %}} Configuration for the
 [PodSecurityPolicy](https://cloud.google.com/kubernetes-engine/docs/how-to/pod-security-policies) feature.
 Structure is documented below.
  {{% /md %}}
@@ -4981,7 +4994,7 @@ is not provided, the provider project is used.
                 
                 <code><a href="#clusterreleasechannel">Cluster<wbr>Release<wbr>Channel</a></code>
             </td>
-            <td class="align-top">{{% md %}} ) Configuration options for the
+            <td class="align-top">{{% md %}} Configuration options for the
 [Release channel](https://cloud.google.com/kubernetes-engine/docs/concepts/release-channels)
 feature, which provide more control over automatic upgrades of your GKE clusters. Structure is documented below.
  {{% /md %}}
@@ -5025,7 +5038,7 @@ setting `initial_node_count` to at least `1`.
                 
                 <code><a href="#clusterresourceusageexportconfig">Cluster<wbr>Resource<wbr>Usage<wbr>Export<wbr>Config?</a></code>
             </td>
-            <td class="align-top">{{% md %}} ) Configuration for the
+            <td class="align-top">{{% md %}} Configuration for the
 [ResourceUsageExportConfig](https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-usage-metering) feature.
 Structure is documented below.
  {{% /md %}}
@@ -5070,7 +5083,10 @@ subnetwork in which the cluster&#39;s instances are launched.
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} (Optional) The IP address range of the Cloud TPUs in this cluster, in
+[CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+notation (e.g. `1.2.3.4/29`).
+ {{% /md %}}
 
             
             </td>
@@ -5082,7 +5098,7 @@ subnetwork in which the cluster&#39;s instances are launched.
                 
                 <code><a href="#clusterverticalpodautoscaling">Cluster<wbr>Vertical<wbr>Pod<wbr>Autoscaling?</a></code>
             </td>
-            <td class="align-top">{{% md %}} )
+            <td class="align-top">{{% md %}} 
 Vertical Pod Autoscaling automatically adjusts the resources of pods controlled by it.
 Structure is documented below.
  {{% /md %}}
@@ -5097,7 +5113,7 @@ Structure is documented below.
                 
                 <code><a href="#clusterworkloadidentityconfig">Cluster<wbr>Workload<wbr>Identity<wbr>Config?</a></code>
             </td>
-            <td class="align-top">{{% md %}} )
+            <td class="align-top">{{% md %}} 
 Workload Identity allows Kubernetes service accounts to act as a user-managed
 [Google IAM Service Account](https://cloud.google.com/iam/docs/service-accounts#user-managed_service_accounts).
 Structure is documented below.
@@ -5162,7 +5178,7 @@ Structure is documented below.
                 
                 <code><a href="#clusterclusterautoscaling">Dict[Cluster<wbr>Cluster<wbr>Autoscaling]</a></code>
             </td>
-            <td class="align-top">{{% md %}} )
+            <td class="align-top">{{% md %}} 
 Per-cluster configuration of Node Auto-Provisioning with Cluster Autoscaler to
 automatically adjust the size of the cluster and create/delete node pools based
 on the current needs of the cluster&#39;s workload. See the
@@ -5196,7 +5212,7 @@ only work for routes-based clusters, where `ip_allocation_policy` is not defined
                 
                 <code><a href="#clusterdatabaseencryption">Dict[Cluster<wbr>Database<wbr>Encryption]</a></code>
             </td>
-            <td class="align-top">{{% md %}} ).
+            <td class="align-top">{{% md %}} .
 Structure is documented below.
  {{% /md %}}
 
@@ -5253,7 +5269,7 @@ If enabled, all container images will be validated by Google Binary Authorizatio
                 
                 <code>bool</code>
             </td>
-            <td class="align-top">{{% md %}} )
+            <td class="align-top">{{% md %}} 
 Whether Intra-node visibility is enabled for this cluster. This makes same node pod to pod traffic visible for VPC network.
  {{% /md %}}
 
@@ -5298,7 +5314,7 @@ Defaults to `false`
                 
                 <code>bool</code>
             </td>
-            <td class="align-top">{{% md %}} ) Enable Shielded Nodes features on all nodes in this cluster.  Defaults to `false`.
+            <td class="align-top">{{% md %}} Enable Shielded Nodes features on all nodes in this cluster.  Defaults to `false`.
  {{% /md %}}
 
             
@@ -5311,7 +5327,7 @@ Defaults to `false`
                 
                 <code>bool</code>
             </td>
-            <td class="align-top">{{% md %}} ) Whether to enable Cloud TPU resources in this cluster.
+            <td class="align-top">{{% md %}} Whether to enable Cloud TPU resources in this cluster.
 See the [official documentation](https://cloud.google.com/tpu/docs/kubernetes-engine-setup).
  {{% /md %}}
 
@@ -5500,7 +5516,8 @@ current master version--use the read-only `master_version` field to obtain that.
 If unset, the cluster&#39;s version will be set by GKE to the version of the most recent
 official release (which is not necessarily the latest version).  Most users will find
 the `gcp.container.getEngineVersions` data source useful - it indicates which versions
-are available, and can be use to approximate fuzzy versions. If you intend to specify versions manually,
+are available, and can be use to approximate fuzzy versions in a
+provider-compatible way. If you intend to specify versions manually,
 [the docs](https://cloud.google.com/kubernetes-engine/versioning-and-upgrades#specifying_cluster_version)
 describe the various acceptable formats for this field.
  {{% /md %}}
@@ -5633,9 +5650,9 @@ gcp.container.NodePool resource instead of this property.
 or set to the same value as `min_master_version` on create. Defaults to the default
 version set by GKE which is not necessarily the latest version. This only affects
 nodes in the default node pool. While a fuzzy version can be specified, it&#39;s
-recommended that you specify explicit versions as this provider will see spurious diffs
+recommended that you specify explicit versions as the provider will see spurious diffs
 when fuzzy versions are used. See the `gcp.container.getEngineVersions` data source&#39;s
-`version_prefix` field to approximate fuzzy versions.
+`version_prefix` field to approximate fuzzy versions in a provider-compatible way.
 To update nodes in other node pools, use the `version` attribute on the node pool.
  {{% /md %}}
 
@@ -5661,7 +5678,7 @@ To update nodes in other node pools, use the `version` attribute on the node poo
                 
                 <code><a href="#clusterpodsecuritypolicyconfig">Dict[Cluster<wbr>Pod<wbr>Security<wbr>Policy<wbr>Config]</a></code>
             </td>
-            <td class="align-top">{{% md %}} ) Configuration for the
+            <td class="align-top">{{% md %}} Configuration for the
 [PodSecurityPolicy](https://cloud.google.com/kubernetes-engine/docs/how-to/pod-security-policies) feature.
 Structure is documented below.
  {{% /md %}}
@@ -5704,7 +5721,7 @@ is not provided, the provider project is used.
                 
                 <code><a href="#clusterreleasechannel">Dict[Cluster<wbr>Release<wbr>Channel]</a></code>
             </td>
-            <td class="align-top">{{% md %}} ) Configuration options for the
+            <td class="align-top">{{% md %}} Configuration options for the
 [Release channel](https://cloud.google.com/kubernetes-engine/docs/concepts/release-channels)
 feature, which provide more control over automatic upgrades of your GKE clusters. Structure is documented below.
  {{% /md %}}
@@ -5748,7 +5765,7 @@ setting `initial_node_count` to at least `1`.
                 
                 <code><a href="#clusterresourceusageexportconfig">Dict[Cluster<wbr>Resource<wbr>Usage<wbr>Export<wbr>Config]</a></code>
             </td>
-            <td class="align-top">{{% md %}} ) Configuration for the
+            <td class="align-top">{{% md %}} Configuration for the
 [ResourceUsageExportConfig](https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-usage-metering) feature.
 Structure is documented below.
  {{% /md %}}
@@ -5793,7 +5810,10 @@ subnetwork in which the cluster&#39;s instances are launched.
                 
                 <code>str</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} (Optional) The IP address range of the Cloud TPUs in this cluster, in
+[CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+notation (e.g. `1.2.3.4/29`).
+ {{% /md %}}
 
             
             </td>
@@ -5805,7 +5825,7 @@ subnetwork in which the cluster&#39;s instances are launched.
                 
                 <code><a href="#clusterverticalpodautoscaling">Dict[Cluster<wbr>Vertical<wbr>Pod<wbr>Autoscaling]</a></code>
             </td>
-            <td class="align-top">{{% md %}} )
+            <td class="align-top">{{% md %}} 
 Vertical Pod Autoscaling automatically adjusts the resources of pods controlled by it.
 Structure is documented below.
  {{% /md %}}
@@ -5820,7 +5840,7 @@ Structure is documented below.
                 
                 <code><a href="#clusterworkloadidentityconfig">Dict[Cluster<wbr>Workload<wbr>Identity<wbr>Config]</a></code>
             </td>
-            <td class="align-top">{{% md %}} )
+            <td class="align-top">{{% md %}} 
 Workload Identity allows Kubernetes service accounts to act as a user-managed
 [Google IAM Service Account](https://cloud.google.com/iam/docs/service-accounts#user-managed_service_accounts).
 Structure is documented below.
@@ -5950,7 +5970,7 @@ Structure is documented below.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-)
+
 Per-cluster configuration of Node Auto-Provisioning with Cluster Autoscaler to
 automatically adjust the size of the cluster and create/delete node pools based
 on the current needs of the cluster&#39;s workload. See the
@@ -5988,7 +6008,7 @@ only work for routes-based clusters, where `ip_allocation_policy` is not defined
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-).
+.
 Structure is documented below.
  {{% /md %}}
 
@@ -6053,7 +6073,7 @@ If enabled, all container images will be validated by Google Binary Authorizatio
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-)
+
 Whether Intra-node visibility is enabled for this cluster. This makes same node pod to pod traffic visible for VPC network.
  {{% /md %}}
 
@@ -6104,7 +6124,7 @@ Defaults to `false`
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) Enable Shielded Nodes features on all nodes in this cluster.  Defaults to `false`.
+Enable Shielded Nodes features on all nodes in this cluster.  Defaults to `false`.
  {{% /md %}}
 
             
@@ -6119,7 +6139,7 @@ Defaults to `false`
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) Whether to enable Cloud TPU resources in this cluster.
+Whether to enable Cloud TPU resources in this cluster.
 See the [official documentation](https://cloud.google.com/tpu/docs/kubernetes-engine-setup).
  {{% /md %}}
 
@@ -6332,7 +6352,8 @@ current master version--use the read-only `master_version` field to obtain that.
 If unset, the cluster&#39;s version will be set by GKE to the version of the most recent
 official release (which is not necessarily the latest version).  Most users will find
 the `gcp.container.getEngineVersions` data source useful - it indicates which versions
-are available, and can be use to approximate fuzzy versions. If you intend to specify versions manually,
+are available, and can be use to approximate fuzzy versions in a
+provider-compatible way. If you intend to specify versions manually,
 [the docs](https://cloud.google.com/kubernetes-engine/versioning-and-upgrades#specifying_cluster_version)
 describe the various acceptable formats for this field.
  {{% /md %}}
@@ -6481,9 +6502,9 @@ The Kubernetes version on the nodes. Must either be unset
 or set to the same value as `min_master_version` on create. Defaults to the default
 version set by GKE which is not necessarily the latest version. This only affects
 nodes in the default node pool. While a fuzzy version can be specified, it&#39;s
-recommended that you specify explicit versions as this provider will see spurious diffs
+recommended that you specify explicit versions as the provider will see spurious diffs
 when fuzzy versions are used. See the `gcp.container.getEngineVersions` data source&#39;s
-`version_prefix` field to approximate fuzzy versions.
+`version_prefix` field to approximate fuzzy versions in a provider-compatible way.
 To update nodes in other node pools, use the `version` attribute on the node pool.
  {{% /md %}}
 
@@ -6513,7 +6534,7 @@ To update nodes in other node pools, use the `version` attribute on the node poo
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) Configuration for the
+Configuration for the
 [PodSecurityPolicy](https://cloud.google.com/kubernetes-engine/docs/how-to/pod-security-policies) feature.
 Structure is documented below.
  {{% /md %}}
@@ -6562,7 +6583,7 @@ is not provided, the provider project is used.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) Configuration options for the
+Configuration options for the
 [Release channel](https://cloud.google.com/kubernetes-engine/docs/concepts/release-channels)
 feature, which provide more control over automatic upgrades of your GKE clusters. Structure is documented below.
  {{% /md %}}
@@ -6612,7 +6633,7 @@ The GCE resource labels (a map of key/value pairs) to be applied to the cluster.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) Configuration for the
+Configuration for the
 [ResourceUsageExportConfig](https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-usage-metering) feature.
 Structure is documented below.
  {{% /md %}}
@@ -6663,6 +6684,9 @@ subnetwork in which the cluster&#39;s instances are launched.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+(Optional) The IP address range of the Cloud TPUs in this cluster, in
+[CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+notation (e.g. `1.2.3.4/29`).
  {{% /md %}}
 
             
@@ -6677,7 +6701,7 @@ subnetwork in which the cluster&#39;s instances are launched.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-)
+
 Vertical Pod Autoscaling automatically adjusts the resources of pods controlled by it.
 Structure is documented below.
  {{% /md %}}
@@ -6694,7 +6718,7 @@ Structure is documented below.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-)
+
 Workload Identity allows Kubernetes service accounts to act as a user-managed
 [Google IAM Service Account](https://cloud.google.com/iam/docs/service-accounts#user-managed_service_accounts).
 Structure is documented below.
@@ -6765,7 +6789,7 @@ Structure is documented below.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-)
+
 Per-cluster configuration of Node Auto-Provisioning with Cluster Autoscaler to
 automatically adjust the size of the cluster and create/delete node pools based
 on the current needs of the cluster&#39;s workload. See the
@@ -6803,7 +6827,7 @@ only work for routes-based clusters, where `ip_allocation_policy` is not defined
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-).
+.
 Structure is documented below.
  {{% /md %}}
 
@@ -6868,7 +6892,7 @@ If enabled, all container images will be validated by Google Binary Authorizatio
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-)
+
 Whether Intra-node visibility is enabled for this cluster. This makes same node pod to pod traffic visible for VPC network.
  {{% /md %}}
 
@@ -6919,7 +6943,7 @@ Defaults to `false`
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) Enable Shielded Nodes features on all nodes in this cluster.  Defaults to `false`.
+Enable Shielded Nodes features on all nodes in this cluster.  Defaults to `false`.
  {{% /md %}}
 
             
@@ -6934,7 +6958,7 @@ Defaults to `false`
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) Whether to enable Cloud TPU resources in this cluster.
+Whether to enable Cloud TPU resources in this cluster.
 See the [official documentation](https://cloud.google.com/tpu/docs/kubernetes-engine-setup).
  {{% /md %}}
 
@@ -7147,7 +7171,8 @@ current master version--use the read-only `master_version` field to obtain that.
 If unset, the cluster&#39;s version will be set by GKE to the version of the most recent
 official release (which is not necessarily the latest version).  Most users will find
 the `gcp.container.getEngineVersions` data source useful - it indicates which versions
-are available, and can be use to approximate fuzzy versions. If you intend to specify versions manually,
+are available, and can be use to approximate fuzzy versions in a
+provider-compatible way. If you intend to specify versions manually,
 [the docs](https://cloud.google.com/kubernetes-engine/versioning-and-upgrades#specifying_cluster_version)
 describe the various acceptable formats for this field.
  {{% /md %}}
@@ -7296,9 +7321,9 @@ The Kubernetes version on the nodes. Must either be unset
 or set to the same value as `min_master_version` on create. Defaults to the default
 version set by GKE which is not necessarily the latest version. This only affects
 nodes in the default node pool. While a fuzzy version can be specified, it&#39;s
-recommended that you specify explicit versions as this provider will see spurious diffs
+recommended that you specify explicit versions as the provider will see spurious diffs
 when fuzzy versions are used. See the `gcp.container.getEngineVersions` data source&#39;s
-`version_prefix` field to approximate fuzzy versions.
+`version_prefix` field to approximate fuzzy versions in a provider-compatible way.
 To update nodes in other node pools, use the `version` attribute on the node pool.
  {{% /md %}}
 
@@ -7328,7 +7353,7 @@ To update nodes in other node pools, use the `version` attribute on the node poo
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) Configuration for the
+Configuration for the
 [PodSecurityPolicy](https://cloud.google.com/kubernetes-engine/docs/how-to/pod-security-policies) feature.
 Structure is documented below.
  {{% /md %}}
@@ -7377,7 +7402,7 @@ is not provided, the provider project is used.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) Configuration options for the
+Configuration options for the
 [Release channel](https://cloud.google.com/kubernetes-engine/docs/concepts/release-channels)
 feature, which provide more control over automatic upgrades of your GKE clusters. Structure is documented below.
  {{% /md %}}
@@ -7427,7 +7452,7 @@ The GCE resource labels (a map of key/value pairs) to be applied to the cluster.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) Configuration for the
+Configuration for the
 [ResourceUsageExportConfig](https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-usage-metering) feature.
 Structure is documented below.
  {{% /md %}}
@@ -7478,6 +7503,9 @@ subnetwork in which the cluster&#39;s instances are launched.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+(Optional) The IP address range of the Cloud TPUs in this cluster, in
+[CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+notation (e.g. `1.2.3.4/29`).
  {{% /md %}}
 
             
@@ -7492,7 +7520,7 @@ subnetwork in which the cluster&#39;s instances are launched.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-)
+
 Vertical Pod Autoscaling automatically adjusts the resources of pods controlled by it.
 Structure is documented below.
  {{% /md %}}
@@ -7509,7 +7537,7 @@ Structure is documented below.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-)
+
 Workload Identity allows Kubernetes service accounts to act as a user-managed
 [Google IAM Service Account](https://cloud.google.com/iam/docs/service-accounts#user-managed_service_accounts).
 Structure is documented below.
@@ -7580,7 +7608,7 @@ Structure is documented below.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-)
+
 Per-cluster configuration of Node Auto-Provisioning with Cluster Autoscaler to
 automatically adjust the size of the cluster and create/delete node pools based
 on the current needs of the cluster&#39;s workload. See the
@@ -7618,7 +7646,7 @@ only work for routes-based clusters, where `ip_allocation_policy` is not defined
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-).
+.
 Structure is documented below.
  {{% /md %}}
 
@@ -7683,7 +7711,7 @@ If enabled, all container images will be validated by Google Binary Authorizatio
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-)
+
 Whether Intra-node visibility is enabled for this cluster. This makes same node pod to pod traffic visible for VPC network.
  {{% /md %}}
 
@@ -7734,7 +7762,7 @@ Defaults to `false`
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) Enable Shielded Nodes features on all nodes in this cluster.  Defaults to `false`.
+Enable Shielded Nodes features on all nodes in this cluster.  Defaults to `false`.
  {{% /md %}}
 
             
@@ -7749,7 +7777,7 @@ Defaults to `false`
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) Whether to enable Cloud TPU resources in this cluster.
+Whether to enable Cloud TPU resources in this cluster.
 See the [official documentation](https://cloud.google.com/tpu/docs/kubernetes-engine-setup).
  {{% /md %}}
 
@@ -7962,7 +7990,8 @@ current master version--use the read-only `master_version` field to obtain that.
 If unset, the cluster&#39;s version will be set by GKE to the version of the most recent
 official release (which is not necessarily the latest version).  Most users will find
 the `gcp.container.getEngineVersions` data source useful - it indicates which versions
-are available, and can be use to approximate fuzzy versions. If you intend to specify versions manually,
+are available, and can be use to approximate fuzzy versions in a
+provider-compatible way. If you intend to specify versions manually,
 [the docs](https://cloud.google.com/kubernetes-engine/versioning-and-upgrades#specifying_cluster_version)
 describe the various acceptable formats for this field.
  {{% /md %}}
@@ -8111,9 +8140,9 @@ The Kubernetes version on the nodes. Must either be unset
 or set to the same value as `min_master_version` on create. Defaults to the default
 version set by GKE which is not necessarily the latest version. This only affects
 nodes in the default node pool. While a fuzzy version can be specified, it&#39;s
-recommended that you specify explicit versions as this provider will see spurious diffs
+recommended that you specify explicit versions as the provider will see spurious diffs
 when fuzzy versions are used. See the `gcp.container.getEngineVersions` data source&#39;s
-`version_prefix` field to approximate fuzzy versions.
+`version_prefix` field to approximate fuzzy versions in a provider-compatible way.
 To update nodes in other node pools, use the `version` attribute on the node pool.
  {{% /md %}}
 
@@ -8143,7 +8172,7 @@ To update nodes in other node pools, use the `version` attribute on the node poo
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) Configuration for the
+Configuration for the
 [PodSecurityPolicy](https://cloud.google.com/kubernetes-engine/docs/how-to/pod-security-policies) feature.
 Structure is documented below.
  {{% /md %}}
@@ -8192,7 +8221,7 @@ is not provided, the provider project is used.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) Configuration options for the
+Configuration options for the
 [Release channel](https://cloud.google.com/kubernetes-engine/docs/concepts/release-channels)
 feature, which provide more control over automatic upgrades of your GKE clusters. Structure is documented below.
  {{% /md %}}
@@ -8242,7 +8271,7 @@ The GCE resource labels (a map of key/value pairs) to be applied to the cluster.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) Configuration for the
+Configuration for the
 [ResourceUsageExportConfig](https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-usage-metering) feature.
 Structure is documented below.
  {{% /md %}}
@@ -8293,6 +8322,9 @@ subnetwork in which the cluster&#39;s instances are launched.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+(Optional) The IP address range of the Cloud TPUs in this cluster, in
+[CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+notation (e.g. `1.2.3.4/29`).
  {{% /md %}}
 
             
@@ -8307,7 +8339,7 @@ subnetwork in which the cluster&#39;s instances are launched.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-)
+
 Vertical Pod Autoscaling automatically adjusts the resources of pods controlled by it.
 Structure is documented below.
  {{% /md %}}
@@ -8324,7 +8356,7 @@ Structure is documented below.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-)
+
 Workload Identity allows Kubernetes service accounts to act as a user-managed
 [Google IAM Service Account](https://cloud.google.com/iam/docs/service-accounts#user-managed_service_accounts).
 Structure is documented below.
@@ -8395,7 +8427,7 @@ Structure is documented below.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-)
+
 Per-cluster configuration of Node Auto-Provisioning with Cluster Autoscaler to
 automatically adjust the size of the cluster and create/delete node pools based
 on the current needs of the cluster&#39;s workload. See the
@@ -8433,7 +8465,7 @@ only work for routes-based clusters, where `ip_allocation_policy` is not defined
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-).
+.
 Structure is documented below.
  {{% /md %}}
 
@@ -8498,7 +8530,7 @@ If enabled, all container images will be validated by Google Binary Authorizatio
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-)
+
 Whether Intra-node visibility is enabled for this cluster. This makes same node pod to pod traffic visible for VPC network.
  {{% /md %}}
 
@@ -8549,7 +8581,7 @@ Defaults to `false`
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) Enable Shielded Nodes features on all nodes in this cluster.  Defaults to `false`.
+Enable Shielded Nodes features on all nodes in this cluster.  Defaults to `false`.
  {{% /md %}}
 
             
@@ -8564,7 +8596,7 @@ Defaults to `false`
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) Whether to enable Cloud TPU resources in this cluster.
+Whether to enable Cloud TPU resources in this cluster.
 See the [official documentation](https://cloud.google.com/tpu/docs/kubernetes-engine-setup).
  {{% /md %}}
 
@@ -8777,7 +8809,8 @@ current master version--use the read-only `master_version` field to obtain that.
 If unset, the cluster&#39;s version will be set by GKE to the version of the most recent
 official release (which is not necessarily the latest version).  Most users will find
 the `gcp.container.getEngineVersions` data source useful - it indicates which versions
-are available, and can be use to approximate fuzzy versions. If you intend to specify versions manually,
+are available, and can be use to approximate fuzzy versions in a
+provider-compatible way. If you intend to specify versions manually,
 [the docs](https://cloud.google.com/kubernetes-engine/versioning-and-upgrades#specifying_cluster_version)
 describe the various acceptable formats for this field.
  {{% /md %}}
@@ -8926,9 +8959,9 @@ The Kubernetes version on the nodes. Must either be unset
 or set to the same value as `min_master_version` on create. Defaults to the default
 version set by GKE which is not necessarily the latest version. This only affects
 nodes in the default node pool. While a fuzzy version can be specified, it&#39;s
-recommended that you specify explicit versions as this provider will see spurious diffs
+recommended that you specify explicit versions as the provider will see spurious diffs
 when fuzzy versions are used. See the `gcp.container.getEngineVersions` data source&#39;s
-`version_prefix` field to approximate fuzzy versions.
+`version_prefix` field to approximate fuzzy versions in a provider-compatible way.
 To update nodes in other node pools, use the `version` attribute on the node pool.
  {{% /md %}}
 
@@ -8958,7 +8991,7 @@ To update nodes in other node pools, use the `version` attribute on the node poo
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) Configuration for the
+Configuration for the
 [PodSecurityPolicy](https://cloud.google.com/kubernetes-engine/docs/how-to/pod-security-policies) feature.
 Structure is documented below.
  {{% /md %}}
@@ -9007,7 +9040,7 @@ is not provided, the provider project is used.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) Configuration options for the
+Configuration options for the
 [Release channel](https://cloud.google.com/kubernetes-engine/docs/concepts/release-channels)
 feature, which provide more control over automatic upgrades of your GKE clusters. Structure is documented below.
  {{% /md %}}
@@ -9057,7 +9090,7 @@ The GCE resource labels (a map of key/value pairs) to be applied to the cluster.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-) Configuration for the
+Configuration for the
 [ResourceUsageExportConfig](https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-usage-metering) feature.
 Structure is documented below.
  {{% /md %}}
@@ -9108,6 +9141,9 @@ subnetwork in which the cluster&#39;s instances are launched.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+(Optional) The IP address range of the Cloud TPUs in this cluster, in
+[CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+notation (e.g. `1.2.3.4/29`).
  {{% /md %}}
 
             
@@ -9122,7 +9158,7 @@ subnetwork in which the cluster&#39;s instances are launched.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-)
+
 Vertical Pod Autoscaling automatically adjusts the resources of pods controlled by it.
 Structure is documented below.
  {{% /md %}}
@@ -9139,7 +9175,7 @@ Structure is documented below.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-)
+
 Workload Identity allows Kubernetes service accounts to act as a user-managed
 [Google IAM Service Account](https://cloud.google.com/iam/docs/service-accounts#user-managed_service_accounts).
 Structure is documented below.
@@ -9202,6 +9238,20 @@ Structure is documented below.
             <td class="align-top">
                 
                 <code><a href="#clusteraddonsconfigcloudrunconfig">Cluster<wbr>Addons<wbr>Config<wbr>Cloudrun<wbr>Config<wbr>Args?</a></code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">Dns<wbr>Cache<wbr>Config</td>
+            <td class="align-top">
+                
+                <code><a href="#clusteraddonsconfigdnscacheconfig">Cluster<wbr>Addons<wbr>Config<wbr>Dns<wbr>Cache<wbr>Config<wbr>Args?</a></code>
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
@@ -9302,6 +9352,20 @@ Structure is documented below.
         </tr>
     
         <tr>
+            <td class="align-top">Dns<wbr>Cache<wbr>Config</td>
+            <td class="align-top">
+                
+                <code><a href="#clusteraddonsconfigdnscacheconfig">*Cluster<wbr>Addons<wbr>Config<wbr>Dns<wbr>Cache<wbr>Config</a></code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
             <td class="align-top">Horizontal<wbr>Pod<wbr>Autoscaling</td>
             <td class="align-top">
                 
@@ -9392,6 +9456,20 @@ Structure is documented below.
         </tr>
     
         <tr>
+            <td class="align-top">dns<wbr>Cache<wbr>Config</td>
+            <td class="align-top">
+                
+                <code><a href="#clusteraddonsconfigdnscacheconfig">Cluster<wbr>Addons<wbr>Config<wbr>Dns<wbr>Cache<wbr>Config?</a></code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
             <td class="align-top">horizontal<wbr>Pod<wbr>Autoscaling</td>
             <td class="align-top">
                 
@@ -9472,6 +9550,20 @@ Structure is documented below.
             <td class="align-top">
                 
                 <code><a href="#clusteraddonsconfigcloudrunconfig">Dict[Cluster<wbr>Addons<wbr>Config<wbr>Cloudrun<wbr>Config]</a></code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Optional)
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">dns<wbr>Cache<wbr>Config</td>
+            <td class="align-top">
+                
+                <code><a href="#clusteraddonsconfigdnscacheconfig">Dict[Cluster<wbr>Addons<wbr>Config<wbr>Dns<wbr>Cache<wbr>Config]</a></code>
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
@@ -9682,6 +9774,163 @@ Structure is documented below.
     
         <tr>
             <td class="align-top">disabled</td>
+            <td class="align-top">
+                
+                <code>bool</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Required)
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+    </tbody>
+</table>
+
+
+{{% /lang %}}
+
+
+
+
+
+#### ClusterAddonsConfigDnsCacheConfig
+{{% lang nodejs %}}
+> See the <a href="/docs/reference/pkg/nodejs/pulumi/gcp/types/input/#ClusterAddonsConfigDnsCacheConfig">input</a> and <a href="/docs/reference/pkg/nodejs/pulumi/gcp/types/output/#ClusterAddonsConfigDnsCacheConfig">output</a> API doc for this type.
+{{% /lang %}}
+
+{{% lang go %}}
+> See the <a href="https://pkg.go.dev/github.com/pulumi/pulumi-gcp/sdk/go/gcp/container?tab=doc#ClusterAddonsConfigDnsCacheConfigArgs">input</a> and <a href="https://pkg.go.dev/github.com/pulumi/pulumi-gcp/sdk/go/gcp/container?tab=doc#ClusterAddonsConfigDnsCacheConfigOutput">output</a> API doc for this type.
+{{% /lang %}}
+
+{{% lang csharp %}}
+> See the <a href="/docs/reference/pkg/dotnet/Pulumi.Gcp/Pulumi.Gcp.Container.ClusterAddonsConfigDnsCacheConfigArgs.html">input</a> and <a href="/docs/reference/pkg/dotnet/Pulumi.Gcp/Pulumi.Gcp.Container.ClusterAddonsConfigDnsCacheConfig.html">output</a> API doc for this type.
+{{% /lang %}}
+
+
+
+{{< langchoose csharp nojavascript >}}
+
+
+{{% lang csharp %}}
+
+
+<table class="ml-6">
+    <thead>
+        <tr>
+            <th>Argument</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+    
+        <tr>
+            <td class="align-top">Enabled</td>
+            <td class="align-top">
+                
+                <code>bool</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Required)
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+    </tbody>
+</table>
+
+
+{{% /lang %}}
+
+
+{{% lang go %}}
+
+
+<table class="ml-6">
+    <thead>
+        <tr>
+            <th>Argument</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+    
+        <tr>
+            <td class="align-top">Enabled</td>
+            <td class="align-top">
+                
+                <code>bool</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Required)
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+    </tbody>
+</table>
+
+
+{{% /lang %}}
+
+
+{{% lang nodejs %}}
+
+
+<table class="ml-6">
+    <thead>
+        <tr>
+            <th>Argument</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+    
+        <tr>
+            <td class="align-top">enabled</td>
+            <td class="align-top">
+                
+                <code>boolean</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Required)
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+    </tbody>
+</table>
+
+
+{{% /lang %}}
+
+
+{{% lang python %}}
+
+
+<table class="ml-6">
+    <thead>
+        <tr>
+            <th>Argument</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+    
+        <tr>
+            <td class="align-top">enabled</td>
             <td class="align-top">
                 
                 <code>bool</code>

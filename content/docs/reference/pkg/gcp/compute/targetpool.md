@@ -153,8 +153,8 @@ legacy `gcp.compute.HttpHealthCheck` is supported.
  (Optional)
 List of instances in the pool. They can be given as
 URLs, or in the form of &#34;zone/name&#34;. Note that the instances need not exist
-at the time of target pool creation, so there is no need to use
-interpolators to create a dependency on the instances from the
+at the time of target pool creation, so there is no need to use the
+interpolation to create a dependency on the instances from the
 target pool.
  {{% /md %}}
 
@@ -320,8 +320,8 @@ legacy `gcp.compute.HttpHealthCheck` is supported.
  (Optional)
 List of instances in the pool. They can be given as
 URLs, or in the form of &#34;zone/name&#34;. Note that the instances need not exist
-at the time of target pool creation, so there is no need to use
-interpolators to create a dependency on the instances from the
+at the time of target pool creation, so there is no need to use the
+interpolation to create a dependency on the instances from the
 target pool.
  {{% /md %}}
 
@@ -487,8 +487,8 @@ legacy `gcp.compute.HttpHealthCheck` is supported.
  (Optional)
 List of instances in the pool. They can be given as
 URLs, or in the form of &#34;zone/name&#34;. Note that the instances need not exist
-at the time of target pool creation, so there is no need to use
-interpolators to create a dependency on the instances from the
+at the time of target pool creation, so there is no need to use the
+interpolation to create a dependency on the instances from the
 target pool.
  {{% /md %}}
 
@@ -654,8 +654,8 @@ legacy `gcp.compute.HttpHealthCheck` is supported.
  (Optional)
 List of instances in the pool. They can be given as
 URLs, or in the form of &#34;zone/name&#34;. Note that the instances need not exist
-at the time of target pool creation, so there is no need to use
-interpolators to create a dependency on the instances from the
+at the time of target pool creation, so there is no need to use the
+interpolation to create a dependency on the instances from the
 target pool.
  {{% /md %}}
 
@@ -825,8 +825,8 @@ legacy `gcp.compute.HttpHealthCheck` is supported.
             </td>
             <td class="align-top">{{% md %}} List of instances in the pool. They can be given as
 URLs, or in the form of &#34;zone/name&#34;. Note that the instances need not exist
-at the time of target pool creation, so there is no need to use
-interpolators to create a dependency on the instances from the
+at the time of target pool creation, so there is no need to use the
+interpolation to create a dependency on the instances from the
 target pool.
  {{% /md %}}
 
@@ -987,8 +987,8 @@ legacy `gcp.compute.HttpHealthCheck` is supported.
             </td>
             <td class="align-top">{{% md %}} List of instances in the pool. They can be given as
 URLs, or in the form of &#34;zone/name&#34;. Note that the instances need not exist
-at the time of target pool creation, so there is no need to use
-interpolators to create a dependency on the instances from the
+at the time of target pool creation, so there is no need to use the
+interpolation to create a dependency on the instances from the
 target pool.
  {{% /md %}}
 
@@ -1149,8 +1149,8 @@ legacy `gcp.compute.HttpHealthCheck` is supported.
             </td>
             <td class="align-top">{{% md %}} List of instances in the pool. They can be given as
 URLs, or in the form of &#34;zone/name&#34;. Note that the instances need not exist
-at the time of target pool creation, so there is no need to use
-interpolators to create a dependency on the instances from the
+at the time of target pool creation, so there is no need to use the
+interpolation to create a dependency on the instances from the
 target pool.
  {{% /md %}}
 
@@ -1311,8 +1311,8 @@ legacy `gcp.compute.HttpHealthCheck` is supported.
             </td>
             <td class="align-top">{{% md %}} List of instances in the pool. They can be given as
 URLs, or in the form of &#34;zone/name&#34;. Note that the instances need not exist
-at the time of target pool creation, so there is no need to use
-interpolators to create a dependency on the instances from the
+at the time of target pool creation, so there is no need to use the
+interpolation to create a dependency on the instances from the
 target pool.
  {{% /md %}}
 
@@ -1542,8 +1542,8 @@ legacy `gcp.compute.HttpHealthCheck` is supported.
  (Optional)
 List of instances in the pool. They can be given as
 URLs, or in the form of &#34;zone/name&#34;. Note that the instances need not exist
-at the time of target pool creation, so there is no need to use
-interpolators to create a dependency on the instances from the
+at the time of target pool creation, so there is no need to use the
+interpolation to create a dependency on the instances from the
 target pool.
  {{% /md %}}
 
@@ -1724,8 +1724,8 @@ legacy `gcp.compute.HttpHealthCheck` is supported.
  (Optional)
 List of instances in the pool. They can be given as
 URLs, or in the form of &#34;zone/name&#34;. Note that the instances need not exist
-at the time of target pool creation, so there is no need to use
-interpolators to create a dependency on the instances from the
+at the time of target pool creation, so there is no need to use the
+interpolation to create a dependency on the instances from the
 target pool.
  {{% /md %}}
 
@@ -1906,8 +1906,8 @@ legacy `gcp.compute.HttpHealthCheck` is supported.
  (Optional)
 List of instances in the pool. They can be given as
 URLs, or in the form of &#34;zone/name&#34;. Note that the instances need not exist
-at the time of target pool creation, so there is no need to use
-interpolators to create a dependency on the instances from the
+at the time of target pool creation, so there is no need to use the
+interpolation to create a dependency on the instances from the
 target pool.
  {{% /md %}}
 
@@ -2088,8 +2088,8 @@ legacy `gcp.compute.HttpHealthCheck` is supported.
  (Optional)
 List of instances in the pool. They can be given as
 URLs, or in the form of &#34;zone/name&#34;. Note that the instances need not exist
-at the time of target pool creation, so there is no need to use
-interpolators to create a dependency on the instances from the
+at the time of target pool creation, so there is no need to use the
+interpolation to create a dependency on the instances from the
 target pool.
  {{% /md %}}
 

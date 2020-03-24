@@ -264,7 +264,7 @@ Specifies a minimum CPU platform. Applicable values are the friendly names of CP
             <td class="align-top">{{% md %}} 
  (Optional)
 The name of the instance template. If you leave
-this blank, this provider will auto-generate a unique name.
+this blank, the provider will auto-generate a unique name.
  {{% /md %}}
 
             
@@ -607,7 +607,7 @@ Specifies a minimum CPU platform. Applicable values are the friendly names of CP
             <td class="align-top">{{% md %}} 
  (Optional)
 The name of the instance template. If you leave
-this blank, this provider will auto-generate a unique name.
+this blank, the provider will auto-generate a unique name.
  {{% /md %}}
 
             
@@ -950,7 +950,7 @@ Specifies a minimum CPU platform. Applicable values are the friendly names of CP
             <td class="align-top">{{% md %}} 
  (Optional)
 The name of the instance template. If you leave
-this blank, this provider will auto-generate a unique name.
+this blank, the provider will auto-generate a unique name.
  {{% /md %}}
 
             
@@ -1293,7 +1293,7 @@ Specifies a minimum CPU platform. Applicable values are the friendly names of CP
             <td class="align-top">{{% md %}} 
  (Optional)
 The name of the instance template. If you leave
-this blank, this provider will auto-generate a unique name.
+this blank, the provider will auto-generate a unique name.
  {{% /md %}}
 
             
@@ -1639,7 +1639,7 @@ thus the two mechanisms are not allowed to be used simultaneously.
                 <code>string</code>
             </td>
             <td class="align-top">{{% md %}} The name of the instance template. If you leave
-this blank, this provider will auto-generate a unique name.
+this blank, the provider will auto-generate a unique name.
  {{% /md %}}
 
             
@@ -1981,7 +1981,7 @@ thus the two mechanisms are not allowed to be used simultaneously.
                 <code>string</code>
             </td>
             <td class="align-top">{{% md %}} The name of the instance template. If you leave
-this blank, this provider will auto-generate a unique name.
+this blank, the provider will auto-generate a unique name.
  {{% /md %}}
 
             
@@ -2323,7 +2323,7 @@ thus the two mechanisms are not allowed to be used simultaneously.
                 <code>string</code>
             </td>
             <td class="align-top">{{% md %}} The name of the instance template. If you leave
-this blank, this provider will auto-generate a unique name.
+this blank, the provider will auto-generate a unique name.
  {{% /md %}}
 
             
@@ -2665,7 +2665,7 @@ thus the two mechanisms are not allowed to be used simultaneously.
                 <code>str</code>
             </td>
             <td class="align-top">{{% md %}} The name of the instance template. If you leave
-this blank, this provider will auto-generate a unique name.
+this blank, the provider will auto-generate a unique name.
  {{% /md %}}
 
             
@@ -3092,7 +3092,7 @@ Specifies a minimum CPU platform. Applicable values are the friendly names of CP
             <td class="align-top">{{% md %}} 
  (Optional)
 The name of the instance template. If you leave
-this blank, this provider will auto-generate a unique name.
+this blank, the provider will auto-generate a unique name.
  {{% /md %}}
 
             
@@ -3480,7 +3480,7 @@ Specifies a minimum CPU platform. Applicable values are the friendly names of CP
             <td class="align-top">{{% md %}} 
  (Optional)
 The name of the instance template. If you leave
-this blank, this provider will auto-generate a unique name.
+this blank, the provider will auto-generate a unique name.
  {{% /md %}}
 
             
@@ -3868,7 +3868,7 @@ Specifies a minimum CPU platform. Applicable values are the friendly names of CP
             <td class="align-top">{{% md %}} 
  (Optional)
 The name of the instance template. If you leave
-this blank, this provider will auto-generate a unique name.
+this blank, the provider will auto-generate a unique name.
  {{% /md %}}
 
             
@@ -4256,7 +4256,7 @@ Specifies a minimum CPU platform. Applicable values are the friendly names of CP
             <td class="align-top">{{% md %}} 
  (Optional)
 The name of the instance template. If you leave
-this blank, this provider will auto-generate a unique name.
+this blank, the provider will auto-generate a unique name.
  {{% /md %}}
 
             
@@ -5716,7 +5716,7 @@ created from this template,
             <td class="align-top">{{% md %}} 
  (Optional)
 The name of the instance template. If you leave
-this blank, this provider will auto-generate a unique name.
+this blank, the provider will auto-generate a unique name.
  {{% /md %}}
 
             
@@ -5836,7 +5836,7 @@ this blank, this provider will auto-generate a unique name.
             <td class="align-top">{{% md %}} 
  (Optional)
 The name of the instance template. If you leave
-this blank, this provider will auto-generate a unique name.
+this blank, the provider will auto-generate a unique name.
  {{% /md %}}
 
             
@@ -5956,7 +5956,7 @@ this blank, this provider will auto-generate a unique name.
             <td class="align-top">{{% md %}} 
  (Optional)
 The name of the instance template. If you leave
-this blank, this provider will auto-generate a unique name.
+this blank, the provider will auto-generate a unique name.
  {{% /md %}}
 
             
@@ -6076,7 +6076,7 @@ this blank, this provider will auto-generate a unique name.
             <td class="align-top">{{% md %}} 
  (Optional)
 The name of the instance template. If you leave
-this blank, this provider will auto-generate a unique name.
+this blank, the provider will auto-generate a unique name.
  {{% /md %}}
 
             

@@ -7,6 +7,17 @@ block_external_search_index: true
 table td p { margin-top: 0; margin-bottom: 0; }
 </style>
 
+A named resource representing the stream of messages from a single,
+specific topic, to be delivered to the subscribing application.
+
+
+To get more information about Subscription, see:
+
+* [API documentation](https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.subscriptions)
+* How-to Guides
+    * [Managing Subscriptions](https://cloud.google.com/pubsub/docs/admin#managing_subscriptions)
+
+> This content is derived from https://github.com/terraform-providers/terraform-provider-google/blob/master/website/docs/r/pubsub_subscription.html.markdown.
 
 
 

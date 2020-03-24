@@ -7,6 +7,18 @@ block_external_search_index: true
 table td p { margin-top: 0; margin-bottom: 0; }
 </style>
 
+A RegionSslCertificate resource, used for HTTPS load balancing. This resource
+provides a mechanism to upload an SSL key and certificate to
+the load balancer to serve secure connections from the user.
+
+
+To get more information about RegionSslCertificate, see:
+
+* [API documentation](https://cloud.google.com/compute/docs/reference/rest/v1/regionSslCertificates)
+* How-to Guides
+    * [Official Documentation](https://cloud.google.com/load-balancing/docs/ssl-certificates)
+
+> This content is derived from https://github.com/terraform-providers/terraform-provider-google/blob/master/website/docs/r/compute_region_ssl_certificate.html.markdown.
 
 
 

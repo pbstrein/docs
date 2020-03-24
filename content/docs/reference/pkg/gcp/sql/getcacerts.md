@@ -7,6 +7,12 @@ block_external_search_index: true
 table td p { margin-top: 0; margin-bottom: 0; }
 </style>
 
+Get all of the trusted Certificate Authorities (CAs) for the specified SQL database instance. For more information see the
+[official documentation](https://cloud.google.com/sql/)
+and
+[API](https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances/listServerCas).
+
+> This content is derived from https://github.com/terraform-providers/terraform-provider-google/blob/master/website/docs/d/datasource_google_sql_ca_certs.html.markdown.
 
 
 
@@ -62,6 +68,7 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+The name or self link of the instance.
  {{% /md %}}
 
             
@@ -76,6 +83,7 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The ID of the project in which the resource belongs. If `project` is not provided, the provider project is used.
  {{% /md %}}
 
             
@@ -110,6 +118,7 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+The name or self link of the instance.
  {{% /md %}}
 
             
@@ -124,6 +133,7 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The ID of the project in which the resource belongs. If `project` is not provided, the provider project is used.
  {{% /md %}}
 
             
@@ -158,6 +168,7 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+The name or self link of the instance.
  {{% /md %}}
 
             
@@ -172,6 +183,7 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The ID of the project in which the resource belongs. If `project` is not provided, the provider project is used.
  {{% /md %}}
 
             
@@ -206,6 +218,7 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+The name or self link of the instance.
  {{% /md %}}
 
             
@@ -220,6 +233,7 @@ The following arguments are supported:
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The ID of the project in which the resource belongs. If `project` is not provided, the provider project is used.
  {{% /md %}}
 
             
@@ -267,7 +281,8 @@ The following output properties are available:
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} SHA1 fingerprint of the currently active CA certificate.
+ {{% /md %}}
 
             
             </td>
@@ -279,7 +294,8 @@ The following output properties are available:
                 
                 <code><a href="#getcacertscert">List&lt;Get<wbr>Ca<wbr>Certs<wbr>Cert&gt;</a></code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} A list of server CA certificates for the instance. Each contains:
+ {{% /md %}}
 
             
             </td>
@@ -348,7 +364,8 @@ The following output properties are available:
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} SHA1 fingerprint of the currently active CA certificate.
+ {{% /md %}}
 
             
             </td>
@@ -360,7 +377,8 @@ The following output properties are available:
                 
                 <code><a href="#getcacertscert">[]Get<wbr>Ca<wbr>Certs<wbr>Cert</a></code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} A list of server CA certificates for the instance. Each contains:
+ {{% /md %}}
 
             
             </td>
@@ -429,7 +447,8 @@ The following output properties are available:
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} SHA1 fingerprint of the currently active CA certificate.
+ {{% /md %}}
 
             
             </td>
@@ -441,7 +460,8 @@ The following output properties are available:
                 
                 <code><a href="#getcacertscert">Get<wbr>Ca<wbr>Certs<wbr>Cert[]</a></code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} A list of server CA certificates for the instance. Each contains:
+ {{% /md %}}
 
             
             </td>
@@ -510,7 +530,8 @@ The following output properties are available:
                 
                 <code>str</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} SHA1 fingerprint of the currently active CA certificate.
+ {{% /md %}}
 
             
             </td>
@@ -522,7 +543,8 @@ The following output properties are available:
                 
                 <code><a href="#getcacertscert">List[Get<wbr>Ca<wbr>Certs<wbr>Cert]</a></code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} A list of server CA certificates for the instance. Each contains:
+ {{% /md %}}
 
             
             </td>
@@ -619,6 +641,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+The CA certificate used to connect to the SQL instance via SSL.
  {{% /md %}}
 
             
@@ -633,6 +656,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+The CN valid for the CA cert.
  {{% /md %}}
 
             
@@ -647,6 +671,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+Creation time of the CA cert.
  {{% /md %}}
 
             
@@ -661,6 +686,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+Expiration time of the CA cert.
  {{% /md %}}
 
             
@@ -675,6 +701,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+SHA1 fingerprint of the CA cert.
  {{% /md %}}
 
             
@@ -709,6 +736,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+The CA certificate used to connect to the SQL instance via SSL.
  {{% /md %}}
 
             
@@ -723,6 +751,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+The CN valid for the CA cert.
  {{% /md %}}
 
             
@@ -737,6 +766,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+Creation time of the CA cert.
  {{% /md %}}
 
             
@@ -751,6 +781,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+Expiration time of the CA cert.
  {{% /md %}}
 
             
@@ -765,6 +796,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+SHA1 fingerprint of the CA cert.
  {{% /md %}}
 
             
@@ -799,6 +831,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+The CA certificate used to connect to the SQL instance via SSL.
  {{% /md %}}
 
             
@@ -813,6 +846,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+The CN valid for the CA cert.
  {{% /md %}}
 
             
@@ -827,6 +861,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+Creation time of the CA cert.
  {{% /md %}}
 
             
@@ -841,6 +876,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+Expiration time of the CA cert.
  {{% /md %}}
 
             
@@ -855,6 +891,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+SHA1 fingerprint of the CA cert.
  {{% /md %}}
 
             
@@ -889,6 +926,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+The CA certificate used to connect to the SQL instance via SSL.
  {{% /md %}}
 
             
@@ -903,6 +941,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+The CN valid for the CA cert.
  {{% /md %}}
 
             
@@ -917,6 +956,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+Creation time of the CA cert.
  {{% /md %}}
 
             
@@ -931,6 +971,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+Expiration time of the CA cert.
  {{% /md %}}
 
             
@@ -945,6 +986,7 @@ The following output properties are available:
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
+SHA1 fingerprint of the CA cert.
  {{% /md %}}
 
             

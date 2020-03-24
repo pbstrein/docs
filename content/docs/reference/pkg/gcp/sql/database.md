@@ -7,6 +7,10 @@ block_external_search_index: true
 table td p { margin-top: 0; margin-bottom: 0; }
 </style>
 
+Represents a SQL database inside the Cloud SQL instance, hosted in
+Google's cloud.
+
+> This content is derived from https://github.com/terraform-providers/terraform-provider-google/blob/master/website/docs/r/sql_database.html.markdown.
 
 
 

@@ -7,6 +7,16 @@ block_external_search_index: true
 table td p { margin-top: 0; margin-bottom: 0; }
 </style>
 
+A policy is a collection of DNS rules applied to one or more Virtual
+Private Cloud resources.
+
+To get more information about Policy, see:
+
+* [API documentation](https://cloud.google.com/dns/docs/reference/v1beta2/policies)
+* How-to Guides
+    * [Using DNS server policies](https://cloud.google.com/dns/zones/#using-dns-server-policies)
+
+> This content is derived from https://github.com/terraform-providers/terraform-provider-google/blob/master/website/docs/r/dns_policy.html.markdown.
 
 
 

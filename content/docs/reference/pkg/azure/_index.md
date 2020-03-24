@@ -35,6 +35,7 @@ A Pulumi package for creating and managing Microsoft Azure cloud resources.
     <li><a href="containerservice/"><span class="symbol module"></span>containerservice</a></li>
     <li><a href="core/"><span class="symbol module"></span>core</a></li>
     <li><a href="cosmosdb/"><span class="symbol module"></span>cosmosdb</a></li>
+    <li><a href="costmanagement/"><span class="symbol module"></span>costmanagement</a></li>
     <li><a href="dashboard/"><span class="symbol module"></span>dashboard</a></li>
     <li><a href="databasemigration/"><span class="symbol module"></span>databasemigration</a></li>
     <li><a href="databricks/"><span class="symbol module"></span>databricks</a></li>
@@ -74,6 +75,7 @@ A Pulumi package for creating and managing Microsoft Azure cloud resources.
     <li><a href="operationalinsights/"><span class="symbol module"></span>operationalinsights</a></li>
     <li><a href="policy/"><span class="symbol module"></span>policy</a></li>
     <li><a href="postgresql/"><span class="symbol module"></span>postgresql</a></li>
+    <li><a href="powerbi/"><span class="symbol module"></span>powerbi</a></li>
     <li><a href="privatedns/"><span class="symbol module"></span>privatedns</a></li>
     <li><a href="privatelink/"><span class="symbol module"></span>privatelink</a></li>
     <li><a href="proximity/"><span class="symbol module"></span>proximity</a></li>

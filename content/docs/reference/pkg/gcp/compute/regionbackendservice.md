@@ -7,6 +7,17 @@ block_external_search_index: true
 table td p { margin-top: 0; margin-bottom: 0; }
 </style>
 
+A Region Backend Service defines a regionally-scoped group of virtual
+machines that will serve traffic for load balancing.
+
+
+To get more information about RegionBackendService, see:
+
+* [API documentation](https://cloud.google.com/compute/docs/reference/latest/regionBackendServices)
+* How-to Guides
+    * [Internal TCP/UDP Load Balancing](https://cloud.google.com/compute/docs/load-balancing/internal/)
+
+> This content is derived from https://github.com/terraform-providers/terraform-provider-google/blob/master/website/docs/r/compute_region_backend_service.html.markdown.
 
 
 

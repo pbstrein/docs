@@ -2997,6 +2997,20 @@ The following output properties are available:
         </tr>
     
         <tr>
+            <td class="align-top">Dns<wbr>Cache<wbr>Configs</td>
+            <td class="align-top">
+                
+                <code><a href="#getclusteraddonsconfigdnscacheconfig">List&lt;Get<wbr>Cluster<wbr>Addons<wbr>Config<wbr>Dns<wbr>Cache<wbr>Config<wbr>Args&gt;</a></code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Required)
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
             <td class="align-top">Horizontal<wbr>Pod<wbr>Autoscalings</td>
             <td class="align-top">
                 
@@ -3091,6 +3105,20 @@ The following output properties are available:
             <td class="align-top">
                 
                 <code><a href="#getclusteraddonsconfigcloudrunconfig">[]Get<wbr>Cluster<wbr>Addons<wbr>Config<wbr>Cloudrun<wbr>Config</a></code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Required)
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">Dns<wbr>Cache<wbr>Configs</td>
+            <td class="align-top">
+                
+                <code><a href="#getclusteraddonsconfigdnscacheconfig">[]Get<wbr>Cluster<wbr>Addons<wbr>Config<wbr>Dns<wbr>Cache<wbr>Config</a></code>
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
@@ -3205,6 +3233,20 @@ The following output properties are available:
         </tr>
     
         <tr>
+            <td class="align-top">dns<wbr>Cache<wbr>Configs</td>
+            <td class="align-top">
+                
+                <code><a href="#getclusteraddonsconfigdnscacheconfig">Get<wbr>Cluster<wbr>Addons<wbr>Config<wbr>Dns<wbr>Cache<wbr>Config[]</a></code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Required)
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
             <td class="align-top">horizontal<wbr>Pod<wbr>Autoscalings</td>
             <td class="align-top">
                 
@@ -3299,6 +3341,20 @@ The following output properties are available:
             <td class="align-top">
                 
                 <code><a href="#getclusteraddonsconfigcloudrunconfig">List[Get<wbr>Cluster<wbr>Addons<wbr>Config<wbr>Cloudrun<wbr>Config]</a></code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Required)
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="align-top">dns<wbr>Cache<wbr>Configs</td>
+            <td class="align-top">
+                
+                <code><a href="#getclusteraddonsconfigdnscacheconfig">List[Get<wbr>Cluster<wbr>Addons<wbr>Config<wbr>Dns<wbr>Cache<wbr>Config]</a></code>
             </td>
             <td class="align-top">{{% md %}} 
  (Required)
@@ -3523,6 +3579,163 @@ The following output properties are available:
     
         <tr>
             <td class="align-top">disabled</td>
+            <td class="align-top">
+                
+                <code>bool</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Required)
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+    </tbody>
+</table>
+
+
+{{% /lang %}}
+
+
+
+
+
+#### GetClusterAddonsConfigDnsCacheConfig
+{{% lang nodejs %}}
+> See the   <a href="/docs/reference/pkg/nodejs/pulumi/gcp/types/output/#GetClusterAddonsConfigDnsCacheConfig">output</a> API doc for this type.
+{{% /lang %}}
+
+{{% lang go %}}
+> See the   <a href="https://pkg.go.dev/github.com/pulumi/pulumi-gcp/sdk/go/gcp/container?tab=doc#GetClusterAddonsConfigDnsCacheConfig">output</a> API doc for this type.
+{{% /lang %}}
+
+{{% lang csharp %}}
+> See the   <a href="/docs/reference/pkg/dotnet/Pulumi.Gcp/Pulumi.Gcp.Container.GetClusterAddonsConfigDnsCacheConfig.html">output</a> API doc for this type.
+{{% /lang %}}
+
+
+
+{{< langchoose csharp nojavascript >}}
+
+
+{{% lang csharp %}}
+
+
+<table class="ml-6">
+    <thead>
+        <tr>
+            <th>Argument</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+    
+        <tr>
+            <td class="align-top">Enabled</td>
+            <td class="align-top">
+                
+                <code>bool</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Required)
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+    </tbody>
+</table>
+
+
+{{% /lang %}}
+
+
+{{% lang go %}}
+
+
+<table class="ml-6">
+    <thead>
+        <tr>
+            <th>Argument</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+    
+        <tr>
+            <td class="align-top">Enabled</td>
+            <td class="align-top">
+                
+                <code>bool</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Required)
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+    </tbody>
+</table>
+
+
+{{% /lang %}}
+
+
+{{% lang nodejs %}}
+
+
+<table class="ml-6">
+    <thead>
+        <tr>
+            <th>Argument</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+    
+        <tr>
+            <td class="align-top">enabled</td>
+            <td class="align-top">
+                
+                <code>boolean</code>
+            </td>
+            <td class="align-top">{{% md %}} 
+ (Required)
+ {{% /md %}}
+
+            
+            </td>
+        </tr>
+    
+    </tbody>
+</table>
+
+
+{{% /lang %}}
+
+
+{{% lang python %}}
+
+
+<table class="ml-6">
+    <thead>
+        <tr>
+            <th>Argument</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+    
+        <tr>
+            <td class="align-top">enabled</td>
             <td class="align-top">
                 
                 <code>bool</code>

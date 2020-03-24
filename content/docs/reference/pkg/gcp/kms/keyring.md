@@ -7,6 +7,33 @@ block_external_search_index: true
 table td p { margin-top: 0; margin-bottom: 0; }
 </style>
 
+A `KeyRing` is a toplevel logical grouping of `CryptoKeys`.
+
+
+> **Note:** KeyRings cannot be deleted from Google Cloud Platform.
+Destroying a provider-managed KeyRing will remove it from state but
+*will not delete the resource on the server.*
+
+
+To get more information about KeyRing, see:
+
+* [API documentation](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings)
+* How-to Guides
+    * [Creating a key ring](https://cloud.google.com/kms/docs/creating-keys#create_a_key_ring)
+
+## Example Usage - Kms Key Ring Basic
+
+
+```typescript
+import * as pulumi from "@pulumi/pulumi";
+import * as gcp from "@pulumi/gcp";
+
+const example_keyring = new gcp.kms.KeyRing("example-keyring", {
+    location: "global",
+});
+```
+
+> This content is derived from https://github.com/terraform-providers/terraform-provider-google/blob/master/website/docs/r/kms_key_ring.html.markdown.
 
 
 

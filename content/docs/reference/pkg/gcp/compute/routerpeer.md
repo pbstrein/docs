@@ -7,6 +7,36 @@ block_external_search_index: true
 table td p { margin-top: 0; margin-bottom: 0; }
 </style>
 
+BGP information that must be configured into the routing stack to
+establish BGP peering. This information must specify the peer ASN
+and either the interface name, IP address, or peer IP address.
+Please refer to RFC4273.
+
+
+To get more information about RouterBgpPeer, see:
+
+* [API documentation](https://cloud.google.com/compute/docs/reference/rest/v1/routers)
+* How-to Guides
+    * [Google Cloud Router](https://cloud.google.com/router/docs/)
+
+## Example Usage - Router Peer Basic
+
+
+```typescript
+import * as pulumi from "@pulumi/pulumi";
+import * as gcp from "@pulumi/gcp";
+
+const peer = new gcp.compute.RouterPeer("peer", {
+    advertisedRoutePriority: 100,
+    interface: "interface-1",
+    peerAsn: 65513,
+    peerIpAddress: "169.254.1.2",
+    region: "us-central1",
+    router: "my-router",
+});
+```
+
+> This content is derived from https://github.com/terraform-providers/terraform-provider-google/blob/master/website/docs/r/compute_router_bgp_peer.html.markdown.
 
 
 
@@ -213,6 +243,8 @@ IP address of the BGP interface outside Google Cloud Platform. Only IPv4 is supp
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
  {{% /md %}}
 
             
@@ -409,6 +441,8 @@ IP address of the BGP interface outside Google Cloud Platform. Only IPv4 is supp
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
  {{% /md %}}
 
             
@@ -605,6 +639,8 @@ IP address of the BGP interface outside Google Cloud Platform. Only IPv4 is supp
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
  {{% /md %}}
 
             
@@ -801,6 +837,8 @@ IP address of the BGP interface outside Google Cloud Platform. Only IPv4 is supp
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
  {{% /md %}}
 
             
@@ -1022,7 +1060,9 @@ character, which cannot be a dash.
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+ {{% /md %}}
 
             
             </td>
@@ -1225,7 +1265,9 @@ character, which cannot be a dash.
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+ {{% /md %}}
 
             
             </td>
@@ -1428,7 +1470,9 @@ character, which cannot be a dash.
                 
                 <code>string</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+ {{% /md %}}
 
             
             </td>
@@ -1631,7 +1675,9 @@ character, which cannot be a dash.
                 
                 <code>str</code>
             </td>
-            <td class="align-top">{{% md %}}  {{% /md %}}
+            <td class="align-top">{{% md %}} The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
+ {{% /md %}}
 
             
             </td>
@@ -1915,6 +1961,8 @@ IP address of the BGP interface outside Google Cloud Platform. Only IPv4 is supp
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
  {{% /md %}}
 
             
@@ -2144,6 +2192,8 @@ IP address of the BGP interface outside Google Cloud Platform. Only IPv4 is supp
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
  {{% /md %}}
 
             
@@ -2373,6 +2423,8 @@ IP address of the BGP interface outside Google Cloud Platform. Only IPv4 is supp
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
  {{% /md %}}
 
             
@@ -2602,6 +2654,8 @@ IP address of the BGP interface outside Google Cloud Platform. Only IPv4 is supp
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
  {{% /md %}}
 
             

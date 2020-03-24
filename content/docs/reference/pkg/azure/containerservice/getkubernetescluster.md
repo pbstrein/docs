@@ -9,9 +9,6 @@ table td p { margin-top: 0; margin-bottom: 0; }
 
 Use this data source to access information about an existing Managed Kubernetes Cluster (AKS).
 
-> **Note:** All arguments including the client secret will be stored in the raw state as plain-text.
-[Read more about sensitive data in state](https://www.terraform.io/docs/state/sensitive-data.html).
-
 ## Example Usage
 
 ```typescript

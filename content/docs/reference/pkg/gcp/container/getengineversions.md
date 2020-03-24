@@ -7,18 +7,6 @@ block_external_search_index: true
 table td p { margin-top: 0; margin-bottom: 0; }
 </style>
 
-## a---
-
-subcategory: "Kubernetes (Container) Engine"
-layout: "google"
-page_title: "Google: gcp.container.getEngineVersions"
-sidebar_current: "docs-google-datasource-container-versions"
-description: |-
-  Provides lists of available Google Kubernetes Engine versions for masters and nodes.
----
-
-# google\_container\_engine\_versions
-
 Provides access to available Google Kubernetes Engine versions in a zone or region for a given project.
 
 > If you are using the `gcp.container.getEngineVersions` datasource with a
@@ -117,7 +105,7 @@ Defaults to the project that the provider is authenticated with.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-If provided, this provider will only return versions
+If provided, the provider will only return versions
 that match the string prefix. For example, `1.11.` will match all `1.11` series
 releases. Since this is just a string match, it&#39;s recommended that you append a
 `.` after minor versions to ensure that prefixes such as `1.1` don&#39;t match
@@ -191,7 +179,7 @@ Defaults to the project that the provider is authenticated with.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-If provided, this provider will only return versions
+If provided, the provider will only return versions
 that match the string prefix. For example, `1.11.` will match all `1.11` series
 releases. Since this is just a string match, it&#39;s recommended that you append a
 `.` after minor versions to ensure that prefixes such as `1.1` don&#39;t match
@@ -265,7 +253,7 @@ Defaults to the project that the provider is authenticated with.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-If provided, this provider will only return versions
+If provided, the provider will only return versions
 that match the string prefix. For example, `1.11.` will match all `1.11` series
 releases. Since this is just a string match, it&#39;s recommended that you append a
 `.` after minor versions to ensure that prefixes such as `1.1` don&#39;t match
@@ -339,7 +327,7 @@ Defaults to the project that the provider is authenticated with.
             </td>
             <td class="align-top">{{% md %}} 
  (Optional)
-If provided, this provider will only return versions
+If provided, the provider will only return versions
 that match the string prefix. For example, `1.11.` will match all `1.11` series
 releases. Since this is just a string match, it&#39;s recommended that you append a
 `.` after minor versions to ensure that prefixes such as `1.1` don&#39;t match

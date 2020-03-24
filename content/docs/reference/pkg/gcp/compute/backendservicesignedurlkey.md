@@ -7,6 +7,16 @@ block_external_search_index: true
 table td p { margin-top: 0; margin-bottom: 0; }
 </style>
 
+A key for signing Cloud CDN signed URLs for Backend Services.
+
+
+To get more information about BackendServiceSignedUrlKey, see:
+
+* [API documentation](https://cloud.google.com/compute/docs/reference/rest/v1/backendServices)
+* How-to Guides
+    * [Using Signed URLs](https://cloud.google.com/cdn/docs/using-signed-urls/)
+
+> This content is derived from https://github.com/terraform-providers/terraform-provider-google/blob/master/website/docs/r/compute_backend_service_signed_url_key.html.markdown.
 
 
 
